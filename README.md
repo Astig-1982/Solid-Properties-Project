@@ -1,4 +1,4 @@
-# The Property Management Project
+# Solid Properties Project
 
 ## Site Owners Goals
 
