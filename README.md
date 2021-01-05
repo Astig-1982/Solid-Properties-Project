@@ -1,45 +1,28 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# The Property Management Project
 
-Welcome USER_NAME,
+## Site Owners Goals
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+* A website that projects a clear representation of all the services provided, so that the client won't miss any oportunity in purchasing a service that is not well represented.
+* A clear explanation of what every service is providing in detail, so that the client can easily find all the info on the webiste, without the need of callling the company for additional info.
+* A clear explanation of how the prices are calculated, so that the client will have a better understanding of the total upon purchasing.
+* A personalised profile where the client can add her/his properties, so that she/he can have the total cost of the each service in a quick manner, without having to enter the property details all the time when selecting a service.
 
-## Gitpod Reminders
+## User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* As a landlord\landlady, I would like to be able to see a full list of all services provided at once, so I can choose some to purchase.
+* As a landlord\landlady, I would like to be able to see a list of categories of all services, so I can easily navigate to the ones that are within my interest.
+* As a landlord\landlady, I would like to be able to see each service in detail, so can I have a clear understanding of what it's providing.
+* As a landlord\landlady, I would like to be able to see price of each service depending on the size of the property, so I can have a clear understanding how much would cost for each of my properties.
+* As a landlord\landlady, I would like to be able to choose the date when the service - or services - will take place, so I can get the property ready.
+* As a landlord\landlady, I would like to be able to search for a service by name, so I can easily find what I am looking for.
+* As a landlord\landlady, I would like to be able to to have the option to purchase a maintenance service in full or partially, so I don't have to spend more money on extra things that my property may not require - like a complete refurbishment, when all is needed is maybe only one room to be refurbished.
+* As a landlord\landlady, I would like to be able to have a clear understanding of how the company works and how the prices are calculated, so I can be sure that my money are well spent.
+* As a landlord\landlady, I would like to be able to have a clear display of my total spendings on the screen, so I can avoid going above my budget.
+* As a landlord\landlady, I would like to be able to register my property details once, so all prices to be automatically calculated everytime I choose a service, without having to add all the time the size of my property.
 
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+* As a user, I would like to be able to register to website in a straight forward way, so I would have a profile where to be able to keep track of all my purchases. 
+* As a user, I would like to be able to easily login or logout, so I can easily have access to my profile.
+* As a user, I would like to be able to receive confirmation email upon registering, so I can be sure that everything went well.
+* As a user, I would like to be able to have clear live notifications on the screen everytime an important action was performed or is due to be performed, so I can be constantly up to date to what I'm doing and what I'm purchasing on the website.
+* As a user, I would like to be able to have clear live notifications on the screen everytime an action cannot be performed or an error occurs, and a brief explanation, so I can correct the mistake and perform the action in cause again.
+* As a user, I would like to be able to have a secure checkout so I know that the transaction and my card details are protected.
