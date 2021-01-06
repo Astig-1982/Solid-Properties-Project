@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+}
+
+.navbar-brand {
+    margin-left: 30%;
+}
+
+.navbar-nav {
+    margin-left: 35%;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+
+/* --------------- home page starts here -------------- */
+
+.home-container {
+    height: 70vh;
+    background: url('/media/house_tower.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title-container {
+    margin-top: 17%;
+    padding: 2rem;
+    width: 45%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+.title-container h2 {
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.main-title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.main-action-buttons {
+    height: 4rem;
+    width: 9rem;
+    background-color: rgb(0,128,128);
+}
+
+
+
