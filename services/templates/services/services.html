@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid border border-blue section-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="mx-auto text-center section-title-container">
+                <h1 class="section-title">services</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container services-container">
+    <div class="row">
+        {% for service in services %}
+            <div class="col-12 col-md-3 text-center service-holder">
+                <div class="rounded-circle mx-auto text-center"></div>
+                <div>
+                    <p class="service-name">{{ service.name }}</p>
+                    <p class="service-description">{{ service.short_description }}
+                        <a href="#" class="py-3">See more</a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
+
