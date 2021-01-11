@@ -67,9 +67,10 @@ body {
 }
 
 .section-container {
-    height: 29vh;
+    height: 30vh;
     background: url('/media/house_tower.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: scroll;
 }
 
 .section-title-container {

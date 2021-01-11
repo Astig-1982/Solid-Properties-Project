@@ -19,7 +19,7 @@
                 <div>
                     <p class="service-name">{{ service.name }}</p>
                     <p class="service-description">{{ service.short_description }}
-                        <a href="#" class="py-3">See more</a>
+                        <a href="{% url 'detailed_service' service.id %}" class="py-3">See more</a>
                     </p>
                 </div>
             </div>
