@@ -15,7 +15,9 @@
     <div class="row">
         {% for service in services %}
             <div class="col-12 col-md-3 text-center service-holder">
-                <div class="rounded-circle mx-auto text-center"></div>
+                <div>
+                    <a href="{% url 'detailed_service' service.id %}" class="rounded-circle mx-auto text-center py-3"></a>
+                </div>
                 <div>
                     <p class="service-name">{{ service.name }}</p>
                     <p class="service-description">{{ service.short_description }}
