@@ -14,6 +14,15 @@ def all_services(request):
     category = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sort = request.GET['sort']
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sort = f'-{sort}'
+        services = services.order_by(sort)
+
         if 'category' in request.GET:
             category = request.GET['category']
             services = services.filter(category__name__exact=category)
@@ -31,7 +40,6 @@ def all_services(request):
         'services': services,
         'search': query,
         'categories': categories,
-        
     }
 
     return render(request, 'services/services.html', context)
