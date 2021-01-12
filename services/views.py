@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Services
+from .models import Services, Category
 
 # Create your views here.
 
@@ -9,9 +9,15 @@ from .models import Services
 def all_services(request):
 
     services = Services.objects.all()
+    categories = Category.objects.all()
     query = None
+    category = None
 
     if request.GET:
+        if 'category' in request.GET:
+            category = request.GET['category']
+            services = services.filter(category__name__exact=category)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -23,6 +29,9 @@ def all_services(request):
 
     context = {
         'services': services,
+        'search': query,
+        'categories': categories,
+        
     }
 
     return render(request, 'services/services.html', context)
@@ -37,5 +46,9 @@ def detailed_service(request, service_id):
     }
 
     return render(request, 'services/detailed_service.html', context)
+
+
+
+
 
 
