@@ -12,6 +12,9 @@ def all_services(request):
     categories = Category.objects.all()
     query = None
     category = None
+    sort = None
+    direction = None
+    current_category = 'All Services'
 
     if request.GET:
         if 'sort' in request.GET:
@@ -21,11 +24,14 @@ def all_services(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sort = f'-{sort}'
-        services = services.order_by(sort)
+
+            services = services.order_by(sort)
 
         if 'category' in request.GET:
             category = request.GET['category']
             services = services.filter(category__name__exact=category)
+            current = get_object_or_404(Category, name=category)
+            current_category = current.friendly_name
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -40,6 +46,7 @@ def all_services(request):
         'services': services,
         'search': query,
         'categories': categories,
+        'current_category': current_category,
     }
 
     return render(request, 'services/services.html', context)
