@@ -14,7 +14,7 @@ def all_services(request):
     category = None
     sort = None
     direction = None
-    current_category = 'All Services'
+    current_category = 'services'
 
     if request.GET:
         if 'sort' in request.GET:
