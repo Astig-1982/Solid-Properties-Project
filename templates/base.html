@@ -34,10 +34,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-    {% block postloadjs %}
+    {% block page_header %}
     {% endblock %}
 
     <title>Solid Properties</title>
@@ -88,7 +85,10 @@
         </nav>
     </header>
 
-    {% block page_header %}
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
     {% endblock %}
 
 </body>

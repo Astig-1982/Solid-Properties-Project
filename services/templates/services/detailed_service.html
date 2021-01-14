@@ -2,22 +2,24 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid border border-blue section-container">
-    <div class="row">
-        <div class="col-12">
-            <div class="mx-auto text-center section-title-container">
-                <h1 class="section-title">services</h1>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="container services-container">
     <div class="row">
         <div class="col-12">
-            {{ service.name }}
+            {{ service.category.name }}
         </div>
     </div>
 </div>
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.navbar').css('background-color', 'blue')
+});
+</script>
+
+{% endblock %}
 
 {% endblock %}
 
