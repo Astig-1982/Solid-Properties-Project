@@ -31,7 +31,6 @@ class Category(models.Model):
         return self.friendly_name
 
 
-
 class Services(models.Model):
 
     class Meta:
