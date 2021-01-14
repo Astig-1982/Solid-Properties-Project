@@ -9,7 +9,7 @@ def landlord_profile(request):
     landlord = get_object_or_404(LandlordProfile, user=request.user)
 
     context = {
-        'landlord': landlord
+        'landlord': landlord,
     }
 
     return render(request, 'profiles/profile.html', context)
