@@ -5,17 +5,22 @@
 
 <div class="container services-container">
     <div class="row">
-        <div class="col-12">
-            {{ service.category.name }}
+        <div class="col-12 col-md-6">
+            <img class="service-image" src="{{ service.category.image.url }}" alt="{{ service.name }}">
+        </div>
+        <div class="col-12 col-md-6">
+            <p>{{ service.short_description }}</p>
+            <p>{{ service.description }}</p>
         </div>
     </div>
 </div>
+
 
 {% block postloadjs %}
 
 <script type="text/javascript">
 $(document).ready(function(){
-    $('.navbar').css('background-color', 'blue')
+    $('.navbar').css('background-color', 'rgb(33,0,112)')
 });
 </script>
 

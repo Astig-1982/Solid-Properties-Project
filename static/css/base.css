@@ -122,4 +122,9 @@ body {
     width: 9rem;
 }
 
+/* --------------- detailed_service page starts here -------------- */
 
+.service-image {
+    width: 70%;
+    height: 450px;
+}
