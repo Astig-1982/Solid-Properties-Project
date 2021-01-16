@@ -29,8 +29,8 @@ body {
 
 /* --------------- home page starts here -------------- */
 
-.home-container {
-    height: 70vh;
+.landing-row {
+    height: 76vh;
     background: url('/media/house_tower.jpg') no-repeat center center fixed;
     background-size: cover;
 }
@@ -52,12 +52,29 @@ body {
     font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
+    font-weight: 900 !important;
 }
 
 .main-action-buttons {
     height: 4rem;
     width: 9rem;
     background-color: rgb(0,128,128);
+    color: #ffffff;
+}
+
+.categories-title {
+    margin-top: 3.5%;
+}
+
+.categories-title h2 {
+    font-size: 3rem;
+    font-weight: bold !important;
+    letter-spacing: .08rem;
+}
+
+.categories-title h4 {
+    margin-top: 1%;
+    font-size: 2rem;
 }
 
 /* --------------- services page starts here -------------- */
