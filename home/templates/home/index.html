@@ -20,6 +20,15 @@
         </div>
     </div>
 </div>
+<div class="container category-container">
+    <div class="row">
+        {% for category in categories %}
+            <div class="col-12 col-md-4 category-column">
+                <img class="category-image" src="{{ category.image.url }}" alt="{{ category.name }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}  
 

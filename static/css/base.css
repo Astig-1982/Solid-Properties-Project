@@ -29,6 +29,9 @@ body {
 
 /* --------------- home page starts here -------------- */
 
+            /* ------- landing section ------ */
+
+
 .landing-row {
     height: 76vh;
     background: url('/media/house_tower.jpg') no-repeat center center fixed;
@@ -75,6 +78,21 @@ body {
 .categories-title h4 {
     margin-top: 1%;
     font-size: 2rem;
+}
+
+            /* ------- category section ------ */
+
+.category-container {
+    margin-top: 5%;
+}
+
+.category-image {
+    width: 20rem;
+    height: 18rem;
+}
+
+.category-column {
+    margin-bottom: 2%;
 }
 
 /* --------------- services page starts here -------------- */
