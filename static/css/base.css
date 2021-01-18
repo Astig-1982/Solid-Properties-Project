@@ -27,6 +27,37 @@ body {
     letter-spacing: .05rem;
 }
 
+/* --------------- footer section starts here -------------- */
+
+.footer-container {
+    background-color: rgb(33,0,112);
+    color: #ffffff;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.footer-container a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-horizontal {
+    width: 70%;
+    height: .05rem;
+    background-color: #ffffff;
+}
+
+#social-paragraph {
+    margin-left: 17.8rem;
+}
+
+#facebook-span {
+    margin-left: 1rem;
+}
+
+.footer-categories {
+    margin-top: 1.5rem;
+}
+
 /* --------------- home page starts here -------------- */
 
             /* ------- landing section ------ */
