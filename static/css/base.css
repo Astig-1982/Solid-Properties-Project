@@ -47,7 +47,14 @@ body {
 }
 
 #social-paragraph {
-    margin-left: 17.8rem;
+    margin-left: 17.7rem;
+    font-size: 120%;
+}
+
+#social-paragraph span {
+    font-size: 150%;
+    margin-left: 1rem;
+    padding-top: .2rem;
 }
 
 #facebook-span {
@@ -55,7 +62,21 @@ body {
 }
 
 .footer-categories {
-    margin-top: 1.5rem;
+    margin-top: 1.3rem;
+    letter-spacing: .06rem;
+}
+
+.footer-categories a {
+    margin-left: 4.1rem;
+}
+
+#legal-footer {
+    margin-left: 17.7rem;
+}
+
+.copyright-message {
+    margin-top: 1.7rem;
+    font-weight: 100;
 }
 
 /* --------------- home page starts here -------------- */
