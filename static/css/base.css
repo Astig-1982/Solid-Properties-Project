@@ -46,16 +46,26 @@ body {
     background-color: #ffffff;
 }
 
-#social-paragraph {
+.social-row a {
+    margin-left: 2.5rem;
+}
+
+.social-row a:first-child {
+    margin-left: 25rem;
+}
+
+.footer-container p:first-child {
     margin-left: 17.7rem;
     font-size: 120%;
 }
 
-#social-paragraph span {
+.footer-container p:first-child span:first-child:not(#facebook-span) span {
+    display: inline;
     font-size: 150%;
-    margin-left: 1rem;
     padding-top: .2rem;
+    margin-left: 1.6rem;
 }
+
 
 #facebook-span {
     margin-left: 1rem;

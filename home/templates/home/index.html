@@ -32,47 +32,5 @@
 
 {% endblock %}  
 
-{% block footer %}
 
-<div class="container-fluid footer-container">
-    <div class="row">
-        <div class="col-md-6">
-            <p id="social-paragraph">Follow us on: 
-                <span id="facebook-span"><i class="fab fa-facebook-square"></i></span>
-                <span><i class="fab fa-instagram"></i></span>
-                <span><i class="fab fa-linkedin"></i></span>
-                <span><i class="fab fa-twitter-square"></i></span>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <div>
-                <a href="#">Home</a>
-                <a href="#">Sign In</a>
-                {% if request.user.is_authenticated %}
-                    <a href="#">Sign Out</a>
-                {% else %}
-                    <a href="#">Register</a>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    <div class="mx-auto footer-horizontal"></div>  
-    <div class="row footer-categories">
-        <div class="col-12">
-            <div class="mx-auto">
-                <a id="legal-footer" href="#">Legal Services</a>
-                <a href="#">Repairs & Refurbishment</a>
-                <a href="#">Admin Services</a>
-                <a href="#">Plumbing & Electric</a>
-                <a href="#">Free</a>
-                <a href="#">Marketing</a>
-                <a href="#">Cleaning</a>
-                <a href="#">Other</a>
-            </div>
-            <p class="mx-auto text-center copyright-message">Copyright Solid Properties Ltd. 2020. Registered OfficeL 212 Marylebone Rd, London, NW1 5LS</p>
-        </div>
-    </div>
-</div>
-
-{% endblock %}
 
