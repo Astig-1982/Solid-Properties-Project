@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    {{ property_form }}
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.footer-container').css('margin-top', '30%')
+});
+</script>
+
+{% endblock %}
+
+
+{% endblock %}
+
