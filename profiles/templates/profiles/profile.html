@@ -11,16 +11,61 @@
         </div>
     </div>
 </div>
-<div class="div">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="profile-div mx-auto">
+                <p>
+                    Name: {{ landlord }}
+                </p>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Please select a property</option>
+                    {% for property in properties %}
+                    <option value="{{ property.street_address }}">{{ property.street_address }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  
+<div>
     {{ landlord }}
 </div>
 
 
 
+<div style="margin-top: 20px;">
+    {% for property in properties %}
+        <div>
+            <div>
+                {{ property.street_address }}
+            </div>
+            <div>
+                {{ property.no_of_bedrooms }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+-->
 
 
+
+
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.footer-container').css('margin-top', '50%')
+    });
+</script>
+
+{% endblock %}
 
 
 
 {% endblock %}
-

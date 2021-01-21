@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import LandlordProfile
+from properties.models import Properties
 
 # Create your views here.
 
@@ -7,9 +8,12 @@ from .models import LandlordProfile
 def landlord_profile(request):
 
     landlord = get_object_or_404(LandlordProfile, user=request.user)
+    all_properties = landlord.properties.all()
+    properties = all_properties.order_by('street_address')
 
     context = {
         'landlord': landlord,
+        'properties': properties,
     }
 
     return render(request, 'profiles/profile.html', context)
