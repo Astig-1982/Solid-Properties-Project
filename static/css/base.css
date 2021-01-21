@@ -225,3 +225,9 @@ body {
     width: 70%;
     height: 450px;
 }
+
+/* --------------- add_property page starts here -------------- */
+
+#property-form {
+    margin-top: 280px;
+}

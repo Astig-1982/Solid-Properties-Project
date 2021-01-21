@@ -11,7 +11,7 @@ def add_property(request):
 
     if request.method == 'POST':
         form_data = {
-                'landlord': request.user,
+                'landlord': landlord,
                 'street_address': request.POST['street_address'],
                 'house_name': request.POST['house_name'],
                 'post_code': request.POST['post_code'],

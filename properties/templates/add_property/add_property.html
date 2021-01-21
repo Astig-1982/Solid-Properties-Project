@@ -2,8 +2,16 @@
 {% load static %}
 
 {% block content %}
-
-    {{ property_form }}
+<div id="property-form">
+    <form action="{% url 'add_property' %}" method="POST" style="margin-top: 300px">
+        {% csrf_token %}
+        {{ property_form.street_address | as_crispy_field }}
+        {{ property_form.house_name | as_crispy_field }}
+        {{ property_form.post_code | as_crispy_field }}
+        {{ property_form.no_of_bedrooms | as_crispy_field }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 {% block postloadjs %}
 
