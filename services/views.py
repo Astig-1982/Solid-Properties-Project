@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import Services, Category
+from properties.models import Properties
+from profiles.models import LandlordProfile
 
 # Create your views here.
 
@@ -55,9 +57,13 @@ def all_services(request):
 def detailed_service(request, service_id):
 
     service = get_object_or_404(Services, pk=service_id)
+    landlord = get_object_or_404(LandlordProfile, user=request.user)
+    all_properties = landlord.properties.all()
 
     context = {
         'service': service,
+        'landlord': landlord,
+        'properties': all_properties,
     }
 
     return render(request, 'services/detailed_service.html', context)

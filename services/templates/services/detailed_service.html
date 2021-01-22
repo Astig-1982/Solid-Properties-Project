@@ -15,6 +15,29 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <select id="select-property" class="form-select" aria-label="Default select example">
+                    <option selected>Please select a property</option>
+                    {% for property in properties %}
+                    <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }}</span></option>
+                    {% endfor %}
+                </select>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="text-center service-price">
+                {{ service.price }}
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="text-center total-price">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% block postloadjs %}
 
@@ -22,6 +45,18 @@
 $(document).ready(function(){
     $('.navbar').css('background-color', 'rgb(33,0,112)')
     $('.services-container').css('margin-bottom', '13.5%')
+    $('#select-property').change(function(){
+        let bedrooms = $(this).val();
+        let servicePrice = $('.service-price').html()
+        let servicePriceInt = parseInt(servicePrice)
+        let noOfBedrooms = parseInt(bedrooms)
+        let totalPrice = servicePriceInt * noOfBedrooms
+        $('.total-price').text(totalPrice)
+        console.log(servicePrice)
+        console.log(noOfBedrooms)
+    })
+    
+    
 });
 </script>
 

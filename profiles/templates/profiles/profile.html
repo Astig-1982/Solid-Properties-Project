@@ -23,7 +23,7 @@
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Please select a property</option>
                     {% for property in properties %}
-                    <option value="{{ property.street_address }}">{{ property.street_address }}</option>
+                    <option value="{{ property.street_address }}">{{ property.no_of_bedrooms }} bedroomed <strong>{{ property.street_address }}</strong></option>
                     {% endfor %}
                 </select>
             </div>
