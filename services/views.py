@@ -57,14 +57,19 @@ def all_services(request):
 def detailed_service(request, service_id):
 
     service = get_object_or_404(Services, pk=service_id)
-    landlord = get_object_or_404(LandlordProfile, user=request.user)
-    all_properties = landlord.properties.all()
+    if request.user.is_authenticated:
+        landlord = get_object_or_404(LandlordProfile, user=request.user)
+        all_properties = landlord.properties.all()
+        context = {
+            'service': service,
+            'landlord': landlord,
+            'properties': all_properties,
+        }
+        return render(request, 'services/detailed_service.html', context)
 
     context = {
-        'service': service,
-        'landlord': landlord,
-        'properties': all_properties,
-    }
+            'service': service,
+        }
 
     return render(request, 'services/detailed_service.html', context)
 

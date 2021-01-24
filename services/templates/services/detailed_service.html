@@ -9,31 +9,33 @@
             <img class="service-image" src="{{ service.category.image.url }}" alt="{{ service.name }}">
         </div>
         <div class="col-12 col-md-6">
+            <p class="short-description"><strong>About this service</strong></p>
             <p>{{ service.short_description }}</p>
+            <p class="description"><strong>Our Commitment</strong></p>
             <p>{{ service.description }}</p>
+            <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
+                {% if service.price_variation %}
+                    <strong class="total-bedrooms">*TOTAL COST:<span class="total-price price"></span></strong>
+                {% endif %}
+            </p>
+            {% if service.price_variation %}
+                <p>*Please note that the price is for 1 bedroom. Please select the property for which you would like to purchase it to see the total cost for this service.</p>
+            {% endif %}
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container property-container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <select id="select-property" class="form-select" aria-label="Default select example">
-                    <option selected>Please select a property</option>
-                    {% for property in properties %}
-                    <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }}</span></option>
-                    {% endfor %}
+            <select id="select-property" class="form-select w-50" aria-label="Default select example">
+                    {% if request.user %}
+                        <option selected>Please select a property</option>
+                        {% for property in properties %}
+                        <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
+                        {% endfor %}
+                    {% endif %}
                 </select>
-        </div>
-        <div class="col-12 col-md-3">
-            <div class="text-center service-price">
-                {{ service.price }}
-            </div>
-        </div>
-        <div class="col-12 col-md-3">
-            <div class="text-center total-price">
-                
-            </div>
         </div>
     </div>
 </div>
@@ -44,14 +46,14 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('.navbar').css('background-color', 'rgb(33,0,112)')
-    $('.services-container').css('margin-bottom', '13.5%')
+    $('.property-container').addClass('detailed-service-bottom')
     $('#select-property').change(function(){
         let bedrooms = $(this).val();
         let servicePrice = $('.service-price').html()
         let servicePriceInt = parseInt(servicePrice)
         let noOfBedrooms = parseInt(bedrooms)
         let totalPrice = servicePriceInt * noOfBedrooms
-        $('.total-price').text(totalPrice)
+        $('.total-price').text(`£${totalPrice.toFixed(2)}`)
         console.log(servicePrice)
         console.log(noOfBedrooms)
     })

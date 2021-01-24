@@ -27,7 +27,7 @@ body {
     letter-spacing: .05rem;
 }
 
-/* --------------- footer section starts here -------------- */
+/* --------------------------------------------------- footer section starts here -------------------------------------------------- */
 
 .footer-container {
     background-color: rgb(33,0,112);
@@ -89,7 +89,7 @@ body {
     font-weight: 100;
 }
 
-/* --------------- home page starts here -------------- */
+/* --------------------------------------------------- home page starts here -------------------------------------------------- */
 
             /* ------- landing section ------ */
 
@@ -157,7 +157,7 @@ body {
     margin-bottom: 2%;
 }
 
-/* --------------- services page starts here -------------- */
+/* --------------------------------------------------- service page starts here -------------------------------------------------- */
 
 .services-container {
     margin-top: 5%;
@@ -219,14 +219,30 @@ body {
     width: 9rem;
 }
 
-/* --------------- detailed_service page starts here -------------- */
+/* --------------------------------------------------- detailed page starts here -------------------------------------------------- */
 
 .service-image {
     width: 70%;
     height: 450px;
 }
 
-/* --------------- add_property page starts here -------------- */
+.total-bedrooms {
+    margin-left: 5rem;
+}
+
+.price {
+    margin-left: .2rem;
+}
+
+.property-container {
+    margin-top: 0
+}
+
+.detailed-service-bottom {
+    margin-bottom: 8.69%;
+}
+
+/* --------------------------------------------------- add property page starts here -------------------------------------------------- */
 
 #property-form {
     margin-top: 280px;
