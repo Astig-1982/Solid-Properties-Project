@@ -7,8 +7,40 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <img class="service-image" src="{{ service.category.image.url }}" alt="{{ service.name }}">
+            <div class="property-container">
+                {% if service.price_variation %}
+                    <select class="select-property form-select w-50" aria-label="Default select example">
+                {% else %}
+                    <select class="select-property form-select w-50" aria-label="Default select example" disabled>
+                {% endif %}
+                        {% if request.user.is_authenticated %}
+                            <option selected>Please select a property</option>
+                            {% for property in properties %}
+                            <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }} Bedroomed {{ property.street_address }}</span></option>
+                            {% endfor %}
+                        {% else %}
+                            <option selected>Please select the number of bedrooms</option>
+                            <option value="1"><span class="no-of-bedrooms">1 Bedroom</span></option>
+                            <option value="2"><span class="no-of-bedrooms">2 Bedrooms</span></option>
+                            <option value="3"><span class="no-of-bedrooms">3 Bedrooms</span></option>
+                            <option value="4"><span class="no-of-bedrooms">4 Bedrooms</span></option>
+                            <option value="5"><span class="no-of-bedrooms">5 Bedrooms</span></option>
+                        {% endif %}
+                </select>
+                {% if service.price_variation %}
+                    {% if request.user.is_authenticated %}
+                        <p class="property-select-text">*Please select from above the property for which the total cost of this service to be calculated for.</p>
+                    {% else %}
+                        <p class="property-select-text">*Please select from above the number of bedrooms for which the total cost of this service to be calculated for.</p>
+                    {% endif %}
+                {% else %}
+                    <p class="property-select-text text-secondary">*Fixed priced service.</p>
+                {% endif %}
+            </div>
         </div>
         <div class="col-12 col-md-6">
+            <h3 class="text-uppercase">{{ service.name }}</h3>
+            <hr class="horizontal-separator">
             <p class="short-description"><strong>About this service</strong></p>
             <p>{{ service.short_description }}</p>
             <p class="description"><strong>Our Commitment</strong></p>
@@ -16,36 +48,20 @@
             <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
                 {% if service.price_variation %}
                     <strong class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
+                {% else %}
+                    <strong class="total-bedrooms">*TOTAL COST: <span class="price">£{{ service.price }}</span></strong>
                 {% endif %}
             </p>
             {% if service.price_variation %}
                 <p>*Please note that the price is for 1 bedroom. Please select the property for which you would like to purchase it to see the total cost for this service.</p>
+            {% else %}
+                <p>*Please note that this service has a fixed price, regardless of the number of bedrooms the property comprises.</p>
             {% endif %}
         </div>
     </div>
 </div>
 
-<div class="container property-container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <select id="select-property" class="form-select w-50" aria-label="Default select example">
-                    {% if request.user.is_authenticated %}
-                        <option selected>Please select a property</option>
-                        {% for property in properties %}
-                        <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }} Bedroomed {{ property.street_address }}</span></option>
-                        {% endfor %}
-                    {% else %}
-                        <option selected>Please select the number of bedrooms</option>
-                        <option value="1"><span class="no-of-bedrooms">1 Bedroom</span></option>
-                        <option value="2"><span class="no-of-bedrooms">2 Bedrooms</span></option>
-                        <option value="3"><span class="no-of-bedrooms">3 Bedrooms</span></option>
-                        <option value="4"><span class="no-of-bedrooms">4 Bedrooms</span></option>
-                        <option value="5"><span class="no-of-bedrooms">5 Bedrooms</span></option>
-                    {% endif %}
-                </select>
-        </div>
-    </div>
-</div>
+
 
 
 {% block postloadjs %}
@@ -53,8 +69,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('.navbar').css('background-color', 'rgb(33,0,112)')
-    $('.property-container').addClass('detailed-service-bottom')
-    $('#select-property').change(function(){
+    $('.services-container').addClass('detailed-service-bottom')
+    $('.select-property').change(function(){
         let bedrooms = $(this).val();
         let servicePrice = $('.service-price').html()
         let servicePriceInt = parseInt(servicePrice)

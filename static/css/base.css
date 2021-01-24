@@ -221,6 +221,14 @@ body {
 
 /* --------------------------------------------------- detailed page starts here -------------------------------------------------- */
 
+.services-container {
+    min-height: 
+}
+
+.horizontal-separator {
+    margin-bottom: 5%;
+}
+
 .service-image {
     width: 70%;
     height: 450px;
@@ -235,11 +243,17 @@ body {
 }
 
 .property-container {
-    margin-top: 0
+    margin-top: 6%;
 }
 
 .detailed-service-bottom {
-    margin-bottom: 8.69%;
+    margin-bottom: 6.45%;
+}
+
+.property-select-text {
+    margin-top: 2%;
+    width: 70%;
+    font-size: 80%;
 }
 
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
