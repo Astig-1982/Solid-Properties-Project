@@ -1,1 +1,1 @@
-web: gunicorn solid_properties.wsgi:appllication
+web: gunicorn solid_properties.wsgi:application
