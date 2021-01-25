@@ -28,7 +28,7 @@ SECRET_KEY = 'j5g@k2yj$xsqz*b6w^el*1n5!=gxdpi_7t(anb*2@q+m3)l$ho'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['solid-properties-project.heroku.com', 'localhost']
+ALLOWED_HOSTS = ['solid-properties-project.herokuapp.com', 'localhost']
 
 
 # Application definition
