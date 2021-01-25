@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 body {
     margin: 0;
@@ -12,7 +12,7 @@ body {
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in;
 }
 
 .blue {
@@ -20,11 +20,12 @@ body {
 }
 
 .navbar-brand {
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 .navbar-nav {
-    margin-left: 35%;
+    margin-left: 25%;
+    margin-right: 2% !important;
 }
 
 .navbar a {
@@ -32,6 +33,11 @@ body {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: .05rem;
+}
+
+.btn-outline-success {
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 /* --------------------------------------------------- footer section starts here -------------------------------------------------- */
