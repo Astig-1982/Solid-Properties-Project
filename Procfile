@@ -1,0 +1,1 @@
+web: gunicorn solid_properties.wsgi:appllication

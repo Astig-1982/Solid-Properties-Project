@@ -26,3 +26,52 @@
 * As a user, I would like to be able to have clear live notifications on the screen everytime an important action was performed or is due to be performed, so I can be constantly up to date to what I'm doing and what I'm purchasing on the website.
 * As a user, I would like to be able to have clear live notifications on the screen everytime an action cannot be performed or an error occurs, and a brief explanation, so I can correct the mistake and perform the action in cause again.
 * As a user, I would like to be able to have a secure checkout so I know that the transaction and my card details are protected.
+
+## Deployment:
+
+Solid Property Project was developed on GitPod using git and GitHub to host the repository.
+
+### Deploying Solid Properties Project to Heroku:
+
+* 1: **Create** a requirements.txt file using the following command.
+```bash
+pip3 freeze > requirements.txt
+```
+* 2: **Create<** a Procfile with the following command.
+```bash
+echo web: python3 app.py > Procfile
+```
+* 3: **Push** these newly created files to your repository.
+* 4: **Create** a new app for this project on the Heroku Dashboard.
+* 5: **Provision** postgresql from Heroku Resources.
+* 6: **Install** Dj Database Url with command:
+```bash
+pip3 install dj_database_url
+```
+* 7: **Install** Psycopg2 with command:
+```bash
+pip3 install psycopg2-binary
+```
+* 8: **Freeze** the new requirement using the same command as before.
+```bash
+pip3 freeze > requirements.txt
+```
+* 9: **Import** ```dj-database-url``` in the ```settings.py``` file.
+* 10: **Add postgresql** as the default database in ```settings.py``` file.
+* 11: **Run migrations** again for the new database.
+```bash
+python3 manage.py migrate
+```
+* 12: **Create superuser** again.
+```bash
+python3 manage.py createsuperuser
+```
+* 13: **Install**  ```gunicorn``` using the command.
+```bash
+pip3 install gunicorn
+```
+* 14: **Freeze** the new requirement using the same command as before.
+* 15: In **Procfile** tell Heroku to create a web dyno which will run gunicorn and serve the solid_properties django app.
+```bash
+web: gunicorn solid_properties.wsgi:appllication
+```  

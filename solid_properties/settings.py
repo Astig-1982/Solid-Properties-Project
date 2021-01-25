@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'j5g@k2yj$xsqz*b6w^el*1n5!=gxdpi_7t(anb*2@q+m3)l$ho'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['solid-properties-project.heroku.com', 'localhost']
 
 
 # Application definition
@@ -114,12 +115,21 @@ WSGI_APPLICATION = 'solid_properties.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+#DATABASES = {
+    #'default': dj_database_url.parse('postgres://lmvrfncxwxmpas:5709f7b28179a5e41b9c17cbf3304a7b5c58b2a202d43dca0c9b2f64a3410fb2@ec2-34-246-141-162.eu-west-1.compute.amazonaws.com:5432/dc29nv1670v84m')
+#}
 
 
 # Password validation
