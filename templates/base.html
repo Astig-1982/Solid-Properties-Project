@@ -131,10 +131,20 @@
     </div>
     </div>
     {% endblock %}
-
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            $(function() {$(window).on("scroll", function() {
+                if($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('blue');
+                } else {
+                $('.navbar').removeClass('blue');
+                }
+            });
+        });
+    });
+</script>
     {% block postloadjs %}
     {% endblock %}
-
 </body>
 
 </html>

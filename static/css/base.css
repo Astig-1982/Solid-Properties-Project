@@ -10,6 +10,13 @@ body {
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.blue {
+    background-color: rgb(33,0,112);
 }
 
 .navbar-brand {
