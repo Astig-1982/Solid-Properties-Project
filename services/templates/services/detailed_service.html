@@ -7,14 +7,29 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <img class="service-image" src="{{ service.category.image.url }}" alt="{{ service.name }}">
-            <div class="property-container">
+            
+        </div>
+        <div class="col-12 col-md-6">
+            <h3 class="text-uppercase">{{ service.name }}</h3>
+            <hr class="horizontal-separator">
+            <p class="short-description"><strong>About this service</strong></p>
+            <p>{{ service.short_description }}</p>
+            <p class="description"><strong>Our Commitment</strong></p>
+            <p>{{ service.description }}</p>
+            
+        </div>
+    </div>
+    <div class="row property-container">
+        
+            <form class="add-cart-form col-12 col-md-6" action="{% url 'add_to_cart' service.id %}" method="POST">
+                {% csrf_token %}
                 {% if service.price_variation %}
-                    <select class="select-property form-select w-50" aria-label="Default select example">
+                    <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms">
                 {% else %}
-                    <select class="select-property form-select w-50" aria-label="Default select example" disabled>
+                    <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms" disabled>
                 {% endif %}
                         {% if request.user.is_authenticated %}
-                            <option selected>Please select a property</option>
+                            <option selected value="1">Please select a property</option>
                             {% for property in properties %}
                             <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }} Bedroomed {{ property.street_address }}</span></option>
                             {% endfor %}
@@ -36,16 +51,13 @@
                 {% else %}
                     <p class="property-select-text text-secondary">*Fixed priced service.</p>
                 {% endif %}
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <h3 class="text-uppercase">{{ service.name }}</h3>
-            <hr class="horizontal-separator">
-            <p class="short-description"><strong>About this service</strong></p>
-            <p>{{ service.short_description }}</p>
-            <p class="description"><strong>Our Commitment</strong></p>
-            <p>{{ service.description }}</p>
-            <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
+                <input type="submit" value="Add">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+            
+
+            <div class="col-12 col-md-6">
+                <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
                 {% if service.price_variation %}
                     <strong class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
                 {% else %}
@@ -57,7 +69,8 @@
             {% else %}
                 <p>*Please note that this service has a fixed price, regardless of the number of bedrooms the property comprises.</p>
             {% endif %}
-        </div>
+            </div>
+        
     </div>
 </div>
 

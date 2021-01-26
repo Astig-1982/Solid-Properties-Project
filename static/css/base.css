@@ -274,3 +274,13 @@ body {
 #property-form {
     margin-top: 280px;
 }
+
+/* --------------------------------------------------- cart page starts here -------------------------------------------------- */
+
+.cart-container {
+    margin-top: 5%;
+}
+
+.cart-bottom {
+    margin-bottom: 20%;
+}

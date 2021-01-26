@@ -3,14 +3,22 @@
 
 {% block content %}
 
+<div class="container cart-container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2 class="text-uppercase">shopping cart</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript"> 
-$(document).ready(function(){
-    $('.navbar').css('background-color', 'rgb(33,0,112)')
-});
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.navbar').css('background-color', 'rgb(33,0,112)')
+        $('.cart-container').addClass('cart-bottom')
+    });
 </script>
 {% endblock %}
-
-{% endblock %}
-
