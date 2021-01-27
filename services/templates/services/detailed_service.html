@@ -51,6 +51,7 @@
                 {% else %}
                     <p class="property-select-text text-secondary">*Fixed priced service.</p>
                 {% endif %}
+                <input type="hidden" name="street_address" class="street_address">
                 <input type="submit" value="Add">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
@@ -81,11 +82,13 @@ $(document).ready(function(){
     $('.services-container').addClass('detailed-service-bottom')
     $('.select-property').change(function(){
         let bedrooms = $(this).val();
-        let servicePrice = $('.service-price').html()
-        let servicePriceInt = parseInt(servicePrice)
-        let noOfBedrooms = parseInt(bedrooms)
-        let totalPrice = servicePriceInt * noOfBedrooms
-        $('.total-price').text(`£${totalPrice.toFixed(2)}`)
+        let street_address = $(this).find(":selected").text();
+        let servicePrice = $('.service-price').html();
+        let servicePriceInt = parseInt(servicePrice);
+        let noOfBedrooms = parseInt(bedrooms);
+        let totalPrice = servicePriceInt * noOfBedrooms;
+        $('.total-price').text(`£${totalPrice.toFixed(2)}`);
+        $('.street_address').val(street_address);
     })   
 });
 </script>
