@@ -23,12 +23,15 @@ def add_to_cart(request, service_id):
         no_of_bedrooms = 1
 
     cart = request.session.get('cart', {})
-    cart[service_id] = {}
-    cart[service_id][street_address] = no_of_bedrooms
+    key = service_id
+    cart.setdefault(key, [])
+    street_bedrooms = {}
+    street_bedrooms[street_address] = no_of_bedrooms
+    street_bedrooms_copy = street_bedrooms.copy()
+    cart[key].append(street_bedrooms_copy)
 
     request.session['cart'] = cart
     print(request.session['cart'])
-    print(street_address)
 
     return redirect(redirect_url)
 

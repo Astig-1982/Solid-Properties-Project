@@ -23,11 +23,9 @@
         
             <form class="add-cart-form col-12 col-md-6" action="{% url 'add_to_cart' service.id %}" method="POST">
                 {% csrf_token %}
-                {% if service.price_variation %}
+                
                     <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms">
-                {% else %}
-                    <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms" disabled>
-                {% endif %}
+                
                         {% if request.user.is_authenticated %}
                             <option selected value="1">Please select a property</option>
                             {% for property in properties %}
