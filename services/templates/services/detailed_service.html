@@ -29,7 +29,7 @@
                         {% if request.user.is_authenticated %}
                             <option selected value="1">Please select a property</option>
                             {% for property in properties %}
-                            <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.no_of_bedrooms }} Bedroomed {{ property.street_address }}</span></option>
+                            <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
                             {% endfor %}
                         {% else %}
                             <option selected>Please select the number of bedrooms</option>

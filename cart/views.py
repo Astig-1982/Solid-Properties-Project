@@ -24,12 +24,11 @@ def add_to_cart(request, service_id):
             no_of_bedrooms = 1
 
         cart = request.session.get('cart', {})
-        key = service_id
-        cart.setdefault(key, [])
+        cart.setdefault(service_id, [])
         street_bedrooms = {}
         street_bedrooms[street_address] = no_of_bedrooms
         street_bedrooms_copy = street_bedrooms.copy()
-        cart[key].append(street_bedrooms_copy)
+        cart[service_id].append(street_bedrooms_copy)
 
         request.session['cart'] = cart
         print(request.session['cart'])
