@@ -3,17 +3,43 @@
 
 {% block content %}
 
-<div class="container cart-container">
+<div class="container cart-container-temporary">
     <div class="row">
         <div class="col-12 col-md-6">
             <h2 class="text-uppercase">shopping cart</h2>
             <hr>
         </div>
-        <div>
-            {{ cart_items }}
+    </div>
+</div>
+<div class="container cart-container">
+    <div class="row">
+        <div class="col-12">
+            <table>
+                <thead>
+                <tr>
+                    <th>Service Info</th>
+                    <th>Properties</th>
+                    <th>Number Of Bedrooms</th>
+                    <th>Total Cost</th>
+                </tr>
+                </thead>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.service }}</td>
+                    {% for property in item.properties %}
+                       
+                            <td>{{ property.address }}</td>
+                            <td>{{ property.no_of_bedrooms }}</td>
+                            <td>{{ property.total_cost }}</td>
+                      
+                    {% endfor %}
+                {% endfor %}
+                </tr>
+            </table>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
 

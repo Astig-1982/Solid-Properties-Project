@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 from services.models import Services
-from properties.models import Properties
 
 
 def cart_contents(request):
@@ -9,22 +8,27 @@ def cart_contents(request):
     cart_items = []
     cart = request.session.get('cart', {})
 
-    for service_id, addresses in cart.items():
+    for service, addresses in cart.items():
         total = []
-        service = get_object_or_404(Services, pk=service_id)
+        list_addresses = []
+        service = get_object_or_404(Services, pk=service)
         for address in addresses:
-            for dict_address in address:
-                total_price = address[dict_address] * float(service.price)
-                total.append(total_price)
+            for key_address, no_of_bedrooms in address.items():
+                total_cost = no_of_bedrooms * float(service.price)
+                total.append(total_cost)
+                list_addresses.append({
+                    "address": key_address,
+                    "no_of_bedrooms": no_of_bedrooms,
+                    "total_cost": total_cost,
+                })
         cart_items.append({
-            service: addresses,
-            "total_for_this_service": sum(total),
+            "service": service,
+            "properties": list_addresses,
         })
 
     context = {
-        'cart_items': cart_items,
+        "cart_items": cart_items,
     }
 
     return context
-
 

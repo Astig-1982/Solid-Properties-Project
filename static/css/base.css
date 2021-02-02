@@ -277,10 +277,18 @@ body {
 
 /* --------------------------------------------------- cart page starts here -------------------------------------------------- */
 
+.cart-container-temporary {
+    margin-top: 5%;
+}
+
 .cart-container {
     margin-top: 5%;
 }
 
 .cart-bottom {
     margin-bottom: 20%;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
