@@ -11,6 +11,7 @@
         </div>
     </div>
 </div>
+{% if cart_items %}
 <div class="container cart-container">
     <div class="row">
         <div class="col-12">
@@ -27,18 +28,19 @@
                 <tr>
                     <td>{{ item.service }}</td>
                     {% for property in item.properties %}
-                       
                             <td>{{ property.address }}</td>
                             <td>{{ property.no_of_bedrooms }}</td>
                             <td>{{ property.total_cost }}</td>
-                      
                     {% endfor %}
                 {% endfor %}
                 </tr>
             </table>
         </div>
     </div>
+    <div>{{ grand_total }}</div>
 </div>
+
+{% endif %}
 
 
 {% endblock %}
