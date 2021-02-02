@@ -24,9 +24,11 @@ def cart_contents(request):
                         "total_cost": total_cost,
                     })
             grand_total.append(sum(total))
+            total = sum(total)
             cart_items.append({
                 "service": service,
                 "properties": list_addresses,
+                "total_for_all_properties": total,
             })
 
     grand_total = sum(grand_total)

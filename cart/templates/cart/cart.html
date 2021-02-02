@@ -19,19 +19,27 @@
                 <thead>
                 <tr>
                     <th>Service Info</th>
+                    <th>Service Price</th>
                     <th>Properties</th>
                     <th>Number Of Bedrooms</th>
-                    <th>Total Cost</th>
+                    <th>Total Cost Per Property</th>
+                    <th>Total Cost For All Properties</th>
                 </tr>
                 </thead>
                 {% for item in cart_items %}
                 <tr>
                     <td>{{ item.service }}</td>
+                    <td>{{ item.service.price }}</td>
                     {% for property in item.properties %}
                             <td>{{ property.address }}</td>
-                            <td>{{ property.no_of_bedrooms }}</td>
+                            {% if item.service.price_variation %}
+                                <td>{{ property.no_of_bedrooms }}</td>
+                            {% else %}
+                                <td>Fixed Price</td>
+                            {% endif %}
                             <td>{{ property.total_cost }}</td>
                     {% endfor %}
+                    <td>{{ item.total_for_all_properties }}</td>
                 {% endfor %}
                 </tr>
             </table>
