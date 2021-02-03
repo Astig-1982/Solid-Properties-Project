@@ -23,7 +23,7 @@
         
             <form class="add-cart-form col-12 col-md-6" action="{% url 'add_to_cart' service.id %}" method="POST">
                 {% csrf_token %}
-                
+
                     <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms">
                 
                         {% if request.user.is_authenticated %}
@@ -32,12 +32,16 @@
                             <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
                             {% endfor %}
                         {% else %}
-                            <option selected>Please select the number of bedrooms</option>
-                            <option value="1"><span class="no-of-bedrooms">1 Bedroom</span></option>
-                            <option value="2"><span class="no-of-bedrooms">2 Bedrooms</span></option>
-                            <option value="3"><span class="no-of-bedrooms">3 Bedrooms</span></option>
-                            <option value="4"><span class="no-of-bedrooms">4 Bedrooms</span></option>
-                            <option value="5"><span class="no-of-bedrooms">5 Bedrooms</span></option>
+                            {% if service.price_variation %} 
+                                <option selected>Please select the number of bedrooms</option>
+                                <option value="1"><span class="no-of-bedrooms">1 Bedroom</span></option>
+                                <option value="2"><span class="no-of-bedrooms">2 Bedrooms</span></option>
+                                <option value="3"><span class="no-of-bedrooms">3 Bedrooms</span></option>
+                                <option value="4"><span class="no-of-bedrooms">4 Bedrooms</span></option>
+                                <option value="5"><span class="no-of-bedrooms">5 Bedrooms</span></option>
+                            {% else %}
+                                <option selected disabled style="opacity: 0.5;">Please select the number of bedrooms</option>
+                            {% endif %} 
                         {% endif %}
                 </select>
                 {% if service.price_variation %}

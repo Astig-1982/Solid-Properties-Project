@@ -12,7 +12,8 @@
     </div>
 </div>
 {% if cart_items %}
-<div class="container cart-container">
+    {% if request.user.is_authenticated %}
+        <div class="container cart-container">
     <div class="row">
         <div class="col-12">
             <table>
@@ -37,17 +38,35 @@
                             {% else %}
                                 <td>Fixed Price</td>
                             {% endif %}
-                            <td>{{ property.total_cost }}</td>
                     {% endfor %}
                     <td>{{ item.total_for_all_properties }}</td>
                 {% endfor %}
                 </tr>
             </table>
-        </div>
+       </div>
     </div>
     <div>{{ grand_total }}</div>
-</div>
+        </div>
+    {% else %}
+        <div class="container cart-container">
+        <table>
+            <th>Service Info</th>
+            <th>Price</th>
+            <th>Number Of Bedrooms</th>
+            {% for item in cart_items %}
+                {% for no_of_bedrooms in item.list_bedrooms %}
+                    <tr>
+                        <td>{{ item.service }}</td>
+                        <td>{{ item.service.price }}</td>
+                        <td>{{ no_of_bedrooms }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
 
+        </div>
+        <div>{{ grand_total }}</div>
+    {% endif %}
 {% endif %}
 
 
