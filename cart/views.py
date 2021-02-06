@@ -17,13 +17,13 @@ def add_to_cart(request, service_id):
     street_address = request.POST.get("street_address")
     redirect_url = request.POST.get('redirect_url')
 
+    if service.price_variation:
+        no_of_bedrooms = int(request.POST.get('no_of_bedrooms'))
+    else:
+        no_of_bedrooms = 1
+
     if request.user.is_authenticated:
         if street_address:
-            if service.price_variation:
-                no_of_bedrooms = int(request.POST.get('no_of_bedrooms'))
-            else:
-                no_of_bedrooms = 1
-
             cart = request.session.get('cart', {})
             cart.setdefault(service_id, [])
             street_bedrooms = {}
@@ -38,11 +38,6 @@ def add_to_cart(request, service_id):
             return redirect(redirect_url)
 
     else:
-        if service.price_variation:
-            no_of_bedrooms = int(request.POST.get('no_of_bedrooms'))
-        else:
-            no_of_bedrooms = 1
-
         cart = request.session.get('cart', {})
         cart.setdefault(service_id, [])
         cart[service_id].append(no_of_bedrooms)
@@ -50,7 +45,6 @@ def add_to_cart(request, service_id):
         print(request.session['cart'])
 
     return redirect(redirect_url)
-
 
 
 

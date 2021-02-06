@@ -7,6 +7,7 @@ def cart_contents(request):
 
     cart_items = []
     cart = request.session.get('cart', {})
+    grand_total = 0
 
     if request.user.is_authenticated:
         grand_total = []
@@ -31,12 +32,6 @@ def cart_contents(request):
                 "total_for_all_properties": total,
             })
 
-        grand_total = sum(grand_total)
-
-        context = {
-            "cart_items": cart_items,
-            "grand_total": grand_total,
-        }
     else:
         grand_total = []
         for service, bedrooms in cart.items():
@@ -51,9 +46,11 @@ def cart_contents(request):
                 "list_bedrooms": list_bedrooms,
             })
 
-            context = {
-                "cart_items": cart_items,
-                "grand_total": sum(grand_total),
+    grand_total = sum(grand_total)
+
+    context = {
+            "cart_items": cart_items,
+            "grand_total": grand_total,
         }
 
     return context
