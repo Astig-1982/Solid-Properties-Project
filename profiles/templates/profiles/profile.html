@@ -11,56 +11,56 @@
         </div>
     </div>
 </div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <div class="profile-div mx-auto">
-                <p>
-                    Name: {{ landlord }}
-                </p>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Please select a property</option>
-                    {% for property in properties %}
-                    <option value="{{ property.street_address }}">{{ property.no_of_bedrooms }} bedroomed <strong>{{ property.street_address }}</strong></option>
-                    {% endfor %}
-                </select>
-            </div>
+<div class="container profile-container">
+    <div class="row profile-row mx-auto">
+        <div class="col-12">
+            <h4>
+                Hello, {{ landlord|title }}.
+            </h4>
+            <p>
+                Welcome to your Solid Properties profile page. Below are the properties for which you wish to purchase
+                services.
+                Feel free to add any numbers of properties you wish.
+            </p>
+            <table class="table no-of-properties">
+                <thead>
+                    <tr>
+                        <th scope="col">Number Of Properties Registered</th>
+                        <th scope="col">{{ properties_count }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="row profile-row mx-auto">
+        <div class="col-12">
+            <table class="table properties-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Property Address</th>
+                        <th scope="col">Post Code</th>
+                        <th scope="col ">Number Of Bedrooms Comprising</th>
+                    </tr>
+                </thead>
+                {% for property in properties %}
+                <tbody>
+                    <tr>
+                        <td>{{ property.street_address }}</td>
+                        <td class="text-uppercase">{{ property.post_code }}</td>
+                        <td>{{ property.no_of_bedrooms }} Bedrooms</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>
-
-<!--  
-<div>
-    {{ landlord }}
-</div>
-
-
-
-<div style="margin-top: 20px;">
-    {% for property in properties %}
-        <div>
-            <div>
-                {{ property.street_address }}
-            </div>
-            <div>
-                {{ property.no_of_bedrooms }}
-            </div>
-        </div>
-    {% endfor %}
-</div>
--->
-
-
-
-
 
 {% block postloadjs %}
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.footer-container').css('margin-top', '50%')
+        $('.footer-container').addClass('profile-margin')
     });
 </script>
 

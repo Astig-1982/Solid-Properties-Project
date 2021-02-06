@@ -232,7 +232,7 @@ body {
     width: 9rem;
 }
 
-/* --------------------------------------------------- detailed page starts here -------------------------------------------------- */
+/* --------------------------------------------------- detailed service page starts here -------------------------------------------------- */
 
 .services-container {
     min-height: 
@@ -273,6 +273,28 @@ body {
 
 #property-form {
     margin-top: 280px;
+}
+
+/* --------------------------------------------------- profile page -------------------------------------------------- */
+
+.profile-margin {
+    margin-top: 8%
+}
+
+.profile-container {
+    margin-top: 5%;
+}
+
+.profile-row {
+    width: 70%;
+}
+
+.no-of-properties {
+    width: 41%;
+}
+
+.properties-table {
+    width: 85%;
 }
 
 /* --------------------------------------------------- cart page starts here -------------------------------------------------- */
