@@ -53,5 +53,7 @@ def cart_contents(request):
             "grand_total": grand_total,
         }
 
+    print(cart_items)
+
     return context
 

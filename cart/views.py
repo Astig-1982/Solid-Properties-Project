@@ -30,7 +30,6 @@ def add_to_cart(request, service_id):
             street_bedrooms[street_address] = no_of_bedrooms
             street_bedrooms_copy = street_bedrooms.copy()
             cart[service_id].append(street_bedrooms_copy)
-
             request.session['cart'] = cart
             print(request.session['cart'])
         else:

@@ -14,61 +14,42 @@
 {% if cart_items %}
     {% if request.user.is_authenticated %}
         <div class="container cart-container">
-    <div class="row">
-        <div class="col-12">
-            <table>
-                <thead>
-                <tr>
-                    <th>Service Info</th>
-                    <th>Service Price</th>
-                    <th>Properties</th>
-                    <th>Number Of Bedrooms</th>
-                    <th>Total Cost Per Property</th>
-                    <th>Total Cost For All Properties</th>
-                </tr>
-                </thead>
-                {% for item in cart_items %}
-                <tr>
-                    <td>{{ item.service }}</td>
-                    <td>{{ item.service.price }}</td>
-                    {% for property in item.properties %}
-                            <td>{{ property.address }}</td>
-                            {% if item.service.price_variation %}
-                                <td>{{ property.no_of_bedrooms }}</td>
-                            {% else %}
-                                <td>Fixed Price</td>
-                            {% endif %}
-                    {% endfor %}
-                    <td>{{ item.total_for_all_properties }}</td>
-                {% endfor %}
-                </tr>
-            </table>
-       </div>
-    </div>
-    <div>{{ grand_total }}</div>
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="px-2">Service Info</th>
+                            <th class="px-2">Properties</th>
+                            <th class="px-2">Property Number Of Bedrooms</th>
+                            <th class="px-2">Service Cost Per Property</th>
+                            <th class="px-2">Total Cost For All Properties</th>
+                        </tr>
+                    </thead>
+                        {% for item in cart_items %}
+                        <tr>
+                            <td rowspan="{{ item.properties|length }}" class="px-2">{{ item.service|title }}</td>
+                            <td rowspan="{{ item.properties|length }}" class="px-2">
+                                {% for property in item.properties %}
+                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.address }}</div>
+                                {% endfor %}
+                            </td>
+                            <td rowspan="{{ item.properties|length }}" class="text-center">
+                                {% for property in item.properties %}
+                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.no_of_bedrooms }}</div>
+                                {% endfor %}
+                            </td>
+                            <td rowspan="{{ item.properties|length }}" class="px-2">
+                                {% for property in item.properties %}
+                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.total_cost }}</div>
+                                {% endfor %}
+                            </td>
+                            <td rowspan="{{ item.properties|length }}" class="text-center">{{ item.total_for_all_properties }}</td>
+                        </tr>
+                        {% endfor %}
+                </table>
+            </div>
         </div>
-    {% else %}
-        <div class="container cart-container">
-        <table>
-            <th>Service Info</th>
-            <th>Price</th>
-            <th>Number Of Bedrooms</th>
-            {% for item in cart_items %}
-                {% for no_of_bedrooms in item.list_bedrooms %}
-                    <tr>
-                        <td>{{ item.service }}</td>
-                        <td>{{ item.service.price }}</td>
-                        <td>{{ no_of_bedrooms }}</td>
-                    </tr>
-                {% endfor %}
-            {% endfor %}
-        </table>
-
-        </div>
-        <div>{{ grand_total }}</div>
     {% endif %}
-{% else %}
-        <div>{{ message }}</div>
 {% endif %}
 
 
