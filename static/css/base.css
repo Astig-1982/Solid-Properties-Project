@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-size: 16px;
     font-family: 'Lato', sans-serif;
+    position: relative;
 }
 
 .navbar {
@@ -323,9 +324,66 @@ body {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 
-.add-border {
-    border-bottom: .5px solid rgb(0, 0, 0);
+th, td {
+    width: auto;
+}
+
+.separator {
+    margin: 0;
+    padding: 0;
+}
+
+.data-no-of-bedrooms {
+    width: 15rem;
+}
+
+.data-total_for_all_properties {
+    width: 16rem;
+}
+
+.data-address {
+    width: 15rem;
+}
+
+#data-row tr:nth-child(even) {
+    background-color: rgb(237, 237, 237);
+}
+
+#data-row tr:nth-child(odd) {
+    background-color: rgba(237, 237, 237, .1);
+}
+
+.head-info {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgba(33,0,112, .9) !important;
+    color: #ffffff;
+}
+
+.table-data {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#grand-total {
+    float: right;
+    width: 16.05rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-top: none;
+    padding: 1rem;
+    background-color: rgba(191, 74, 2, .7);
+    font-size: 150%;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+#grand-total-span {
+    margin-left: 0
+}
+
+.currency-margin {
+    margin-left: 1%;
 }

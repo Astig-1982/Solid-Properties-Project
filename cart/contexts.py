@@ -22,10 +22,10 @@ def cart_contents(request):
                     list_addresses.append({
                         "address": key_address,
                         "no_of_bedrooms": no_of_bedrooms,
-                        "total_cost": total_cost,
+                        "total_cost": format(total_cost, '.2f'),
                     })
             grand_total.append(sum(total))
-            total = sum(total)
+            total = format(sum(total), '.2f')
             cart_items.append({
                 "service": service,
                 "properties": list_addresses,
@@ -46,7 +46,7 @@ def cart_contents(request):
                 "list_bedrooms": list_bedrooms,
             })
 
-    grand_total = sum(grand_total)
+    grand_total = format(sum(grand_total), '.2f')
 
     context = {
             "cart_items": cart_items,

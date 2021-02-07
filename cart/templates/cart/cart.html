@@ -15,38 +15,49 @@
     {% if request.user.is_authenticated %}
         <div class="container cart-container">
             <div class="row">
-                <table>
+                <table id="data-row">
                     <thead>
                         <tr>
-                            <th class="px-2">Service Info</th>
-                            <th class="px-2">Properties</th>
-                            <th class="px-2">Property Number Of Bedrooms</th>
-                            <th class="px-2">Service Cost Per Property</th>
-                            <th class="px-2">Total Cost For All Properties</th>
+                            <th class="px-2 head-info">Service Info</th>
+                            <th class="px-2 head-info text-center">Service Price Per Bedroom</th>
+                            <th class="px-2 head-info">Property</th>
+                            <th class="text-center head-info data-no-of-bedrooms">Property Number Of Bedrooms</th>
+                            <th class="text-center head-info">Total Cost Per Property</th>
+                            <th class="text-center head-info data-total_for_all_properties">Total Cost For All Properties</th>
                         </tr>
                     </thead>
                         {% for item in cart_items %}
                         <tr>
-                            <td rowspan="{{ item.properties|length }}" class="px-2">{{ item.service|title }}</td>
-                            <td rowspan="{{ item.properties|length }}" class="px-2">
+                            <td class="px-2 text-uppercase"><strong>{{ item.service }}</strong></td>
+                            <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
+                            <td class="px-2">
                                 {% for property in item.properties %}
-                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.address }}</div>
+                                    <div class="table-data data-address">{{ property.address }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                             </td>
-                            <td rowspan="{{ item.properties|length }}" class="text-center">
+                            <td class="text-center">
                                 {% for property in item.properties %}
-                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.no_of_bedrooms }}</div>
+                                    {% if item.service.price_variation %}
+                                        <div class="table-data data-no-of-bedrooms">{{ property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                    {% else %}
+                                        <div class="table-data data-no-of-bedrooms text-capitalize">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                    {% endif %}                               
                                 {% endfor %}
                             </td>
-                            <td rowspan="{{ item.properties|length }}" class="px-2">
+                            <td class="text-center">
                                 {% for property in item.properties %}
-                                    <div class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}">{{ property.total_cost }}</div>
+                                    <div class="table-data">£<span class="currency-margin">{{ property.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                             </td>
-                            <td rowspan="{{ item.properties|length }}" class="text-center">{{ item.total_for_all_properties }}</td>
+                            <td class="text-center data-total_for_all_properties">£<span class="currency-margin">{{ item.total_for_all_properties }}</span></td>
                         </tr>
                         {% endfor %}
                 </table>
+            </div>
+            <div class="row">
+                <div class="col-12 px-0 text-uppercase text-center">
+                    <div id="grand-total">total: <span class="currency-margin">£<span id="grand-total-span">{{ grand_total }}</span></span></div>
+                </div>
             </div>
         </div>
     {% endif %}
@@ -55,11 +66,13 @@
 
 {% endblock %}
 
+ class="{% if item.properties|length > 1%} add-border {% else %} border-0 {% endif %}"
+
 {% block postloadjs %}
 <script type="text/javascript">
     $(document).ready(function () {
         $('.navbar').css('background-color', 'rgb(33,0,112)')
-        $('.cart-container').addClass('cart-bottom')
+        $('.cart-container').css('margin-bottom', '14%');
     });
 </script>
 {% endblock %}
