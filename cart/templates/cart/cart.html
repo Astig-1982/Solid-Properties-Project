@@ -42,7 +42,13 @@
                         {% if request.user.is_authenticated %}
                             <td class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
-                                    <div class="table-data data-address">{{ property.address }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                    <div class="table-data data-address">{{ property.address }}</div>
+                                    <form method="POST" action="{% url 'remove_address' item.service.id %}">
+                                    {% csrf_token %}
+                                        <input type="hidden" name="property_address" value="{{ property.address }}">
+                                        <input type="submit" value="Remove">
+                                    </form>
+                                    {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                         {% endif %}
                             </td>
