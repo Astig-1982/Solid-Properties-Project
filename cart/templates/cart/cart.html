@@ -32,7 +32,12 @@
                 </thead>
                     {% for item in cart_items %}
                     <tr>
-                        <td class="px-2 text-uppercase"><strong>{{ item.service }}</strong></td>
+                        <td class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
+                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}">
+                                {% csrf_token %}
+                                <input type="submit" value="Remove">
+                            </form>
+                        </td>
                         <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
                         {% if request.user.is_authenticated %}
                             <td class="px-2">
