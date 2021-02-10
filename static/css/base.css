@@ -344,8 +344,13 @@ th, td {
     width: 16rem;
 }
 
-.data-address {
-    width: 15rem;
+#data-row {
+    width: 90%;
+    margin: auto;
+}
+
+#data-row td {
+    min-height: 5rem;
 }
 
 #data-row tr:nth-child(even) {
@@ -386,4 +391,26 @@ th, td {
 
 .currency-margin {
     margin-left: 1%;
+}
+
+.remove-service {
+    display: inline;
+}
+
+#service-data {
+    width: 20rem;
+}
+
+#address-data {
+    width: 20rem;
+}
+
+#address-data, .remove_address {
+    display: inline;
+}
+
+#remove-buttons {
+    float: right;
+    height: 1.5rem;
+    font-size: 50%;
 }
