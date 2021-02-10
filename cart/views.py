@@ -49,43 +49,25 @@ def add_to_cart(request, service_id):
 def remove_from_cart(request, service_id):
 
     property_address = None
-    if property_address in request.POST:
-        property_address = request.POST['property_address']
     cart = request.session.get('cart', {})
+    if 'property_address' in request.POST:
+        property_address = request.POST['property_address']
 
     if property_address:
         for address in cart[service_id]:
             for address_key in address.keys():
                 if address_key == property_address:
-                    address.clear()
+                    dict_address = address
+        dict_address.clear()
+        if all(not d for d in cart[service_id]):
+            cart.pop(service_id)
     else:
         cart.pop(service_id)
-
     request.session['cart'] = cart
 
     context = {}
 
     return render(request, 'cart/cart.html', context)
-
-
-def remove_address(request, service_id):
-
-    property_address = request.POST['property_address']
-    cart = request.session.get('cart', {})
-
-    for address in cart[service_id]:
-        for address_key in address.keys():
-            if address_key == property_address:
-                dict_address = address
-
-    dict_address.clear()
-
-    request.session['cart'] = cart
-
-    context = {}
-
-    return render(request, 'cart/cart.html', context)
-
 
 
 
