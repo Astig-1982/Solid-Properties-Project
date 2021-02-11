@@ -33,7 +33,7 @@
                     {% for item in cart_items %}
                     <tr>
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
-                            <form method="POST" action="" class="remove-service">
+                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service">
                                 {% csrf_token %}
                                 <input type="submit" value="Remove">
                             </form>
@@ -43,9 +43,9 @@
                             <td style="height: 2rem" class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
                                     <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
-                                    <form method="POST" action="" class="remove_address">
+                                    <form method="POST" action="{% url 'remove_address' item.service.id %}" class="remove_address">
                                     {% csrf_token %}
-                                        <input type="hidden" name="property_address" value="{{ property.property }}">
+                                        <input type="hidden" name="property_id" value="{{ property.property.id }}">
                                         <input type="submit" value="Remove" id="remove-buttons">
                                     </form>
                                     {% if not forloop.last %} <hr class="separator"> {% endif %}

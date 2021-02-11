@@ -43,3 +43,29 @@ def add_to_cart(request, service_id):
     return redirect(redirect_url)
 
 
+def remove_from_cart(request, service_id):
+
+    cart = request.session.get('cart', {})
+    cart.pop(service_id)
+    request.session['cart'] = cart
+
+    context = {}
+
+    return render(request, 'cart/cart.html', context)
+
+
+def remove_address(request, service_id):
+
+    cart = request.session.get('cart', {})
+    property_id = request.POST['property_id']
+    this_property = get_object_or_404(Properties, pk=property_id)
+
+    for the_property in cart[service_id]:
+        if the_property == this_property.id:
+            cart[service_id].remove(the_property)
+
+    request.session['cart'] = cart
+
+    context = {}
+
+    return render(request, 'cart/cart.html', context)
