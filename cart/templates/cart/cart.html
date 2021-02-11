@@ -33,7 +33,7 @@
                     {% for item in cart_items %}
                     <tr>
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
-                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service">
+                            <form method="POST" action="" class="remove-service">
                                 {% csrf_token %}
                                 <input type="submit" value="Remove">
                             </form>
@@ -42,10 +42,10 @@
                         {% if request.user.is_authenticated %}
                             <td style="height: 2rem" class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
-                                    <div id="address-data" class="table-data">{{ property.the_property.street_address }}</div>
-                                    <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address">
+                                    <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
+                                    <form method="POST" action="" class="remove_address">
                                     {% csrf_token %}
-                                        <input type="hidden" name="property_address" value="{{ property.the_property }}">
+                                        <input type="hidden" name="property_address" value="{{ property.property }}">
                                         <input type="submit" value="Remove" id="remove-buttons">
                                     </form>
                                    
@@ -57,7 +57,7 @@
                             {% if request.user.is_authenticated %}
                                 {% for property in item.properties_or_bedrooms %}   
                                     {% if item.service.price_variation %}
-                                        <div class="table-data data-no-of-bedrooms">{{ property.the_property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        <div class="table-data data-no-of-bedrooms">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
                                         <div class="table-data data-no-of-bedrooms text-capitalize">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% endif %}                               
