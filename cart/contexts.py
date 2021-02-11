@@ -27,6 +27,17 @@ def cart_contents(request):
                     'property': the_property,
                     'total_cost': total_cost,
                 })
+            else:
+                if service.price_variation:
+                    total_cost = property_or_bedrooms * service.price
+                else:
+                    total_cost = service.price
+                total.append(total_cost)
+                list_properties_or_bedrooms.append({
+                    'no_of_bedrooms': property_or_bedrooms,
+                    'total_cost': total_cost,
+                })
+
         grand_total.append(sum(total))
         total = format(sum(total), '.2f')
         cart_items.append({
