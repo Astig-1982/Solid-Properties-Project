@@ -46,20 +46,24 @@
                 </select>
                 {% if service.price_variation %}
                     {% if request.user.is_authenticated %}
-                        <p class="property-select-text">*Please select from above the property for which the total cost of this service to be calculated for.</p>
+                        <p class="property-select-text">*Please select from above the property for which this service to be provided.</p>
                     {% else %}
                         <p class="property-select-text">*Please select from above the number of bedrooms for which the total cost of this service to be calculated for.</p>
                     {% endif %}
                 {% else %}
-                    <p class="property-select-text text-secondary">*Fixed priced service.</p>
+                    {% if request.user.is_authenticated %}
+                        <p class="property-select-text">*Please select from above the property for which this service to be provided.</p>
+                    {% else %}
+                        <p class="property-select-text text-secondary">*Fixed priced service.</p>
+                    {% endif %}
                 {% endif %}
                 <input type="hidden" name="street_address" class="street_address">
-                <input type="submit" value="ADD SERVICE" class="buttons">
+                <input type="submit" value="ADD SERVICE" id="add-service-button" class="buttons">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
             
 
-            <div class="col-12 col-md-6">
+            <div id="price-col" class="col-12 col-md-6">
                 <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
                 {% if service.price_variation %}
                     <strong class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
@@ -68,9 +72,9 @@
                 {% endif %}
             </p>
             {% if service.price_variation %}
-                <p>*Please note that the price is for 1 bedroom. Please select the property for which you would like to purchase it to see the total cost for this service.</p>
+                <p class="price-variation-paragraph">*Please note that the price is for 1 bedroom. Please select the property for which you would like to purchase it to see the total cost for this service.</p>
             {% else %}
-                <p>*Please note that this service has a fixed price, regardless of the number of bedrooms the property comprises.</p>
+                <p class="price-variation-paragraph">*Please note that this service has a fixed price, regardless of the number of bedrooms the property comprises.</p>
             {% endif %}
             </div>
         
@@ -80,8 +84,7 @@
 {% block postloadjs %}
 <script type="text/javascript"> 
 $(document).ready(function(){
-    $('.navbar').css('background-color', 'rgb(33,0,112)')
-    $('.services-container').addClass('detailed-service-bottom')
+    $('.navbar').css('background-color', 'rgb(33,0,112)');
     $('.select-property').change(function(){
         let bedrooms = $(this).val();
         let street_address = $(this).find(":selected").text();
@@ -91,7 +94,7 @@ $(document).ready(function(){
         let totalPrice = servicePriceInt * noOfBedrooms;
         $('.total-price').text(`£${totalPrice.toFixed(2)}`);
         $('.street_address').val(street_address);
-    })   
+    });   
 });
 </script>
 {% endblock %}

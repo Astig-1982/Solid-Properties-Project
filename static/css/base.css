@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
+
+
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-family: 'Lato', sans-serif;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .navbar {
@@ -49,12 +54,32 @@ body {
     border: 1px solid #ffffff;
 }
 
+.buttons {
+    transition-property: background-color, color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
 /* --------------------------------------------------- footer section starts here -------------------------------------------------- */
 
 .footer-container {
     background-color: rgb(33,0,112);
     color: #ffffff;
     padding: 1.5rem 1.5rem 0 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 12.9rem;
+    margin-top: 29%; 
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#container-wrapp {
+  padding-bottom: 12.9rem;
 }
 
 .footer-container a {
@@ -146,6 +171,11 @@ body {
     width: 9rem;
     background-color: rgb(2, 191, 191);
     color: #ffffff;
+}
+
+.main-action-buttons:hover {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
 }
 
 .categories-title {
@@ -250,10 +280,6 @@ body {
 
 /* --------------------------------------------------- detailed service page starts here -------------------------------------------------- */
 
-.services-container {
-    min-height: 
-}
-
 .horizontal-separator {
     margin-bottom: 5%;
 }
@@ -267,22 +293,37 @@ body {
     margin-left: 5rem;
 }
 
+#price-col {
+    margin-top: 3%;
+}
+
 .price {
     margin-left: .2rem;
 }
 
 .property-container {
-    margin-top: 6%;
-}
-
-.detailed-service-bottom {
-    margin-bottom: 6.45%;
+    margin-top: 4%;
 }
 
 .property-select-text {
-    margin-top: 2%;
+    margin: 1.8% 0;
     width: 70%;
     font-size: 80%;
+}
+
+#add-service-button {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+    border: none;
+    width: 9rem;
+    height: 2.4rem;
+    margin-top: 0;
+    border: 1px solid rgb(2, 191, 191);
+}
+
+#add-service-button:hover {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
 }
 
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
@@ -422,7 +463,22 @@ th, td {
     float: right;
     height: 1.5rem;
     font-size: 50%;
-    margin-top: 25%
+    margin-top: 25%;
+    margin-right: 0;
+}
+
+#remove-buttons, #remove-service-buttons {
+    border: 1px solid rgb(2, 191, 191);
+    color: rgb(2, 191, 191);
+    background-color: #ffffff;
+    transition-property: background-color, color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+#remove-buttons:hover, #remove-service-buttons:hover {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
 }
 
 .multiple-data {

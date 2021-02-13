@@ -12,7 +12,7 @@
     </div>
 </div>
 {% if cart_items %}
-    <div class="container-fluid cart-container">
+    <div class="container-fluid cart-container wrapper">
         <div class="row">
             <table id="data-row">
                 <thead>
@@ -35,7 +35,7 @@
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
                             <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service remove-form">
                                 {% csrf_token %}
-                                <input type="submit" value="Remove" id="remove-service-buttons">
+                                <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
                             </form>
                         </td>
                         <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
@@ -46,7 +46,7 @@
                                     <form method="POST" action="{% url 'remove_address' item.service.id %}" class="remove_address remove-form">
                                     {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
-                                        <input type="submit" value="Remove" id="remove-buttons">
+                                        <input type="submit" value="Remove" id="remove-buttons" class="buttons">
                                     </form>
                                     {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
