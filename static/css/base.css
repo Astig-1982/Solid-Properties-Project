@@ -52,6 +52,14 @@ body {
 .btn-outline-success {
     color: #ffffff;
     border: 1px solid #ffffff;
+    transition-property: background-color, border;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+.btn-outline-success:hover {
+    background-color: rgb(2, 191, 191);
+    border: 1px solid rgb(2, 191, 191);
 }
 
 .buttons {
@@ -139,7 +147,6 @@ body {
 
             /* ------- landing section ------ */
 
-
 .landing-row {
     height: 76vh;
     background: url('/media/house_tower.jpg') no-repeat center center fixed;
@@ -197,6 +204,7 @@ body {
 
 .category-container {
     margin-top: 5%;
+    margin-bottom: 4.5%;
 }
 
 .category-image {
@@ -276,6 +284,12 @@ body {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
     width: 9rem;
+    border: 1px solid rgb(2, 191, 191);
+}
+
+.filtering-buttons:hover {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
 }
 
 /* --------------------------------------------------- detailed service page starts here -------------------------------------------------- */
@@ -352,12 +366,25 @@ body {
 
 /* --------------------------------------------------- cart page starts here -------------------------------------------------- */
 
-.cart-container-temporary {
-    margin-top: 5%;
+.cart-container {
+    margin-top: 6.5%;
+    margin-bottom: 8%;
 }
 
-.cart-container {
-    margin-top: 5%;
+.shopping-title {
+    margin-top: 6.5%;
+    margin-left: 3.89%;
+}
+
+.cart-empty-row {
+    margin-top: .8%;
+    margin-left: 3.89%;
+}
+
+#data-row {
+    margin-top: .8% !important;
+    width: 90%;
+    margin: auto;
 }
 
 .cart-bottom {
@@ -383,11 +410,6 @@ th, td {
 
 .data-total_for_all_properties {
     width: 16rem;
-}
-
-#data-row {
-    width: 90%;
-    margin: auto;
 }
 
 #data-row td {
