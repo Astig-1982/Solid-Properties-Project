@@ -373,6 +373,10 @@ th, td {
     padding-bottom: 2%;
 }
 
+.grand-total-col {
+    width: 95%;
+}
+
 #grand-total {
     float: right;
     width: 16.05rem;
