@@ -33,17 +33,17 @@
                     {% for item in cart_items %}
                     <tr>
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
-                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service">
+                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service remove-form">
                                 {% csrf_token %}
-                                <input type="submit" value="Remove">
+                                <input type="submit" value="Remove" id="remove-service-buttons">
                             </form>
                         </td>
                         <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
                         {% if request.user.is_authenticated %}
-                            <td style="height: 2rem" class="px-2">
+                            <td class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
                                     <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
-                                    <form method="POST" action="{% url 'remove_address' item.service.id %}" class="remove_address">
+                                    <form method="POST" action="{% url 'remove_address' item.service.id %}" class="remove_address remove-form">
                                     {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
                                         <input type="submit" value="Remove" id="remove-buttons">
@@ -56,24 +56,24 @@
                             {% if request.user.is_authenticated %}
                                 {% for property in item.properties_or_bedrooms %}   
                                     {% if item.service.price_variation %}
-                                        <div class="table-data data-no-of-bedrooms">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        <div class="table-data data-no-of-bedrooms multiple-data">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
-                                        <div class="table-data data-no-of-bedrooms text-capitalize">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% endif %}                               
                                 {% endfor %}
                             {% else %}
                                 {% for bedroom in item.properties_or_bedrooms %}
                                     {% if item.service.price_variation %}
-                                        <div class="table-data data-no-of-bedrooms">{{ bedroom.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
-                                        <div class="table-data data-no-of-bedrooms text-capitalize">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% endif %}                               
                                 {% endfor %}
                             {% endif %}
                         </td>
                         <td class="text-center">
                             {% for property_or_no_of_bedrooms in item.properties_or_bedrooms %}
-                                <div class="table-data">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                <div class="table-data multiple-data">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                             {% endfor %}
                         </td>
                         <td class="text-center data-total_for_all_properties">£<span class="currency-margin">{{ item.total_for_all_properties }}</span></td>

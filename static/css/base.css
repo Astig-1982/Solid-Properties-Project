@@ -397,20 +397,34 @@ th, td {
     display: inline;
 }
 
+#remove-service-buttons {
+    float: right;
+}
+
 #service-data {
     width: 20rem;
 }
 
 #address-data {
     width: 20rem;
+    height: 1.8rem;
 }
 
 #address-data, .remove_address {
-    display: inline;
+    display: inline-block;
 }
 
 #remove-buttons {
     float: right;
     height: 1.5rem;
     font-size: 50%;
+    margin-top: 25%
 }
+
+.multiple-data {
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
+
+
