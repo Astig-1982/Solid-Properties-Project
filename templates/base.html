@@ -134,6 +134,20 @@
     </div>
     </div>
     </div>
+
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
     
     {% block js %}
     <script type="text/javascript"> 
@@ -146,6 +160,7 @@
                 }
             });
             $('.footer').css('position', $(document).height() > $(window).height() ? "inherit" : "fixed");
+            $('.toast').toast('show');
         });
     });
     </script>

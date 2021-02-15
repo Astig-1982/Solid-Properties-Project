@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
 from .forms import PropertyForm
 from profiles.models import LandlordProfile
 from properties.models import Properties
@@ -16,7 +17,7 @@ def add_property(request):
         the_property = properties.filter(street_address__exact=street_address)
 
         if the_property:
-            print("there is already this property registered")
+            messages.error(request, f"{street_address} is already in your list of properties.")
             property_form = PropertyForm()
         else:
             form_data = {
@@ -31,6 +32,7 @@ def add_property(request):
 
             if property_form.is_valid():
                 property_form.save()
+                messages.success(request, f"You have added {street_address} to your list of properties.")
 
     else:
         property_form = PropertyForm()

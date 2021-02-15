@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from django.contrib import messages
 from services.models import Services
 from properties.models import Properties
 
@@ -25,6 +26,7 @@ def add_to_cart(request, service_id):
             cart.setdefault(service_id, [])
             cart[service_id].append(the_property.id)
             request.session['cart'] = cart
+            messages.success(request, f"You have added {service} to your shopping cart.")
             print(request.session['cart'])
         else:
             print("No value")
@@ -38,6 +40,7 @@ def add_to_cart(request, service_id):
         cart.setdefault(service_id, [])
         cart[service_id].append(no_of_bedrooms)
         request.session['cart'] = cart
+        messages.success(request, f"You have added {service} to your shopping cart.")
         print(request.session['cart'])
 
     return redirect(redirect_url)
@@ -46,11 +49,12 @@ def add_to_cart(request, service_id):
 def remove_from_cart(request, service_id):
 
     cart = request.session.get('cart', {})
+    service = get_object_or_404(Services, pk=service_id)
     property_id = None
     no_of_bedrooms = None
-    if 'property_id' in request.POST:
+    if 'property_id' in request.POST:  # if the user is logged in
         property_id = request.POST['property_id']
-    elif 'no_of_bedrooms' in request.POST:
+    elif 'no_of_bedrooms' in request.POST:  # if the user is not logged in
         no_of_bedrooms = request.POST['no_of_bedrooms']
  
     if property_id:
@@ -58,16 +62,21 @@ def remove_from_cart(request, service_id):
         for the_property in cart[service_id]:
             if the_property == this_property.id:
                 cart[service_id].remove(the_property)
+                messages.success(request, f"{service} for {this_property} has been removed from your shopping cart.")
         if not cart[service_id]:
             cart.pop(service_id)
+            messages.success(request, f"{service} has been removed from your shopping cart.")
     elif no_of_bedrooms:
         for bedrooms in cart[service_id]:
             if int(bedrooms) == int(no_of_bedrooms):
                 cart[service_id].remove(bedrooms)
+                messages.success(request, f"{service} for {bedrooms} bedrooms has been removed from your shopping cart.")
         if not cart[service_id]:
             cart.pop(service_id)
+            messages.success(request, f"{service} has been removed from your shopping cart.")
     else:
         cart.pop(service_id)
+        messages.success(request, f"{service} has been removed from your shopping cart.")
 
     request.session['cart'] = cart
 
