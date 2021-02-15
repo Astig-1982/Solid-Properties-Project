@@ -46,26 +46,23 @@ def add_to_cart(request, service_id):
 def remove_from_cart(request, service_id):
 
     cart = request.session.get('cart', {})
-    cart.pop(service_id)
-    request.session['cart'] = cart
-
-    context = {}
-
-    return render(request, 'cart/cart.html', context)
-
-
-def remove_address(request, service_id):
-
-    cart = request.session.get('cart', {})
-    property_id = request.POST['property_id']
-    this_property = get_object_or_404(Properties, pk=property_id)
-
-    for the_property in cart[service_id]:
-        if the_property == this_property.id:
-            cart[service_id].remove(the_property)
+    property_id = None
+    if 'property_id' in request.POST:
+        property_id = request.POST['property_id']
+    if property_id:
+        this_property = get_object_or_404(Properties, pk=property_id)
+        for the_property in cart[service_id]:
+            if the_property == this_property.id:
+                cart[service_id].remove(the_property)
+        if not cart[service_id]:
+            cart.pop(service_id)
+    else:
+        cart.pop(service_id)
 
     request.session['cart'] = cart
 
     context = {}
 
     return render(request, 'cart/cart.html', context)
+
+

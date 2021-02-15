@@ -41,7 +41,7 @@
                             <td class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
                                     <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
-                                    <form method="POST" action="{% url 'remove_address' item.service.id %}" class="remove_address remove-form">
+                                    <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
                                     {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
                                         <input type="submit" value="Remove" id="remove-buttons" class="buttons">
