@@ -11,13 +11,6 @@ body {
     min-height: 100%;
 }
 
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 25px;
-    z-index: 2000;
-}
-
 .navbar {
     background-color: rgba(0, 0, 0, .2);
     color: #ffffff;
@@ -146,6 +139,25 @@ body {
 .copyright-message {
     margin-top: 1.7rem;
     font-weight: 100;
+}
+
+/* --------------------------------------------------- toast messages starts here -------------------------------------------------- */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 25px;
+    border-radius: 0;
+    z-index: 2000;
+}
+
+.message-container i {
+    font-size: 150%;
+    margin-right: 2%;
+}
+
+#success {
+    background-color: green !important;
 }
 
 /* --------------------------------------------------- home page starts here -------------------------------------------------- */
