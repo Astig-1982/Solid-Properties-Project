@@ -12,7 +12,9 @@ def add_property(request):
 
     if request.method == 'POST':
         street_address = request.POST['street_address']
-        the_property = get_object_or_404(Properties, street_address=street_address)
+        properties = Properties.objects.all()
+        the_property = properties.filter(street_address__exact=street_address)
+
         if the_property:
             print("there is already this property registered")
             property_form = PropertyForm()
