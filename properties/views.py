@@ -17,7 +17,7 @@ def add_property(request):
         the_property = properties.filter(street_address__exact=street_address)
 
         if the_property:
-            messages.warning(request, f"{street_address} is already in your list of properties.")
+            messages.warning(request, f"{street_address} is already in your list of properties and cannot be added twice.")
             property_form = PropertyForm()
         else:
             form_data = {
@@ -32,7 +32,8 @@ def add_property(request):
 
             if property_form.is_valid():
                 property_form.save()
-                messages.success(request, f"{street_address} is already in your list of properties and cannot be added twice.")
+                property_form = PropertyForm()
+                messages.success(request, f"you have added {street_address} to your properties list.")
 
     else:
         property_form = PropertyForm()
