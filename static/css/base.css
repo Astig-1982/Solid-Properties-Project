@@ -483,7 +483,7 @@ th, td {
     display: inline-block;
 }
 
-#remove-buttons {
+.remove-buttons {
     float: right;
     height: 1.5rem;
     font-size: 50%;
@@ -491,7 +491,7 @@ th, td {
     margin-right: 0;
 }
 
-#remove-buttons, #remove-service-buttons {
+.remove-buttons, #remove-service-buttons {
     border: 1px solid rgb(2, 191, 191);
     color: rgb(2, 191, 191);
     background-color: #ffffff;
@@ -500,7 +500,7 @@ th, td {
     transition-timing-function: ease-in-out;
 }
 
-#remove-buttons:hover, #remove-service-buttons:hover {
+.remove-buttons:hover, #remove-service-buttons:hover {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
 }

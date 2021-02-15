@@ -47,13 +47,23 @@ def remove_from_cart(request, service_id):
 
     cart = request.session.get('cart', {})
     property_id = None
+    no_of_bedrooms = None
     if 'property_id' in request.POST:
         property_id = request.POST['property_id']
+    elif 'no_of_bedrooms' in request.POST:
+        no_of_bedrooms = request.POST['no_of_bedrooms']
+ 
     if property_id:
         this_property = get_object_or_404(Properties, pk=property_id)
         for the_property in cart[service_id]:
             if the_property == this_property.id:
                 cart[service_id].remove(the_property)
+        if not cart[service_id]:
+            cart.pop(service_id)
+    elif no_of_bedrooms:
+        for bedrooms in cart[service_id]:
+            if int(bedrooms) == int(no_of_bedrooms):
+                cart[service_id].remove(bedrooms)
         if not cart[service_id]:
             cart.pop(service_id)
     else:
