@@ -26,7 +26,7 @@ def add_to_cart(request, service_id):
             cart.setdefault(service_id, [])
             cart[service_id].append(the_property.id)
             request.session['cart'] = cart
-            messages.success(request, f"You have added {service} to your shopping cart.")
+            messages.success(request, f"You have added {service.name} for {the_property.street_address} to your shopping cart.")
             print(request.session['cart'])
         else:
             print("No value")
@@ -40,7 +40,7 @@ def add_to_cart(request, service_id):
         cart.setdefault(service_id, [])
         cart[service_id].append(no_of_bedrooms)
         request.session['cart'] = cart
-        messages.success(request, f"You have added {service} to your shopping cart.")
+        messages.success(request, f"You have added {service.name} to your shopping cart.")
         print(request.session['cart'])
 
     return redirect(redirect_url)
@@ -62,21 +62,21 @@ def remove_from_cart(request, service_id):
         for the_property in cart[service_id]:
             if the_property == this_property.id:
                 cart[service_id].remove(the_property)
-                messages.success(request, f"{service} for {this_property} has been removed from your shopping cart.")
+                messages.success(request, f"{service.name} for {this_property.street_address} has been removed from your shopping cart.")
         if not cart[service_id]:
             cart.pop(service_id)
-            messages.success(request, f"{service} has been removed from your shopping cart.")
+            messages.success(request, f"{service.name} has been removed from your shopping cart.")
     elif no_of_bedrooms:
         for bedrooms in cart[service_id]:
             if int(bedrooms) == int(no_of_bedrooms):
                 cart[service_id].remove(bedrooms)
-                messages.success(request, f"{service} for {bedrooms} bedrooms has been removed from your shopping cart.")
+                messages.success(request, f"{service.name} for {bedrooms} bedrooms has been removed from your shopping cart.")
         if not cart[service_id]:
             cart.pop(service_id)
-            messages.success(request, f"{service} has been removed from your shopping cart.")
+            messages.success(request, f"{service.name} has been removed from your shopping cart.")
     else:
         cart.pop(service_id)
-        messages.success(request, f"{service} has been removed from your shopping cart.")
+        messages.success(request, f"{service.name} has been removed from your shopping cart.")
 
     request.session['cart'] = cart
 
