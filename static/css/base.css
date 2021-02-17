@@ -229,6 +229,10 @@ body {
     height: 18rem;
 }
 
+.category-image:hover {
+    box-shadow: none;
+}
+
 .category-column {
     margin-bottom: 2%;
 }
@@ -306,6 +310,7 @@ body {
     color: #ffffff;
     width: 9rem;
     border: 1px solid rgb(2, 191, 191);
+    border-radius: 0;
 }
 
 .filtering-buttons:hover {

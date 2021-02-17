@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div id="property-form" class="col-12 w-50 mx-auto">
-                <form>
+                <form action="{% url 'add_property' %}" method="POST">
                     {% csrf_token %}
                     {{ property_form.street_address | as_crispy_field }}
                     {{ property_form.house_name | as_crispy_field }}

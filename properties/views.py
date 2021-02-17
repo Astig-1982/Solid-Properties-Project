@@ -33,7 +33,7 @@ def add_property(request):
             if property_form.is_valid():
                 property_form.save()
                 property_form = PropertyForm()
-                messages.success(request, f"{street_address} has been registered succesfuly and has added to your list of properties.")
+                messages.success(request, f"{street_address} has been succesfuly registered and added to your list of properties.")
 
     else:
         property_form = PropertyForm()
