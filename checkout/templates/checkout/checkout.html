@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container add-property-container">
+    <div class="row">
+        <div id="add-property-div" class="col-12 mx-auto">         
+            <p>In the form provided below please register a property and it will be added to your list of properties. Upon choosing a service, you can choose from this list a property for which the service to be executed.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="property-form" class="col-12 w-50 mx-auto">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    <input type="submit" value="MAKE PAYMENT" class="buttons register-property-button">
+                </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.navbar').css('background-color', 'rgb(33,0,112)');
+    });
+</script>
+
+{% endblock %}
