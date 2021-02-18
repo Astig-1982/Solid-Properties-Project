@@ -16,7 +16,7 @@ class Order(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)  
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = models.CharField(max_length=40, null=False, blank=False)
-    postcode = models.CharField(max_length=20, null=True, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
@@ -34,7 +34,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.grand_total = self.lineitems.all().aggregate(Sum('lineitem_total'))
+        self.grand_total = self.lineitems.aggregate(Sum('lineitem_total'))
         self.save()
 
     def save(self, *args, **kwargs):
