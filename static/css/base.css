@@ -488,7 +488,7 @@ th, td {
 .head-info {
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgba(33,0,112, .9) !important;
+    background-color: rgba(33,0,112, .9);
     color: #ffffff;
 }
 
@@ -539,7 +539,7 @@ th, td {
 }
 
 #address-data, .remove_address {
-    display: inline-block;
+    display: inherit;
 }
 
 .remove-buttons {
@@ -568,6 +568,71 @@ th, td {
     height: 2.5rem;
     box-sizing: border-box;
 }
+
+/* --------------------------------------------------- checkout page starts here -------------------------------------------------- */
+
+.checkout-container {
+    
+    padding: 0;
+}
+
+.checkout-title {
+    margin-top: 6%;
+}
+
+.checkout-row {
+    margin-bottom: 6%;
+}
+
+#checkout-p-div p {
+    margin-left: 15%;
+}
+
+#checkout-form {
+    width: 70%;
+    float: right;
+    margin-right: 15%;
+}
+
+#checkout-data-row {
+    width: 90%;
+    font-size: 85%;
+}
+
+.checkout-head-info {
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(33,0,112);
+}
+
+#total-cost-per-property-th {
+    width: 10rem
+}
+
+.checkout-no-of-bedrooms-th {
+    width: 10rem;
+}
+
+#property-info {
+    width: 50rem;
+}
+
+#data-tr form {
+    display: table-cell;
+}
+
+#property-no-of-bedrooms div {
+    height: 2.8rem;
+    box-sizing: border-box;
+    padding-top: 8.5%;
+}
+
+#total-cost-per-property-td div {
+    height: 2.8rem;
+    box-sizing: border-box;
+    padding-top: 8.5%;
+}
+
+
 
 
 
