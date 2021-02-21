@@ -9,13 +9,10 @@
                 <hr>
             </div>
         </div>
-    <div class="row">
-        <div id="checkout-p-div" class="col-6">         
-            <p>Please fill out the form below to complete your order</p>
-        </div>
-    </div>
+    
     <div class="row checkout-row">
         <div id="property-form" class="col-12 col-md-4">
+            <p>Please fill out the form below to complete your order</p>
                 <form id="checkout-form" action="" method="POST">
                     {% csrf_token %}
                     {{ order_form.full_name | as_crispy_field }}
@@ -26,11 +23,12 @@
                     {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
-                    <input type="submit" value="MAKE PAYMENT" class="buttons register-property-button">
+                    <input type="submit" value="PROCEED TO PAYMENT" class="buttons register-property-button">
                 </form>
         </div>
         {% if cart_items %}
         <div class="col-12 col-md-8">
+            <p id="order-summary-p">Please see in the table below your order summary</p>
             <table id="checkout-data-row" class="data-row-class">
                 <thead>
                     <tr>
@@ -105,7 +103,7 @@
             </table>
         
             <div class="grand-total-col mx-0 px-0 text-uppercase text-center">
-                <div id="grand-total">total: <span class="currency-margin">£<span id="grand-total-span">{{ grand_total }}</span></span></div>
+                <div id="grand-total-checkout" class="grand-total">total: <span class="currency-margin">£<span id="grand-total-span">{{ grand_total }}</span></span></div>
             </div>
         
         </div>

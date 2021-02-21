@@ -501,7 +501,7 @@ th, td {
     width: 95%;
 }
 
-#grand-total {
+.grand-total {
     float: right;
     width: 16.05rem;
     border: 1px solid rgb(0, 0, 0);
@@ -571,21 +571,26 @@ th, td {
 
 /* --------------------------------------------------- checkout page starts here -------------------------------------------------- */
 
-.checkout-container {
-    
+.checkout-container { 
     padding: 0;
 }
 
 .checkout-title {
     margin-top: 6%;
+    margin-left: 4.4%;
+    width: 89.5%;
 }
 
 .checkout-row {
     margin-bottom: 6%;
 }
 
-#checkout-p-div p {
+.checkout-row p {
     margin-left: 15%;
+}
+
+#order-summary-p {
+    margin-left: 0;
 }
 
 #checkout-form {
@@ -597,6 +602,7 @@ th, td {
 #checkout-data-row {
     width: 90%;
     font-size: 85%;
+    margin-top: 3%;
 }
 
 .checkout-head-info {
@@ -630,6 +636,11 @@ th, td {
     height: 2.8rem;
     box-sizing: border-box;
     padding-top: 8.5%;
+}
+
+#grand-total-checkout {
+    margin-right: 5.3%;
+    width: 15.15rem;
 }
 
 
