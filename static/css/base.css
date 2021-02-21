@@ -465,6 +465,13 @@ th, td {
     padding: 0;
 }
 
+#address-data-order {
+    height: 2.2rem;
+    display: inherit;
+    width: 20rem;
+    
+}
+
 .data-no-of-bedrooms {
     width: 15rem;
 }
@@ -529,16 +536,16 @@ th, td {
     float: right;
 }
 
+#remove-property {
+    position: relative;
+    left: 2rem;
+}
+
 #service-data {
     width: 20rem;
 }
 
-#address-data {
-    width: 20rem;
-    height: 1.8rem;
-}
-
-#address-data, .remove_address {
+.address-data, .remove_address {
     display: inherit;
 }
 
@@ -599,10 +606,19 @@ th, td {
     margin-right: 15%;
 }
 
+.checkout-legends {
+    font-size: 72%;
+}
+
 #checkout-data-row {
     width: 90%;
     font-size: 85%;
-    margin-top: 3%;
+    margin-top: 3.1%;
+}
+
+#checkout-data-row th,
+#checkout-data-row td {
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .checkout-head-info {
@@ -619,7 +635,7 @@ th, td {
 }
 
 #property-info {
-    width: 50rem;
+    width: 44rem;
 }
 
 #data-tr form {
@@ -627,20 +643,28 @@ th, td {
 }
 
 #property-no-of-bedrooms div {
-    height: 2.8rem;
     box-sizing: border-box;
     padding-top: 8.5%;
 }
 
+#address-data-checkout {
+    width: 20rem;
+    box-sizing: border-box;
+    padding-top: 7%;
+}
+
 #total-cost-per-property-td div {
-    height: 2.8rem;
     box-sizing: border-box;
     padding-top: 8.5%;
 }
 
 #grand-total-checkout {
     margin-right: 5.3%;
-    width: 15.15rem;
+    width: 15.31rem;
+}
+
+#charging-details-total {
+    margin-left: .5%;
 }
 
 

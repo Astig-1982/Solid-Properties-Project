@@ -15,15 +15,31 @@
             <p>Please fill out the form below to complete your order</p>
                 <form id="checkout-form" action="" method="POST">
                     {% csrf_token %}
-                    {{ order_form.full_name | as_crispy_field }}
-                    {{ order_form.email | as_crispy_field }}
-                    {{ order_form.phone_number | as_crispy_field }}
+                    <fieldset>
+                        <legend class="checkout-legends">Contact details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="mt-2">
+                        <legend class="checkout-legends">Billing address</legend>
                     {{ order_form.country | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
-                    <input type="submit" value="PROCEED TO PAYMENT" class="buttons register-property-button">
+                    </fieldset>
+                    <fieldset class="mt-2">
+                        <legend class="checkout-legends">Payment</legend>
+                        <!-- A Stripe card element will go here -->
+                        <div class="mb-3" id="card-element"></div>
+                        <!-- Used to display form errors -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        <!-- Pass the client secret to the view so we can get the payment intent id -->
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                    </fieldset>
+                    <p class="m-0 mb-2" id="charging-details">Your card will be charged <strong class="m-1">£<span id="charging-details-total">{{ grand_total }}</span></strong></p>
+                    <input type="submit" value="complete order" class="buttons register-property-button text-uppercase">
                 </form>
         </div>
         {% if cart_items %}
@@ -48,21 +64,12 @@
                     {% for item in cart_items %}
                     <tr id="data-tr">
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
-                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service remove-form">
-                                {% csrf_token %}
-                                <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
-                            </form>
                         </td>
                         <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
                         {% if request.user.is_authenticated %}
                             <td class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
-                                    <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
-                                    <form id="checkout-remove-address" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
-                                    {% csrf_token %}
-                                        <input type="hidden" name="property_id" value="{{ property.property.id }}">
-                                        <input type="submit" value="Remove" class="buttons remove-buttons">
-                                    </form>
+                                    <div id="address-data-checkout" class="address-data table-data">{{ property.property.street_address }}</div>
                                     {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                         {% endif %}
@@ -80,11 +87,6 @@
                                 {% for bedroom in item.properties_or_bedrooms %}
                                     {% if item.service.price_variation %}
                                         <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div>
-                                        <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
-                                    {% csrf_token %}
-                                        <input type="hidden" name="no_of_bedrooms" value="{{ bedroom.no_of_bedrooms }}">
-                                        <input type="submit" value="Remove" class="buttons remove-buttons">
-                                        </form> 
                                         {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
                                         <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
@@ -114,12 +116,13 @@
 
 {% block postloadjs %}
 
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.navbar').css('background-color', 'rgb(33,0,112)');
     });
 </script>
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-
+    
 {% endblock %}

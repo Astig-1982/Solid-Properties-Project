@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <div class="container-fluid checkout-container">
+    <div class="container-fluid cart-container">
         <div class="row shopping-title">
             <div class="col-12 col-md-6">
                 <h1 class="text-uppercase">shopping cart</h1>
@@ -40,12 +40,14 @@
                         {% if request.user.is_authenticated %}
                             <td class="px-2">
                                 {% for property in item.properties_or_bedrooms %}
-                                    <div id="address-data" class="table-data">{{ property.property.street_address }}</div>
-                                    <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
+                                    <div id="address-data-order" class="address-data table-data">{{ property.property.street_address }}</div>
+                                
+                                    <form id="remove-property" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
                                     {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
                                         <input type="submit" value="Remove" class="buttons remove-buttons">
                                     </form>
+                                    
                                     {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                         {% endif %}
@@ -67,7 +69,7 @@
                                     {% csrf_token %}
                                         <input type="hidden" name="no_of_bedrooms" value="{{ bedroom.no_of_bedrooms }}">
                                         <input type="submit" value="Remove" class="buttons remove-buttons">
-                                        </form> 
+                                        </form>
                                         {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
                                         <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
