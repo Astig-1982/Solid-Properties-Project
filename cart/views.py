@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
 from django.contrib import messages
 from services.models import Services
 from properties.models import Properties
@@ -80,8 +80,6 @@ def remove_from_cart(request, service_id):
 
     request.session['cart'] = cart
 
-    context = {}
-
-    return render(request, 'cart/cart.html', context)
+    return redirect(reverse('cart'))
 
 
