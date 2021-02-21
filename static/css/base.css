@@ -660,7 +660,8 @@ th, td {
 
 #grand-total-checkout {
     margin-right: 5.3%;
-    width: 15.31rem;
+    width: 16.31rem;
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 #charging-details-total {
