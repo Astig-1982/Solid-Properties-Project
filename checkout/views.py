@@ -4,12 +4,15 @@ from django.conf import settings
 from .forms import OrderForm
 from cart.contexts import cart_contents
 
-import stripe 
+import stripe
 
 # Create your views here.
 
 
 def checkout(request):
+
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = request.session.get('cart', {})
     if not cart:
@@ -18,14 +21,22 @@ def checkout(request):
 
     current_cart = cart_contents(request)
     total = float(current_cart['grand_total'])
-    stripe_total = round(total)
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
     order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing.')
 
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51I0QyBDK9nNxncrw48NUr7VaOFaXhP2PyitGBqK3GFVi9cxRLyg73ycKNXq3KKgOLeoSUuY8xGv5kgo1Tqjd1ThW00k5svl8xl',
-        'client_secret': 'test client secret',
-        'stripe_total': stripe_total,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, 'checkout/checkout.html', context)

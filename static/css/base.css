@@ -514,7 +514,8 @@ th, td {
     border: 1px solid rgb(0, 0, 0);
     border-top: none;
     padding: 1rem;
-    background-color: rgba(191, 74, 2, .7);
+    background-color: rgba(0, 0, 0, .8);
+    color: #ffffff;
     font-size: 150%;
     font-weight: 700;
     letter-spacing: .5px;
@@ -659,9 +660,18 @@ th, td {
 }
 
 #grand-total-checkout {
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(0, 0, 0);
     margin-right: 5.3%;
     width: 16.31rem;
     border: 1px solid rgba(0, 0, 0, .2);
+    border-top: none;
+}
+
+#charging-details {
+    background-color: rgba(0, 0, 0, .8);
+    color: #ffffff;
+    padding: .5px 0 0 12px;
 }
 
 #charging-details-total {
