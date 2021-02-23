@@ -678,7 +678,20 @@ th, td {
     margin-left: .5%;
 }
 
+/* --------------------------------------------------- success_checkout page starts here -------------------------------------------------- */
 
+.success-order-container legend {
+    font-size: 120%;
+}
+
+.success-tables {
+    width: 75%;
+}
+
+.success-tables th {
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(33,0,112);
+}
 
 
 

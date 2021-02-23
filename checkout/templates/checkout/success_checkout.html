@@ -11,6 +11,81 @@
         </div>
     
 <p>your order has been succesful. We have send a confirmation email to {{ order.email }}. your order total is {{ order.grand_total }}</p>
+</div>
+<div class="container success-order-container">
+    <div class="row">
+        <div class="col-12">
+            <fieldset>
+                <legend>Order Info</legend>
+            <table class="success-tables">
+            <thead>
+                    <tr>
+                        <th class="px-2">Order Number</th>
+                        <th class="px-2">Order Date</th>
+                    </tr>
+                </thead>
+                    <tr id="data-tr">
+                        <td class="px-2 text-uppercase">{{ order.order_number }}</td>
+                        <td class="px-2">{{ order.date }}</td>
+                    </tr>   
+            </table>
+            </fieldset>
+
+            <fieldset class="mt-2">
+                <legend>Order Details</legend>
+            <table class="success-tables">
+                <thead>
+                    <tr>
+                        <th class="px-2">Service</th>
+                        <th class="px-2">Property</th>
+                        <th class="px-2">Total Cost</th>
+                    </tr>
+                </thead>
+                {% for item in order.lineitems.all %}
+                    <tr>
+                        <td class="px-2 text-uppercase">{{ item.service.name }}</td>
+                        <td class="px-2">{{ item.the_property.street_address }}</td>
+                        <td class="px-2">{{ item.lineitem_total }}</td>
+                    </tr>
+                {% endfor %}   
+            </table>
+            </fieldset>
+
+            <fieldset class="mt-2">
+                <legend>Billing Details</legend>
+            <table class="success-tables">
+                <thead>
+                    <tr>
+                        <th class="px-2">Full Name</th>
+                        <th class="px-2">Email Address</th>
+                        <th class="px-2">Street Address</th>
+                        {% if order.street_address2 %}
+                            <th class="px-2">Street Address 1</th>
+                            <th class="px-2">Street Address 2</th>
+                        {% endif %}
+                        <th class="px-2">Town or City</th>
+                        <th class="px-2">Postal Code</th>
+                        <th class="px-2">Phone Number</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td class="px-2 text-capitalaize">{{ order.full_name }}</td>
+                        <td class="px-2">{{ order.email }}</td>
+                        <td class="px-2">{{ order.street_address1 }}</td>
+                        {% if order.street_address2 %}
+                            <tr class="px-2">{{ order.street_address2 }}</tr>
+                        {% endif %}
+                        <td class="px-2">{{ order.town_or_city }}</td>
+                        <td class="px-2">{{ order.postcode }}</td>
+                        <td class="px-2">{{ order.phone_number }}</td>
+                    </tr>
+            </table>
+            </fieldset>
+
+        </div>
+</div>
+</div>
+
 
 {% endblock %}
 
