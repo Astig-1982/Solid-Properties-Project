@@ -34,7 +34,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.grand_total = self.lineitems.aggregate(Sum('lineitem_total'))
+        self.grand_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -48,8 +48,6 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
-
-    
 
 
 class OrderLineItem(models.Model):
@@ -65,11 +63,10 @@ class OrderLineItem(models.Model):
         """
 
         if self.service.price_variation:
-            self.the_property.no_of_bedrooms = self.the_property.no_of_bedrooms
+            self.lineitem_total = self.service.price * self.the_property.no_of_bedrooms
         else:
-            self.the_property.no_of_bedrooms = 1
+            self.lineitem_total = self.service.price
 
-        self.lineitem_total = self.service.price * self.the_property.no_of_bedrooms
         super().save(*args, **kwargs)
 
     def __str__(self):
