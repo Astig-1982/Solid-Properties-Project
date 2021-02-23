@@ -16,47 +16,47 @@
     <div class="row">
         <div class="col-12">
             <fieldset>
-                <legend>Order Info</legend>
-            <table class="success-tables">
+                <legend class="success-tables-padding">Order Info</legend>
+            <table class="success-tables shadow mb-5 bg-white">
             <thead>
-                    <tr>
-                        <th class="px-2">Order Number</th>
+                    <tr class="first-tr">
+                        <th class="px-2"><span class="success-tables-padding">Order Number</span></th>
                         <th class="px-2">Order Date</th>
                     </tr>
                 </thead>
                     <tr id="data-tr">
-                        <td class="px-2 text-uppercase">{{ order.order_number }}</td>
+                        <td class="px-2 text-uppercase"><strong><span class="success-tables-padding">{{ order.order_number }}</span></strong></td>
                         <td class="px-2">{{ order.date }}</td>
                     </tr>   
             </table>
             </fieldset>
 
             <fieldset class="mt-2">
-                <legend>Order Details</legend>
-            <table class="success-tables">
+                <legend class="success-tables-padding">Order Details</legend>
+            <table class="success-tables shadow mb-5 bg-white">
                 <thead>
-                    <tr>
-                        <th class="px-2">Service</th>
+                    <tr class="first-tr">
+                        <th class="px-2"><span class="success-tables-padding">Service</span></th>
                         <th class="px-2">Property</th>
                         <th class="px-2">Total Cost</th>
                     </tr>
                 </thead>
                 {% for item in order.lineitems.all %}
                     <tr>
-                        <td class="px-2 text-uppercase">{{ item.service.name }}</td>
+                        <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>
                         <td class="px-2">{{ item.the_property.street_address }}</td>
-                        <td class="px-2">{{ item.lineitem_total }}</td>
+                        <td class="px-2">£{{ item.lineitem_total }}</td>
                     </tr>
                 {% endfor %}   
             </table>
             </fieldset>
 
             <fieldset class="mt-2">
-                <legend>Billing Details</legend>
-            <table class="success-tables">
+                <legend class="success-tables-padding">Billing Details</legend>
+            <table class="success-tables shadow mb-5 bg-white">
                 <thead>
-                    <tr>
-                        <th class="px-2">Full Name</th>
+                    <tr class="first-tr">
+                        <th class="px-2"><span class="success-tables-padding">Full Name</span></th>
                         <th class="px-2">Email Address</th>
                         <th class="px-2">Street Address</th>
                         {% if order.street_address2 %}
@@ -69,7 +69,7 @@
                     </tr>
                 </thead>
                     <tr>
-                        <td class="px-2 text-capitalaize">{{ order.full_name }}</td>
+                        <td class="px-2 text-capitalaize"><span class="success-tables-padding">{{ order.full_name }}</span></td>
                         <td class="px-2">{{ order.email }}</td>
                         <td class="px-2">{{ order.street_address1 }}</td>
                         {% if order.street_address2 %}

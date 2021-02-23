@@ -682,15 +682,28 @@ th, td {
 
 .success-order-container legend {
     font-size: 120%;
+    padding-left: 6%;
 }
 
 .success-tables {
     width: 75%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.success-tables th {
-    background-color: rgba(0, 0, 0, .2);
-    color: rgb(33,0,112);
+.success-tables, 
+.success-tables th, 
+.success-tables td {
+    border: none;
+    height: 2.5rem;
+}
+
+.first-tr {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.success-tables-padding {
+    padding-left: 12%;
 }
 
 
