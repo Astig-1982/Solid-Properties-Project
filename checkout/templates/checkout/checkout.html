@@ -13,7 +13,7 @@
     <div class="row checkout-row">
         <div id="property-form" class="col-12 col-md-4">
             <p>Please fill out the form below to complete your order</p>
-                <form id="checkout-form" action="" method="POST">
+                <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
                     {% csrf_token %}
                     <fieldset>
                         <legend class="checkout-legends">Contact details</legend>
@@ -108,6 +108,14 @@
             </div>
         </div>
     </div>
+</div>
+<div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
+</div>
 {% endif %}
 
 {% endblock %}
