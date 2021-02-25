@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, OrderLineItemAnonym
 from cart.contexts import cart_contents
 from services.models import Services
 from properties.models import Properties
@@ -37,12 +37,19 @@ def checkout(request):
             for service, properties_or_bedrooms in cart.items():
                 service = get_object_or_404(Services, pk=service)
                 for property_or_bedrooms in properties_or_bedrooms:
-                    the_property = get_object_or_404(Properties, pk=property_or_bedrooms)
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        service=service,
-                        the_property=the_property,
-                    )
+                    if request.user.is_authenticated:
+                        the_property = get_object_or_404(Properties, pk=property_or_bedrooms)
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            service=service,
+                            the_property=the_property,
+                        )
+                    else:
+                        order_line_item = OrderLineItemAnonym(
+                            order=order,
+                            service=service,
+                            no_of_bedrooms=property_or_bedrooms,
+                        )
                     order_line_item.save()
             return redirect(reverse('success_checkout',
                             args=[order.order_number]))
@@ -94,4 +101,3 @@ def success_checkout(request, order_number):
     }
 
     return render(request, 'checkout/success_checkout.html', context)
-

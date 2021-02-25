@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, OrderLineItemAnonym
 
 # Register your models here.
 
@@ -9,16 +9,22 @@ class OrderLineItemAdminInline(admin.TabularInline):
     readonly_fields = ('lineitem_total',)
 
 
+class OrderLineItemAdminInlineAnonym(admin.TabularInline):
+    model = OrderLineItemAnonym
+    readonly_fields = ('lineitem_anonym',)
+
+
 class OrderAdmin(admin.ModelAdmin):
 
-    inlines = (OrderLineItemAdminInline,)
+    inlines = (OrderLineItemAdminInline, OrderLineItemAdminInlineAnonym)
 
-    readonly_fields = ('order_number', 'date', 'grand_total')
+    readonly_fields = ('order_number', 'date',
+                       'grand_total', 'grand_total_for_anonym')
 
     fields = ('order_number', 'landlord_profile', 'date', 'full_name',
               'email', 'phone_number', 'country',
               'postcode', 'town_or_city', 'street_address1',
-              'street_address2', 'grand_total',)
+              'street_address2', 'grand_total', 'grand_total_for_anonym')
 
     list_display = ('order_number', 'date',
                     'full_name', 'grand_total',)

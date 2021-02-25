@@ -10,7 +10,7 @@
             </div>
         </div>
     
-<p>your order has been succesful. We have send a confirmation email to {{ order.email }}. your order total is {{ order.grand_total }}</p>
+<p>your order has been succesful. We have send a confirmation email to {{ order.email }}. your order total is {% if request.user.is_authenticated %} {{ order.grand_total }} {% else %} {{ order.grand_total_for_anonym }} {% endif %}</p>
 </div>
 <div class="container success-order-container">
     <div class="row">
