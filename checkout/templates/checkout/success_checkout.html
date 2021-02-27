@@ -5,16 +5,15 @@
 <div class="container-fluid checkout-container">
     <div class="row checkout-title">
             <div class="col-12">
-                <h1 class="text-uppercase">checkout</h1>
+                <h1 class="text-uppercase">order succesful</h1>
                 <hr>
             </div>
         </div>
-    
-<p>your order has been succesful. We have send a confirmation email to {{ order.email }}. your order total is  {{ order.grand_total }}.</p>
 </div>
 <div class="container success-order-container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 order-details-col">
+            <p>Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is  <strong>£{{ order.grand_total }}</strong>.</p>
             <fieldset>
                 <legend class="order-billing-legends">Order Info</legend>
             <table class="success-tables shadow-sm mb-5 bg-white">
@@ -87,7 +86,9 @@
                     </thead>
             </table>
             </fieldset>
-
+            <div class="col-12">
+                <p id="billing-total" class="text-capitalize float-right"><strong>total amount: <span id="total-amount">£{{ order.grand_total }}</span></strong></p>
+            </div>
         </div>
 </div>
 </div>

@@ -699,6 +699,11 @@ th, td {
 
 /* --------------------------------------------------- success_checkout page starts here -------------------------------------------------- */
 
+.success-checkout-container {
+    margin-top: 30%;
+}
+
+
 .success-order-container legend {
     font-size: 120%;
 }
@@ -707,6 +712,17 @@ th, td {
     width: 75%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.order-details-col {
+    padding-left: 10rem;
+    margin-top: 3.2%;
+    margin-bottom: 5%;
+}
+
+.order-details-col p:not(#billing-total) {
+    padding-left: 4.6%;
+    font-size: 90%;
 }
 
 .success-tables, 
@@ -762,6 +778,16 @@ th, td {
 
 .billing-address-details {
     padding-left: 15.6%;
+}
+
+#billing-total {
+    float: right;
+    width: 20rem;
+    margin-right: 15%;
+}
+
+#total-amount {
+    margin-left: 10%;
 }
 
 
