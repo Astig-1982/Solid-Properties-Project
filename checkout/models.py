@@ -33,17 +33,21 @@ class Order(models.Model):
     def update_total(self):
         """
         Update grand total each time a line item is added,
-        accounting for delivery costs.
+        accounting for delivery costs. This function
+        will be executed if the user is logged in.
         """
-        self.grand_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.grand_total = self.lineitems.aggregate(Sum(
+                           'lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def update_total_for_anonym(self):
         """
         Update grand total each time a line item is added,
-        accounting for delivery costs.
+        accounting for delivery costs. This function
+        will be executed if the user is not logged in.
         """
-        self.grand_total_for_anonym = self.lineitemsanonym.aggregate(Sum('lineitem_anonym'))['lineitem_anonym__sum'] or 0
+        self.grand_total = self.lineitemsanonym.aggregate(Sum(
+                          'lineitem_anonym'))['lineitem_anonym__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -73,14 +77,16 @@ class OrderLineItem(models.Model):
         """
 
         if self.service.price_variation:
-            self.lineitem_total = self.service.price * self.the_property.no_of_bedrooms
+            self.lineitem_total = self.service.price * \
+                                  self.the_property.no_of_bedrooms
         else:
             self.lineitem_total = self.service.price
 
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Service {self.service.name} on order {self.order.order_number}'
+        return f'Service {self.service.name} \
+            on order {self.order.order_number}'
 
 
 # this model is for each line item if the user is not logged in
@@ -95,8 +101,10 @@ class OrderLineItemAnonym(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_anonym = int(self.service.price) * int(self.no_of_bedrooms)
+        self.lineitem_anonym = int(self.service.price) * \
+            int(self.no_of_bedrooms)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Service {self.service.name} on order {self.order.order_number}'
+        return f'Service {self.service.name} \
+            on order {self.order.order_number}'
