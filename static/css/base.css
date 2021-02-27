@@ -701,7 +701,6 @@ th, td {
 
 .success-order-container legend {
     font-size: 120%;
-    padding-left: 6%;
 }
 
 .success-tables {
@@ -723,6 +722,46 @@ th, td {
 
 .success-tables-padding {
     padding-left: 12%;
+}
+
+.order-number-span {
+    padding-left: 7%;
+}
+
+#order-date-th {
+    width: 10rem;
+}
+
+#order-date-td {
+    font-size: 87.4%;
+}
+
+.order-billing-legends {
+    padding-left: 4.8%;
+}
+
+#order-details-legend {
+    padding-left: 4.8%;
+}
+
+#lineitem-total-td {
+    width: 10rem;
+}
+
+.billing-address-email {
+    padding-left: 25.5%;
+}
+
+.billing-address-address {
+    width: 10rem;
+}
+
+.street-address-details {
+    font-size: 87.4%;
+}
+
+.billing-address-details {
+    padding-left: 15.6%;
 }
 
 
