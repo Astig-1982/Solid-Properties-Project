@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import LandlordProfile
 from properties.models import Properties
 from checkout.models import Order
@@ -10,9 +10,9 @@ def landlord_profile(request):
 
     landlord = get_object_or_404(LandlordProfile, user=request.user)
     all_properties = landlord.properties.all()
+    orders = landlord.orders.all()
     properties = all_properties.order_by('street_address')
     properties_count = all_properties.count()
-    orders = landlord.orders.all()
 
     context = {
         'landlord': landlord,
@@ -22,6 +22,14 @@ def landlord_profile(request):
     }
 
     return render(request, 'profiles/profile.html', context)
+
+
+def order_history(request, order_number):
+
+    order = get_object_or_404(Order, order_number=order_number)
+
+    return redirect(reverse('success_checkout',
+                            args=[order.order_number]))
 
 
 

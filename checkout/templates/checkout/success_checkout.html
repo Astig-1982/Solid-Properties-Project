@@ -5,7 +5,7 @@
 <div class="container-fluid checkout-container">
     <div class="row checkout-title">
             <div class="col-12">
-                <h1 class="text-uppercase">order succesful</h1>
+                <h1 class="text-uppercase">{% if from_profile %} order succesful {% else %} order history {% endif %}</h1>
                 <hr>
             </div>
         </div>
@@ -13,7 +13,13 @@
 <div class="container success-order-container">
     <div class="row">
         <div class="col-12 order-details-col">
-            <p>Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is  <strong>£{{ order.grand_total }}</strong>.</p>
+            <p>
+                {% if from_profile %} 
+                    Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>.Your order total is<strong>£{{ order.grand_total }}</strong>.
+                {% else %}
+                    <span id="order-summary-span">Please see below your order summary.</span>
+                {% endif %}
+            </p>
             <fieldset>
                 <legend class="order-billing-legends">Order Info</legend>
             <table class="success-tables shadow-sm mb-5 bg-white">
@@ -73,7 +79,7 @@
             <table class="success-tables shadow-sm mb-5 bg-white">
                 <thead>
                     <tr class="first-tr">
-                        <th class="px-2"><span class="billing-address-details">Full Name</span></th>
+                        <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Full Name</span></th>
                         <th class="px-2"><span class="billing-address-email">Email Address</span></th>
                         <th class="px-2 billing-address-address">Street Address</th>
                         {% if order.street_address2 %}
@@ -83,7 +89,7 @@
                     </tr>
                 </thead>
                     <tr>
-                        <td class="px-2 text-capitalaize"><span class="billing-address-details">{{ order.full_name }}</span></td>
+                        <td class="px-2 text-capitalaize"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">{{ order.full_name }}</span></td>
                         <td class="px-2"><span class="billing-address-email">{{ order.email }}</span></td>
                         <td class="px-2 street-address-details">{{ order.street_address1 }}</td>
                         {% if order.street_address2 %}
@@ -92,12 +98,12 @@
                     </tr>
                     <thead>
                         <tr class="first-tr">
-                            <th class="px-2"><span class="billing-address-details">Town or City</span></th>
+                            <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Town or City</span></th>
                             <th class="px-2"><span class="billing-address-email">Postal Code</span></th>
                             <th class="px-2 billing-address-address">Phone Number</th>
                         </tr>
                         <tr>
-                            <td class="px-2"><span class="billing-address-details">{{ order.town_or_city }}</span></td>
+                            <td class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}s">{{ order.town_or_city }}</span></td>
                             <td class="px-2"><span class="billing-address-email">{{ order.postcode }}</span></td>
                             <td class="px-2">{{ order.phone_number }}</td>
                         </tr>

@@ -23,10 +23,11 @@
     </div>
     <div class="row profile-row mt-3 mx-auto">
         <div class="col-12 col-md-6">
-            <p>Below are the properties for which you wish to purchase services. 
+            <p class="head-p">Below are the properties for which you wish to purchase services. 
                 So far you have registered {{ properties_count }} {% if properties_count == 1 %} property {% else %} properties {% endif %}.
                 Feel free to add any numbers of properties you wish.
             </p>
+            {% if properties %}
             <table class="table properties-table">
                 <thead>
                     <tr id="head-properties-info">
@@ -39,7 +40,7 @@
                 <tbody>
                     <tr>
                         <td>{{ property.street_address }}
-                            <form method="POST" action="" class="remove-service remove-form">
+                            <form method="POST" action="{% url 'remove_property' property.id %}" class="remove-service remove-form">
                                 {% csrf_token %}
                                 <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
                             </form>
@@ -50,13 +51,31 @@
                 </tbody>
                 {% endfor %}
             </table>
-            <button id="add-property" class="add-service-button buttons text-uppercase">add another property</button>
+            {% else %}
+            <h2>No properties registered.</h2>
+            {% endif %}
+            <a href="{% url 'add_property' %}"><button id="add-property" class="add-service-button buttons text-uppercase">{% if properties %} add another property {% else %} add your property {% endif %}</button></a>
         </div>
         <div class="col-12 col-md-6">
-            <h3>Order History</h3>
-            {% for order in orders %}
-            {{ order.order_number }}
-            {% endfor %}
+            <p class="head-p">Order History</p>
+            <table style="width:100%">
+                 <thead>
+                    <tr>
+                        <th><strong class="text-capitalize">order number</strong></th>
+                        <th><strong class="text-capitalize">order date</strong></th>
+                        <th><strong class="text-capitalize">total amount</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <th><strong class="text-capitalize"><a href="{% url 'order_history' order.order_number %}">{{ order.order_number }}</a></strong></th>
+                            <th><strong class="text-capitalize">{{ order.date }}</strong></th>
+                            <th><strong class="text-capitalize">{{ order.grand_total }}</strong></th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

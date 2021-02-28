@@ -372,17 +372,13 @@ body {
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
 
 .add-property-container {
-    margin-top: 7%;
+    margin-top: 8.9%;
 }
 
 #add-property-div {
-    width: 48%;
-    height: 5rem;
-    font-size: 85%;
-    padding: 1%;
-    margin-bottom: 2.9%;
-    border: 1.5px solid rgb(33,0,112);
-    box-sizing: border-box;
+     width: 50%;
+     font-size: 85%;
+     color: rgba(0, 0, 0, .5);
 }
 
 #property-form label {
@@ -421,6 +417,12 @@ body {
     margin-bottom: 5%;
 }
 
+.head-p {
+    color: rgba(0, 0, 0, .5);
+    font-size: 90%;
+    width: 80%;
+}
+
 .profile-row {
     width: 91.4%;
 }
@@ -434,12 +436,6 @@ body {
 }
 
 .properties-table {
-    width: 80%;
-}
-
-.profile-row p {
-    color: rgba(0, 0, 0, .5);
-    font-size: 90%;
     width: 80%;
 }
 
@@ -749,6 +745,9 @@ th, td {
     margin-top: 30%;
 }
 
+#order-summary-span {
+    color: rgba(0, 0, 0, .5);
+}
 
 .success-order-container legend {
     font-size: 120%;
@@ -827,6 +826,10 @@ th, td {
 }
 
 .billing-address-details {
+    padding-left: 15.6%;
+}
+
+.billing-addess-not-logged {
     padding-left: 20.6%;
 }
 

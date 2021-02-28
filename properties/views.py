@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+
 from .forms import PropertyForm
 from profiles.models import LandlordProfile
 from properties.models import Properties
@@ -17,7 +18,9 @@ def add_property(request):
         the_property = properties.filter(street_address__exact=street_address)
 
         if the_property:
-            messages.warning(request, f"{street_address} is already in your list of properties and cannot be registered twice.")
+            messages.warning(request, f"{street_address} is already in \
+                                    registered on the website and \
+                                    cannot be registered twice.")
             property_form = PropertyForm()
         else:
             form_data = {
@@ -44,4 +47,11 @@ def add_property(request):
     }
 
     return render(request, 'add_property/add_property.html', context)
+
+
+def remove_property(request, property_id):
+
+    Properties.objects.filter(id=property_id).delete()
+
+    return redirect(reverse('profile'))
 
