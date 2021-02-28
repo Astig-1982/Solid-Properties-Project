@@ -84,6 +84,7 @@
 {% block postloadjs %}
 <script type="text/javascript"> 
 $(document).ready(function(){
+    $('.navbar').removeClass('navbar-transition');
     $('.navbar').css('background-color', 'rgb(33,0,112)');
     $('.select-property').change(function(){
         let bedrooms = $(this).val();

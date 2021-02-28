@@ -55,7 +55,7 @@
                 {% else %}
                     {% for item in order.lineitemsanonym.all %}
                         <tr>
-                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>
+                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding-not-logged">{{ item.service.name }}</span></strong></td>
                             {% if item.service.price_variation %}                        
                                 <td class="px-2">{{ item.no_of_bedrooms }}</td>
                             {% else %}
@@ -122,6 +122,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $('.navbar').removeClass('navbar-transition');
         $('.navbar').css('background-color', 'rgb(33,0,112)');
     });
 </script>
