@@ -21,4 +21,6 @@ class OrderForm(forms.ModelForm):
             else:
                 placeholder = field
             placeholder = placeholder.replace('_',  ' ')
-            self.fields[field].widget.attrs['placeholder'] = placeholder.capitalize()
+            if field != 'country':
+                self.fields[field].widget.attrs['placeholder'] = \
+                                                placeholder.capitalize()

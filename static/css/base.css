@@ -354,7 +354,7 @@ body {
     font-size: 80%;
 }
 
-#add-service-button {
+.add-service-button {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
     border: none;
@@ -364,7 +364,7 @@ body {
     border: 1px solid rgb(2, 191, 191);
 }
 
-#add-service-button:hover {
+.add-service-button:hover {
     background-color: #ffffff;
     color: rgb(2, 191, 191);
 }
@@ -417,15 +417,54 @@ body {
 }
 
 .profile-container {
-    margin-top: 5%;
+    margin-top: 1.9%;
+    margin-bottom: 5%;
 }
 
 .profile-row {
-    width: 70%;
+    width: 91.4%;
+}
+
+#property-address-id {
+    width: 21.8rem;
+}
+
+#bedrooms-comprising {
+    width: 12rem;
+}
+
+.properties-table {
+    width: 80%;
+}
+
+.profile-row p {
+    color: rgba(0, 0, 0, .5);
+    font-size: 90%;
+    width: 80%;
+}
+
+#head-properties-info {
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(33,0,112);
 }
 
 .no-of-properties {
-    width: 41%;
+    width: 38%;
+}
+
+#no-of-properties-th {
+    width: 13.2rem;
+    font-size: 98%;
+}
+
+.no-of-properties th:not(#no-of-properties-th) {
+    width: 2rem;
+    padding-left: 6%;
+}
+
+#add-property {
+    width: 15rem;
+    height: 2.8rem;
 }
 
 /* --------------------------------------------------- cart page starts here -------------------------------------------------- */
@@ -498,8 +537,8 @@ th, td {
 .head-info {
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgba(33,0,112, .9);
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(33,0,112);
 }
 
 .table-data {
@@ -517,8 +556,8 @@ th, td {
     border: 1px solid rgb(0, 0, 0);
     border-top: none;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, .8);
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, .2);
+    color: rgb(33,0,112);
     font-size: 150%;
     font-weight: 700;
     letter-spacing: .5px;
@@ -670,7 +709,7 @@ th, td {
     background-color: rgba(0, 0, 0, .2);
     color: rgb(0, 0, 0);
     margin-right: 5.3%;
-    width: 16.31rem;
+    width: 16.15rem;
     border: 1px solid rgba(0, 0, 0, .2);
     border-top: none;
 }

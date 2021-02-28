@@ -6,63 +6,62 @@
     <div class="row">
         <div class="col-12">
             <div class="mx-auto text-center section-title-container">
-                <h1 class="section-title">landlord</h1>
+                <h1 class="section-title text-uppercase">my profile</h1>
             </div>
         </div>
     </div>
 </div>
-<div class="container profile-container">
-    <div class="row profile-row mx-auto">
+<div class="container-fluid profile-container">
+    <div class="row mt-0 checkout-title">
         <div class="col-12">
-            <h4>
-                Hello, {{ landlord|title }}.
-            </h4>
+            <h4>Hello, {{ landlord|title }}.</h4>
             <p>
-                Welcome to your Solid Properties profile page. Below are the properties for which you wish to purchase
-                services.
-                Feel free to add any numbers of properties you wish.
+                Welcome to your Solid Properties Profile page.
             </p>
-            <table class="table no-of-properties">
-                <thead>
-                    <tr>
-                        <th scope="col">Number Of Properties Registered</th>
-                        <th scope="col">{{ properties_count }}</th>
-                    </tr>
-                </thead>
-            </table>
+            <hr>
         </div>
     </div>
-    <div class="row profile-row mx-auto">
-        <div class="col-12">
+    <div class="row profile-row mt-3 mx-auto">
+        <div class="col-12 col-md-6">
+            <p>Below are the properties for which you wish to purchase services. 
+                So far you have registered {{ properties_count }} {% if properties_count == 1 %} property {% else %} properties {% endif %}.
+                Feel free to add any numbers of properties you wish.
+            </p>
             <table class="table properties-table">
                 <thead>
-                    <tr>
-                        <th scope="col">Property Address</th>
+                    <tr id="head-properties-info">
+                        <th scope="col" id="property-address-id">Property Address</th>
                         <th scope="col">Post Code</th>
-                        <th scope="col ">Number Of Bedrooms Comprising</th>
+                        <th scope="col" id="bedrooms-comprising">Number Of Bedrooms Comprising</th>
                     </tr>
                 </thead>
                 {% for property in properties %}
                 <tbody>
                     <tr>
-                        <td>{{ property.street_address }}</td>
-                        <td class="text-uppercase">{{ property.post_code }}</td>
+                        <td>{{ property.street_address }}
+                            <form method="POST" action="" class="remove-service remove-form">
+                                {% csrf_token %}
+                                <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
+                            </form>
+                        </td>
+                        <td class="text-uppercase" id="post-code-id">{{ property.post_code }}</td>
                         <td>{{ property.no_of_bedrooms }} Bedrooms</td>
                     </tr>
                 </tbody>
                 {% endfor %}
             </table>
+            <button id="add-property" class="add-service-button buttons text-uppercase">add another property</button>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-md-6">
             <h3>Order History</h3>
             {% for order in orders %}
-                {{ order.order_number }}
+            {{ order.order_number }}
             {% endfor %}
         </div>
     </div>
 </div>
+
+
 
 {% block postloadjs %}
 
@@ -73,7 +72,5 @@
 </script>
 
 {% endblock %}
-
-
 
 {% endblock %}
