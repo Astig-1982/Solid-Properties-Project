@@ -7,6 +7,7 @@ from .models import Order, OrderLineItem, OrderLineItemAnonym
 from cart.contexts import cart_contents
 from services.models import Services
 from properties.models import Properties
+from profiles.models import LandlordProfile
 
 import stripe
 
@@ -20,8 +21,13 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
+        if request.user.is_authenticated:
+            landlord = get_object_or_404(LandlordProfile, user=request.user)
+        else:
+            landlord = None
 
         form_data = {
+            'landlord_profile': landlord,
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
