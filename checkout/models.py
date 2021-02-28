@@ -47,7 +47,7 @@ class Order(models.Model):
         will be executed if the user is not logged in.
         """
         self.grand_total = self.lineitemsanonym.aggregate(Sum(
-                          'lineitem_anonym'))['lineitem_anonym__sum'] or 0
+                          'lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -94,14 +94,14 @@ class OrderLineItemAnonym(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitemsanonym')
     service = models.ForeignKey(Services, null=False, blank=False, on_delete=models.CASCADE)
     no_of_bedrooms = models.DecimalField(max_digits=1, decimal_places=0, null=False, blank=False, editable=False) # the number of bedrooms for which the service is purchased
-    lineitem_anonym = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False) # total cost of the service for the number of bedrooms is purchased
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False) # total cost of the service for the number of bedrooms is purchased
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_anonym = int(self.service.price) * \
+        self.lineitem_total = int(self.service.price) * \
             int(self.no_of_bedrooms)
         super().save(*args, **kwargs)
 

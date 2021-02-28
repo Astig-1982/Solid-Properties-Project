@@ -36,17 +36,35 @@
                 <thead>
                     <tr class="first-tr">
                         <th class="px-2"><span class="success-tables-padding">Service</span></th>
-                        <th class="px-2">Property</th>
+                        {% if request.user.is_authenticated %}
+                            <th class="px-2">Property</th>
+                        {% else %}
+                            <th class="px-2 text-capitalize">no of bedrooms to be executed for</th>
+                        {% endif %}
                         <th id="lineitem-total-td" class="px-2">Total Cost</th>
                     </tr>
                 </thead>
-                {% for item in order.lineitems.all %}
-                    <tr>
-                        <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>
-                        <td class="px-2">{{ item.the_property.street_address }}</td>
-                        <td class="px-2">£{{ item.lineitem_total }}</td>
-                    </tr>
-                {% endfor %}   
+                {% if request.user.is_authenticated %}
+                    {% for item in order.lineitems.all %}
+                        <tr>
+                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>                        
+                            <td class="px-2">{{ item.the_property.street_address }}</td>
+                            <td class="px-2">£{{ item.lineitem_total }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    {% for item in order.lineitemsanonym.all %}
+                        <tr>
+                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>
+                            {% if item.service.price_variation %}                        
+                                <td class="px-2">{{ item.no_of_bedrooms }}</td>
+                            {% else %}
+                                <td class="px-2 text-capitalize">fixed price</td>
+                            {% endif %}
+                            <td class="px-2">£{{ item.lineitem_total }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}   
             </table>
             </fieldset>
 

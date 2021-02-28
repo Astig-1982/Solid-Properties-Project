@@ -11,7 +11,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 class OrderLineItemAdminInlineAnonym(admin.TabularInline):
     model = OrderLineItemAnonym
-    readonly_fields = ('lineitem_anonym',)
+    readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
