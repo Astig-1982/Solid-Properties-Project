@@ -592,6 +592,10 @@ th, td {
     width: 89.5%;
 }
 
+#property-form select[name="country"] {
+    color: rgba(0, 0, 0, .6);
+}
+
 .checkout-row {
     margin-bottom: 6%;
 }
@@ -740,7 +744,11 @@ th, td {
 }
 
 .success-tables-padding {
-    padding-left: 15.5%;
+    padding-left: 15.7%;
+}
+
+.success-tables-padding-not-logged {
+    padding-left: 24.5%;
 }
 
 .order-number-span {
@@ -780,7 +788,7 @@ th, td {
 }
 
 .billing-address-details {
-    padding-left: 15.6%;
+    padding-left: 20.6%;
 }
 
 #billing-total {

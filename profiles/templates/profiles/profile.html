@@ -54,6 +54,14 @@
             </table>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>Order History</h3>
+            {% for order in orders %}
+                {{ order.order_number }}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% block postloadjs %}

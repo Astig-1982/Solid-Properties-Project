@@ -23,11 +23,11 @@
                     </fieldset>
                     <fieldset class="mt-2">
                         <legend class="checkout-legends">Billing address</legend>
-                    {{ order_form.country | as_crispy_field }}
-                    {{ order_form.postcode | as_crispy_field }}
-                    {{ order_form.town_or_city | as_crispy_field }}
-                    {{ order_form.street_address1 | as_crispy_field }}
-                    {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
                     </fieldset>
                     <fieldset class="mt-2">
                         <legend class="checkout-legends">Payment</legend>
@@ -122,6 +122,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $('.navbar').removeClass('navbar-transition');
         $('.navbar').css('background-color', 'rgb(33,0,112)');
     });
 </script>
