@@ -5,7 +5,7 @@
 <div class="container-fluid checkout-container">
     <div class="row checkout-title">
             <div class="col-12">
-                <h1 class="text-uppercase">{% if from_profile %} order succesful {% else %} order history {% endif %}</h1>
+                <h1 class="text-uppercase">{% if from_profile %} order history {% else %} order succesful {% endif %}</h1>
                 <hr>
             </div>
         </div>
@@ -15,9 +15,9 @@
         <div class="col-12 order-details-col">
             <p>
                 {% if from_profile %} 
-                    Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>.Your order total is<strong>£{{ order.grand_total }}</strong>.
-                {% else %}
                     <span id="order-summary-span">Please see below your order summary.</span>
+                {% else %}
+                    Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is <strong>£{{ order.grand_total }}</strong>.
                 {% endif %}
             </p>
             <fieldset>
