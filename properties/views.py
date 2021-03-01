@@ -51,7 +51,15 @@ def add_property(request):
 
 def remove_property(request, property_id):
 
+    cart = request.session.get('cart', {})
+    this_property = get_object_or_404(Properties, pk=property_id)
+    for properties in cart.values():
+        for the_property in properties:
+            if the_property == this_property.id:
+                properties.remove(the_property)
+
     Properties.objects.filter(id=property_id).delete()
+    request.session['cart'] = cart
 
     return redirect(reverse('profile'))
 
