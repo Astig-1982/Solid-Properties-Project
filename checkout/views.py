@@ -8,6 +8,7 @@ from cart.contexts import cart_contents
 from services.models import Services
 from properties.models import Properties
 from profiles.models import LandlordProfile
+from profiles.forms import BillingForm
 
 import stripe
 
@@ -51,6 +52,8 @@ def checkout(request):
                             service=service,
                             the_property=the_property,
                         )
+                        request.session['save_info'] = \
+                            'save-info' in request.POST
                     else:
                         order_line_item = OrderLineItemAnonym(
                             order=order,
@@ -78,7 +81,20 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            landlord = get_object_or_404(LandlordProfile, user=request.user)
+            order_form = OrderForm(initial={
+                    'full_name': landlord.default_full_name,
+                    'email': landlord.user.email,
+                    'phone_number': landlord.default_phone_number,
+                    'country': landlord.default_country,
+                    'postcode': landlord.default_postcode,
+                    'town_or_city': landlord.default_town_or_city,
+                    'street_address1': landlord.default_street_address1,
+                    'street_address2': landlord.default_street_address2,
+                })
+        else:
+            order_form = OrderForm()
 
         if not stripe_public_key:
             messages.warning(request, 'Stripe public key is missing.')
@@ -94,7 +110,26 @@ def checkout(request):
 
 def success_checkout(request, order_number):
 
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        if save_info:
+            landlord = get_object_or_404(LandlordProfile, user=request.user)
+            billing_data = {
+                'default_full_name': order.full_name,
+                'default_email': order.email,
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+            }
+            billing_details_form = BillingForm(billing_data, instance=landlord)
+            if billing_details_form.is_valid:
+                billing_details_form.save()
+
     messages.success(request, f'Your order was succesful! \
                                 We will send shortly a confirmation email to \
                                 {order.email} with your order number \
