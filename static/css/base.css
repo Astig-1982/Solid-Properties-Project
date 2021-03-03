@@ -163,6 +163,24 @@ body {
     background-color: green !important;
 }
 
+/* --------------------------------------------------- form pages starts -------------------------------------------------- */
+
+.form-containers {
+    margin-top: 5%;
+    margin-bottom: 6%;
+}
+
+.form-div {
+    padding-left: 8%;
+    width: 50%;
+    font-size: 85%;
+    color: rgba(0, 0, 0, .5);
+}
+
+.regular-form {
+    width: 35%;
+}
+
 /* --------------------------------------------------- home page starts here -------------------------------------------------- */
 
             /* ------- landing section ------ */
@@ -371,14 +389,13 @@ body {
 
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
 
-.add-property-container {
-    margin-top: 8.9%;
+#add-property-row {
+    margin-top: 3%;
 }
 
 #add-property-div {
-     width: 50%;
-     font-size: 85%;
-     color: rgba(0, 0, 0, .5);
+    width: 35%;
+    padding-left: .6%;
 }
 
 #property-form label {
@@ -843,5 +860,19 @@ th, td {
     margin-left: 10%;
 }
 
+/* --------------------------------------------------- billing details starts here -------------------------------------------------- */
+
+#billing-container {
+    margin-top: 2%;
+}
+
+
+#billing-div {
+    padding-left: 8%;
+}
+
+#billing-details-row {
+    margin-top: 2.1%;
+}
 
 

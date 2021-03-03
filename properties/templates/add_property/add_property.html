@@ -2,14 +2,20 @@
 {% load static %}
 
 {% block content %}
-<div class="container add-property-container">
-    <div class="row">
-        <div id="add-property-div" class="col-12 mx-auto">         
+<div class="container-fluid">
+    <div class="row checkout-title">
+        <div class="col-12">
+            <h1 class="text-uppercase">add a property</h1>
+            <hr>
+        </div>
+    </div>
+    <div id="add-property-row" class="row">
+        <div id="add-property-div" class="col-12 form-div mx-auto">         
             <p>In the form provided below please register a property and it will be added to your list of properties. Upon choosing a service, you can choose from this list a property for which the service to be executed.</p>
         </div>
     </div>
     <div class="row">
-        <div id="property-form" class="col-12 w-50 mx-auto">
+        <div class="col-12 mx-auto regular-form">
                 <form action="{% url 'add_property' %}" method="POST">
                     {% csrf_token %}
                     {{ property_form.street_address | as_crispy_field }}
@@ -31,6 +37,5 @@
 </script>
 
 {% endblock %}
-
 
 {% endblock %}

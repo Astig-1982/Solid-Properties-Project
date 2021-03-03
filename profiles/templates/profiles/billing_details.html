@@ -2,43 +2,34 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid border border-blue section-container">
-    <div class="row">
+<div id="billing-container" class="container-fluid form-containers">
+    <div class="row checkout-title">
         <div class="col-12">
-            <div class="mx-auto text-center section-title-container">
-                <h1 class="section-title text-uppercase">my profile</h1>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid profile-container">
-    <div class="row mt-0 checkout-title">
-        <div class="col-12">
-            <h4 class="text-uppercase">billing details</h4>
+            <h1 class="text-uppercase">billing details</h1>
             <hr>
         </div>
     </div>
-    <div class="row profile-row mt-3 mx-auto">
-        <div class="col-12 mx-auto">
-            <p class="head-p">
-                Below are your billing details. 
-            </p>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ billing_form|crispy }}
-                <button class="buttons text-uppercase">update billing details</button>
-            </form>
+    <div id="billing-details-row" class="row">
+        <div class="col-12 form-div mx-auto">         
+            <p>Please see below your billing details.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mx-auto regular-form">
+                <form action="{% url 'billing_details' %}" method="POST">
+                    {% csrf_token %}
+                    {{ billing_form|crispy }}
+                    <input type="submit" value="UPDATE DETAILS" class="buttons register-property-button">
+                </form>
         </div>
     </div>
 </div>
-
-
 
 {% block postloadjs %}
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.footer-container').addClass('profile-margin')
+        $('.navbar').css('background-color', 'rgb(33,0,112)');
     });
 </script>
 
