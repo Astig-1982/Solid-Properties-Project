@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid border border-blue section-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="mx-auto text-center section-title-container">
+                <h1 class="section-title text-uppercase">my profile</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid profile-container">
+    <div class="row mt-0 checkout-title">
+        <div class="col-12">
+            <h4 class="text-uppercase">billing details</h4>
+            <hr>
+        </div>
+    </div>
+    <div class="row profile-row mt-3 mx-auto">
+        <div class="col-12 mx-auto">
+            <p class="head-p">
+                Below are your billing details. 
+            </p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ billing_form|crispy }}
+                <button class="buttons text-uppercase">update billing details</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.footer-container').addClass('profile-margin')
+    });
+</script>
+
+{% endblock %}
+
+{% endblock %}

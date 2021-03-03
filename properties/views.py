@@ -50,7 +50,11 @@ def add_property(request):
 
 
 def remove_property(request, property_id):
-
+    """
+    A function that removes the property from the list and
+    from the shopping cart if a service has been purchased
+    for it.
+    """
     cart = request.session.get('cart', {})
     this_property = get_object_or_404(Properties, pk=property_id)
     for properties in cart.values():

@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import LandlordProfile
 from properties.models import Properties
 from checkout.models import Order
+from .forms import BillingForm
 
 # Create your views here.
 
@@ -31,5 +33,25 @@ def order_history(request, order_number):
     return redirect(reverse('success_checkout',
                             args=[order.order_number]))
 
+
+def billing_details(request):
+
+    landlord = get_object_or_404(LandlordProfile, user=request.user)
+
+    if request.method == 'POST':
+        billing_form = BillingForm(request.POST, instance=landlord)
+        if billing_form.is_valid():
+            billing_form.save()
+            messages.success(request, 'Your billing details \
+                                    have been updated succesfuly.')
+
+    billing_form = BillingForm(instance=landlord)
+
+    context = {
+        'landlord': landlord,
+        'billing_form': billing_form,
+    }
+
+    return render(request, 'profiles/billing_details.html', context)
 
 
