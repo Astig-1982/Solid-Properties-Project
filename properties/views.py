@@ -29,6 +29,7 @@ def add_property(request):
                     'house_name': request.POST['house_name'],
                     'post_code': request.POST['post_code'],
                     'no_of_bedrooms': request.POST['no_of_bedrooms'],
+                    'activate': request.POST['activate-property'],
                 }
 
             property_form = PropertyForm(form_data)
@@ -64,6 +65,18 @@ def remove_property(request, property_id):
 
     Properties.objects.filter(id=property_id).delete()
     request.session['cart'] = cart
+
+    return redirect(reverse('profile'))
+
+
+def activate(request, property_id):
+
+    this_property = get_object_or_404(Properties, pk=property_id)
+
+    if this_property.activate:
+        Properties.objects.filter(pk=property_id).update(activate=False)
+    else:
+        Properties.objects.filter(pk=property_id).update(activate=True)
 
     return redirect(reverse('profile'))
 

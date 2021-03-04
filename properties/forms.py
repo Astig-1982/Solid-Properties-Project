@@ -6,7 +6,7 @@ class PropertyForm(forms.ModelForm):
     class Meta:
         model = Properties
         fields = ('landlord', 'street_address', 'house_name',
-                  'post_code', 'no_of_bedrooms')
+                  'post_code', 'no_of_bedrooms', 'activate',)
 
     def __init__(self, *args, **kwargs):
         """
