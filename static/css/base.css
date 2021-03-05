@@ -512,6 +512,29 @@ body {
     height: 2.8rem;
 }
 
+.order-history-table {
+    width: 100%;
+}
+
+.order-history-table a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 400;
+}
+
+.order-history-table, 
+.order-history-table th, 
+.order-history-table td {
+    border: none;
+    height: 2.8rem;
+}
+
+#order-number-th {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .6);
+    font-weight: 400;
+}
+
 /* --------------------------------------------------- cart page starts here -------------------------------------------------- */
 
 .cart-container {
@@ -690,6 +713,21 @@ th, td {
 .checkout-row p {
     margin-left: 15%;
 }
+
+#save-details {
+    color: rgba(0, 0, 0, .5) !important;
+    font-size: 76% !important;
+}
+
+#save-details a {
+    color: rgb(2, 191, 191);
+    text-decoration: none;
+}
+
+#save-details a:hover {
+    text-decoration: underline;
+}
+
 
 #order-summary-p {
     margin-left: 0;

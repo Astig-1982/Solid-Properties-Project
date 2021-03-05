@@ -43,8 +43,12 @@
                             <span class="{% if property.activate %} active {% else %} not-active {% endif %}">{{ property.street_address }}</span>
                             <a href="{% url 'activate_deactivate' property.id %}"><button class="buttons activate-buttons text-capitalize {% if property.activate %} deactivate-button {% else %} activate-button {% endif %}">{% if property.activate %} deactivate {% else %} activate {% endif %}</button></a>
                         </td>
-                        <td class="text-uppercase" id="post-code-id">{{ property.post_code }}</td>
-                        <td>{{ property.no_of_bedrooms }} Bedrooms</td>
+                        <td>
+                            <span id="post-code-id" class="{% if property.activate %} active {% else %} not-active {% endif %} text-uppercase">{{ property.post_code }}</span>
+                        </td>
+                        <td>
+                            <span class="{% if property.activate %} active {% else %} not-active {% endif %}">{{ property.no_of_bedrooms }} Bedrooms</span>
+                        </td>
                     </tr>
                 </tbody>
                 {% endfor %}
@@ -56,7 +60,8 @@
         </div>
         <div class="col-12 col-md-6">
             <p class="head-p">Order History</p>
-            <table style="width:100%">
+            {% if orders %}
+            <table class="order-history-table">
                  <thead>
                     <tr>
                         <th><strong class="text-capitalize">order number</strong></th>
@@ -67,13 +72,14 @@
                 <tbody>
                     {% for order in orders %}
                         <tr>
-                            <th><strong class="text-capitalize"><a href="{% url 'order_history' order.order_number %}">{{ order.order_number }}</a></strong></th>
-                            <th><strong class="text-capitalize">{{ order.date }}</strong></th>
-                            <th><strong class="text-capitalize">{{ order.grand_total }}</strong></th>
+                            <th class="text-capitalize"><a id="order-number-th" title="{{ order.order_number }}" href="{% url 'order_history' order.order_number %}">{{ order.order_number|truncatechars:10 }}</a></th>
+                            <th class="text-capitalize"><a href="{% url 'order_history' order.order_number %}">{{ order.date }}</a></th>
+                            <th class="text-capitalize"><a href="{% url 'order_history' order.order_number %}">£{{ order.grand_total }}</a></th>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -28,14 +28,14 @@
                         {{ order_form.town_or_city | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
-                        <div>
+                        <div id="save-details">
 							{% if user.is_authenticated %}
-								<label class="" for="id-save-info">Save these billing details to my profile</label>
-                                <input class="" type="checkbox" id="id-save-info" name="save-info" checked>
+								<label for="id-save-info">Save these billing details to my profile</label>
+                                <input type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create and account for a personalized shopping experience.</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> for a more shopping experience.
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create</a> and account for a personalized shopping experience or 
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a>.
                                 </label>
 							{% endif %}
 						</div>
