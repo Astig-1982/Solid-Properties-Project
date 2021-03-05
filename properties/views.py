@@ -69,11 +69,17 @@ def remove_property(request, property_id):
     return redirect(reverse('profile'))
 
 
-def activate(request, property_id):
+def activate_deactivate(request, property_id):
 
     this_property = get_object_or_404(Properties, pk=property_id)
 
     if this_property.activate:
+        cart = request.session.get('cart', {})
+        for properties in cart.values():
+            for the_property in properties:
+                if the_property == this_property.id:
+                    properties.remove(the_property)
+        request.session['cart'] = cart
         Properties.objects.filter(pk=property_id).update(activate=False)
     else:
         Properties.objects.filter(pk=property_id).update(activate=True)

@@ -39,14 +39,12 @@
                 {% for property in properties %}
                 <tbody>
                     <tr>
-                        <td>{% if property.activate %} {{ property.street_address }} {% else %} <span style="color: yellow;">{{ property.street_address }} {% endif %}</span>
-                            <form method="POST" action="{% url 'remove_property' property.id %}" class="remove-service remove-form">
-                                {% csrf_token %}
-                                <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
-                            </form>
+                        <td>
+                            <span class="{% if property.activate %} active {% else %} not-active {% endif %}">{{ property.street_address }}</span>
+                            <a href="{% url 'activate_deactivate' property.id %}"><button class="buttons activate-buttons text-capitalize {% if property.activate %} deactivate-button {% else %} activate-button {% endif %}">{% if property.activate %} deactivate {% else %} activate {% endif %}</button></a>
                         </td>
                         <td class="text-uppercase" id="post-code-id">{{ property.post_code }}</td>
-                        <td>{{ property.no_of_bedrooms }} Bedrooms <span><a href="{% url 'activate' property.id %}">activate</a></span></td>
+                        <td>{{ property.no_of_bedrooms }} Bedrooms</td>
                     </tr>
                 </tbody>
                 {% endfor %}

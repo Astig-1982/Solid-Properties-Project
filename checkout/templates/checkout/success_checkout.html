@@ -54,7 +54,11 @@
                     {% for item in order.lineitems.all %}
                         <tr>
                             <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>                        
-                            <td class="px-2">{{ item.the_property.street_address }}</td>
+                            <td class="px-2 {% if item.the_property.activate %} active {% else %} not-active-success {% endif %}">{{ item.the_property.street_address }}
+                                {% if not item.the_property.activate %}
+                                    <p id="success-active" class="text-capitalize">property no longer active on the website</p>
+                                {% endif %}
+                            </td>
                             <td class="px-2">£{{ item.lineitem_total }}</td>
                         </tr>
                     {% endfor %}

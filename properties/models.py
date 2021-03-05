@@ -13,7 +13,7 @@ class Properties(models.Model):
     house_name = models.CharField(max_length=20, null=True, blank=True)
     post_code = models.CharField(max_length=9, null=False, blank=False)
     no_of_bedrooms = models.DecimalField(max_digits=2, decimal_places=0)
-    activate = models.BooleanField(default=True, null=True, blank=True)
+    activate = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.street_address

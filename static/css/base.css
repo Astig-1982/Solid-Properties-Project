@@ -461,6 +461,33 @@ body {
     color: rgb(33,0,112);
 }
 
+.activate-buttons {
+    float: right;
+    background-color: #ffffff;
+    width: 4.6rem;
+    height: 2rem;
+    font-size: 74%;
+    border: none;
+}
+
+.deactivate-button {
+    border: 1px solid rgb(212, 0, 0);
+    color: rgb(212, 0, 0);
+}
+
+.activate-button {
+    border: 1px solid rgb(0, 212, 127);
+    color: rgb(0, 212, 127);
+}
+
+.active {
+    color: rgb(0, 0, 0);
+}
+
+.not-active {
+    color: rgba(0, 0, 0, .2);
+}
+
 .no-of-properties {
     width: 38%;
 }
@@ -873,6 +900,17 @@ th, td {
 
 #billing-details-row {
     margin-top: 2.1%;
+}
+
+.not-active-success {
+    color: rgba(0, 0, 0, .5);
+}
+
+#success-active {
+    margin: 0;
+    padding: 0 !important;
+    font-size: 60% !important;
+    color: rgb(212, 0, 0);
 }
 
 
