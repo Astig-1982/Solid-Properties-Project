@@ -480,6 +480,11 @@ body {
     color: rgb(0, 212, 127);
 }
 
+.activate-button:hover {
+    background-color: rgb(0, 212, 127);
+    color: #ffffff;
+}
+
 .active {
     color: rgb(0, 0, 0);
 }
@@ -641,16 +646,19 @@ th, td {
 }
 
 .remove-buttons, #remove-service-buttons {
-    border: 1px solid rgb(2, 191, 191);
-    color: rgb(2, 191, 191);
+    border: 1px solid rgb(212, 0, 0);
+    color: rgb(212, 0, 0);
     background-color: #ffffff;
     transition-property: background-color, color;
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 }
 
-.remove-buttons:hover, #remove-service-buttons:hover {
-    background-color: rgb(2, 191, 191);
+.remove-buttons:hover, 
+#remove-service-buttons:hover,
+/* including .deactivate-button from profile page */
+.deactivate-button:hover {
+    background-color: rgb(212, 0, 0);
     color: #ffffff;
 }
 
@@ -814,6 +822,17 @@ th, td {
     font-size: 90%;
 }
 
+.not-active-success {
+    color: rgba(0, 0, 0, .5);
+}
+
+#success-active {
+    margin: 0;
+    padding: 0 !important;
+    font-size: 60% !important;
+    color: rgb(212, 0, 0);
+}
+
 .success-tables, 
 .success-tables th, 
 .success-tables td {
@@ -902,15 +921,6 @@ th, td {
     margin-top: 2.1%;
 }
 
-.not-active-success {
-    color: rgba(0, 0, 0, .5);
-}
 
-#success-active {
-    margin: 0;
-    padding: 0 !important;
-    font-size: 60% !important;
-    color: rgb(212, 0, 0);
-}
 
 
