@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;800;900&display=swap');
 
 body {
     margin: 0;
@@ -53,6 +53,7 @@ body {
 .btn-outline-success {
     color: #ffffff;
     border: 1px solid #ffffff;
+    height: 2.4rem;
     transition-property: background-color, border;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
@@ -507,9 +508,30 @@ body {
     padding-left: 6%;
 }
 
-#add-property {
+.profile-buttons {
     width: 15rem;
     height: 2.8rem;
+}
+
+#billing-details-div {
+    margin-top: 4%;
+}
+
+#billing-details-link {
+    text-decoration: none;
+    color: rgb(2, 191, 191);
+}
+
+#billing-details-button {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
+    display: block;
+    border: 1px solid rgb(2, 191, 191);
+}
+
+#billing-details-button:hover {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
 }
 
 .order-history-table {
@@ -578,8 +600,7 @@ th, td {
 #address-data-order {
     height: 2.2rem;
     display: inherit;
-    width: 20rem;
-    
+    width: 20rem;  
 }
 
 .data-no-of-bedrooms {
@@ -605,8 +626,8 @@ th, td {
 .head-info {
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgba(0, 0, 0, .2);
-    color: rgb(33,0,112);
+    background-color: rgba(33,0,112, .9);
+    color: #ffffff;
 }
 
 .table-data {
@@ -614,29 +635,57 @@ th, td {
     padding-bottom: 2%;
 }
 
-.grand-total-col {
-    width: 95%;
+.grand-total-row {
+   margin-top: 2%;
 }
 
-.grand-total {
+#cart-buttons {
     float: right;
-    width: 16.05rem;
-    border: 1px solid rgb(0, 0, 0);
-    border-top: none;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, .2);
+    width: 30rem;
+    margin-right: 4%;
+}
+
+.continue-shopping-button,
+.secure-checkout-button {
+    width: 13rem;
+    height: 3.48rem;
+    font-size: 90%;
+    border: none;
+}
+
+.continue-shopping-button {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+    margin-right: 5%;
+}
+
+.secure-checkout-button {
+    background-color: rgba(0, 0, 0, .9);
+    color: #ffffff;
+}
+
+#grand-total-div {
     color: rgb(33,0,112);
-    font-size: 150%;
-    font-weight: 700;
-    letter-spacing: .5px;
+    width: 60rem;
+    height: 3.48rem;
+    margin-right: 4.5%;
+    float: right;
+}
+
+#inlcluding-vat-span {
+    opacity: .8;
+    font-size: 60%;
+    margin-right: 12%;
+}
+
+#total-amount-span {
+    float: right;
+    width: 13.5rem;
 }
 
 #grand-total-span {
-    margin-left: 0
-}
-
-.currency-margin {
-    margin-left: 1%;
+    font-size: 140%;
+    font-weight: 700;
 }
 
 .remove-service {
@@ -755,8 +804,8 @@ th, td {
 }
 
 .checkout-head-info {
-    background-color: rgba(0, 0, 0, .2);
-    color: rgb(33,0,112);
+    background-color: rgb(33,0,112);
+    color: #ffffff;
 }
 
 #total-cost-per-property-th {
@@ -792,10 +841,10 @@ th, td {
 }
 
 #grand-total-checkout {
-    background-color: rgba(0, 0, 0, .2);
-    color: rgb(0, 0, 0);
+    background-color: rgb(33,0,112);
+    color: #ffffff;
     margin-right: 5.3%;
-    width: 16.15rem;
+    width: 16.41rem;
     border: 1px solid rgba(0, 0, 0, .2);
     border-top: none;
 }

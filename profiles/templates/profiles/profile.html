@@ -56,7 +56,7 @@
             {% else %}
             <h2>No properties registered.</h2>
             {% endif %}
-            <a href="{% url 'add_property' %}"><button id="add-property" class="add-service-button buttons text-uppercase">{% if properties %} add another property {% else %} add your property {% endif %}</button></a>
+            <a href="{% url 'add_property' %}"><button class="add-service-button buttons text-uppercase profile-buttons">{% if properties %} add another property {% else %} add your property {% endif %}</button></a>
         </div>
         <div class="col-12 col-md-6">
             <p class="head-p">Order History</p>
@@ -80,6 +80,9 @@
                 </tbody>
             </table>
             {% endif %}
+            <div id="billing-details-div">
+                <a id="billing-details-link" href="{% url 'billing_details' %}" class="text-capitalize">billing details</a>
+            </div>
         </div>
     </div>
 </div>
