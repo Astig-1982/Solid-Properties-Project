@@ -24,7 +24,7 @@
     <div class="row">
         {% for category in categories %}
             <div class="col-12 col-md-4 category-column">
-                <a href="{% url 'services' %}?category={{ category.name }}"><img class="category-image shadow mb-5 bg-white" src="{{ category.image.url }}" alt="{{ category.name }}"></a>
+                <a href="{% url 'services' %}?category={{ category.name }}"><img class="category-image shadow mb-5 bg-white" src="" alt="{{ category.name }}"></a>
             </div>
         {% endfor %}
     </div>
