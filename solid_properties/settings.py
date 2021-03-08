@@ -132,9 +132,10 @@ else:
         }
     }
 
-#DATABASES = {
-    #'default': dj_database_url.parse('postgres://lmvrfncxwxmpas:5709f7b28179a5e41b9c17cbf3304a7b5c58b2a202d43dca0c9b2f64a3410fb2@ec2-34-246-141-162.eu-west-1.compute.amazonaws.com:5432/dc29nv1670v84m')
-#}
+
+# DATABASES = {
+    # 'default': dj_database_url.parse('postgres://lmvrfncxwxmpas:5709f7b28179a5e41b9c17cbf3304a7b5c58b2a202d43dca0c9b2f64a3410fb2@ec2-34-246-141-162.eu-west-1.compute.amazonaws.com:5432/dc29nv1670v84m')
+# }
 
 
 # Password validation
