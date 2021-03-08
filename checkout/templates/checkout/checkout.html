@@ -50,7 +50,7 @@
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
                     <p class="m-0 mb-2" id="charging-details">Your card will be charged <strong class="m-1">£<span id="charging-details-total">{{ grand_total }}</span></strong></p>
-                    <button type="submit" value="complete order" class="buttons register-property-button text-uppercase">complete order <i id="complete-order-i" class="fas fa-arrow-right m-2"></i></button>
+                    <button id="place-order-button" type="submit" value="complete order" class="buttons register-property-button text-uppercase">place order <i id="complete-order-i" class="fas fa-arrow-right m-2"></i></button>
                 </form>
         </div>
         {% if cart_items %}
@@ -114,8 +114,20 @@
                     </tr>
                     {% endfor %}
             </table>
-            <div class="grand-total-col mx-0 px-0 text-uppercase text-center">
-                <div id="grand-total-checkout" class="grand-total">total: <span class="currency-margin">£<span id="grand-total-span">{{ grand_total }}</span></span></div>
+            <div class="row grand-total-row">
+                <div class="col-12">
+                    <div id="checkput-grand-total-div" class="grand-total-div">
+                        <span id="total-amount-span" class="text-capitalize">total amount <span id="inlcluding-vat-span">(Including VAT)</span><span id="grand-total-span">£{{ grand_total }}</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 grand-total-col mx-0 px-0 text-uppercase text-center">
+                    <div id="checkout-buttons" class="table-buttons">
+                        <a id="continue-shopping-a" href="{% url 'services' %}"><button id="checkout-continue-shopping-button" class="buttons text-uppercase continue-shopping-button main-action-buttons">continue shopping</button></a>
+                        <a id="secure-checkout-a" href="{% url 'cart' %}"><button id="adjust-cart-button" class="buttons text-uppercase continue-shopping-button main-action-buttons">adjust cart</button></a>
+                    </div> 
+                </div>
             </div>
         </div>
     </div>

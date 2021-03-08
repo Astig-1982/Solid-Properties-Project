@@ -33,7 +33,7 @@
                         <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
                             <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove-service remove-form">
                                 {% csrf_token %}
-                                <input type="submit" value="Remove" id="remove-service-buttons" class="buttons">
+                                <button id="remove-buttons-holder"><input type="submit" value="" id="remove-service-buttons" class="buttons"><i class="fas fa-trash-alt remove-icons"></i></button>
                             </form>
                         </td>
                         <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
@@ -45,7 +45,7 @@
                                     <form id="remove-property" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
                                     {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
-                                        <input type="submit" value="Remove" class="buttons remove-buttons">
+                                        <button id="remove-property-buttons-holder"><input type="submit" value="" id="remove-property-buttons" class="buttons"><i class="fas fa-trash-alt remove-icons"></i></button>
                                     </form> 
                                     {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
@@ -88,16 +88,16 @@
         </div>
         <div class="row grand-total-row">
             <div class="col-12">
-                <div id="grand-total-div">
-                    <span id="total-amount-span" class="text-capitalize">total <span id="inlcluding-vat-span">(Including VAT)</span><span id="grand-total-span">£{{ grand_total }}</span></span>
+                <div class="grand-total-div">
+                    <span id="total-amount-span" class="text-capitalize">total amount <span id="inlcluding-vat-span">(Including VAT)</span><span id="grand-total-span">£{{ grand_total }}</span></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 grand-total-col mx-0 px-0 text-uppercase text-center">
-                <div id="cart-buttons">
-                    <a id="continue-shopping-a" href="{% url 'services' %}"><button class="buttons text-uppercase continue-shopping-button">continue shopping</button></a>
-                    <a id="secure-checkout-a" href="{% url 'checkout' %}"><button class="buttons text-uppercase secure-checkout-button">secure checkout</button></a>
+                <div class="table-buttons">
+                    <a href="{% url 'services' %}"><button class="buttons text-uppercase continue-shopping-button main-action-buttons">continue shopping</button></a>
+                    <a href="{% url 'checkout' %}"><button class="buttons text-uppercase secure-checkout-button">secure checkout <i id="complete-order-i" class="fas fa-arrow-right m-2"></i></button></a>
                 </div> 
             </div>
         </div>

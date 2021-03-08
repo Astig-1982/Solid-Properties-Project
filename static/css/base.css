@@ -70,6 +70,12 @@ body {
     transition-timing-function: ease-in-out;
 }
 
+.main-action-buttons:hover {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
+    border: 1px solid rgb(2, 191, 191);
+}
+
 /* --------------------------------------------------- footer section starts here -------------------------------------------------- */
 
 .footer-container {
@@ -598,7 +604,7 @@ th, td {
 }
 
 #address-data-order {
-    height: 2.2rem;
+    height: 3rem;
     display: inherit;
     width: 20rem;  
 }
@@ -639,7 +645,7 @@ th, td {
    margin-top: 2%;
 }
 
-#cart-buttons {
+.table-buttons {
     float: right;
     width: 30rem;
     margin-right: 4%;
@@ -649,7 +655,7 @@ th, td {
 .secure-checkout-button {
     width: 13rem;
     height: 3.48rem;
-    font-size: 90%;
+    font-size: 95%;
     border: none;
 }
 
@@ -664,7 +670,7 @@ th, td {
     color: #ffffff;
 }
 
-#grand-total-div {
+.grand-total-div {
     color: rgb(33,0,112);
     width: 60rem;
     height: 3.48rem;
@@ -675,12 +681,12 @@ th, td {
 #inlcluding-vat-span {
     opacity: .8;
     font-size: 60%;
-    margin-right: 12%;
+    margin-right: 9%;
 }
 
 #total-amount-span {
     float: right;
-    width: 13.5rem;
+    width: 19.4rem;
 }
 
 #grand-total-span {
@@ -694,6 +700,10 @@ th, td {
 
 #remove-service-buttons {
     float: right;
+    width: 2.5rem;
+    font-size: 50%;
+    height: 1.5rem;
+    padding-right: 2%;
 }
 
 #remove-property {
@@ -705,30 +715,33 @@ th, td {
     width: 20rem;
 }
 
-.address-data, .remove_address {
+.address-data, 
+.remove_address {
     display: inherit;
 }
 
-.remove-buttons {
+#remove-buttons-holder {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
     float: right;
-    height: 1.5rem;
-    font-size: 50%;
-    margin-top: 25%;
-    margin-right: 0;
 }
 
-.remove-buttons, #remove-service-buttons {
-    border: 1px solid rgb(212, 0, 0);
-    color: rgb(212, 0, 0);
-    background-color: #ffffff;
-    transition-property: background-color, color;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
+#remove-property-buttons-holder {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.remove-buttons:hover, 
-#remove-service-buttons:hover,
-/* including .deactivate-button from profile page */
+#remove-property-buttons,
+#remove-service-buttons {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.remove-icons {
+    color: rgba(212, 0, 0, .6);
+}
+
 .deactivate-button:hover {
     background-color: rgb(212, 0, 0);
     color: #ffffff;
@@ -777,6 +790,19 @@ th, td {
     text-decoration: underline;
 }
 
+#place-order-button {
+    background-color: rgba(0, 0, 0, .9);
+    color: #ffffff;
+    border: none;
+}
+
+#place-order-button:hover,
+/* including the secure-checkout-button from checkout page */
+.secure-checkout-button:hover {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, .9);
+    border: 1px solid rgba(0, 0, 0, .9);
+}
 
 #order-summary-p {
     margin-left: 0;
@@ -840,17 +866,27 @@ th, td {
     padding-top: 8.5%;
 }
 
-#grand-total-checkout {
-    background-color: rgb(33,0,112);
-    color: #ffffff;
-    margin-right: 5.3%;
-    width: 16.41rem;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-top: none;
+#checkput-grand-total-div {
+    margin-right: 9%;
+}
+
+#checkout-buttons {
+    margin-right: 3.5%;
+}
+
+#checkout-continue-shopping-button {
+    margin-right: 1.6%;
+}
+
+#checkout-continue-shopping-button,
+#adjust-cart-button {
+    width: 10rem;
+    height: 2rem;
+    font-size: 80%;
 }
 
 #charging-details {
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgb(2, 191, 191);
     color: #ffffff;
     padding: .5px 0 0 12px;
 }
