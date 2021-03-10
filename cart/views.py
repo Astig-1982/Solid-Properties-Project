@@ -32,20 +32,25 @@ def add_to_cart(request, service_id):
             print(request.session['cart'])
         except Exception:
             messages.warning(request, 'Please select first \
-             the property for which you wish the service to be purchased.')
+                the property for which you wish the service to be purchased.')
             return redirect(redirect_url)
     else:
-        if service.price_variation:
-            no_of_bedrooms = int(request.POST.get('no_of_bedrooms'))
-        else:
-            no_of_bedrooms = 1
-        cart = request.session.get('cart', {})
-        cart.setdefault(service_id, [])
-        cart[service_id].append(no_of_bedrooms)
-        request.session['cart'] = cart
-        messages.success(request, f"You have added \
-            {service.name} to your shopping cart.")
-        print(request.session['cart'])
+        try:
+            if service.price_variation:
+                no_of_bedrooms = int(request.POST.get('no_of_bedrooms'))
+            else:
+                no_of_bedrooms = 1
+            cart = request.session.get('cart', {})
+            cart.setdefault(service_id, [])
+            cart[service_id].append(no_of_bedrooms)
+            request.session['cart'] = cart
+            messages.success(request, f"You have added \
+                {service.name} to your shopping cart.")
+            print(request.session['cart'])
+        except Exception:
+            messages.warning(request, 'Please select first \
+                the number of bedrooms for which you \
+                wish the service to be purchased.')
 
     return redirect(redirect_url)
 
@@ -60,7 +65,7 @@ def remove_from_cart(request, service_id):
         property_id = request.POST['property_id']
     elif 'no_of_bedrooms' in request.POST:  # if the user is not logged in
         no_of_bedrooms = request.POST['no_of_bedrooms']
- 
+
     if property_id:
         this_property = get_object_or_404(Properties, pk=property_id)
         for the_property in cart[service_id]:
