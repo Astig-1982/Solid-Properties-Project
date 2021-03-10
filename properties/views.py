@@ -19,7 +19,7 @@ def add_property(request):
         properties = Properties.objects.all()
         the_property = properties.filter(street_address__exact=street_address)
 
-        if the_property: 
+        if the_property:
             messages.warning(request, f"{street_address} is already in \
                                     registered on the website and \
                                     cannot be registered twice.")
