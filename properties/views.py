@@ -91,4 +91,5 @@ def activate_deactivate(request, property_id):
         Properties.objects.filter(pk=property_id).update(activate=True)
 
     return redirect(reverse('profile'))
+    
 
