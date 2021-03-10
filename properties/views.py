@@ -9,7 +9,9 @@ from properties.models import Properties
 
 
 def add_property(request):
-
+    """
+    This view adds a property to the user's list
+    """
     landlord = get_object_or_404(LandlordProfile, user=request.user)
 
     if request.method == 'POST':
@@ -17,7 +19,7 @@ def add_property(request):
         properties = Properties.objects.all()
         the_property = properties.filter(street_address__exact=street_address)
 
-        if the_property:
+        if the_property: 
             messages.warning(request, f"{street_address} is already in \
                                     registered on the website and \
                                     cannot be registered twice.")
@@ -37,7 +39,8 @@ def add_property(request):
             if property_form.is_valid():
                 property_form.save()
                 property_form = PropertyForm()
-                messages.success(request, f"{street_address} has been succesfuly registered and added to your list of properties.")
+                messages.success(request, f"{street_address} has been \
+                succesfuly registered and added to your list of properties.")
 
     else:
         property_form = PropertyForm()
@@ -52,7 +55,7 @@ def add_property(request):
 
 def remove_property(request, property_id):
     """
-    A function that removes the property from the list and
+    This view removes the property from the list. It also removes it
     from the shopping cart if a service has been purchased
     for it.
     """
@@ -70,7 +73,10 @@ def remove_property(request, property_id):
 
 
 def activate_deactivate(request, property_id):
-
+    """
+    This view activates and deactivates user's properties
+    on the webiste.
+    """
     this_property = get_object_or_404(Properties, pk=property_id)
 
     if this_property.activate:
