@@ -104,3 +104,4 @@ def remove_from_cart(request, service_id):
     return redirect(reverse('cart'))
 
 
+
