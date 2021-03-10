@@ -93,3 +93,4 @@ def activate_deactivate(request, property_id):
 
     return redirect(reverse('profile'))
 
+
