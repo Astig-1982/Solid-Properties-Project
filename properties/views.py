@@ -56,8 +56,7 @@ def add_property(request):
 def remove_property(request, property_id):
     """
     This view removes the property from the list. It also removes it
-    from the shopping cart if a service has been purchased
-    for it.
+    from the shopping cart if a service for it has been added.
     """
     cart = request.session.get('cart', {})
     this_property = get_object_or_404(Properties, pk=property_id)
@@ -75,11 +74,13 @@ def remove_property(request, property_id):
 def activate_deactivate(request, property_id):
     """
     This view activates and deactivates user's properties
-    on the webiste.
+    on the webiste. Upon deactivation, it also removes the property from the
+    shopping cart if a service for it has been added.
     """
     this_property = get_object_or_404(Properties, pk=property_id)
 
     if this_property.activate:
+        # remove property from the shopping cart
         cart = request.session.get('cart', {})
         for properties in cart.values():
             for the_property in properties:

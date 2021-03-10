@@ -8,7 +8,7 @@ from properties.models import Properties
 
 def view_cart(request):
     """
-    This view displays the shopping cart
+    This view displays the shopping cart.
     """
     context = {}
 
@@ -17,7 +17,7 @@ def view_cart(request):
 
 def add_to_cart(request, service_id):
     """
-    This view adds to shopping cart
+    This view adds to shopping cart.
     """
     service = get_object_or_404(Services, pk=service_id)
     street_address = request.POST.get("street_address")
@@ -72,7 +72,8 @@ def remove_from_cart(request, service_id):
     elif 'no_of_bedrooms' in request.POST:  # if the user is not logged in
         no_of_bedrooms = request.POST['no_of_bedrooms']
 
-    if property_id:  # remove properties one by one
+    if property_id:
+        # remove properties one by one  
         this_property = get_object_or_404(Properties, pk=property_id)
         for the_property in cart[service_id]:
             if the_property == this_property.id:
@@ -84,7 +85,8 @@ def remove_from_cart(request, service_id):
             cart.pop(service_id)
             messages.success(request, f"{service.name} has been \
                 removed from your shopping cart.")
-    elif no_of_bedrooms:  # remove the no of bedrooms one by one
+    elif no_of_bedrooms:
+        # remove the no of bedrooms one by one  
         for bedrooms in cart[service_id]:
             if int(bedrooms) == int(no_of_bedrooms):
                 cart[service_id].remove(bedrooms)
@@ -95,7 +97,8 @@ def remove_from_cart(request, service_id):
             messages.success(request, f"{service.name} has been \
                 removed from your shopping cart.")
     else:
-        cart.pop(service_id)  # remove the service
+        # remove the service
+        cart.pop(service_id)  
         messages.success(request, f"{service.name} has been removed \
             from your shopping cart.")
 
