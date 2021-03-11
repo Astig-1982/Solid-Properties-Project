@@ -1044,6 +1044,46 @@ th, td {
     margin-top: 2.1%;
 }
 
+/* --------------------------------------------------- login page starts here -------------------------------------------------- */
 
+/*
+#login-p-1,
+#login-p-2 {
+    color: rgba(0, 0, 0, .5);
+    font-size: 92%;
+}
+
+
+
+#login-p-2 {
+    padding-right: 8.8rem;
+}
+
+*/
+
+.login-paragraph {
+    width: 28%;
+    padding-left: .4%;
+    color: rgba(0, 0, 0, .5);
+    font-size: 92%;
+}
+
+#login-row {
+    margin-top: 2%;
+}
+
+#login-form {
+    width: 28%;
+}
+
+.login-a {
+    text-decoration: none;
+    color: rgb(2, 191, 191);
+}
+
+.login-a:hover {
+    text-decoration: underline;
+    color: rgb(2, 191, 191);
+}
 
 

@@ -1,4 +1,3 @@
-<div class="container account-container">
 {% extends "account/base.html" %}
 {% load static %}
 
@@ -9,43 +8,68 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row checkout-title">
+        <div class="col-12">
+            <h1 class="text-uppercase">{% trans "sign in" %}</h1>
+            <hr>
+        </div>
+    </div>
 
-<h1>{% trans "Sign In" %}</h1>
+    <div id="login-row" class="row login-paragraph-row">
+        <div class="col-12">
+            <div class="login-paragraph mx-auto">
+            {% get_providers as socialaccount_providers %}
 
-{% get_providers as socialaccount_providers %}
+            {% if socialaccount_providers %}
+            <p>{% blocktrans with site.name as site_name %}Please sign in with one
+            of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+            for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+            <div class="socialaccount_ballot">
 
-<div class="socialaccount_ballot">
+            <ul class="socialaccount_providers">
+                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+            </ul>
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+            <div class="login-or">{% trans 'or' %}</div>
 
-  <div class="login-or">{% trans 'or' %}</div>
+            </div>
 
+            {% include "socialaccount/snippets/login_extra.html" %}
+
+            {% else %}
+                <p id="login-p-2">{% blocktrans %}Please sign in to access your properties and for a personalized shopping experience. If you don't have an account yet, then please
+                <a href="{{ signup_url }}" class="login-a">sign up</a> first.{% endblocktrans %}</p>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div id="login-form" class="col-12 mx-auto">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <a class="button secondaryAction login-a" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+            <button class="primaryAction buttons register-property-button text-uppercase mt-2" type="submit">{% trans "Sign In" %}</button>
+            </form>
+        </div>
+    </div>
 </div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
 
 {% endblock %}
-</div>
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.navbar').css('background-color', 'rgb(33,0,112)');
+    });
+</script>
+
+{% endblock %}
 
