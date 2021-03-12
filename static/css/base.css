@@ -782,11 +782,11 @@ th, td {
 }
 
 #save-details a {
-    color: rgb(2, 191, 191);
-    text-decoration: none;
+    color: rgb(2, 191, 191) !important;
 }
 
 #save-details a:hover {
+    color: rgb(2, 191, 191) !important;
     text-decoration: underline;
 }
 
@@ -1044,46 +1044,56 @@ th, td {
     margin-top: 2.1%;
 }
 
-/* --------------------------------------------------- login page starts here -------------------------------------------------- */
+/* --------------------------------------------------- logout pages start here -------------------------------------------------- */
 
-/*
-#login-p-1,
-#login-p-2 {
-    color: rgba(0, 0, 0, .5);
-    font-size: 92%;
-}
+/* ------------------ login page ------------------ */
 
-
-
-#login-p-2 {
-    padding-right: 8.8rem;
-}
-
-*/
-
-.login-paragraph {
+#login-paragraph,
+#sign-up-paragraph {
     width: 28%;
-    padding-left: .4%;
     color: rgba(0, 0, 0, .5);
     font-size: 92%;
+}
+
+#login-paragraph {
+    padding-left: .4%;
 }
 
 #login-row {
     margin-top: 2%;
 }
 
-#login-form {
+.login-form {
     width: 28%;
 }
 
 .login-a {
-    text-decoration: none;
     color: rgb(2, 191, 191);
 }
 
 .login-a:hover {
-    text-decoration: underline;
     color: rgb(2, 191, 191);
 }
+
+/* ------------------ logout page ------------------ */
+
+#logout-form {
+    width: 17%;
+}
+
+#logout-p {
+    margin-top: 6%;
+}
+
+/* ------------------ sign up page ------------------ */
+
+#signup_form {
+    margin-top: 1%;
+}
+
+#sign-up-paragraph {
+    padding-left: .8%;
+}
+
 
 

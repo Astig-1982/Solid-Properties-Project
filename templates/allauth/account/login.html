@@ -18,7 +18,7 @@
 
     <div id="login-row" class="row login-paragraph-row">
         <div class="col-12">
-            <div class="login-paragraph mx-auto">
+            <div id="login-paragraph" class="mx-auto">
             {% get_providers as socialaccount_providers %}
 
             {% if socialaccount_providers %}
@@ -47,7 +47,7 @@
     </div>
     
     <div class="row">
-        <div id="login-form" class="col-12 mx-auto">
+        <div class="col-12 login-form mx-auto">
             <form class="login" method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form|crispy }}
