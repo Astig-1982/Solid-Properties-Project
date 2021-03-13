@@ -65,15 +65,9 @@ body {
 }
 
 .buttons {
-    transition-property: background-color, color;
-    transition-duration: .5s;
-    transition-timing-function: ease-in-out;
-}
-
-.main-action-buttons:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-    border: 1px solid rgb(2, 191, 191);
+    transition-property: background-color, color, border;
+    transition-duration: .4s;
+    transition-timing-function: ease;
 }
 
 /* --------------------------------------------------- footer section starts here -------------------------------------------------- */
@@ -225,11 +219,6 @@ body {
     color: #ffffff;
 }
 
-.main-action-buttons:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-}
-
 .categories-title {
     margin-top: 3.5%;
 }
@@ -341,11 +330,6 @@ body {
     border-radius: 0;
 }
 
-.filtering-buttons:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-}
-
 /* --------------------------------------------------- detailed service page starts here -------------------------------------------------- */
 
 .horizontal-separator {
@@ -386,8 +370,17 @@ body {
     width: 9rem;
     height: 2.4rem;
     margin-top: 0;
-    font-size: 81%;
+    font-size: 76%;
     border: 1px solid rgb(2, 191, 191);
+}
+
+.main-action-buttons:hover,
+.filtering-buttons:hover,
+#adjust-cart-button:hover,
+#continue-shopping-cart:hover,
+.add-service-button:hover {
+    background-color: rgb(2, 209, 209);
+    color: #ffffff;
 }
 
 #continue-shopping-service,
@@ -398,12 +391,6 @@ body {
     font-weight: 700;
 }
 
-.continue-shopping-button:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-    border: 1px solid rgb(2, 191, 191);
-}
-
 #continue-shopping-service {
     font-size: 74%;
     margin-left: 1.6%;
@@ -411,21 +398,10 @@ body {
     text-decoration: none;
 }
 
-.continue-shopping-button,
-#continue-shopping-service {
-    transition-property: opacity;
-    transition-duration: .3s;
-    transition-timing-function: ease;
-}
-
 .continue-shopping-button:hover,
 #continue-shopping-service:hover {
-    opacity: .8;
-}
-
-.add-service-button:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
+    color: rgb(2, 204, 204);
+    border: 1.5px solid rgb(2, 209, 209)
 }
 
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
@@ -697,12 +673,7 @@ th, td {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
     margin-right: 5%;
-}
-
-#continue-shopping-cart:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-    border: 1px solid rgb(2, 191, 191);
+    font-size: 600;
 }
 
 .secure-checkout-button {
@@ -839,9 +810,7 @@ th, td {
 #place-order-button:hover,
 /* including the secure-checkout-button from checkout page */
 .secure-checkout-button:hover {
-    background-color: #ffffff;
-    color: rgba(0, 0, 0, .9);
-    border: 1px solid rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, .8);
 }
 
 #order-summary-p {
@@ -930,12 +899,6 @@ th, td {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
     font-weight: 400;
-}
-
-#adjust-cart-button:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
-    border: 1px solid rgb(2, 191, 191);
 }
 
 #charging-details {
