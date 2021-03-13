@@ -398,6 +398,7 @@ body {
     text-decoration: none;
 }
 
+#checkout-continue-shopping-button:hover,
 .continue-shopping-button:hover,
 #continue-shopping-service:hover {
     color: rgb(2, 204, 204);
@@ -679,6 +680,7 @@ th, td {
 .secure-checkout-button {
     background-color: rgba(0, 0, 0, .9);
     color: #ffffff;
+    border: none;
 }
 
 .grand-total-div {
@@ -880,7 +882,7 @@ th, td {
 }
 
 #checkout-buttons {
-    margin-right: 3.5%;
+    margin-right: 5%;
 }
 
 #checkout-continue-shopping-button {
