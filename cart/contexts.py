@@ -17,7 +17,8 @@ def cart_contents(request):
         service = get_object_or_404(Services, pk=service)
         for property_or_bedrooms in properties_or_bedrooms:
             if request.user.is_authenticated:
-                the_property = get_object_or_404(Properties, pk=property_or_bedrooms)
+                the_property = get_object_or_404(Properties,
+                                                 pk=property_or_bedrooms)
                 if service.price_variation:
                     total_cost = the_property.no_of_bedrooms * service.price
                 else:
