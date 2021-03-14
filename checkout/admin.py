@@ -19,12 +19,12 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline, OrderLineItemAdminInlineAnonym)
 
     readonly_fields = ('order_number', 'date',
-                       'grand_total', 'grand_total_for_anonym')
+                       'grand_total')
 
     fields = ('order_number', 'landlord_profile', 'date', 'full_name',
               'email', 'phone_number', 'country',
               'postcode', 'town_or_city', 'street_address1',
-              'street_address2', 'grand_total', 'grand_total_for_anonym')
+              'street_address2', 'grand_total')
 
     list_display = ('order_number', 'date',
                     'full_name', 'grand_total',)
