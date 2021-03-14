@@ -323,9 +323,18 @@ body {
     transition-timing-function: ease-in-out;
 }
 
+.hvr-rectangle-out:before {
+    background: rgb(2, 191, 191);
+    border-radius: 50%;
+}
+
+/*
+
 .service-circles:hover {
     background-color: rgb(2, 191, 191);
 }
+
+*/
 
 .service-name {
     font-weight: 700;
