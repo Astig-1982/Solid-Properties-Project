@@ -283,6 +283,7 @@ body {
 
 .services-container {
     margin-top: 5%;
+    margin-bottom: 6.9%;
 }
 
 .services-row {
@@ -328,13 +329,18 @@ body {
     border-radius: 50%;
 }
 
-/*
-
-.service-circles:hover {
-    background-color: rgb(2, 191, 191);
+.category-icon-i {
+    color: rgb(2, 191, 191);
+    font-size: 190%;
 }
 
-*/
+.service-circles:hover > .category-icon-i {
+    color: #ffffff;
+}
+
+.white-color {
+    color: #ffffff;
+}
 
 .service-name {
     font-weight: 700;
