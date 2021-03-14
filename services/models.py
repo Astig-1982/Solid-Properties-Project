@@ -40,8 +40,6 @@ class Services(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL, related_name='categories')
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
-    bedrooms_dependent = models.BooleanField(default=False, null=True, blank=True)
-    one_time_fee_display = models.BooleanField(default=False, null=True, blank=True)
     price_variation = models.BooleanField(default=False, null=True, blank=True)
     short_description = models.TextField(blank=True)
     description = models.TextField(blank=True)
