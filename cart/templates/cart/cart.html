@@ -43,7 +43,7 @@
                                     <div id="address-data-order" class="address-data table-data">{{ property.property.street_address }}</div>
                                 
                                     <form id="remove-property" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
-                                    {% csrf_token %}
+                                        {% csrf_token %}
                                         <input type="hidden" name="property_id" value="{{ property.property.id }}">
                                         <button id="remove-property-buttons-holder"><input type="submit" value="" id="remove-property-buttons" class="buttons"><i class="fas fa-trash-alt remove-icons"></i></button>
                                     </form> 
@@ -65,9 +65,9 @@
                                     {% if item.service.price_variation %}
                                         <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div>
                                         <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
-                                    {% csrf_token %}
-                                        <input type="hidden" name="no_of_bedrooms" value="{{ bedroom.no_of_bedrooms }}">
-                                        <input type="submit" value="Remove" class="buttons remove-buttons">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="no_of_bedrooms" value="{{ bedroom.no_of_bedrooms }}">
+                                            <input type="submit" value="Remove" class="buttons remove-buttons">
                                         </form>
                                         {% if not forloop.last %} <hr class="separator"> {% endif %}
                                     {% else %}
