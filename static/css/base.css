@@ -379,6 +379,7 @@ body {
     border: 1px solid rgb(2, 191, 191);
 }
 
+.register-property-button:hover,
 .main-action-buttons:hover,
 .filtering-buttons:hover,
 #adjust-cart-button:hover,
@@ -434,11 +435,6 @@ body {
     height: 4rem;
     font-size: 130%;
     letter-spacing: .5px;
-}
-
-.register-property-button:hover {
-    background-color: #ffffff;
-    color: rgb(2, 191, 191);
 }
 
 .form-control {
