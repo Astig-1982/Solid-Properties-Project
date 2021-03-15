@@ -13,3 +13,12 @@ def index(request):
     }
 
     return render(request, "home/index.html", context)
+
+
+def about(request):
+    """
+    This view displays the about page
+    """
+    context = {}
+
+    return render(request, 'home/about.html', context)

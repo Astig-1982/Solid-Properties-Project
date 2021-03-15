@@ -279,6 +279,36 @@ body {
     margin-bottom: 2%;
 }
 
+/* --------------------------------------------------- about page starts here -------------------------------------------------- */
+
+.about-container {
+    margin-top: 2.9rem;
+}
+
+.about-separators {
+    border: 1px solid rgba(0, 0, 0, .6);
+}
+
+.about-divs {
+    width: 80%;
+    height: 18rem;
+}
+
+.about-h2 {
+    margin-top: 12.9rem;
+}
+
+.about-circle {
+    border: 1px solid rgb(2, 191, 191);
+    width: 15rem;
+    height: 15rem;
+    margin-top: 7rem;
+}
+
+.about-pragraphs {
+    margin-top: 5rem;
+}
+
 /* --------------------------------------------------- service page starts here -------------------------------------------------- */
 
 .services-container {
@@ -566,9 +596,10 @@ body {
     padding-left: 6%;
 }
 
-.profile-buttons {
-    width: 15rem;
-    height: 2.8rem;
+#add-property-button {
+    width: 10rem;
+    height: 2.5rem;
+    margin-right: 1.95%;
 }
 
 #billing-details-div {
@@ -929,7 +960,6 @@ th, td {
 #checkout-continue-shopping-button {
     margin-right: 1.6%;
 }
-
 
 .continue-shopping-button,
 #adjust-cart-button {
