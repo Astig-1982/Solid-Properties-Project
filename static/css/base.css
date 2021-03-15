@@ -307,16 +307,39 @@ body {
     margin-top: 12.9rem;
 }
 
-.about-circle {
-    border: 1px solid rgb(2, 191, 191);
+.about-circles {
+    background: url('/media/shard.jpg') no-repeat center center fixed;
+    background-size: cover;
     width: 15rem;
     height: 15rem;
     margin-top: 7rem;
+    background-attachment: scroll !important;
+}
+
+#how-it-works-circle {
+    background: url('/media/how-it-works.jpeg') no-repeat center center fixed;
+}
+
+#who-are-we-circle {
+    background: url('/media/who-are-we.jpeg') no-repeat center center fixed;
+}
+
+#what-do-we-offer-circle {
+    background: url('/media/what-do-we-offer.jpeg') no-repeat center center fixed;
+    background-size: 500px 300px;
 }
 
 .about-pragraphs {
     margin-top: 5rem;
     letter-spacing: 1px;
+}
+
+#what-do-we-offer-paragraph {
+    margin-top: 3.5rem;
+}
+
+.about-buttons-row {
+    padding-right: 4.6rem;
 }
 
 .about-buttons-divs {
@@ -332,7 +355,8 @@ body {
     text-decoration: none;
     background-color: #ffffff;
     color: rgb(2, 191, 191);
-    font-weight: 800; 
+    font-weight: 800;
+    font-size: 119%;
 }
 
 /* --------------------------------------------------- service page starts here -------------------------------------------------- */
