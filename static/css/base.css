@@ -285,12 +285,21 @@ body {
     margin-top: 2.9rem;
 }
 
+.about-container h2 {
+    letter-spacing: .1rem;
+}
+
 .about-separators {
     border: 1px solid rgba(0, 0, 0, .6);
 }
 
 .about-divs {
     width: 80%;
+    height: 18rem;
+}
+
+.about-divs-p {
+    width: 100%;
     height: 18rem;
 }
 
@@ -307,6 +316,23 @@ body {
 
 .about-pragraphs {
     margin-top: 5rem;
+    letter-spacing: 1px;
+}
+
+.about-buttons-divs {
+    height: 18rem;
+}
+
+.about-buttons {
+    width: 6.8rem;
+    height: 6.8rem;
+    border: 2px solid rgb(2, 191, 191);
+    margin-top: 5rem;
+    padding-top: 2.4rem !important;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
+    font-weight: 800; 
 }
 
 /* --------------------------------------------------- service page starts here -------------------------------------------------- */
