@@ -37,10 +37,12 @@ def all_services(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "No entry has been dedected")
+                messages.warning(request, "No entry has been dedected")
                 return redirect(reverse('services'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(short_description__icontains=query)
+            queries = Q(name__icontains=query) | \
+                Q(description__icontains=query) | \
+                Q(short_description__icontains=query)
             services = services.filter(queries)
 
     context = {
