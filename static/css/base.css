@@ -457,6 +457,11 @@ body {
 
 /* --------------------------------------------------- detailed service page starts here -------------------------------------------------- */
 
+#detailed-service-container {
+    margin-top: 9.8rem;
+    margin-bottom: 5rem;
+}
+
 .horizontal-separator {
     margin-bottom: 5%;
 }
