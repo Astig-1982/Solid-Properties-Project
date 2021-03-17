@@ -23,7 +23,7 @@
             </div>
         </div>
         <div id="signup_form" class="col-12 login-form mx-auto">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+            <form class="login" method="POST" action="{% url 'account_signup' %}">
             {% csrf_token %}
             {{ form|crispy }}
             {% if redirect_field_value %}
