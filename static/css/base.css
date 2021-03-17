@@ -266,17 +266,35 @@ body {
     margin-bottom: 4.5%;
 }
 
+.category-column {
+    margin-bottom: 3rem;
+    width: 21rem;
+    transition-property: box-shadow;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+}
+
+.category-column:hover {
+    box-shadow: 8px 8px 5px grey;
+}
+
 .category-image {
     width: 21rem;
     height: 18rem;
 }
 
-.category-image:hover {
-    box-shadow: none;
-}
-
-.category-column {
-    margin-bottom: 2%;
+#category-name {
+    height: 3rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-top: none;
+    margin-top: 0;
+    padding-top: .8rem;
+    width: 21rem;
+    text-align: center;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .6);
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* --------------------------------------------------- about page starts here -------------------------------------------------- */
