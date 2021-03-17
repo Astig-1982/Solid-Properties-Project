@@ -19,7 +19,10 @@
                 <form action="{% url 'billing_details' %}" method="POST">
                     {% csrf_token %}
                     {{ billing_form|crispy }}
-                    <input type="submit" value="UPDATE DETAILS" class="buttons register-property-button">
+                    <div>
+                        <input type="submit" value="UPDATE DETAILS" class="buttons register-property-button">
+                        <a class="buttons back-to-profile-a" href="{% url 'profile' %}">BACK TO PROFILE</a>
+                    </div>
                 </form>
         </div>
     </div>

@@ -30,7 +30,7 @@
                             <option selected value="1">Please select a property</option>
                             {% for property in properties %}
                                 {% if property.activate %}
-                                    <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
+                                    <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span> {{ property.no_of_bedrooms }} Bed</option>
                                 {% else %}
                                     <option value="{{ property.no_of_bedrooms }}" disabled><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
                                 {% endif %}

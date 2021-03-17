@@ -295,7 +295,7 @@ body {
 
 .about-divs {
     width: 80%;
-    height: 18rem;
+    height: 20.9rem;
 }
 
 .about-divs-p {
@@ -332,6 +332,14 @@ body {
 .about-pragraphs {
     margin-top: 5rem;
     letter-spacing: 1px;
+}
+
+#we-are-we-paragraph {
+    margin-top: 3.2rem;
+}
+
+.about-pragraphs h5 {
+    font-weight: 500;
 }
 
 #what-do-we-offer-paragraph {
@@ -483,6 +491,10 @@ body {
     margin-left: .2rem;
 }
 
+#option-no-of-bedrooms {
+    margin-left: 5% !important;
+}
+
 .property-container {
     margin-top: 4%;
 }
@@ -504,6 +516,7 @@ body {
     border: 1px solid rgb(2, 191, 191);
 }
 
+.back-to-profile-a:hover,
 .register-property-button:hover,
 .main-action-buttons:hover,
 .filtering-buttons:hover,
@@ -556,10 +569,19 @@ body {
     color: #ffffff;
     border: 1px solid rgb(2, 191, 191);
     border-radius: 0;
-    width: 100%;
+    width: 15rem;
     height: 4rem;
     font-size: 130%;
     letter-spacing: .5px;
+}
+
+.back-to-profile-a {
+    text-decoration: none;
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+    padding: 1.25rem 1.8rem 1.29rem 1.8rem;
+    margin-left: 1rem;
+    font-size: 130%;
 }
 
 .form-control {
