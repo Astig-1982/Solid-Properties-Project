@@ -29,11 +29,18 @@ def add_to_cart(request, service_id):
                                              street_address=street_address)
             cart = request.session.get('cart', {})
             cart.setdefault(service_id, [])
-            cart[service_id].append(the_property.id)
-            request.session['cart'] = cart
-            messages.success(request, f"You have added {service.name} \
-                for {the_property.street_address} to your shopping cart.")
-            print(request.session['cart'])
+            # check if this property has already been selected for this service
+            if the_property.id in cart[service_id]:
+                messages.warning(request, 'This service has already been selected for this \
+                    property and cannot be selected twice for \
+                    the same property.')
+                return redirect(redirect_url)
+            else:
+                cart[service_id].append(the_property.id)
+                request.session['cart'] = cart
+                messages.success(request, f"You have added {service.name} \
+                    for {the_property.street_address} to your shopping cart.")
+                print(request.session['cart'])
         except Exception:
             messages.warning(request, 'Please select first \
                 the property for which you wish the service to be purchased.')
