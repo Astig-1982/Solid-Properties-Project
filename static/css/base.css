@@ -39,8 +39,8 @@ body {
 }
 
 .navbar-nav {
-    margin-left: 22.9%;
-    margin-right: 2% !important;
+    margin-left: 20.6%;
+    margin-right: .9rem !important;
 }
 
 .navbar a {
@@ -52,12 +52,12 @@ body {
 
 #shopping-cart-i {
     font-size: 170%;
-    margin-top: .39rem;
+    margin-top: 0;
 }
 
 #shopping-cart-a {
     text-decoration: none;
-    margin-right: 1rem;
+    margin-left: .9rem;
     position: relative;
 }
 
@@ -1213,7 +1213,7 @@ th, td {
     margin-left: 10%;
 }
 
-/* --------------------------------------------------- billing details starts here -------------------------------------------------- */
+/* --------------------------------------------------- billing details page starts here -------------------------------------------------- */
 
 #billing-container {
     margin-top: 2%;
@@ -1277,6 +1277,14 @@ th, td {
 
 #sign-up-paragraph {
     padding-left: .8%;
+}
+
+/* --------------------------------------------------- media queries start here -------------------------------------------------- */
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    .main-title {
+        font-size: 3rem;
+    }
 }
 
 

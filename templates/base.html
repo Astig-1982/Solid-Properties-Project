@@ -59,10 +59,6 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         
                         <li class="nav-item">
-                            <a id="shopping-cart-a" href="{% url 'cart' %}"><i id="shopping-cart-i" class="fas fa-shopping-cart buttons"></i><span id="count-cart-span" class="rounded-circle">{{ count_cart }}</span></a>
-                        </li>
-                        
-                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'services' %}">services</a>
                         </li>
                         <li class="nav-item">
@@ -91,6 +87,9 @@
                         <input class="form-control me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="q">
                         <button class="btn btn-outline-success rounded-0" type="submit">Search</button>
                     </form>
+                    <span class="nav-item">
+                        <a id="shopping-cart-a" href="{% url 'cart' %}"><i id="shopping-cart-i" class="fas fa-shopping-cart buttons"></i><span id="count-cart-span" class="rounded-circle">{{ count_cart }}</span></a>
+                    </span>
                 </div>
             </div>
         </nav>
