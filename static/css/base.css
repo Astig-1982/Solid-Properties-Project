@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500,700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Serif:wght@100;300;400;500,700;800;900&display=swap');
 
 body {
     margin: 0;
@@ -236,6 +236,12 @@ body {
     text-transform: uppercase;
     letter-spacing: .1rem;
     font-weight: 900 !important;
+}
+
+#navbar-brand,
+.section-title,
+.main-title {
+    font-family: 'Noto Serif', serif;
 }
 
 .main-action-buttons {
@@ -972,13 +978,13 @@ th, td {
 }
 
 #place-order-button {
+    width: 100%;
     background-color: rgba(0, 0, 0, .9);
     color: #ffffff;
     border: none;
 }
 
 #place-order-button:hover,
-/* including the secure-checkout-button from checkout page */
 .secure-checkout-button:hover {
     background-color: rgba(0, 0, 0, .8);
 }
@@ -1197,7 +1203,7 @@ th, td {
 }
 
 .billing-address-details {
-    padding-left: 15.6%;
+    padding-left: 20.4%;
 }
 
 .billing-addess-not-logged {
@@ -1311,6 +1317,40 @@ th, td {
 
     .footer-categories a {
         margin-left: 3.299rem;
+    }
+
+    .title-container h2 {
+        font-size: 150%;
+    }
+
+    #address-data-order {
+        width: 41.9rem;
+    }
+
+    #remove-property {
+        left: .5rem;
+    }
+
+    #address-data-checkout,
+    .multiple-data {
+        height: 3.5rem;
+    }
+
+    #property-info {
+        width: 80rem;
+    }
+
+    .checkout-row {
+        margin-top: 3rem;
+    }
+
+    #checkout-form {
+        width: 81.9%;
+        margin-right: 1rem;
+    }
+
+    #checkout-data-row {
+        margin-top: 2.6rem;
     }
 }
 
