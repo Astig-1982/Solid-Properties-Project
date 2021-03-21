@@ -1603,12 +1603,16 @@ th, td {
 
 @media (max-width: 576px) {
     .title-container {
-        margin-top: 37%;
+        margin-top: 41.9%;
         width: 100%;
     }
 
     .main-title {
         font-size: 1.89rem;
+    }
+
+    .title-container h2 {
+        font-size: 1.4rem;
     }
 
     .categories-title h2 {
@@ -1671,6 +1675,15 @@ th, td {
 
     .social-row a:first-child {
         margin-left: 0;
+    }
+
+    #navbar-brand {
+        margin-left: .68rem;
+        font-size: 1.1rem;
+    }
+
+    #form-search {
+       width: 50%;
     }
 }
 
