@@ -232,7 +232,7 @@ body {
 }
 
 .main-title {
-    font-size: 5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
     font-weight: 900 !important;
@@ -1393,6 +1393,67 @@ th, td {
     .back-to-profile-a {
         font-size: 100%;
         padding: .94rem .85rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .title-container {
+        margin-top: 39.5%;
+        width: 75%;
+    }
+
+    #category-name,
+    .category-image {
+        width: 19rem;
+    }
+
+    #navbar-brand {
+        margin-left: 2%;
+        width: 25%;
+        font-size: 95%;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+        margin-right: 0 !important;
+    }
+
+    .navbar a {
+        font-size: 80%;
+    }
+
+    .form-control {
+        width: 55%;
+    }
+
+    .nav-item {
+        position: relative;
+        right: 1.05rem;
+    }
+
+    #legal-footer,
+    .footer-container p:first-child {
+        margin-left: 0;
+    }
+
+    .social-row a:first-child {
+        margin-left: 14.1rem;
+    }
+
+    .footer-horizontal {
+        width: 100%;
+    }
+
+    .footer-categories a {
+        margin-left: .8rem;
+    }
+
+    .services-row {
+        margin-top: 28%;
+    }
+
+    .service-image {
+        width: 92%;
     }
 }
 
