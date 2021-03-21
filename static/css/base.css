@@ -1625,9 +1625,18 @@ th, td {
         margin-bottom: 0;
     }
 
+    #category-containers {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .category-image {
         width: 10rem;
         height: 9rem;
+    }
+
+    .category-column {
+        margin: auto;
     }
 
     .category-column,
