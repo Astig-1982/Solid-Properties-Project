@@ -1601,5 +1601,67 @@ th, td {
     }
 }
 
+@media (max-width: 576px) {
+    .title-container {
+        margin-top: 37%;
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 1.89rem;
+    }
+
+    .categories-title h2 {
+        margin-top: 6%;
+        font-size: 2rem;
+    }
+
+    .categories-title h4 {
+        font-size: 1.4rem;
+    }
+
+    .category-container {
+        margin-top: 8.9%;
+        margin-bottom: 0;
+    }
+
+    .category-image {
+        width: 10rem;
+        height: 9rem;
+    }
+
+    .category-column,
+    #category-name {
+        width: 10rem;
+    }
+
+    #category-name {
+        font-size: 78%;
+    }
+
+    .footer-container {
+        height: 9rem;
+    }
+
+    .footer-container p:first-child {
+        margin-left: 0;
+        font-size: 100%;
+    }
+
+    #account-queries,
+    #social-queries {
+        text-align: center;
+    }
+
+    .footer-horizontal {
+        margin-bottom: 6%;
+        width: 80%;
+    }
+
+    .social-row a:first-child {
+        margin-left: 0;
+    }
+}
+
 
 

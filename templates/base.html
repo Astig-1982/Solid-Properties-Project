@@ -101,7 +101,7 @@
     {% block footer %}
     <div class="container-fluid footer-container">
     <div class="row social-row">
-        <div class="col-md-6">
+        <div id="social-queries" class="col-12 col-md-6">
             <p>Follow us on:
                 <span id="all-social">
                     <span id="facebook-span"><i class="fab fa-facebook-square"></i></span>
@@ -111,8 +111,9 @@
                 </span> 
             </p>
         </div>
-        <div class="col-md-6">
-            <div class="pt-md-3">
+        <div class="col-12 d-md-none mx-auto footer-horizontal"></div>
+        <div class="col-12 col-md-6">
+            <div id="account-queries" class="pt-md-3">
                 <a href="#">Home</a>
                 <a href="#">Sign In</a>
                 {% if request.user.is_authenticated %}
@@ -123,9 +124,9 @@
             </div>
         </div>
     </div>
-    <div class="mx-auto footer-horizontal"></div>  
+    <div class="d-none d-md-block col-md-12 mx-auto footer-horizontal"></div>  
     <div class="row footer-categories">
-        <div id="footer-col" class="col-12">
+        <div id="footer-col" class="d-none d-md-block col-md-12">
             <div class="mx-auto">
                 <a id="legal-footer" href="#">Legal Services</a>
                 <a href="{% url 'services' %}?category=repairs_and_refurbishments">Repairs & Refurbishments</a>
