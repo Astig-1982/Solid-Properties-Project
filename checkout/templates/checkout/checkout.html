@@ -11,7 +11,7 @@
     </div>
     
     <div class="row checkout-row">
-        <div id="property-form" class="col-12 col-md-4">
+        <div id="property-form" class="col-12 col-xl-4">
             <p>Please fill out the form below to complete your order</p>
                 <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
                     {% csrf_token %}
@@ -54,7 +54,7 @@
                 </form>
         </div>
         {% if cart_items %}
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-xl-8">
             <p id="order-summary-p">Please see in the table below your order summary</p>
             <table id="checkout-data-row" class="data-row-class text-center">
                 <thead>

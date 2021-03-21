@@ -1172,9 +1172,10 @@ th, td {
 }
 
 .success-tables-padding-not-logged {
-    padding-left: 24.5%;
+    padding-left: 19%;
 }
 
+.order-number-span-not-logged,
 .order-number-span {
     padding-left: 7%;
 }
@@ -1187,10 +1188,12 @@ th, td {
     font-size: 87.4%;
 }
 
+.order-billing-legends-not-logged,
 .order-billing-legends {
     padding-left: 4.8%;
 }
 
+#order-details-legend-not-logged,
 #order-details-legend {
     padding-left: 4.8%;
 }
@@ -1215,7 +1218,7 @@ th, td {
     padding-left: 20.4%;
 }
 
-.billing-addess-not-logged {
+.billing-address-not-logged {
     padding-left: 20.6%;
 }
 
@@ -1418,6 +1421,10 @@ th, td {
         margin-right: 0 !important;
     }
 
+    #shopping-cart-a {
+        margin-left: 2rem;
+    }
+
     .navbar a {
         font-size: 80%;
     }
@@ -1454,6 +1461,143 @@ th, td {
 
     .service-image {
         width: 92%;
+    }
+
+    .data-no-of-bedrooms {
+        width: 10rem;
+    }
+
+    .data-total_for_all_properties {
+        width: auto;
+    }
+
+    #service-data {
+        width: fit-content;
+    }
+
+    #remove-property {
+        left: 0;
+    }
+
+    .multiple-data {
+        height: 3.35rem;
+    }
+
+    .shopping-title {
+        margin-top: 19%;
+    }
+
+    .checkout-title {
+        margin-top: 9.5%;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    #property-form {
+        margin-top: 2.9%;
+    }
+
+    #order-summary-p {
+        margin-top: 4.8%;
+    }
+
+    #checkout-data-row {
+        margin: 0 auto;
+        margin-top: 2%;
+    }
+
+    #order-summary-p {
+        margin-left: 5.4%;
+    }
+
+    #checkput-grand-total-div {
+        margin-right: 3.5%;
+    }
+
+    #checkout-buttons {
+        margin-right: 0;
+    }
+
+    #address-data-checkout {
+        height: 3.38rem;
+    }
+
+    #head-p-order,
+    .profile-container {
+        margin-top: 6%;
+    }
+
+    .properties-table {
+        width: 100%;
+    }
+
+    .order-details-col {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    #billing-details-row {
+        margin-top: 10.5%;
+    }
+
+    .form-div {
+        font-size: 100%;
+        padding-left: 10.2%;
+    }
+
+    .regular-form {
+        width: 68%;
+    }
+
+    .success-tables {
+        width: 90%;
+        margin: auto;
+    }
+
+    #logout-p {
+        margin-top: 20%;
+        margin-left: 8%;
+        font-size: 95%;
+    }
+
+    .success-order-container legend {
+        margin-left: 5.9%;
+    }
+
+    #billing-total {
+        margin-right: 0;
+    }
+
+    #order-details-legend-not-logged,
+    .order-billing-legends-not-logged,
+    .billing-address-not-logged,
+    .success-tables-padding-not-logged,
+    .order-number-span-not-logged {
+        padding-left: 0;
+    }
+
+    #sign-up-paragraph,
+    #login-paragraph,
+    .login-form {
+        width: 50%;
+    }
+
+    #login-row {
+        margin-top: 10%;
+    }
+
+    #sign-up-paragraph {
+        margin-top: 10.5%;
+    }
+
+    #order-details-legend {
+        padding-left: 4%;
+    }
+
+    .order-number-span {
+        padding: 5.9%;
     }
 }
 

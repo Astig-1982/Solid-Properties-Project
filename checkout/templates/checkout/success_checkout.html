@@ -30,18 +30,18 @@
                     </tr>
                 </thead>
                     <tr id="data-tr">
-                        <td class="px-2 text-uppercase"><strong><span class="order-number-span">{{ order.order_number }}</span></strong></td>
+                        <td class="px-2 text-uppercase"><strong><span class="{% if request.user.is_authenticated %} order-number-span {% else %} order-number-span-not-logged {% endif %}">{{ order.order_number }}</span></strong></td>
                         <td id="order-date-td" class="px-2">{{ order.date }}</td>
                     </tr>   
             </table>
             </fieldset>
 
             <fieldset class="mt-2">
-                <legend id="order-details-legend">Order Details</legend>
+                <legend id="{% if request.user.is_authenticated %}order-details-legend{% else %}order-details-legend-not-logged{% endif %}">Order Details</legend>
             <table class="success-tables shadow-sm mb-5 bg-white">
                 <thead>
                     <tr class="first-tr">
-                        <th class="px-2"><span class="success-tables-padding">Service</span></th>
+                        <th class="px-2"><span class="{% if request.user.is_authenticated %} success-tables-padding {% else %} success-tables-padding-not-logged {% endif %}">Service</span></th>
                         {% if request.user.is_authenticated %}
                             <th class="px-2">Property</th>
                         {% else %}
@@ -79,7 +79,7 @@
             </fieldset>
 
             <fieldset class="mt-2">
-                <legend class="order-billing-legends">Billing Details</legend>
+                <legend class="{% if request.user.is_authenticated %} order-billing-legends {% else %} order-billing-legends-not-logged {% endif %}">Billing Details</legend>
             <table class="success-tables shadow-sm mb-5 bg-white">
                 <thead>
                     <tr class="first-tr">
