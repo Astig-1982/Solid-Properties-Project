@@ -1637,6 +1637,8 @@ th, td {
 
     #category-name {
         font-size: 78%;
+        padding-top: 1.1rem;
+        padding-bottom: 2.29rem;
     }
 
     .footer-container {
