@@ -50,6 +50,19 @@ body {
     letter-spacing: .05rem;
 }
 
+#shopping-cart-nav {
+    position: absolute;
+    right: 2.1rem;
+}
+
+.add-opacity {
+    opacity: 0;
+}
+
+.navbar-toggler {
+    background-color: rgb(2, 191, 191);
+}
+
 #shopping-cart-i {
     font-size: 170%;
     margin-top: 0;
@@ -245,8 +258,8 @@ body {
 }
 
 .main-action-buttons {
-    height: 4rem;
     width: 9rem;
+    height: 4rem;
     background-color: rgb(2, 191, 191);
     color: #ffffff;
 }
@@ -1455,6 +1468,10 @@ th, td {
         margin-left: .8rem;
     }
 
+    .section-title {
+        margin-top: 35.1%;
+    }
+
     .services-row {
         margin-top: 28%;
     }
@@ -1684,6 +1701,71 @@ th, td {
 
     #form-search {
        width: 50%;
+    }
+
+    #shopping-cart-nav {
+        left: 12.5rem;
+        font-size: 78%;
+    }
+
+    .filtering-container {
+        margin-top: 6.9%;
+    }
+
+    .filtering-buttons {
+        width: 6.2rem;
+        font-size: 85%;
+    }
+
+    .btn-outline-success {
+        width: 3.1rem;
+        color: rgb(2, 191, 191);
+        font-size: 119%;
+    }
+
+    .search-input {
+        border: 1px solid rgba(0, 0, 0, .8);
+    }
+
+    #search-mobile {
+        width: 80%;
+        display: inline;
+        margin-bottom: 0;
+        border: none;
+    }
+
+    #filtering-row {
+        margin-top: 6%;
+    }
+
+    #search-by-price-id {
+        font-size: 75%;
+    }
+
+    .section-title {
+        margin-top: 45% !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .main-title {
+        font-size: 1.66rem;
+    }
+
+    .title-container h2 {
+        font-size: 1.35rem;
+    }
+
+    #navbar-brand {
+        font-size: 1rem;
+    }
+
+    .main-action-buttons {
+        width: 6rem;
+        height: 3rem;
+        font-size: 85%;
+        padding-bottom: 2rem !important;
+        padding-right: 5.1rem !important;
     }
 }
 

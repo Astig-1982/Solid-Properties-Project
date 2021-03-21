@@ -12,17 +12,29 @@
     </div>
 </div>
 <div class="container filtering-container">
-    <div class="row text-center">
-        <div class="col-12 col-md-6">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="search-div">
+                <form method="GET" action="{% url 'services' %}" class="d-lg-none d-lg-flex search-box">
+                    <div class="search-input">
+                        <input id="search-mobile" class="form-control me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="q">
+                        <button class="btn btn-outline-success rounded-0" type="submit"><i class="fas fa-search-location"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="filtering-row" class="row text-center">
+        <div class="col-6">
             <div class="dropdown">
-                <button class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" id="sort-button" data-bs-toggle="dropdown" aria-expanded="false">sort by price</button>
+                <button id="search-by-price-id" class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" id="sort-button" data-bs-toggle="dropdown" aria-expanded="false">sort by price</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}?sort=price&direction=asc">from low to high</a></li>
                     <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}?sort=price&direction=desc">from high to low</a></li>
                 </ul>
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-6">
             <div class="dropdown">
                 <button class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" id="filter-button" data-bs-toggle="dropdown" aria-expanded="false">categories</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -37,14 +49,14 @@
 <div class="container services-container">
     <div class="row">
         {% for service in services %}
-            <div class="col-12 col-md-3 text-center service-holder">
+            <div class="col-4 col-md-3 text-center service-holder">
                 <div id="services-description" class="">
                 <div>
                     <a href="{% url 'detailed_service' service.id %}" class="rounded-circle hvr-rectangle-out service-circles mx-auto text-center py-3"><i class="{{ service.category.icon }} buttons category-icon-i"></i></a>
                 </div>
                 <div class="">
                     <p class="service-name">{{ service.name }}</p>
-                    <p class="service-description">{{ service.short_description }}
+                    <p class="d-none d-sm-block service-description">{{ service.short_description }}
                         <a href="{% url 'detailed_service' service.id %}" class="py-3 see-more text-capitalize">details</a>
                     </p> 
                 </div>

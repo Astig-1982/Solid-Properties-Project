@@ -83,14 +83,15 @@
                             </li>
                         {% endif %}
                     </ul>
-                    <form id="form-search" method="GET" action="{% url 'services' %}" class="d-flex search-box">
+                    <form method="GET" action="{% url 'services' %}" class="d-none d-lg-block d-lg-flex search-box">
                         <input class="form-control me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="q">
                         <button class="btn btn-outline-success rounded-0" type="submit">Search</button>
                     </form>
-                    <span class="nav-item">
+                    
+                </div>
+                <span id="shopping-cart-nav" class="nav-item">
                         <a id="shopping-cart-a" href="{% url 'cart' %}"><i id="shopping-cart-i" class="fas fa-shopping-cart buttons"></i><span id="count-cart-span" class="rounded-circle">{{ count_cart }}</span></a>
                     </span>
-                </div>
             </div>
         </nav>
     </header>
@@ -173,6 +174,10 @@
             });
             $('.footer').css('position', $(document).height() > $(window).height() ? "inherit" : "fixed");
             $('.toast').toast('show');
+            $('.navbar-toggler').click(function(){
+                $('.navbar').toggleClass('blue');
+                $('#shopping-cart-nav').toggleClass('add-opacity');
+            })
         });
     });
     </script>
