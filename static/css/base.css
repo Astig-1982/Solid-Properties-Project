@@ -1480,6 +1480,10 @@ th, td {
         width: 92%;
     }
 
+    #total-cost-variation {
+        display: table-cell;
+    }
+
     .data-no-of-bedrooms {
         width: 10rem;
     }

@@ -72,12 +72,12 @@
 
             <div id="price-col" class="col-12 col-md-6">
                 <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
-                {% if service.price_variation %}
-                    <strong class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
-                {% else %}
-                    <strong class="total-bedrooms">*TOTAL COST: <span class="price">£{{ service.price }}</span></strong>
-                {% endif %}
-            </p>
+                    {% if service.price_variation %}
+                        <strong id="total-cost-variation" class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
+                    {% else %}
+                        <strong class="total-bedrooms">*TOTAL COST: <span class="price">£{{ service.price }}</span></strong>
+                    {% endif %}
+                </p>
             {% if service.price_variation %}
                 <p class="price-variation-paragraph">*Please note that the price is for 1 bedroom. Please select the property for which you would like to purchase it to see the total cost for this service.</p>
             {% else %}
