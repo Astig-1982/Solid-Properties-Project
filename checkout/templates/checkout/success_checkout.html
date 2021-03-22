@@ -119,9 +119,14 @@
                 
             </div>
         </div>
-        <div class="row">
+        <div id="total-order-row" class="row">
             <div class="col-12">
                 <p id="billing-total" class="text-capitalize float-right"><strong>total amount: <span id="total-amount">£{{ order.grand_total }}</span></strong></p>
+            </div>
+        </div>
+        <div id="action-order-row" class="row">
+            <div class="col-12">
+                <a id="order-action-button" href="{% url 'services' %}"><button class="continue-shopping-button buttons text-uppercase">continue shopping</button></a>
             </div>
         </div>
     </div>

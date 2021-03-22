@@ -31,10 +31,10 @@
             <div class="overflow-mobile-div">
                 <table class="table properties-table">
                     <thead>
-                        <tr id="head-properties-info">
+                        <tr id="head-properties-info" class="text-uppercase">
                             <th scope="col" id="property-address-id">Property Address</th>
                             <th scope="col">Post Code</th>
-                            <th scope="col" id="bedrooms-comprising">Number Of Bedrooms Comprising</th>
+                            <th scope="col" id="bedrooms-comprising">No Of Bedrooms</th>
                         </tr>
                     </thead>
                     {% for property in properties %}
@@ -58,7 +58,7 @@
             {% else %}
             <h2>No properties registered.</h2>
             {% endif %}
-            <a href="{% url 'add_property' %}"><button id="" class="add-service-button buttons text-uppercase">add property</button></a>
+            <a href="{% url 'add_property' %}"><button class="add-service-button buttons text-uppercase">add property</button></a>
             <a href="{% url 'services' %}"><button class="continue-shopping-button buttons text-uppercase">continue shopping</button></a>
         </div>
         <div class="col-12 col-xl-6">
