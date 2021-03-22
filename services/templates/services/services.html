@@ -27,7 +27,7 @@
     <div id="filtering-row" class="row text-center">
         <div class="col-6">
             <div class="dropdown">
-                <button id="search-by-price-id" class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" id="sort-button" data-bs-toggle="dropdown" aria-expanded="false">sort by price</button>
+                <button id="search-by-price-id" class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" data-bs-toggle="dropdown" aria-expanded="false">sort by price</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}?sort=price&direction=asc">from low to high</a></li>
                     <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}?sort=price&direction=desc">from high to low</a></li>
@@ -38,6 +38,7 @@
             <div class="dropdown">
                 <button class="btn dropdown-toggle filtering-buttons text-capitalize rounded-sm buttons" type="button" id="filter-button" data-bs-toggle="dropdown" aria-expanded="false">categories</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}">all services</a></li>
                     {% for category in categories %}
                     <li class="text-capitalize"><a class="dropdown-item" href="{% url 'services' %}?category={{ category.name }}">{{ category.friendly_name }}</a></li>  
                     {% endfor%}

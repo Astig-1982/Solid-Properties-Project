@@ -440,6 +440,7 @@ body {
     letter-spacing: .2rem;
     text-transform: uppercase;
     font-weight: 700;
+    margin-top: 12.5%;
 }
 
 .service-holder {
@@ -1349,6 +1350,11 @@ th, td {
 }
 
 /* --------------------------------------------------- media queries start here -------------------------------------------------- */
+@media (min-width: 1500px) {
+    #shopping-cart-a {
+        right: 2rem;
+    }
+}
 
 @media (min-width: 1200px) and (max-width: 1499px) {
     .main-title {
