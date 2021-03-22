@@ -16,15 +16,15 @@
     </div>
     <div class="row">
         <div class="col-12 mx-auto regular-form">
-                <form action="{% url 'add_property' %}" method="POST">
+                <form id="add-property-form" action="{% url 'add_property' %}" method="POST">
                     {% csrf_token %}
                     {{ property_form.street_address | as_crispy_field }}
                     {{ property_form.house_name | as_crispy_field }}
                     {{ property_form.post_code | as_crispy_field }}
                     {{ property_form.no_of_bedrooms | as_crispy_field }}
-                    <label class="" for="id-save-info">Active Property</label>
+                    <label class="active-property-box" for="id-save-info">Active Property</label>
                     <input class="" type="checkbox" id="activate" name="activate-property" checked>
-                    <input type="submit" value="REGISTER PROPERTY" class="buttons register-property-button">
+                    <input id="add-property-button" type="submit" value="REGISTER PROPERTY" class="buttons register-property-button">
                 </form>
         </div>
     </div>

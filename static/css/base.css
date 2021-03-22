@@ -610,6 +610,20 @@ body {
     font-size: 120%;
 }
 
+#add-property-button {
+    width: 20rem !important;
+    height: 3.5rem;
+    font-size: 130%;
+    letter-spacing: .5px;
+    display: block;
+}
+
+.active-property-box {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    opacity: .8;
+}
+
 .register-property-button {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
@@ -720,11 +734,6 @@ body {
     padding-left: 6%;
 }
 
-#add-property-button {
-    width: 10rem;
-    height: 2.5rem;
-    margin-right: 1.95%;
-}
 
 #billing-details-div {
     margin-top: 4%;
@@ -765,7 +774,7 @@ body {
 }
 
 #order-number-th {
-    text-decoration: none;
+    text-decoration: underline;
     color: rgba(0, 0, 0, .6);
     font-weight: 400;
 }
@@ -1512,6 +1521,24 @@ th, td {
         margin-top: 19%;
     }
 
+    #add-property-button {
+        width: 16.9rem;
+        height: 4rem;
+        font-size: 130%;
+        letter-spacing: .5px;
+        display: block;
+    }
+
+    .active-property-box {
+        margin-top: 3%;
+        margin-bottom: 2%;
+    }
+
+    #add-property-div {
+        width: 65%;
+        margin-top: 15%;
+    }
+
     .checkout-title {
         margin-top: 9.5%;
     }
@@ -1623,6 +1650,21 @@ th, td {
 
     .order-number-span {
         padding: 5.9%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .landing-row {
+        height: 100vh;
+    }
+
+    .title-container {
+        margin-top: 46.5%;
+        width: 75%;
+    }
+
+    .main-title {
+        font-size: 3rem;
     }
 }
 
@@ -1959,6 +2001,25 @@ th, td {
     #sign-up-paragraph,
     .login-form {
         width: 90%;
+    }
+
+    #add-property-div {
+        width: 90%;
+    }
+
+    .active-property-box {
+        margin-top: 4.8%;
+    }
+
+    #add-property-form {
+        width: 98%;
+        margin: auto;
+    }
+
+    #add-property-button {
+        display: block;
+        font-size: 85%;
+        width: 12rem;
     }
 }
 
