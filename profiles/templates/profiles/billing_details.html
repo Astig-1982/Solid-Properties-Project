@@ -4,7 +4,7 @@
 {% block content %}
 <div id="billing-container" class="container-fluid form-containers">
     <div class="row checkout-title">
-        <div class="col-12">
+        <div id="billing-details-title-col" class="col-12">
             <h1 class="text-uppercase">billing details</h1>
             <hr>
         </div>
@@ -20,8 +20,8 @@
                     {% csrf_token %}
                     {{ billing_form|crispy }}
                     <div>
-                        <input type="submit" value="UPDATE DETAILS" class="buttons register-property-button">
-                        <a class="buttons back-to-profile-a" href="{% url 'profile' %}">BACK TO PROFILE</a>
+                        <input id="update-billings" type="submit" value="UPDATE DETAILS" class="buttons register-property-button action-buttons-billing-details">
+                        <a class="buttons back-to-profile-a action-buttons-billing-details" href="{% url 'profile' %}">BACK TO PROFILE</a>
                     </div>
                 </form>
         </div>

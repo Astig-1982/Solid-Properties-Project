@@ -1859,6 +1859,8 @@ th, td {
         margin-left: 0;
     }
 
+    .billing-address-not-logged,
+    .success-tables-padding-not-logged,
     .billing-address-details,
     .success-tables-padding,
     #order-details-legend-not-logged, 
@@ -1875,8 +1877,76 @@ th, td {
         margin-right: 0;
     }
 
+    #checkout-title-col {
+        padding-left: 5%;
+    }
+
     .success-tables {
         width: 85%;
+    }
+
+    .properties-table {
+        width: max-content;
+    }
+
+    .profile-row {
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    .profile-container {
+        margin-top: 1.1rem;
+    }
+
+    #head-p-mobile {
+        margin-top: 0;
+    }
+
+    .head-p {
+        margin-top: 1.9rem;
+    }
+
+    .regular-form {
+        width: 100%;
+    }
+
+    #billing-details-title-col {
+        padding-left: 0;
+    }
+
+    #billing-details-title-col hr {
+        width: 95vw;
+    }
+
+    .form-div {
+        width: 100%;
+        padding-left: 3.9%;
+    }
+
+    #update-billings {
+        width: 9.9rem;
+        height: 3.34rem;
+    }
+
+    .action-buttons-billing-details {
+        width: 12rem;
+        font-size: 70%;
+        height: 3rem;
+        margin-top: 1rem;
+    }
+
+    #logout-p {
+        margin-top: 16%;
+    }
+
+    #logout-form {
+        width: auto;
+    }
+
+    #login-paragraph, 
+    #sign-up-paragraph,
+    .login-form {
+        width: 90%;
     }
 }
 
