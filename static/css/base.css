@@ -288,7 +288,7 @@ body {
 
 .category-column {
     margin-bottom: 3rem;
-    width: 21rem;
+    width: 18rem;
     transition-property: box-shadow;
     transition-duration: .6s;
     transition-timing-function: ease;
@@ -299,8 +299,8 @@ body {
 }
 
 .category-image {
-    width: 21rem;
-    height: 18rem;
+    width: 18rem;
+    height: 15rem;
 }
 
 #category-name {
@@ -309,7 +309,7 @@ body {
     border-top: none;
     margin-top: 0;
     padding-top: .8rem;
-    width: 21rem;
+    width: 18rem;
     text-align: center;
     font-weight: 600;
     color: rgba(0, 0, 0, .6);
@@ -1325,6 +1325,16 @@ th, td {
     padding-left: .8%;
 }
 
+#who-are-we-tablets {
+    position: relative;
+    top: 4.3rem;
+}
+
+.about-h2-tablets {
+    position: relative;
+    top: 2.4rem;
+}
+
 /* --------------------------------------------------- media queries start here -------------------------------------------------- */
 
 @media (min-width: 1200px) and (max-width: 1499px) {
@@ -1666,8 +1676,230 @@ th, td {
     .main-title {
         font-size: 3rem;
     }
+
+    .footer-container p:first-child {
+        margin-left: 0;
+        font-size: 100%;
+    }
+
+    .footer-horizontal {
+        width: 100%;
+    }
+
+    .social-row a:first-child {
+        margin-left: 6.8rem;
+    }
+
+    .social-row a {
+        margin-left: 2rem;
+    }
+
+    #legal-footer {
+        margin-left: 0;
+    }
+
+    .footer-categories a {
+        margin-left: .5rem;
+        font-size: 70.8%;
+    }
+
+    .copyright-message {
+        font-size: 93.4%;
+    }
+
+    #shopping-cart-nav {
+        left: 18.5rem;
+    }
+
+    .service-image {
+        width: 88.9%;
+        height: 300px;
+    }
+
+    .select-property {
+        width: 89% !important;
+    }
+
+    .total-bedrooms {
+        display: table-cell;
+    }
+
+    .overflow-mobile-div {
+        overflow: scroll;
+    }
+
+    #checkout-data-row,
+    #data-table-row {
+        width: max-content;
+    }
+
+    #data-row {
+        margin-top: 1.5% !important;
+        margin-left: 3.05%;
+    }
+
+    .shopping-title {
+        margin-top: 11.5%;
+    }
+
+    #total-amount-span {
+        float: none;
+        margin-left: 30.1%;
+    }
+
+    .table-buttons {
+        float: none;
+        margin-left: 4.5%;
+    }
+
+    #remove-property {
+        left: 0;
+    }
+
+    #property-info {
+        width: auto;
+    }
+
+    #checkout-data-row {
+        margin-top: .4%;
+        margin-left: 5%;
+    }
+
+    #order-summary-p {
+        margin-left: 5%;
+        margin-top: 6.5%;
+    }
+
+    .checkout-row p {
+        margin-left: 5%;
+    }
+
+    #checkout-form {
+        float: none;
+        width: 75%;
+        margin-left: 5%;
+    }
+
+    .checkout-title {
+        margin-top: 11.5%;
+    }
+
+    #total-amount-span {
+        margin-left: 34%;
+    }
+
+    .table-buttons {
+        margin-left: 0;
+    }
+
+    .success-tables {
+        width: max-content;
+    }
+
+    .order-details-col {
+        padding-left: 0;
+    }
+
+    .success-tables td {
+        width: 16rem;
+    }
+
+    .billing-address-email,
+    .billing-address-not-logged,
+    .success-tables-padding-not-logged,
+    .billing-address-details,
+    .success-tables-padding,
+    #order-details-legend-not-logged, 
+    #order-details-legend,
+    .order-number-span-not-logged, 
+    .order-number-span,
+    .order-billing-legends-not-logged, 
+    .order-billing-legends {
+        padding-left: 0 !important;
+    }
+
+    #billing-total {
+        float: none;
+        margin-bottom: 5%;
+    }
+
+    .order-details-col {
+        margin-bottom: 0;
+    }
+
+    #navbar-brand {
+        margin-left: 3.5%;
+    }
+
+    #shopping-cart-nav {
+        left: 15.5rem;
+    }
+
+    .btn-outline-success {
+        width: 3.1rem;
+        color: rgb(2, 191, 191);
+        font-size: 119%;
+    }
+
+    .search-input {
+        border: 1px solid rgba(0, 0, 0, .8);
+    }
+
+    #search-mobile {
+        width: 80%;
+        display: inline;
+        margin-bottom: 0;
+        border: none;
+    }
+
+    #filtering-row {
+        margin-top: 1.5rem;
+    }
+
+    .section-title-container {
+        margin-top: 34.5%;
+    }
+
+    .properties-table {
+        width: 100%;
+    }
+
+    #head-p-order {
+        margin-top: 6%;
+    }
+
+    .profile-container {
+        margin-bottom: 9%;
+    }
+
+    .regular-form {
+        width: 71.5%;
+    }
+
+    #logout-form {
+        width: auto;
+    }
+
+    #sign-up-paragraph,
+    #login-paragraph,
+    .login-form {
+        width: 50%;
+    }
+
+    #login-paragraph {
+        margin-top: 12.8%;
+    }
+
+    #sign-up-paragraph {
+        margin-top: 5%;
+    }
+
+    .about-divs-p {
+        height: max-content;
+    }
 }
 
+ 
 @media (max-width: 576px) {
     .title-container {
         margin-top: 65.9%;
@@ -1750,6 +1982,16 @@ th, td {
 
     .social-row a:first-child {
         margin-left: 0;
+    }
+
+    .about-divs-p {
+        height: max-content;
+        font-size: 110%;
+    }
+
+    .about-buttons-row {
+        padding-right: 0;
+        margin-top: 17.5%;
     }
 
     #navbar-brand {
