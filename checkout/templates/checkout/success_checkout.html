@@ -12,113 +12,119 @@
 </div>
 <div class="container success-order-container">
     <div class="row">
-        <div class="col-12 order-details-col">
-            <p>
-                {% if from_profile %} 
-                    <span id="order-summary-span">Please see below your order summary.</span>
-                {% else %}
-                    Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is <strong>£{{ order.grand_total }}</strong>.
-                {% endif %}
-            </p>
-            <fieldset>
-                <legend class="order-billing-legends">Order Info</legend>
-            <table class="success-tables shadow-sm mb-5 bg-white">
-            <thead>
-                    <tr class="first-tr">
-                        <th class="px-2"><span class="order-number-span">Order Number</span></th>
-                        <th id="order-date-th" class="px-2">Order Date</th>
-                    </tr>
-                </thead>
-                    <tr id="data-tr">
-                        <td class="px-2 text-uppercase"><strong><span class="{% if request.user.is_authenticated %} order-number-span {% else %} order-number-span-not-logged {% endif %}">{{ order.order_number }}</span></strong></td>
-                        <td id="order-date-td" class="px-2">{{ order.date }}</td>
-                    </tr>   
-            </table>
-            </fieldset>
-
-            <fieldset class="mt-2">
-                <legend id="{% if request.user.is_authenticated %}order-details-legend{% else %}order-details-legend-not-logged{% endif %}">Order Details</legend>
-            <table class="success-tables shadow-sm mb-5 bg-white">
+        <p>
+                    {% if from_profile %} 
+                        <span id="order-summary-span">Please see below your order summary.</span>
+                    {% else %}
+                        Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is <strong>£{{ order.grand_total }}</strong>.
+                    {% endif %}
+                </p>
+        <div class="overflow-mobile-div">
+            <div class="col-12 order-details-col">
+                
+                <fieldset>
+                    <legend class="order-billing-legends">Order Info</legend>
+                <table class="success-tables shadow-sm mb-5 bg-white">
                 <thead>
-                    <tr class="first-tr">
-                        <th class="px-2"><span class="{% if request.user.is_authenticated %} success-tables-padding {% else %} success-tables-padding-not-logged {% endif %}">Service</span></th>
-                        {% if request.user.is_authenticated %}
-                            <th class="px-2">Property</th>
-                        {% else %}
-                            <th class="px-2 text-capitalize">no of bedrooms to be executed for</th>
-                        {% endif %}
-                        <th id="lineitem-total-td" class="px-2">Total Cost</th>
-                    </tr>
-                </thead>
-                {% if request.user.is_authenticated %}
-                    {% for item in order.lineitems.all %}
-                        <tr>
-                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>                        
-                            <td class="px-2 {% if item.the_property.activate %} active {% else %} not-active-success {% endif %}">{{ item.the_property.street_address }}
-                                {% if not item.the_property.activate %}
-                                    <p id="success-active" class="text-capitalize">property no longer active on the website</p>
-                                {% endif %}
-                            </td>
-                            <td class="px-2">£{{ item.lineitem_total }}</td>
-                        </tr>
-                    {% endfor %}
-                {% else %}
-                    {% for item in order.lineitemsanonym.all %}
-                        <tr>
-                            <td class="px-2 text-capitalize"><strong><span class="success-tables-padding-not-logged">{{ item.service.name }}</span></strong></td>
-                            {% if item.service.price_variation %}                        
-                                <td class="px-2">{{ item.no_of_bedrooms }}</td>
-                            {% else %}
-                                <td class="px-2 text-capitalize">fixed price</td>
-                            {% endif %}
-                            <td class="px-2">£{{ item.lineitem_total }}</td>
-                        </tr>
-                    {% endfor %}
-                {% endif %}   
-            </table>
-            </fieldset>
-
-            <fieldset class="mt-2">
-                <legend class="{% if request.user.is_authenticated %} order-billing-legends {% else %} order-billing-legends-not-logged {% endif %}">Billing Details</legend>
-            <table class="success-tables shadow-sm mb-5 bg-white">
-                <thead>
-                    <tr class="first-tr">
-                        <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Full Name</span></th>
-                        <th class="px-2"><span class="billing-address-email">Email Address</span></th>
-                        <th class="px-2 billing-address-address">Street Address</th>
-                        {% if order.street_address2 %}
-                            <th class="px-2 billing-address-address">Street Address 1</th>
-                            <th class="px-2 billing-address-address">Street Address 2</th>
-                        {% endif %}
-                    </tr>
-                </thead>
-                    <tr>
-                        <td class="px-2 text-capitalaize"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">{{ order.full_name }}</span></td>
-                        <td class="px-2"><span class="billing-address-email">{{ order.email }}</span></td>
-                        <td class="px-2 street-address-details">{{ order.street_address1 }}</td>
-                        {% if order.street_address2 %}
-                            <tr class="px-2 street-address-details">{{ order.street_address2 }}</tr>
-                        {% endif %}
-                    </tr>
-                    <thead>
                         <tr class="first-tr">
-                            <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Town or City</span></th>
-                            <th class="px-2"><span class="billing-address-email">Postal Code</span></th>
-                            <th class="px-2 billing-address-address">Phone Number</th>
-                        </tr>
-                        <tr>
-                            <td class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}s">{{ order.town_or_city }}</span></td>
-                            <td class="px-2"><span class="billing-address-email">{{ order.postcode }}</span></td>
-                            <td class="px-2">{{ order.phone_number }}</td>
+                            <th class="px-2"><span class="order-number-span">Order Number</span></th>
+                            <th id="order-date-th" class="px-2">Order Date</th>
                         </tr>
                     </thead>
-            </table>
-            </fieldset>
+                        <tr id="data-tr">
+                            <td class="px-2 text-uppercase"><strong><span class="{% if request.user.is_authenticated %} order-number-span {% else %} order-number-span-not-logged {% endif %}">{{ order.order_number }}</span></strong></td>
+                            <td id="order-date-td" class="px-2">{{ order.date }}</td>
+                        </tr>   
+                </table>
+                </fieldset>
+
+                <fieldset class="mt-2">
+                    <legend id="{% if request.user.is_authenticated %}order-details-legend{% else %}order-details-legend-not-logged{% endif %}">Order Details</legend>
+                <table class="success-tables shadow-sm mb-5 bg-white">
+                    <thead>
+                        <tr class="first-tr">
+                            <th class="px-2"><span class="{% if request.user.is_authenticated %} success-tables-padding {% else %} success-tables-padding-not-logged {% endif %}">Service</span></th>
+                            {% if request.user.is_authenticated %}
+                                <th class="px-2">Property</th>
+                            {% else %}
+                                <th class="px-2 text-capitalize">no of bedrooms to be executed for</th>
+                            {% endif %}
+                            <th id="lineitem-total-td" class="px-2">Total Cost</th>
+                        </tr>
+                    </thead>
+                    {% if request.user.is_authenticated %}
+                        {% for item in order.lineitems.all %}
+                            <tr>
+                                <td class="px-2 text-capitalize"><strong><span class="success-tables-padding">{{ item.service.name }}</span></strong></td>                        
+                                <td class="px-2 {% if item.the_property.activate %} active {% else %} not-active-success {% endif %}">{{ item.the_property.street_address }}
+                                    {% if not item.the_property.activate %}
+                                        <p id="success-active" class="text-capitalize">property no longer active on the website</p>
+                                    {% endif %}
+                                </td>
+                                <td class="px-2">£{{ item.lineitem_total }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        {% for item in order.lineitemsanonym.all %}
+                            <tr>
+                                <td class="px-2 text-capitalize"><strong><span class="success-tables-padding-not-logged">{{ item.service.name }}</span></strong></td>
+                                {% if item.service.price_variation %}                        
+                                    <td class="px-2">{{ item.no_of_bedrooms }}</td>
+                                {% else %}
+                                    <td class="px-2 text-capitalize">fixed price</td>
+                                {% endif %}
+                                <td class="px-2">£{{ item.lineitem_total }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}   
+                </table>
+                </fieldset>
+
+                <fieldset class="mt-2">
+                    <legend class="{% if request.user.is_authenticated %} order-billing-legends {% else %} order-billing-legends-not-logged {% endif %}">Billing Details</legend>
+                <table class="success-tables shadow-sm mb-5 bg-white">
+                    <thead>
+                        <tr class="first-tr">
+                            <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Full Name</span></th>
+                            <th class="px-2"><span class="billing-address-email">Email Address</span></th>
+                            <th class="px-2 billing-address-address">Street Address</th>
+                            {% if order.street_address2 %}
+                                <th class="px-2 billing-address-address">Street Address 1</th>
+                                <th class="px-2 billing-address-address">Street Address 2</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td class="px-2 text-capitalaize"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">{{ order.full_name }}</span></td>
+                            <td class="px-2"><span class="billing-address-email">{{ order.email }}</span></td>
+                            <td class="px-2 street-address-details">{{ order.street_address1 }}</td>
+                            {% if order.street_address2 %}
+                                <tr class="px-2 street-address-details">{{ order.street_address2 }}</tr>
+                            {% endif %}
+                        </tr>
+                        <thead>
+                            <tr class="first-tr">
+                                <th class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}">Town or City</span></th>
+                                <th class="px-2"><span class="billing-address-email">Postal Code</span></th>
+                                <th class="px-2 billing-address-address">Phone Number</th>
+                            </tr>
+                            <tr>
+                                <td class="px-2"><span class="{% if request.user.is_authenticated %} billing-address-details {% else %} billing-address-not-logged {% endif %}s">{{ order.town_or_city }}</span></td>
+                                <td class="px-2"><span class="billing-address-email">{{ order.postcode }}</span></td>
+                                <td class="px-2">{{ order.phone_number }}</td>
+                            </tr>
+                        </thead>
+                </table>
+                </fieldset>
+                
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12">
                 <p id="billing-total" class="text-capitalize float-right"><strong>total amount: <span id="total-amount">£{{ order.grand_total }}</span></strong></p>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 

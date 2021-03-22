@@ -20,12 +20,9 @@
         </div>
     </div>
     <div class="row property-container">
-        
             <form class="add-cart-form col-12 col-md-6" action="{% url 'add_to_cart' service.id %}" method="POST">
                 {% csrf_token %}
-
                     <select class="select-property form-select w-50" aria-label="Default select example" name="no_of_bedrooms">
-                
                         {% if request.user.is_authenticated %}
                             <option selected value="1">Please select a property</option>
                             {% for property in properties %}
@@ -61,11 +58,11 @@
                         <p class="property-select-text text-secondary">*Fixed priced service.</p>
                     {% endif %}
                 {% endif %}
-                <div>
-                <input type="hidden" name="street_address" class="street_address">
-                <input type="submit" value="ADD SERVICE" class="buttons add-service-button">
-                <a id="continue-shopping-service" class="buttons text-uppercase" href="{% url 'services' %}">continue shopping</a>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <div id="detailed-action-buttons">
+                    <input type="hidden" name="street_address" class="street_address">
+                    <input type="submit" value="ADD SERVICE" class="buttons add-service-button">
+                    <a id="continue-shopping-service" class="buttons text-uppercase" href="{% url 'services' %}">continue shopping</a>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
             

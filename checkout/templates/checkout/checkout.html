@@ -56,64 +56,66 @@
         {% if cart_items %}
         <div class="col-12 col-xl-8">
             <p id="order-summary-p">Please see in the table below your order summary</p>
-            <table id="checkout-data-row" class="data-row-class text-center">
-                <thead>
-                    <tr>
-                        <th class="px-2 checkout-head-info head-info">Service Info</th>
-                        <th class="px-2 checkout-head-info head-info text-center">Service Price Per Bedroom</th>
-                        {% if request.user.is_authenticated %}
-                            <th id="property-info" class="px-2 checkout-head-info head-info">Property</th>
-                            <th class="text-center checkout-head-info head-info checkout-no-of-bedrooms-th">Property Number Of Bedrooms</th>
-                        {% else %}
-                            <th class="text-center checkout-head-info head-info checkout-no-of-bedrooms-th">Number Of Bedrooms The Service To Be Executed For</th>
-                        {% endif %}
-                        <th id="total-cost-per-property-th" class="text-center checkout-head-info head-info">Total Cost Per Property</th>
-                        <th class="text-center checkout-head-info head-info data-total_for_all_properties">Total Cost For All Properties</th>
-                        
-                    </tr>
-                </thead>
-                    {% for item in cart_items %}
-                    <tr id="data-tr">
-                        <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
-                        </td>
-                        <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
-                        {% if request.user.is_authenticated %}
-                            <td class="px-2">
-                                {% for property in item.properties_or_bedrooms %}
-                                    <div id="address-data-checkout" class="address-data table-data">{{ property.property.street_address }}</div>
-                                    {% if not forloop.last %} <hr class="separator"> {% endif %}
-                                {% endfor %}
-                        {% endif %}
-                            </td>
-                        <td id="property-no-of-bedrooms" class="text-center">
+            <div class="overflow-mobile-div">
+                <table id="checkout-data-row" class="data-row-class text-center">
+                    <thead>
+                        <tr>
+                            <th class="px-2 checkout-head-info head-info">Service Info</th>
+                            <th class="px-2 checkout-head-info head-info text-center">Service Price Per Bedroom</th>
                             {% if request.user.is_authenticated %}
-                                {% for property in item.properties_or_bedrooms %}   
-                                    {% if item.service.price_variation %}
-                                        <div class="table-data data-no-of-bedrooms multiple-data">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
-                                    {% else %}
-                                        <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
-                                    {% endif %}                               
-                                {% endfor %}
+                                <th id="property-info" class="px-2 checkout-head-info head-info">Property</th>
+                                <th class="text-center checkout-head-info head-info checkout-no-of-bedrooms-th">Property Number Of Bedrooms</th>
                             {% else %}
-                                {% for bedroom in item.properties_or_bedrooms %}
-                                    {% if item.service.price_variation %}
-                                        <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div>
-                                        {% if not forloop.last %} <hr class="separator"> {% endif %}
-                                    {% else %}
-                                        <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
-                                    {% endif %}                               
-                                {% endfor %}
+                                <th class="text-center checkout-head-info head-info checkout-no-of-bedrooms-th">Number Of Bedrooms The Service To Be Executed For</th>
                             {% endif %}
-                        </td>
-                        <td id="total-cost-per-property-td" class="text-center">
-                            {% for property_or_no_of_bedrooms in item.properties_or_bedrooms %}
-                                <div class="table-data multiple-data">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
-                            {% endfor %}
-                        </td>
-                        <td class="text-center data-total_for_all_properties">£<span class="currency-margin">{{ item.total_for_all_properties }}</span></td>
-                    </tr>
-                    {% endfor %}
-            </table>
+                            <th id="total-cost-per-property-th" class="text-center checkout-head-info head-info">Total Cost Per Property</th>
+                            <th class="text-center checkout-head-info head-info data-total_for_all_properties">Total Cost For All Properties</th>
+                            
+                        </tr>
+                    </thead>
+                        {% for item in cart_items %}
+                        <tr id="data-tr">
+                            <td id="service-data" class="px-2 text-uppercase"><strong>{{ item.service }}</strong>
+                            </td>
+                            <td class="px-2 text-center">£<span class="currency-margin">{{ item.service.price }}</span></td>
+                            {% if request.user.is_authenticated %}
+                                <td class="px-2">
+                                    {% for property in item.properties_or_bedrooms %}
+                                        <div id="address-data-checkout" class="address-data table-data">{{ property.property.street_address }}</div>
+                                        {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                    {% endfor %}
+                            {% endif %}
+                                </td>
+                            <td id="property-no-of-bedrooms" class="text-center">
+                                {% if request.user.is_authenticated %}
+                                    {% for property in item.properties_or_bedrooms %}   
+                                        {% if item.service.price_variation %}
+                                            <div class="table-data data-no-of-bedrooms multiple-data">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        {% else %}
+                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        {% endif %}                               
+                                    {% endfor %}
+                                {% else %}
+                                    {% for bedroom in item.properties_or_bedrooms %}
+                                        {% if item.service.price_variation %}
+                                            <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div>
+                                            {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        {% else %}
+                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                        {% endif %}                               
+                                    {% endfor %}
+                                {% endif %}
+                            </td>
+                            <td id="total-cost-per-property-td" class="text-center">
+                                {% for property_or_no_of_bedrooms in item.properties_or_bedrooms %}
+                                    <div class="table-data multiple-data">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td class="text-center data-total_for_all_properties">£<span class="currency-margin">{{ item.total_for_all_properties }}</span></td>
+                        </tr>
+                        {% endfor %}
+                </table>
+            </div>
             <div class="row grand-total-row">
                 <div class="col-12">
                     <div id="checkput-grand-total-div" class="grand-total-div">

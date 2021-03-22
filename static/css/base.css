@@ -1413,8 +1413,12 @@ th, td {
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
+    .landing-row {
+        height: 100vh;
+    }
+
     .title-container {
-        margin-top: 39.5%;
+        margin-top: 56%;
         width: 75%;
     }
 
@@ -1624,12 +1628,16 @@ th, td {
 
 @media (max-width: 576px) {
     .title-container {
-        margin-top: 41.9%;
+        margin-top: 65.9%;
         width: 100%;
     }
 
     .main-title {
         font-size: 1.89rem;
+    }
+
+    .landing-row {
+        height: 100vh;
     }
 
     .title-container h2 {
@@ -1749,6 +1757,127 @@ th, td {
     .section-title {
         margin-top: 45% !important;
     }
+
+    #detailed-service-container {
+        margin-top: 5.5rem;
+    }
+
+    .service-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .services-row h3 {
+        margin-top: 1.5rem;
+    }
+
+    .property-select-text,
+    .select-property {
+        width: 85% !important;
+    }
+
+    #price-col,
+    #detailed-action-buttons {
+        margin-top: 5%;
+    }
+
+    #total-cost-variation {
+        display: table-cell;
+    }
+
+    .price-variation-paragraph {
+        margin-bottom: 0;
+    }
+
+    .table-buttons {
+        float: none;
+        width: auto;
+    }
+
+    #continue-shopping-cart, 
+    .secure-checkout-button {
+        width: 11rem;
+        height: 3rem;
+        font-size: 80%;
+    }
+
+    .overflow-mobile-div {
+        overflow: scroll;
+    }
+
+    #data-table-row {
+        width: max-content;
+    }
+
+    #data-row {
+        margin-left: 1rem;
+    }
+
+    .grand-total-div {
+        margin-right: 0;
+    }
+
+    .checkout-title {
+        margin-top: 20%;
+    }
+
+    #checkout-form {
+        width: 95%;
+        margin-right: 0;
+        margin: auto;
+        margin-left: 0;
+    }
+
+    .checkout-row p {
+        margin-left: 5%;
+    }
+
+    #order-summary-p {
+        margin-top: 2rem;
+        margin-left: 5%;
+    }
+
+    #checkout-data-row {
+        width: max-content;
+        margin-left: 5%;
+    }
+
+    #checkout-buttons {
+        margin-right: 0;
+    }
+
+    .order-details-col {
+        width: max-content;
+        padding-left: 0 !important;
+    }
+
+    .order-details-col td {
+        width: 20rem;
+    }
+
+    .checkout-title {
+        margin-left: 0;
+    }
+
+    .billing-address-details,
+    .success-tables-padding,
+    #order-details-legend-not-logged, 
+    #order-details-legend,
+    .order-number-span-not-logged, 
+    .order-number-span,
+    .order-billing-legends-not-logged, 
+    .order-billing-legends {
+        padding-left: 0 !important;
+    }
+
+    #billing-total {
+        float: none;
+        margin-right: 0;
+    }
+
+    .success-tables {
+        width: 85%;
+    }
 }
 
 @media (max-width: 375px) {
@@ -1761,7 +1890,11 @@ th, td {
     }
 
     #navbar-brand {
-        font-size: 1rem;
+        font-size: .95rem;
+    }
+
+    #shopping-cart-nav {
+        left: 11.4rem;
     }
 
     .main-action-buttons {
@@ -1770,6 +1903,18 @@ th, td {
         font-size: 85%;
         padding-bottom: 2rem !important;
         padding-right: 5.1rem !important;
+    }
+
+    #continue-shopping-cart,
+    .secure-checkout-button {
+        width: 9rem;
+        font-size: 75%;
+        padding-left: 1rem;
+        padding-top: .2rem;
+    }
+
+    #continue-shopping-cart {
+        padding-left: 2rem;
     }
 }
 
