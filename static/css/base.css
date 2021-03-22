@@ -1484,7 +1484,7 @@ th, td {
         width: 92%;
     }
 
-    #total-cost-variation {
+    .total-bedrooms {
         display: table-cell;
     }
 
@@ -1649,6 +1649,10 @@ th, td {
         font-size: 2rem;
     }
 
+    .message-container {
+        right: 15px;
+    }
+
     .categories-title h4 {
         font-size: 1.4rem;
     }
@@ -1781,7 +1785,7 @@ th, td {
         margin-top: 5%;
     }
 
-    #total-cost-variation {
+    .total-bedrooms {
         display: table-cell;
     }
 
@@ -1821,11 +1825,19 @@ th, td {
         margin-top: 20%;
     }
 
+    #remove-property {
+        left: 0;
+    }
+
     #checkout-form {
         width: 95%;
         margin-right: 0;
         margin: auto;
         margin-left: 0;
+    }
+
+    #property-info {
+        width: auto;
     }
 
     .checkout-row p {
@@ -1985,6 +1997,15 @@ th, td {
 
     #continue-shopping-cart {
         padding-left: 2rem;
+    }
+
+    .continue-shopping-button, 
+    #adjust-cart-button {
+        width: 9rem;
+    }
+
+    #adjust-cart-button {
+        padding-left: 2.9rem;
     }
 }
 

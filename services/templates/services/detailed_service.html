@@ -70,7 +70,7 @@
             <div id="price-col" class="col-12 col-md-6">
                 <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
                     {% if service.price_variation %}
-                        <strong id="total-cost-variation" class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
+                        <strong  class="total-bedrooms">*TOTAL COST: <span class="total-price price"></span></strong>
                     {% else %}
                         <strong class="total-bedrooms">*TOTAL COST: <span class="price">£{{ service.price }}</span></strong>
                     {% endif %}
