@@ -210,11 +210,6 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 **Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0, null=False, blank=False, editable=False | the_property
 **LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
 
-
-
-
-
-
 ## Deployment:
 
 Solid Property Project was developed on GitPod using git and GitHub to host the repository.
@@ -231,10 +226,10 @@ Please click the links above for documentation on how to set these up and retrie
 
 ### Instructions
 
-1. Save a copy of the github repository located at [Vroom repo](https://github.com/romqrq/Vroom) by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command
+1. Save a copy of the github repository located at [Solid Properties repo](https://github.com/Astig-1982/Solid-Properties-Project) by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command
 
     ```
-    git clone https://github.com/romqrq/Vroom
+    git clone https://github.com/Astig-1982/Solid-Properties-Project
     ```
 
 2. Open your preferred IDE, open a terminal session in the unzip folder or cd to the correct location.
