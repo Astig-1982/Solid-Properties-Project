@@ -3,20 +3,6 @@ from django.db import models
 # Create your models here.
 
 
-class Main_Category(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Main Categories'
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-
 class Category(models.Model):
 
     class Meta:
@@ -37,9 +23,7 @@ class Services(models.Model):
 
     class Meta:
         verbose_name_plural = 'Services'
-    main_category = models.ForeignKey('Main_Category', null=True, on_delete=models.SET_NULL)
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL, related_name='categories')
-    sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     price_variation = models.BooleanField(default=False, null=True, blank=True)
     short_description = models.TextField(blank=True)
