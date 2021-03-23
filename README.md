@@ -6,18 +6,21 @@ Solid Properties is a website where landlords\landladies and property managers c
 
 Users are encouraged to sign up and register any number of properties from their profile section, thus creating their own list of properties on the website.
 
-### Instructions
+### Instructions:
 
 1. Click the ```REGISTER``` tab and sign up on the website with your name and email address.
 2. Go to your **Profile** page and register a property by clicking ```ADD PROPERTY```.
 3. Complete the form provided with the property address, post code and number of bedrooms it comprises (please note that these are mandatory fields).
-4. Go to **Services** page and choose a service.
-***NOTE** that the services are differentiated between services with a fixed price and services for which the price varies (ex: **repainting**, **refurbishment**), depending on the number of bedrooms the service is purchased for*.
-5. Below the service image, select from your list of properties the property for which you wish to purchase the service.
-6. Based on the number of bedrooms the property selected comprises, a price will be instantly calculated. You will see displayed the **PRICE (per bedroom)** of the service, and next to it the **TOTAL COST** of the service for the property selected.
- * The shopping cart will display the price for each service for each individual property (as for many the price varies, depending on the number of bedrooms the property comprises), and also the 
-total price of the service for all of the properties that has been purchased for.
- * When the purchase is complete, a detailed order history will be provided in which the users will have a history 
+4. Activate your property from your *properties table* in the profile section.
+5. Go to **Services** page and choose a service.
+***NOTE** that services differentiate between services with a fixed price and services for which the price varies (ex: **repainting**, **refurbishment**), depending on the number of bedrooms the service is purchased for*.
+6. Below the service image, select from your list of properties the property for which you wish to purchase the service.
+7. Based on the number of bedrooms the property selected comprises, a price will be instantly calculated. You will see displayed the **PRICE (per bedroom)** of the service, and next to it the **TOTAL COST** of the service for the property selected.
+
+### Further information:
+
+ * The ***shopping cart*** displays the price of the **service name**, the **price** of the service, **the property** for which the service has been purchased, the **price for the specific property** (as for many this varies from the initial price, depending on the number of bedrooms the property comprises of), the **total price of the service** for all of the properties that has been purchased for. At the bottom will be displayed the **total cost** of the shopping cart.
+ * When the purchase is complete, a detailed **order history** will be provided in which the users will have a history 
 of each service purchased and for which of their properties has been executed.
  * If a property is no longer required on the website, go to **Profile** page and from your list of properties table click on the ```DEACTIVATE``` tab to deactivate the property from the website. This will also disable your property from your list of properties when choosing a service.
 ***NOTE** that in your order history will be mentioned if a property is no longer active on the website*.
