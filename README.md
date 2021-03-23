@@ -52,11 +52,27 @@ the user can choose for how many bedrooms a service can be purchased for.
 * As a landlord\landlady, I would like to be able to have a list of my own properties, so I when choosing a service, to know exactly the cost for that service for each of my properties.
 * As a landlord\landlady, I would like to be able to deactivate a property anytime from the website, if that property is no longer required. Also, I would like to have the option to easily reactivate any property. 
 
+## Design Choices
+
+For Solid Properties I have used a dynamic, and in the same time professional style throughout all of its sections, creating a sense of professionalism and defining a target for active people.
+
+### Hero Image From Home Page:
+
+This image represents [Tower Bridge](https://en.wikipedia.org/wiki/Tower_Bridge), a well known landlmark situated next to the City - one of London's main financial districts. This, in my opinion, gives the user a sense of dynamicity, meanwhile also providing a sense of familiarity, which can facilitate in creating a bond with the company **Solid Properties**. The source of this image can be found at the [Credits](#credits) section.
+
+### Top Image from **Services** and **Profile** pages:
+
+This image represents London Bridge area in London, a dynamic and cultural area that is part of London's financial district. Its proximity to Tower Bridge gives the webisite with consistency. **Saint Paul** cathedral and **BT Tower** are also in the background, which again can provide a sense of familiarity. The source of this image can be found at the [Credits](#credits) section.
+
+### Category Images:
+
+These images are representatives of each category of services. They contain suggestive images that help the user to better pin point the type of services within each category. The source of these images can be found at the [Credits](#credits) section.
+
 ## Deployment:
 
 Solid Property Project was developed on GitPod using git and GitHub to host the repository.
 
-### How to run this project locally
+### How to run this project locally:
 
 To run this project on your own IDE follow the instructions below:
 
