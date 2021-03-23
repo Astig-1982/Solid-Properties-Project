@@ -46,6 +46,99 @@ the user can choose for how many bedrooms a service can be purchased for.
 
 Solid Property Project was developed on GitPod using git and GitHub to host the repository.
 
+### How to run this project locally
+
+To run this project on your own IDE follow the instructions below:
+
+To allow you to access all functionality on the site locally, ensure you have created free accounts with the following services:
+    - [Stripe](https://dashboard.stripe.com/register)
+    - [AWS](https://aws.amazon.com/) and [set up an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+
+Please click the links above for documentation on how to set these up and retrieve the necessary environment variables.
+
+### Instructions
+
+1. Save a copy of the github repository located at [Vroom repo](https://github.com/romqrq/Vroom) by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command
+
+    ```
+    git clone https://github.com/romqrq/Vroom
+    ```
+
+2. Open your preferred IDE, open a terminal session in the unzip folder or cd to the correct location.
+
+3. A virtual environment is recommended for the Python interpreter, I recommend using Pythons built in virtual environment. Enter the command:
+
+    ```
+    python3 -m .venv venv
+    ```  
+
+    *NOTE: The `python3` part of this command is for mac operating systems. Your command may differ, depending on the operating system you use*
+
+4. Activate the .venv with the command:
+
+    ```
+    .venv\Scripts\activate
+    ```
+
+    *Again this **command may differ depending on your operating system**. Please check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html).*
+
+5. If needed, Upgrade pip locally with
+
+    ```
+    pip3 install --upgrade pip.
+    ```
+
+6. Install all required modules with the command
+
+    ```
+    pip3 -r requirements.txt.
+    ```
+
+7. Set up the following environment variables within your IDE.
+
+| Key | Value |
+--- | ---
+AWS_ACCESS_KEY_ID | `<your secret key>`
+AWS_SECRET_ACCESS_KEY | `<your secret key>`
+DATABASE_URL | `<your postgres database url>`
+DEVELOPMENT | `True`
+SECRET_KEY | `<your secret key>`
+STRIPE_PUBLIC_KEY | `<your secret key>`
+STRIPE_SECRET_KEY | `<your secret key>`
+STRIPE_WH_SECRET | `<your secret key>`
+  
+
+* If using an IDE that includes a `bashrc` file, open this file and enter all the environment variables listed above using the following format:
+
+```
+HOSTNAME="<enter key here>"
+```
+
+* `HOSTNAME` should be the local address for the site when running within your own IDE.
+
+8. If you have restarted your machine to activate your environment variables, do not forget to reactivate your virtual environment with the command used at step 4.
+
+9. Migrate the admin panel models to create your database template with the terminal command
+
+```
+python3 manage.py migrate
+```
+
+10. Create your superuser to access the django admin panel and database with the following command, and then follow the steps to add your admin username and password:
+
+```
+python3 manage.py createsuperuser
+```
+
+11. You can now run the program locally with the following command:
+
+```
+python3 manage.py runserver
+```
+
+12. Once the program is running, go to the local link provided and add `/admin` to the end of the url.
+13. Once instances of these items exist in your database your local site will run as expected.
+
 ### Deploying Solid Properties Project to Heroku:
 
 * 1: **Create** a requirements.txt file using the following command.
@@ -92,4 +185,16 @@ web: gunicorn solid_properties.wsgi:appllication
 ```
 * 16: In **settings.py** add the host name of our heroku app to ALLOWED_HOSTS.
 * 17: Connect Heroku to GitHub, in order to push directly to Heroku as well when pushing to GitHub. 
-In **Heroku** go to ```Deploy``` tab, then click ```Connect to GitHub``` tab, serch for Solid-Properties-Project app and click ```Connect```
+In **Heroku** go to ```Deploy``` tab, then click ```Connect to GitHub``` tab, serch for Solid-Properties-Project repository and click ```Connect```.
+* Please make sure in the Heroku dashboard the following variables to be set:
+
+| Key | Value |
+--- | ---
+AWS_ACCESS_KEY_ID | `<your secret key>`
+AWS_SECRET_ACCESS_KEY | `<your secret key>`
+DATABASE_URL | `<your postgres database url>`
+SECRET_KEY | `<your secret key>`
+STRIPE_PUBLIC_KEY | `<your secret key>`
+STRIPE_SECRET_KEY | `<your secret key>`
+USE_AWS | `True`
+
