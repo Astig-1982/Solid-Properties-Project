@@ -7,7 +7,7 @@ Solid Properties is a website where landlords\landladies and property managers c
 Users are encouraged to sign up and register any number of properties from their profile section, thus creating their own list of properties on the website.
 When registering a property, the mandatory info will be the property address and the number of bedrooms it comprises.
 Based on the number of bedrooms each property comprises, a price will be instantly calculated upon choosing a specific service. 
-The shopping cart will display the price for each service for each individual property (as on many the price varies, depending on the number of bedrooms the property comprises), and also the 
+The shopping cart will display the price for each service for each individual property (as for many the price varies, depending on the number of bedrooms the property comprises), and also the 
 total price of the service for all of the properties that has been purchased for. When the purchase is complete, a detailed order history will be provided in which the users will have a history 
 of each service purchased and for which of their properties has been executed. If a property is no longer required on the website, the user can deactivate it anytime from his/her profile section. 
 In fact, every property can be activated and deactivated as many times as the user wants.
@@ -30,7 +30,6 @@ the user can choose for how many bedrooms a service can be purchased for.
 * As a user, I would like to be able to have clear live notifications on the screen everytime an important action was performed or is due to be performed, so I can be constantly up to date to what I'm doing and what I'm purchasing on the website.
 * As a user, I would like to be able to have clear live notifications on the screen everytime an action cannot be performed or an error occurs, and a brief explanation, so I can correct the mistake and perform the action in cause again.
 * As a user, I would like to be able to have a secure checkout so I know that the transaction and my card details are protected.
-
 * As a landlord\landlady, I would like to be able to see a full list of all services provided at once, so I can choose some to purchase.
 * As a landlord\landlady, I would like to be able to see a list of categories of all services, so I can easily navigate to the ones that are within my interest.
 * As a landlord\landlady, I would like to be able to see each service in detail, so can I have a clear understanding of what it's providing.
