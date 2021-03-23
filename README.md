@@ -100,11 +100,18 @@ I chose to use icons as the website is selling services, rather than products, w
 
 I chosed to use this design as I believe that, as stated above, it shows in a clear way what each service provides, thus making the user experience more intuitive.
 
-## Database Structure
+## Information Architecture
 
-As a framework Django works with SQL databases. During development on my local machine I worked with the standard sqlite3 database installed with Django.
+During the development phase I worked with **sqlite3** database which is installed with Django.
+For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
 
-### Category Model
+The User model used in this project is provided by Django as a part of defaults ```defaults django.contrib.auth.models```. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.1/topics/auth/default/).
+
+### Database Structure:
+
+#### Services App
+
+##### Category Model 
 
 | Field Name | Field Type | Validation | Key in db | 
 --- | --- | --- | ---
@@ -113,7 +120,9 @@ As a framework Django works with SQL databases. During development on my local m
 **Image** | ImageField | null=True, blank=True | image
 **Icon** | CharField | max_length=50, null=True, blank=False | icon
 
-### Services Model - This model is connected to **Category** model with a ForeignKey. 
+##### Services Model
+
+This model is connected to **Category** model with a **ForeignKey**. 
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
@@ -124,7 +133,12 @@ As a framework Django works with SQL databases. During development on my local m
 **Description** | TextField | blank=False | description
 **Price** | DecimalField |max_digits=6, decimal_places=2 | price
 
-### LandlordProfile Model - This model contains **OneToOneField** connected to **User** model.
+
+#### Profiles App
+
+##### LandlordProfile Model
+
+This model contains **OneToOneField** connected to **User** model.
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
@@ -138,7 +152,11 @@ As a framework Django works with SQL databases. During development on my local m
 **Default Street Address 1** | CharField | max_length=80, null=True, blank=True | default_street_address1
 **Default Street Address 2** | CharField | max_length=80, null=True, blank=True | default_street_address2
 
-### Properties Model - This model is connected to **LandlordProfile** model with a ForeignKey.
+#### Properties App
+
+#### Properties Model
+
+This model is connected to **LandlordProfile** model with a **ForeignKey**.
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
@@ -149,16 +167,48 @@ As a framework Django works with SQL databases. During development on my local m
 **Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0 | default_country
 **Activate** | BooleanField | default=False, null=True, blank=True | default_post_code
 
-### Order Model - This model is connected to **LandlordProfile** model with a ForeignKey.
+#### Checkout App
+
+##### Order Model
+
+This model is connected to **LandlordProfile** model with a **ForeignKey**.
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
-**Landlord** | FK to LandlordProfile | null=True, on_delete=models.SET_NULL | user
-**Street Address** | CharField | max_length=80, null=False, blank=Falsee | default_full_name
-**House Name** | CharField | max_length=20, null=True, blank=True | default_email
-**Post Code** | CharField | max_length=20, null=True, blank=True | default_phone_number
-**Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0 | default_country
-**Activate** | BooleanField | default=False, null=True, blank=True | default_post_code
+**Order Number** | CharField | max_length=32, null=False, editable=False | order_number
+**LandlordProfile** | FK to LandlordProfile | on_delete=models.SET_NULL, null=True, blank=True | landlord_profile
+**Full Name** | CharField | max_length=50, null=False, blank=False | full_name
+**Email** | EmailField | max_length=254, null=False, blank=False |  email
+**Phone Number** | CharField | max_length=20, null=False, blank=False |phone_number
+**Country** | BooleanField | blank_label='Country *', null=False, blank=False | country
+**Post Code** | CharField | max_length=20, null=True, blank=True | postcode
+**Town Or City** | CharField | max_length=40, null=False, blank=False | town_or_city
+**Street Address 1** | CharField | max_length=80, null=False, blank=False | street_address1
+**Street Address 2** | CharField | max_length=80, null=False, blank=False | street_address2
+**Date** | DateTimeField | auto_now_add=True | date
+**Grand Total** | DecimalField | max_digits=10, decimal_places=2, null=False, default=0 | grand_total
+
+##### OrderLineItem Model
+
+This model is connected to **Order**, **Services** and **Properties** models with **ForeignKeys**.
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**Order** | FK to Order | null=False, blank=False, on_delete=models.CASCADE | order
+**Service** | FK to Services | null=False, blank=False, on_delete=models.CASCADE | service
+**Property** | FK to Properties | null=False, blank=False, on_delete=models.CASCADE | the_property
+**LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
+
+##### OrderLineItemAnonym Model
+
+This model is connected to **Order** and **Services** models with **ForeignKeys**.
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**Order** | FK to Order | null=False, blank=False, on_delete=models.CASCADE | order
+**Service** | FK to Services | null=False, blank=False, on_delete=models.CASCADE | service
+**Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0, null=False, blank=False, editable=False | the_property
+**LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
 
 
 
