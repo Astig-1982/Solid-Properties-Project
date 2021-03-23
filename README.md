@@ -70,7 +70,7 @@ This image represents London Bridge area in London, a dynamic and cultural area 
 
 These images are representatives of each category of services. They contain suggestive images that help the user to better pin point the type of services within each category. The source of these images can be found at the [Credits](#credits) section.
 
-## Fonts:
+### Fonts:
 
 The fonts used in this project are the following:
 
