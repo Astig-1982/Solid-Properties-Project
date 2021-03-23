@@ -56,17 +56,46 @@ the user can choose for how many bedrooms a service can be purchased for.
 
 For Solid Properties I have used a dynamic, and in the same time professional style throughout all of its sections, creating a sense of professionalism and defining a target for active people.
 
-### Hero Image From Home Page:
+### Images:
 
-This image represents [Tower Bridge](https://en.wikipedia.org/wiki/Tower_Bridge), a well known landlmark situated next to the City - one of London's main financial districts. This, in my opinion, gives the user a sense of dynamicity, meanwhile also providing a sense of familiarity, which can facilitate in creating a bond with the company **Solid Properties**. The source of this image can be found at the [Credits](#credits) section.
+#### Hero Image From Home Page:
 
-### Top Image from **Services** and **Profile** pages:
+This image represents [Tower Bridge](https://en.wikipedia.org/wiki/Tower_Bridge), a renowned landlmark situated next to the City - one of London's main financial districts. This, in my opinion, gives the user a sense of dynamicity, meanwhile also providing a sense of familiarity, which can facilitate in creating a bond with the company **Solid Properties**. The source of this image can be found at the [Credits](#credits) section.
+
+#### Top Image from **Services** and **Profile** pages:
 
 This image represents London Bridge area in London, a dynamic and cultural area that is part of London's financial district. Its proximity to Tower Bridge gives the webisite with consistency. **Saint Paul** cathedral and **BT Tower** are also in the background, which again can provide a sense of familiarity. The source of this image can be found at the [Credits](#credits) section.
 
-### Category Images:
+#### Category Images:
 
 These images are representatives of each category of services. They contain suggestive images that help the user to better pin point the type of services within each category. The source of these images can be found at the [Credits](#credits) section.
+
+## Fonts:
+
+The fonts used in this project are the following:
+
+* [LATO](https://fonts.google.com/?query=lato) I chose this font as a **main font** because I believe it offers a clear and professional look, which matches the website purpose.
+* [NATO SERIF](https://fonts.google.com/specimen/Noto+Serif?preview.text_type=custom) I chose this font for **all titles** as it varies sufficent from the main font (Lato), offering a good enough contrast between them on the website's pages. In the same time, both of the styles blend in a smooth way together.
+
+## Colors:
+
+The colors used in this project are the following:
+
+* **Navy Blue** - This color is used for the navbar and footer plus on some other small elements in the project (like the head elements from the cart an checkout tables). I chose this color as, in my opinion, gives a professional appereance to the site and provides a clear contrast with the rest page.
+* **White** - This color is used as a main background color throughout all pages of the website. I chose to use white because I believe it is the best color on which to display information in the most clear and intelligible way. This, among others, helps the user better focus on the functionality of a service.
+* **Turquoise** - This color is used mainly for the call to action buttons and for the services' icons. It provieds a good contrast with both the white used for the main background and with the navy blue used for the navbar and footer. With the latter it also goes togeher, being part of the same family of colors.
+
+### Icons:
+
+#### Services Icons:
+
+I chose to use icons as the website is selling services, rather than products, which can be represented by exact images of the product itself. Also, using just general images for each service might confuse the user in the first instance. The icons used are a representation of the category to which the service belongs to. Together with the brief description of the service below, they give the user a better understanding of what the service provides.
+
+### Extra:
+
+#### Brief Descrition Display For Each Service:
+
+I chosed to use this design as I believe that, as stated above, it shows in a clear way what each service provides, thus making the user experience more intuitive.
 
 ## Deployment:
 
