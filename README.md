@@ -201,7 +201,7 @@ This model is connected to **Order**, **Services** and **Properties** models wit
 
 ##### OrderLineItemAnonym Model
 
-This model is connected to **Order** and **Services** models with **ForeignKeys**. This model is used when the user checks out anonymous (not logged in).
+This model is connected to **Order** and **Services** models with **ForeignKeys**. This model is used when the user checks out without being logged in.
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
