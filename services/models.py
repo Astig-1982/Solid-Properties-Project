@@ -24,10 +24,10 @@ class Services(models.Model):
     class Meta:
         verbose_name_plural = 'Services'
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL, related_name='categories')
-    name = models.CharField(max_length=254)
-    price_variation = models.BooleanField(default=False, null=True, blank=True)
-    short_description = models.TextField(blank=True)
-    description = models.TextField(blank=True)
+    name = models.CharField(max_length=254, blank=False)
+    price_variation = models.BooleanField(default=False, null=True)
+    short_description = models.TextField(blank=False)
+    description = models.TextField(blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):

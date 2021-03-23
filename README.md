@@ -96,9 +96,37 @@ I chose to use icons as the website is selling services, rather than products, w
 
 ### Extra:
 
-#### Brief Descrition Display For Each Service:
+#### Brief Description Display For Each Service:
 
 I chosed to use this design as I believe that, as stated above, it shows in a clear way what each service provides, thus making the user experience more intuitive.
+
+## Database Structure
+
+As a framework Django works with SQL databases. During development on my local machine I worked with the standard sqlite3 database installed with Django.
+
+### Category Model
+
+| Field Name | Field Type | Validation | Key in db | 
+--- | --- | --- | ---
+**Name** | CharField | max_length=254 | name
+**Friendly Name** | CharField | max_length=254, null=True, blank=True | friendly_name
+**Image** | ImageField | null=True, blank=True | image
+**Icon** | CharField | max_length=50, null=True, blank=False | icon
+
+#### Services Model
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**Category** | FK to Category | null=True, on_delete=models.SET_NULL | category
+**Name** | CharField | max_length=254, blank=False | name
+**Price Variation** | BooleanField | default=False, null=True | price_variation
+**Short Description** | TextField | blank=False | short_description
+**Description** | TextField | blank=False | description
+**Price** | DecimalField |max_digits=6, decimal_places=2 | price
+
+
+
+
 
 ## Deployment:
 
