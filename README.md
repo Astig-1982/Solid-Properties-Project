@@ -89,4 +89,7 @@ pip3 install gunicorn
 * 15: In **Procfile** tell Heroku to create a web dyno which will run gunicorn and serve the solid_properties django app.
 ```bash
 web: gunicorn solid_properties.wsgi:appllication
-```  
+```
+* 16: In **settings.py** add the host name of our heroku app to ALLOWED_HOSTS.
+* 17: Connect Heroku to GitHub, in order to push directly to Heroku as well when pushing to GitHub. 
+In **Heroku** go to ```Deploy``` tab, then click ```Connect to GitHub``` tab, serch for Solid-Properties-Project app and click ```Connect```
