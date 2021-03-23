@@ -113,7 +113,7 @@ As a framework Django works with SQL databases. During development on my local m
 **Image** | ImageField | null=True, blank=True | image
 **Icon** | CharField | max_length=50, null=True, blank=False | icon
 
-#### Services Model
+### Services Model - This model is connected to **Category** model with a ForeignKey. 
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
@@ -123,6 +123,43 @@ As a framework Django works with SQL databases. During development on my local m
 **Short Description** | TextField | blank=False | short_description
 **Description** | TextField | blank=False | description
 **Price** | DecimalField |max_digits=6, decimal_places=2 | price
+
+### LandlordProfile Model - This model contains **OneToOneField** connected to **User** model.
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**User** | OneToOneField to User | on_delete=models.CASCADE | user
+**Default Full Name** | CharField | max_length=50, null=True, blank=False | default_full_name
+**Default Email** | EmailField | max_length=254, null=True, blank=True | default_email
+**Default Phone Number** | CharField | max_length=20, null=True, blank=True | default_phone_number
+**Default Country** | CountryField | blank_label='Country *', null=True, blank=True | default_country
+**Default Post Code** | CharField | max_length=20, null=True, blank=True | default_post_code
+**Default Town Or City** | CharField | max_length=40, null=True, blank=True | default_town_or_city
+**Default Street Address 1** | CharField | max_length=80, null=True, blank=True | default_street_address1
+**Default Street Address 2** | CharField | max_length=80, null=True, blank=True | default_street_address2
+
+### Properties Model - This model is connected to **LandlordProfile** model with a ForeignKey.
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**Landlord** | FK to LandlordProfile | null=True, on_delete=models.SET_NULL | user
+**Street Address** | CharField | max_length=80, null=False, blank=Falsee | default_full_name
+**House Name** | CharField | max_length=20, null=True, blank=True | default_email
+**Post Code** | CharField | max_length=20, null=True, blank=True | default_phone_number
+**Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0 | default_country
+**Activate** | BooleanField | default=False, null=True, blank=True | default_post_code
+
+### Order Model - This model is connected to **LandlordProfile** model with a ForeignKey.
+
+| Field Name | Field Type | Validation | Key in db |
+--- | --- | --- | ---
+**Landlord** | FK to LandlordProfile | null=True, on_delete=models.SET_NULL | user
+**Street Address** | CharField | max_length=80, null=False, blank=Falsee | default_full_name
+**House Name** | CharField | max_length=20, null=True, blank=True | default_email
+**Post Code** | CharField | max_length=20, null=True, blank=True | default_phone_number
+**Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0 | default_country
+**Activate** | BooleanField | default=False, null=True, blank=True | default_post_code
+
 
 
 
