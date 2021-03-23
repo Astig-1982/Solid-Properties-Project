@@ -25,11 +25,13 @@ the user can choose for how many bedrooms a service can be purchased for.
 
 ## User Stories
 
+### General Users
 * As a user, I would like to be able to register to the website in a straight forward way, so I would have a profile where to be able to keep track of all my purchases. 
 * As a user, I would like to be able to easily login or logout, so I can easily have access to my profile.
 * As a user, I would like to be able to have clear live notifications on the screen everytime an important action was performed or is due to be performed, so I can be constantly up to date to what I'm doing and what I'm purchasing on the website.
 * As a user, I would like to be able to have clear live notifications on the screen everytime an action cannot be performed or an error occurs, and a brief explanation, so I can correct the mistake and perform the action in cause again.
 * As a user, I would like to be able to have a secure checkout so I know that the transaction and my card details are protected.
+### Landlords/Landladies
 * As a landlord\landlady, I would like to be able to see a full list of all services provided at once, so I can choose some to purchase.
 * As a landlord\landlady, I would like to be able to see a list of categories of all services, so I can easily navigate to the ones that are within my interest.
 * As a landlord\landlady, I would like to be able to see each service in detail, so can I have a clear understanding of what it's providing.
