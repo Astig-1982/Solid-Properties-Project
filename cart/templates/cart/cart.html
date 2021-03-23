@@ -12,7 +12,7 @@
         </div>
     {% if cart_items %}
         <div class="overflow-mobile-div">
-            <div id="data-table-row" class="row">
+            <div id="data-table-row" class="row text-center">
                 <table id="data-row">
                     <thead>
                         <tr>
@@ -41,7 +41,7 @@
                             {% if request.user.is_authenticated %}
                                 <td class="px-2">
                                     {% for property in item.properties_or_bedrooms %}
-                                        <div id="address-data-order" class="address-data table-data">{{ property.property.street_address }}</div>
+                                        <div id="address-data-order" class="address-data table-data"><span class="data-spans-logged-in">{{ property.property.street_address }}</span></div>
                                     
                                         <form id="remove-property" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
                                             {% csrf_token %}
@@ -56,30 +56,30 @@
                                 {% if request.user.is_authenticated %}
                                     {% for property in item.properties_or_bedrooms %}   
                                         {% if item.service.price_variation %}
-                                            <div class="table-data data-no-of-bedrooms multiple-data">{{ property.property.no_of_bedrooms }}</div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                            <div class="table-data data-no-of-bedrooms multiple-data"><span class="data-spans-logged-in">{{ property.property.no_of_bedrooms }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                         {% else %}
-                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data"><span class="data-spans-logged-in">fixed price</span></div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
                                         {% endif %}                               
                                     {% endfor %}
                                 {% else %}
                                     {% for bedroom in item.properties_or_bedrooms %}
                                         {% if item.service.price_variation %}
-                                            <div class="table-data data-no-of-bedrooms multiple-data">{{ bedroom.no_of_bedrooms }}</div>
-                                            <form method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
+                                            <div id="not-logged-data-bedrooms" class="data-no-of-bedrooms"><span style="position:relative; top:1.2rem" id="no-of-beds-span">{{ bedroom.no_of_bedrooms }}</span></div>
+                                            <form id="remove-bedrooms" method="POST" action="{% url 'remove_from_cart' item.service.id %}" class="remove_address remove-form">
                                                 {% csrf_token %}
                                                 <input type="hidden" name="no_of_bedrooms" value="{{ bedroom.no_of_bedrooms }}">
-                                                <input type="submit" value="Remove" class="buttons remove-buttons">
+                                                <button id="remove-bedrooms-buttons-holder"><input type="submit" value="" id="remove-bedrooms-buttons" class="buttons"><i class="fas fa-trash-alt remove-icons"></i></button>
                                             </form>
                                             {% if not forloop.last %} <hr class="separator"> {% endif %}
                                         {% else %}
-                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data">fixed price</div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                            <div class="table-data data-no-of-bedrooms text-capitalize multiple-data"><span class="data-spans-logged-in">fixed price</span></div>  {% if not forloop.last %} <hr class="separator"> {% endif %}
                                         {% endif %}                               
                                     {% endfor %}
                                 {% endif %}
                             </td>
                             <td class="text-center">
                                 {% for property_or_no_of_bedrooms in item.properties_or_bedrooms %}
-                                    <div class="table-data multiple-data">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
+                                    <div class="table-data multiple-data"><span class="data-spans-logged-in">£<span class="currency-margin">{{ property_or_no_of_bedrooms.total_cost }}</span></span></div> {% if not forloop.last %} <hr class="separator"> {% endif %}
                                 {% endfor %}
                             </td>
                             <td class="text-center data-total_for_all_properties">£<span class="currency-margin">{{ item.total_for_all_properties }}</span></td>

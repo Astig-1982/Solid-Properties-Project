@@ -102,6 +102,10 @@ body {
     border: 1px solid rgb(2, 191, 191);
 }
 
+.navbar-toggler-icon {
+    background-color: rgb(33,0,112);
+}
+
 .buttons {
     transition-property: background-color, color, border;
     transition-duration: .4s;
@@ -932,6 +936,18 @@ th, td {
 #remove-property {
     position: relative;
     left: 2rem;
+    top: .3rem;
+}
+
+#remove-bedrooms {
+    position: relative;
+    left: 11.6rem;
+    bottom: .5rem;
+}
+
+.data-spans-logged-in {
+    position: relative;
+    top: .39rem;
 }
 
 #service-data {
@@ -949,11 +965,13 @@ th, td {
     float: right;
 }
 
+#remove-bedrooms-buttons-holder,
 #remove-property-buttons-holder {
     border: 0;
     background-color: rgba(0, 0, 0, 0);
 }
 
+#remove-bedrooms-buttons,
 #remove-property-buttons,
 #remove-service-buttons {
     width: 0;
@@ -1406,6 +1424,7 @@ th, td {
 
     #remove-property {
         left: .5rem;
+        top: -1rem;
     }
 
     #address-data-checkout,
@@ -1437,6 +1456,10 @@ th, td {
 
     #bedrooms-comprising {
         width: 9.1rem;
+    }
+
+    #not-logged-data-bedrooms {
+        height: 1.9rem;
     }
 
     .form-div {
@@ -1535,6 +1558,11 @@ th, td {
         width: 10rem;
     }
 
+    #no-of-beds-span {
+        position: relative;
+        top: 1.5rem;
+    }
+
     .data-total_for_all_properties {
         width: auto;
     }
@@ -1545,6 +1573,7 @@ th, td {
 
     #remove-property {
         left: 0;
+        top: -1rem;
     }
 
     .multiple-data {
@@ -1575,6 +1604,14 @@ th, td {
 
     .checkout-title {
         margin-top: 9.5%;
+    }
+
+    #not-logged-data-bedrooms {
+        height: 1.81rem;
+    }
+
+    #remove-bedrooms {
+        left: 7rem;
     }
 
     .form-control {
@@ -1782,6 +1819,7 @@ th, td {
 
     #remove-property {
         left: 0;
+        top: -1rem;
     }
 
     #property-info {
@@ -2140,6 +2178,11 @@ th, td {
 
     #remove-property {
         left: 0;
+        top: -1rem;
+    }
+
+    .multiple-data {
+        height: 3.34rem;
     }
 
     #checkout-form {
