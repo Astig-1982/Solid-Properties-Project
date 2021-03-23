@@ -82,6 +82,8 @@ The fonts used in this project are the following:
 
 ## Colors:
 
+![Colors](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/colors.png)
+
 The colors used in this project are the following:
 
 * **Navy Blue** - This color is used for the navbar and footer plus on some other small elements in the project (like the head elements from the cart an checkout tables). I chose this color as, in my opinion, gives a professional appereance to the site and provides a clear contrast with the rest page.
