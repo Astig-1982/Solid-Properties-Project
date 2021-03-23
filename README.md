@@ -105,7 +105,7 @@ I chosed to use this design as I believe that, as stated above, it shows in a cl
 During the development phase I worked with **sqlite3** database which is installed with Django.
 For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
 
-The User model used in this project is provided by Django as a part of defaults ```defaults django.contrib.auth.models```. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.1/topics/auth/default/).
+The **User** model used in this project is provided by Django as a part of defaults ```defaults django.contrib.auth.models```. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.1/topics/auth/default/).
 
 ### Database Structure:
 
@@ -201,7 +201,7 @@ This model is connected to **Order**, **Services** and **Properties** models wit
 
 ##### OrderLineItemAnonym Model
 
-This model is connected to **Order** and **Services** models with **ForeignKeys**.
+This model is connected to **Order** and **Services** models with **ForeignKeys**. This model is used when the user checks out anonymous (not logged in).
 
 | Field Name | Field Type | Validation | Key in db |
 --- | --- | --- | ---
