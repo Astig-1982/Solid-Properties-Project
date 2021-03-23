@@ -1,5 +1,7 @@
 # Solid Properties Project
 
+Solid Properties is a website where landlords\landladies and property managers can purchase a wide array of property services. The main purpose of the website is to provide to the users a personalized shopping experience. Users can register any number of properties and based on the number of bedrooms each property comprises, a price will be instantly calculated upon choosing a specific service. The shopping cart will display the price for each service for each individual property (as on many they vary, depending on the number of bedrooms the property comprises), and also the total price of the service for all of the properties that has been purchased. When the purchase is complete, a detailed order history will be provided, in which the users can have a history of each service purchased and for which of their properties. The properties can be activated and deactivated anytime from the profile section. 
+
 ## Site Owners Goals
 
 * A website that projects a clear representation of all the services provided, so that the client won't miss any oportunity in purchasing a service that is not well represented.
