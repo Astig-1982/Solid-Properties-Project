@@ -245,6 +245,10 @@ The foooter is fixed and visible an on pages. It contains the following:
 
 I chose to display all categories on the footer as this makes them accesible to the user on all pages. It also impvroves the overall UX.
 
+### Personalised shopping 
+
+![personalised](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personalised_shopping.png)
+
 ### Price calculated depending on the number of bedrooms the property comprises.
 
 ![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/price_total_service.png)
@@ -276,7 +280,7 @@ Please click the links above for documentation on how to set these up and retrie
     ```
     git clone https://github.com/Astig-1982/Solid-Properties-Project
     ```
-    
+
 2. Open your preferred IDE, open a terminal session in the unzip folder or cd to the correct location.
 
 3. A virtual environment is recommended for the Python interpreter, I recommend using Pythons built in virtual environment. Enter the command:
