@@ -135,7 +135,6 @@ This model is connected to **Category** model with a **ForeignKey**.
 **Description** | TextField | blank=False | description
 **Price** | DecimalField |max_digits=6, decimal_places=2 | price
 
-
 #### Profiles App
 
 ##### LandlordProfile Model
@@ -211,6 +210,50 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 **Service** | FK to Services | null=False, blank=False, on_delete=models.CASCADE | service
 **Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0, null=False, blank=False, editable=False | the_property
 **LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
+
+[Back to Top](#table-of-contents)
+
+## Features:
+
+### Fixed Navbar
+
+![navbar](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/navbar.png)
+
+The navbar is fixed and on top of the screens and it's avaiable on all pages throught. In it the user finds links to the following:
+* **Home** page
+* **Services** page
+* **Categories** section
+* **About** page
+* **Profile** page - This will be displayed only if the user is logged in
+* **Sign Out** call to action - This will be displayed only if the user is logged in
+* **Register** call to action - This will be displayed only if the user is ***NOT*** logged in
+* **Sign in** call to action - This will be displayed only if the user is ***NOT*** logged in
+* **Search** box
+
+Having the navabar fixed and accesible from all pages and sections, makes the site more easy and intuitive to use, thus improving the overall UX.
+
+### Footer
+
+![footer](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/Footer.png)
+
+The foooter is fixed and visible an on pages. It contains the following:
+* Links to social media. 
+* Link to home page.
+* Links to sign and register, and to profile page if the user is logged in. 
+* Links to all categories.
+* Company address.
+
+I chose to display all categories on the footer as this makes them accesible to the user on all pages. It also impvroves the overall UX.
+
+### Price calculated depending on the number of bedrooms the property comprises.
+
+![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/total_price.png)
+
+I chose to introduce this feature as the price of many of the services provided depends on how many bedrooms the property that it has been purchased for has. For example, the price for *Repainting* is **£500** per bedroom, so should it is purchased for a property comprising 4 bedrooms, the total price of the service will be **£2000**. This price is calculated automatically when the user selects the property she/he wishes the service to be purchased for. 
+* I have realised this feature with the help of JavaScript. The code is located at the bottom of the page (*detailed_service.html*) in a ```script``` tag. 
+
+
+
 
 ## Deployment:
 
