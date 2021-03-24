@@ -247,7 +247,7 @@ I chose to display all categories on the footer as this makes them accesible to 
 
 ### Price calculated depending on the number of bedrooms the property comprises.
 
-![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/total_price.png)
+![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/price_total_service.png)
 
 I chose to introduce this feature as the price of many of the services provided depends on how many bedrooms the property that it has been purchased for has. For example, the price for *Repainting* is **£500** per bedroom, so should it is purchased for a property comprising 4 bedrooms, the total price of the service will be **£2000**. This price is calculated automatically when the user selects the property she/he wishes the service to be purchased for. 
 * I have realised this feature with the help of JavaScript. The code is located at the bottom of the page (*detailed_service.html*) in a ```script``` tag. 
@@ -276,7 +276,7 @@ Please click the links above for documentation on how to set these up and retrie
     ```
     git clone https://github.com/Astig-1982/Solid-Properties-Project
     ```
-
+    
 2. Open your preferred IDE, open a terminal session in the unzip folder or cd to the correct location.
 
 3. A virtual environment is recommended for the Python interpreter, I recommend using Pythons built in virtual environment. Enter the command:
