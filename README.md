@@ -245,9 +245,24 @@ The foooter is fixed and visible an on pages. It contains the following:
 
 I chose to display all categories on the footer as this makes them accesible to the user on all pages. It also impvroves the overall UX.
 
-### Personalised shopping 
+## Individual List Of Properties
+
+This feature allows the user to create her/his own list of properties in the **profile** section. 
+
+![list_of_properties](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/list_of_properties.png)
+
+This feature has been introduced to enable the **personalised shopping** feature listed below. The user can create her/his own list of properties. From this list she/he can choose the properties she/he wishes to purchase services for.
+
+### Personalised shopping
+
+This feature allows the user to purhcased services for each individual property from her/his. 
 
 ![personalised](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personalised_shopping.png)
+
+I chose to implement this feature as it makes the experience on the site more dynamic. Most of the times the type of services provided by the webiste are to be executed to specific properties. In this case the user has the possibility to choose directly from the website the service and the property for which the service is purchased.
+* This feature has been realised:
+    * In the backend by accessing all the properties from the **Properties** model
+    * In the front end by rendering them using a ```for loop``` in the ```select``` tag in the **detailed_service.html** template.
 
 ### Price calculation 
 
@@ -256,9 +271,54 @@ This feature will automatically calculate the price of the service, depending on
 ![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/total_price.png)
 
 I chose to introduce this feature as the price of many of the services provided depends on how many bedrooms the property that it has been purchased for has. For example, the price for *Repainting* is **£500** per bedroom, so should it is purchased for a property comprising 4 bedrooms, the total price of the service will be **£2000**. This price is calculated automatically when the user selects the property she/he wishes the service to be purchased for. 
-* I have realised this feature with the help of JavaScript. The code is located at the bottom of the page (*detailed_service.html*) in a ```script``` tag. 
+* I have realised this feature with the help of JavaScript. The code is located at the bottom of the page (*detailed_service.html*) in a ```script``` tag.
 
+## Activate & Deactivate Properties
 
+This feature allows the user to activate and deactivate properties from her/his list of properties.
+
+![activate](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/activate.png)
+
+If a property is no longer required on the webiste (maybe it is being sold or it is currently managed by a third party), the user can deactivate it from her/his **profile** section. This will also disable the property from the options list upon choosing a service. As well this it will be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the webiste*. Every property can be activated again at any point.
+* This feature has been realised in the backend in the **properties** app, by creating a ```BooleanField``` named ```activate``` in the **Properties** model. In **view.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
+
+## Detailed Shopping Cart Table
+
+This feature offers an in depth display of the shopping cart.
+
+* This feature has been realised in the backend, in the **cart** app. 
+    * In **views.py** I created a function ```add_to_cart```. This function takes the *street address* of the property from the front end and with its help retrieves the property from the **Properties** model. A dictionary will be created, that takes as ***key** the service and as **value** a list containing the id's of the properties retreived from **Properties** model.
+    * In **context.py** I created ```cart_contents``` funnction that will use a **nested for loop** to iterate through the dictionary created in views.py. Within the first for loop a list named ```total``` will be created for each service. The nested loop will iterate through the list of id's of each service, and will calculate the total cost of the service for the specific property. This will be appended to the ```total``` list created in the first iteration for each service. To calculate the total cost of a specific service for all of the properties purchased, I called python's ```sum()``` method to ```total```.
+    * For **grand total**, in the same ```add_to_cart``` function I created a list named ```grand_total```. For each iteration of the first loop (for each service) to this list will be appended the sum of ```total``` list.   
+
+The same logic has been applied for displaying the shopping cart table if the user is ***NOT*** logged in. 
+
+#### Shopping cart table when the user is logged in and performs purchases for properties from her/his list:
+
+![cart_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_looged.png)
+
+This table contains:
+
+* **Service Info** - This is the name of the service.
+* **Service Price Per Bedroom** - This is the price of the service calculated for 1 bedroom property.
+* **Property** - This is the property for which the service is due to be purhased.
+* **Property Number Of Bedrooms** - This is the number of bedrooms the property comprises.
+* **Total Cost Per Property** - This is the total cost of the service for the specific property.
+* **Total Cost For All Properties** - This is the total cost of the service for all of the properties for which is due to be purhcased.
+
+#### Shopping cart table when the user is ***NOT*** logged in:
+
+![cart_not_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_not_logged.png)
+
+This table contains:
+
+* **Service Info** - This is the name of the service.
+* **Service Price Per Bedroom** - This is the price of the service calculated for 1 bedroom property.
+* **Number Of Bedrooms The Service To Be Executed For** - This is the number of bedrooms the services has been purhcased for.
+* **Total Cost Per Property** - This is the total cost of the service for the specific property.
+* **Total Cost For All Properties** - This is the total cost of the service for all of the properties for which is due to be purhcased.
+
+I chose to use this feature as I believe the user should have a clean understanding of each service she/he buys, what property has been purhcased for, and how the total cost is calculated. In this case she/he will have a sense of veritable transparency and also it helps to keep the budget under control.
 
 
 ## Deployment:
