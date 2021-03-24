@@ -295,8 +295,6 @@ The same logic has been applied for displaying the shopping cart table if the us
 
 #### Shopping cart table when the user is logged in and performs purchases for properties from her/his list:
 
-![cart_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_looged.png)
-
 This table contains:
 
 * **Service Info** - This is the name of the service.
@@ -306,9 +304,9 @@ This table contains:
 * **Total Cost Per Property** - This is the total cost of the service for the specific property.
 * **Total Cost For All Properties** - This is the total cost of the service for all of the properties for which is due to be purhcased.
 
-#### Shopping cart table when the user is ***NOT*** logged in:
+![cart_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_looged.png)
 
-![cart_not_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_not_logged.png)
+#### Shopping cart table when the user is ***NOT*** logged in:
 
 This table contains:
 
@@ -317,6 +315,8 @@ This table contains:
 * **Number Of Bedrooms The Service To Be Executed For** - This is the number of bedrooms the services has been purhcased for.
 * **Total Cost Per Property** - This is the total cost of the service for the specific property.
 * **Total Cost For All Properties** - This is the total cost of the service for all of the properties for which is due to be purhcased.
+
+![cart_not_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_not_logged.png)
 
 I chose to use this feature as I believe the user should have a clean understanding of each service she/he buys, what property has been purhcased for, and how the total cost is calculated. In this case she/he will have a sense of veritable transparency and also it helps to keep the budget under control.
 
