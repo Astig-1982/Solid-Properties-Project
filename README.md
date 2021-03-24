@@ -249,7 +249,9 @@ I chose to display all categories on the footer as this makes them accesible to 
 
 ![personalised](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personalised_shopping.png)
 
-### Price calculated depending on the number of bedrooms the property comprises.
+### Price calculation 
+
+This feature will automatically calculate the price of the service, depending on the number of bedrooms the property comprises.
 
 ![total_price](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/total_price.png)
 
