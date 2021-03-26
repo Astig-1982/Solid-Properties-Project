@@ -102,6 +102,17 @@ I chose to use icons as the website is selling services, rather than products, w
 
 I chosed to use this design as I believe that, as stated above, it shows in a clear way what each service provides, thus making the user experience more intuitive.
 
+## Wireframes
+
+The wireframes for this project have been built using [BALSAMIQ](9https://balsamiq.com/). Please see the wireframes below:
+
+* [Desktop](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_desktop.pdf)
+* [Tablet](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_tablet.pdf)
+* [Mobile](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_mobile.pdf)
+
+**Note**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the profile page is complely different from the original wirreframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throught.
+
+
 ## Information Architecture
 
 During the development phase I worked with **sqlite3** database which is installed with Django.
