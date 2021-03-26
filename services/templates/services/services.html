@@ -49,21 +49,25 @@
 </div>
 <div class="container services-container">
     <div class="row">
-        {% for service in services %}
-            <div class="col-4 col-md-4 col-lg-3 text-center service-holder">
-                <div id="services-description" class="">
-                <div>
-                    <a href="{% url 'detailed_service' service.id %}" class="rounded-circle hvr-rectangle-out service-circles mx-auto text-center py-3"><i class="{{ service.category.icon }} buttons category-icon-i"></i></a>
+        {% if services %}
+            {% for service in services %}
+                <div class="col-4 col-md-4 col-lg-3 text-center service-holder">
+                    <div id="services-description" class="">
+                    <div>
+                        <a href="{% url 'detailed_service' service.id %}" class="rounded-circle hvr-rectangle-out service-circles mx-auto text-center py-3"><i class="{{ service.category.icon }} buttons category-icon-i"></i></a>
+                    </div>
+                    <div class="">
+                        <p class="service-name">{{ service.name }}</p>
+                        <p class="d-none d-sm-block service-description">{{ service.short_description }}
+                            <a href="{% url 'detailed_service' service.id %}" class="py-3 see-more text-capitalize">details</a>
+                        </p> 
+                    </div>
+                    </div>
                 </div>
-                <div class="">
-                    <p class="service-name">{{ service.name }}</p>
-                    <p class="d-none d-sm-block service-description">{{ service.short_description }}
-                        <a href="{% url 'detailed_service' service.id %}" class="py-3 see-more text-capitalize">details</a>
-                    </p> 
-                </div>
-                </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>No services have been detected</p>
+        {% endif %}
     </div>
 </div>
 
