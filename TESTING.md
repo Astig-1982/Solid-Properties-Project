@@ -39,7 +39,7 @@ Now that I have a much better understanding of Django, I am plannig to subject t
 * I've tested multiple times this feature performing the following:
 
     * **Finding services based on key words** - I've typed in the input area and submitted key words and every search retireved all services that contain the respective words.
-    * **Behaviour when submitting an empty search box** - I've submitted an empty query by clicking on the serch button without having anything typed in the input area. The feature works as expected - the user is notified by a ***WARNING*** message that ***no entry has been detected***.
+    * **Behaviour when submitting an empty search box** - I've submitted an empty query by clicking on the serch button without having anything typed in the input area. The feature works as expected - the user is notified by a *WARNING* message that ***no entry has been detected***.
     * **Behaviour when submitting key words not contained by any service provided** - I've submitted an entry containing key words to check the how this feaure behaves. 
         * At first it returned the user the **Services** page without any service displayed on it.
         * I've corrected this UX inconvenient by simply introducing an ```If``` statement in the **services.html** template to check if the template variable ```services``` exists, and if it does the code to retrieves all services was executed. If not, a message will be displayed stating that ***no services within your search criteria have been detected***. 
