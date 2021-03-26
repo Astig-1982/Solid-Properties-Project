@@ -275,7 +275,7 @@ I chose to implement this feature as it makes the experience on the site more dy
     * In the backend by accessing all the properties from the **Properties** model
     * In the front end by rendering them using a ```for loop``` in the ```select``` tag in the **detailed_service.html** template.
 
-### Price calculation 
+### Automated Price Calculation 
 
 This feature will automatically calculate the price of the service, depending on the number of bedrooms the property comprises.
 
@@ -331,6 +331,7 @@ This table contains:
 
 I chose to use this feature as I believe the user should have a clean understanding of each service she/he buys, what property has been purhcased for, and how the total cost is calculated. In this case she/he will have a sense of veritable transparency and also it helps to keep the budget under control.
 
+## Testing
 
 ## Deployment:
 

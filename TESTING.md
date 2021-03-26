@@ -1,6 +1,6 @@
-## Testing
+# Testing
 
-### Automated Testing
+## Automated Testing
 
 I have used the following validation services to test the code used to built this webiste:
 
@@ -9,32 +9,32 @@ I have used the following validation services to test the code used to built thi
 * [JSHint](https://jshint.com/) - used to validate **JavaScript** code.
 * [Python Extension For Visual Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-### Test Driven Development
+## Test Driven Development
 
 I chose not to use Test Driven Development for this project as being my first encounter with Django I was still in the learning process while working on this project. Hence it was difficult to apply automated testing on models and functions which at the time of development I was yet to have a full comprehension of.
 
 Now that I have a much better understanding of Django, I am plannig to subject the entire project to automated testing in the very near future.
 
-### Manual Testing
+## Manual Testing
 
-#### Navbar&Footer
+### Navbar&Footer
 
 * Clicked each link in the navbar to confirm that it leads to the correct page.
 * Confirm that when the user is logged in ***Profile*** and ***Sign Out*** are displayed and whent the user is logged out ***Register*** and ***Sign In*** are displayed.
 
-#### Website links
+### Website links
 
 * Clicked on every link on the webiste to see if it takes the user to the correct pages.
 
-#### Categories Display
+### Categories Display
 
 * Confirm that every **Category** call to action from the home page retrieves the expected categories. I confirm the same outcome when selecting a category from the **Category** dropdown list on **Services** page.
 
-#### Sort By 
+### Sort By 
 
 * Confirm that the selected sorting from the **Sort By** dropdown list on **Services page works as expected.
 
-#### Serch box
+### Serch box
 
 * I've tested multiple times this feature performing the following:
 
@@ -45,16 +45,16 @@ Now that I have a much better understanding of Django, I am plannig to subject t
         * I've corrected this UX inconvenient by simply introducing an ```If``` statement in the **services.html** template to check if the template variable ```services``` exists, and if it does the code to retrieves all services was executed. If not, a message will be displayed stating that ***no services within your search criteria have been detected***. 
         * The feature works now as expected.
 
-#### Adding properties to the list in the **Profile** section and diplaying them in the **Select a property** dropdown list on the **detailed_service** page
+### Adding properties to the list in the **Profile** section and diplaying them in the **Select a property** dropdown list on the **detailed_service** page
 
 * I have tested this feature multiple times by syimply adding properties to the list in the **Profile** section and checking that the same properties are rendered in the dropdown list on the **detailed_service** page. I have repeated this action severall times throught the development and the feature works everytime as expected. 
 
-#### Automated calculation of the total price
+### Automated calculation of the total price
 
 * This feature calculates the price for each service, depending on the number of bedrooms the property comprises.
     * The testing for this feature was very straight forward. Upon selecting the preferred property (or the number of bedrooms if the user is not logged in) from the dropdown list on the **detailed_service** page, I ws checking if the total price displayed was updating accordingly - **price per bedroom * the number of bedrooms**. I have performed this action multiple times with different services for different properties and the feature works as expected every time.
 
-#### Detailed shopping cart tables
+### Detailed shopping cart tables
 
 This feature went under strong scrutinity as it represents one of the most important features of the personalised shopping experience.
 
@@ -65,7 +65,7 @@ This feature went under strong scrutinity as it represents one of the most impor
 
 I've since performed multiple tests by adding different services for different properties and I am happy to announce that the feature now works as expected.
 
-#### Payment System
+### Payment System
 
 I have strongly emphasised on the testing of this feature as it wes my first time working with [STRIPE](https://stripe.com/gb). The following have been carried:
 
@@ -75,7 +75,7 @@ I have strongly emphasised on the testing of this feature as it wes my first tim
 
 Throughout the testing of this highly important feaure of the website, no errors have been detected and the payment works as expected.
 
-#### Authentification System
+### Authentification System
 
 I have used as authentification system the built-in components of Django **allauth** package.
 
