@@ -104,7 +104,7 @@ I chosed to use this design as I believe that, as stated above, it shows in a cl
 
 ## Wireframes
 
-The wireframes for this project have been built using [BALSAMIQ](9https://balsamiq.com/). Please see the wireframes below:
+The wireframes for this project have been built using [BALSAMIQ](https://balsamiq.com/). Please see the wireframes below:
 
 * [Desktop](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_desktop.pdf)
 * [Tablet](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_tablet.pdf)
