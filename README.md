@@ -290,8 +290,8 @@ This feature allows the user to activate and deactivate properties from her/his 
 
 ![activate](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/activate.png)
 
-If a property is no longer required on the webiste (maybe it is being sold or it is currently managed by a third party), the user can deactivate it from her/his **profile** section. This will also disable the property from the options list upon choosing a service. As well this it will be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the webiste*. Every property can be activated again at any point.
-* This feature has been realised in the backend in the **properties** app, by creating a ```BooleanField``` named ```activate``` in the **Properties** model. In **view.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
+If a property is no longer required on the website (maybe it's being sold or it's currently managed by a third party) the user can deactivate it from her/his **profile** section. This will also disables the property from the options list upon choosing a service. And it will also be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the website*. Every property can be activated again at any point.
+* This feature has been realised in the backend in the **properties** app. I created a ```BooleanField``` named ```activate``` in the **Properties** model. In **views.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
 
 ## Detailed Shopping Cart Table
 
