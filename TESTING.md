@@ -88,11 +88,49 @@ No errors have been detected and the feature works as expected.
 When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **bugs** have been detected:
 
 * **Bug** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculated the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
-    * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely remove it. This actually improves the overall UX as thus the user has the possibility  to reacitvate the property back anytime.
+    * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely removing it. This actually improves the overall UX as thus the user has the possibility to reactivate the property back anytime.
 
 * **Bug** - if the user adds services to her/his shopping cart and after navigates to the **Profile** section and decides to deactivate  a property for which a service has been prior added to the shopping cart, when returning to the shopping cart the property will still be there - which is wrong because the property is no longer active on the website and services cannot be purchased for it.
-    * **Correction** - In the **properties** app in **views.py** I have modified the ```activate_deactivate``` function, and now this function first checks if the property is in the current shopping cart session, and if it is, it will be removed and the shopping cart will be updated accordingly. 
+    * **Correction** - In the **properties** app in **views.py** I have modified the ```activate_deactivate``` function, and now this function first checks if the property is in the current shopping cart session, and if it is, it will be removed and the shopping cart will be updated accordingly.
 
+Now this feature works as expected.
+
+#### Further testing on this feature:
+
+* Confirm that when a property is deactivated from the website, the specific property will be disabled from the **Please select a property** dropdown list on the **detailed_service** page.
+* Confirm that when a property is deactivated, in the **order history** section a red text below the respective property will be displayed, notifying the user the *property is no longer available*
+
+### Activating properties on the website
+
+* Confirm that this feature works as expected - everytime a property is being activated or reactivated, the **detailed_service** and **order history** sections will update accordingly.
+
+### Order history
+
+ * This feature had the **bug** expressed at the previous feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
+
+Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
+
+### Saving and updating user's details at billing_details section
+
+No bugs have been detected during the development of this feature.
+
+* **Note**: this feature works only if the user is logged in. 
+
+* Confirm that everytime a user checks out, if *save details* checkbox is being clicked her/his billing details will be saved at **billing_details** section.
+* Confirm that when a user updates her/his details in the **billing_details** section, her/his details will update accordingly.
+* Confirm that if a user is NOT logged in, the message ***Save these details to my profile*** will NOT be displayed.
+    * **Note**: I chose not to display this message if the user is not logged in, in the favour of another message that encourages the user to log in in order to benefit of the personalised shopping experience. I chose to emphasize more on the **personalised shopping experience** feature as I believe it is more important and it will better persuade the user to sign up.
+
+### Responsiveness
+
+This website has been developed to be resposive on all major type of screens:
+
+* **Extra Large Desktops** ```@media (min-width: 1500px)``` - fully responsive.
+* **13 inch Macbook Screens** ```@media (min-width: 1200px) and (max-width: 1499px)``` - fully responsive.
+* **Large Tablets** (Ex: IPad Pro) ```(min-width: 1024px) and (max-width: 1199px)``` - fully responsive.
+* **Tablets** ```@media (min-width: 768px) and (max-width: 1023px)``` - fully responsive.
+* **Large Mobiles Screens** (Ex: IPhone 6/7/8 Plus) ```@media (max-width: 576px)``` - fully responsive.
+* **Regular Mobiles Screens** (Ex: Iphone 6/7/8, Huawei P30) ```@media (max-width: 375px)``` - fully responsive.
 
 
 
