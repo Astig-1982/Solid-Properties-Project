@@ -83,4 +83,17 @@ I have used as authentification system the built-in components of Django [allaut
 
 No errors have been detected and the feature works as expected.
 
+### Deactivating properties from the website
+
+When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **bugs** have been detected:
+
+* **Bug** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculated the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
+    * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely remove it. This actually improves the overall UX as thus the user has the possibility  to reacitvate the property back anytime.
+
+* **Bug** - if the user adds services to her/his shopping cart and after navigates to the **Profile** section and decides to deactivate  a property for which a service has been prior added to the shopping cart, when returning to the shopping cart the property will still be there - which is wrong because the property is no longer active on the website and services cannot be purchased for it.
+    * **Correction** - In the **properties** app in **views.py** I have modified the ```activate_deactivate``` function, and now this function first checks if the property is in the current shopping cart session, and if it is, it will be removed and the shopping cart will be updated accordingly. 
+
+
+
+
 
