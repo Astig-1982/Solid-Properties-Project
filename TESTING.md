@@ -54,11 +54,13 @@ The feature works now as expected.
 * This feature calculates the price for each service, depending on the number of bedrooms the property comprises.
     * The testing for this feature was very straight forward. Upon selecting the preferred property (or the number of bedrooms if the user is not logged in) from the dropdown list on the **detailed_service** page, I ws checking if the total price displayed was updating accordingly - **price per bedroom * the number of bedrooms**. I have performed this action multiple times with different services for different properties and the feature works as expected every time.
 
-### Detailed shopping cart tables
+### Shopping cart tables
+
+Both shopping cart tables have been tested -  for logged in and not logged in users.
 
 This feature went under strong scrutinity as it represents one of the most important features of the personalised shopping experience.
 
-* The testing has been performed by adding different services for different properties in the shopping cart. Afterwords i was checking the table to make sure the correct properties are attributed to the correct services, as selected when they were added to the cart. Equally important I was checking to make sure the price for each service is calculated accordingly - for each individual property and also for all of the properties that is due to be purchased for. The following **bug** has been detected:
+* The testing has been performed by adding different services for different properties in the shopping cart. Afterwords I was checking the table to make sure the correct properties are attributed to the correct services, as selected when they were added to the cart. Equally important I was checking to make sure the price for each service is calculated accordingly - for each individual property and also for all of the properties that is due to be purchased for. The following **bug** has been detected:
     * In the corresponding field, instead of displaying the price of the service for ALL of the properties that is due to be purhcased for, it displayed the price calculated only for the last property. 
     * **Cause** - this is because in the **cart** app in **context.py** at ```cart_contents``` function created to display the shopping cart, I created the empty list named ```total``` (where the price of all of the properties is appended) in the second ```for loop``` of the nested loop. This loop was used to iterate through the list of properties of the specific service - **the logic of this feature has been documentated in the README.md file [here](https://github.com/Astig-1982/Solid-Properties-Project#detailed-shopping-cart-table)**.
     * **Correction** - I've corrected this bug by simply creating the empty list named ```total```  in the first ```for loop``` of the nested loop (when iterating through services). Thus, for each service, ```total``` list will append the price for each of the property associated with that specific service.
@@ -83,7 +85,7 @@ I have used as authentification system the built-in components of Django [allaut
 
 No errors have been detected and the feature works as expected.
 
-### Deactivating properties from the website
+### Deactivating Properties From The Website
 
 When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **bugs** have been detected:
 
@@ -104,15 +106,13 @@ Now this feature works as expected.
 
 * Confirm that this feature works as expected - everytime a property is being activated or reactivated, the **detailed_service** and **order history** sections will update accordingly.
 
-### Order history
+### Order History
 
  * This feature had the **bug** expressed at the previous feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
 
 Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
 
 ### Saving and updating user's details at billing_details section
-
-No bugs have been detected during the development of this feature.
 
 * **Note**: this feature works only if the user is logged in. 
 
@@ -121,15 +121,22 @@ No bugs have been detected during the development of this feature.
 * Confirm that if a user is NOT logged in, the message ***Save these details to my profile*** will NOT be displayed.
     * **Note**: I chose not to display this message if the user is not logged in, in the favour of another message that encourages the user to log in in order to benefit of the personalised shopping experience. I chose to emphasize more on the **personalised shopping experience** feature as I believe it is more important and it will better persuade the user to sign up.
 
+No bugs have been detected and this feature works as expected.
+
 ### Responsiveness
 
 This website has been developed to be responsive on all major type of screens:
 
 * **Extra Large Desktops** ```@media (min-width: 1500px)``` - fully responsive.
+
 * **13 inch Macbook Screens** ```@media (min-width: 1200px) and (max-width: 1499px)``` - fully responsive.
+
 * **Large Tablets** (Ex: IPad Pro) ```(min-width: 1024px) and (max-width: 1199px)``` - fully responsive.
+
 * **Tablets** ```@media (min-width: 768px) and (max-width: 1023px)``` - fully responsive.
+
 * **Large Mobiles Screens** (Ex: IPhone 6/7/8 Plus) ```@media (max-width: 576px)``` - fully responsive.
+
 * **Regular Mobiles Screens** (Ex: Iphone 6/7/8, Huawei P30) ```@media (max-width: 375px)``` - fully responsive.
 
 During the development of the website's responsiveness, the following **bug** has been detected:

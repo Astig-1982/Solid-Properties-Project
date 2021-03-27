@@ -293,7 +293,7 @@ This feature allows the user to activate and deactivate properties from her/his 
 If a property is no longer required on the website (maybe it's being sold or it's currently managed by a third party) the user can deactivate it from her/his **profile** section. This will also disables the property from the options list upon choosing a service. And it will also be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the website*. Every property can be activated again at any point.
 * This feature has been realised in the backend in the **properties** app. I created a ```BooleanField``` named ```activate``` in the **Properties** model. In **views.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
 
-## Detailed Shopping Cart Table
+## Shopping Cart Table
 
 This feature offers an in depth display of the shopping cart.
 
@@ -332,6 +332,20 @@ This table contains:
 I chose to use this feature as I believe the user should have a clean understanding of each service she/he buys, what property has been purhcased for, and how the total cost is calculated. In this case she/he will have a sense of veritable transparency and also it helps to keep the budget under control.
 
 ## Testing
+
+Please see testing info in [TESTING.md](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md).
+
+## Bugs
+
+During the development of the website, the following bugs have been detected:
+
+* **Shopping cart tables** bug - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#detailed-shopping-cart-tables).
+
+* **Deactivating Properties** bug - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#deactivating-properties-from-the-website).
+
+* **Order History** bug - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#order-history).
+
+* **Responsiveness** bug - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#responsiveness).
 
 ## Deployment:
 
