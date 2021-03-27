@@ -47,7 +47,7 @@ The feature works now as expected.
 
 ### Adding properties to the list in the **Profile** section and diplaying them in the **Select a property** dropdown list on the **detailed_service** page
 
-* I have tested this feature multiple times by simply adding properties to the list in the **Profile** section and checking that the same properties are rendered in the dropdown list on the **detailed_service** page. I have repeated this action severall times throught the development and the feature works everytime as expected. 
+* I have tested this feature multiple times by simply adding properties to the list in the **Profile** section and checking that the same properties are rendered in the dropdown list on the **detailed_service** page. I have repeated this action severall times throught the development and the feature works every time as expected. 
 
 ### Automated calculation of the total price
 
@@ -89,8 +89,8 @@ No errors have been detected and the feature works as expected.
 
 When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **bugs** have been detected:
 
-* **Bug** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculated the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
-    * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely removing it. This actually improves the overall UX as thus the user has the possibility to reactivate the property back anytime.
+* **Bug** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculates the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
+    * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely removing it. Documentation for this feature can be found [here](https://github.com/Astig-1982/Solid-Properties-Project#activate--deactivate-properties). This actually improves the overall UX as now the user has also the possibility to reactivate the property back anytime.
 
 * **Bug** - if the user adds services to her/his shopping cart and after navigates to the **Profile** section and decides to deactivate  a property for which a service has been prior added to the shopping cart, when returning to the shopping cart the property will still be there - which is wrong because the property is no longer active on the website and services cannot be purchased for it.
     * **Correction** - In the **properties** app in **views.py** I have modified the ```activate_deactivate``` function, and now this function first checks if the property is in the current shopping cart session, and if it is, it will be removed and the shopping cart will be updated accordingly.
@@ -104,11 +104,11 @@ Now this feature works as expected.
 
 ### Activating properties on the website
 
-* Confirm that this feature works as expected - everytime a property is being activated or reactivated, the **detailed_service** and **order history** sections will update accordingly.
+* Confirm that this feature works as expected - every time a property is being activated or reactivated, the **detailed_service** and **order history** sections will update accordingly.
 
 ### Order History
 
- * This feature had the **bug** expressed at the previous feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
+ * This feature manifested the **bug** mentioned at the previous feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
 
 Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
 
@@ -116,7 +116,7 @@ Confirm that the order history works as expected and the services together with 
 
 * **Note**: this feature works only if the user is logged in. 
 
-* Confirm that everytime a user checks out, if *save details* checkbox is being clicked her/his billing details will be saved at **billing_details** section.
+* Confirm that every time a user checks out, if *save details* checkbox is being clicked her/his billing details will be saved at **billing_details** section.
 * Confirm that when a user updates her/his details in the **billing_details** section, her/his details will update accordingly.
 * Confirm that if a user is NOT logged in, the message ***Save these details to my profile*** will NOT be displayed.
     * **Note**: I chose not to display this message if the user is not logged in, in the favour of another message that encourages the user to log in in order to benefit of the personalised shopping experience. I chose to emphasize more on the **personalised shopping experience** feature as I believe it is more important and it will better persuade the user to sign up.
@@ -146,6 +146,10 @@ During the development of the website's responsiveness, the following **bug** ha
 
 I am confident I will completely crush this bug in the very nearest future.
 
+## Further Testing
+
+* During the develpment the website was locally constantly testing with debugger: ```debug=True```. Every time the website crashed the debugger displayed message describing the error. This helped me to find the location of the error and fix it.
+* Friends and familiy members have been asked to test the website multiple times and offer feedback on its design and functionality. Their feedback helped me improve the overall UX.
 
 
 
