@@ -123,7 +123,7 @@ No bugs have been detected during the development of this feature.
 
 ### Responsiveness
 
-This website has been developed to be resposive on all major type of screens:
+This website has been developed to be responsive on all major type of screens:
 
 * **Extra Large Desktops** ```@media (min-width: 1500px)``` - fully responsive.
 * **13 inch Macbook Screens** ```@media (min-width: 1200px) and (max-width: 1499px)``` - fully responsive.
@@ -131,6 +131,15 @@ This website has been developed to be resposive on all major type of screens:
 * **Tablets** ```@media (min-width: 768px) and (max-width: 1023px)``` - fully responsive.
 * **Large Mobiles Screens** (Ex: IPhone 6/7/8 Plus) ```@media (max-width: 576px)``` - fully responsive.
 * **Regular Mobiles Screens** (Ex: Iphone 6/7/8, Huawei P30) ```@media (max-width: 375px)``` - fully responsive.
+
+During the development of the website's responsiveness, the following **bug** has been detected:
+
+* **Overflow**
+    * *Checkout* page exhibits small padding/margin on the right hand side of the screen. The bug behaves exactly the same on all types of screens. My attemps in removing it have been unsuccesfull and due to time constraints I've decided to postpone further investigation.
+
+I am confident I will completely crush this bug in the very nearest future.
+
+
 
 
 
