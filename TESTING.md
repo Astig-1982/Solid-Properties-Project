@@ -133,7 +133,7 @@ Now this feature works as expected.
 
 ### Order History
 
- * This feature manifested the **bug** mentioned at the previous feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
+ * This feature manifested the **bug** mentioned at the testing of **deactivating properties** feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
 
 Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
 

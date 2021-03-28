@@ -616,11 +616,20 @@ USE_AWS | `True`
 
 * 
 
-#### Bakcground Image Secondary pages
+#### Bakcground Image Secondary Pages
 
 * [telegraph.co.uk](https://www.telegraph.co.uk/travel/destinations/europe/united-kingdom/england/london/articles/)
 
 #### Category Images
+
+* **Repairs & Refurbishment** - [cpmcarpentry.com.au](https://cpmcarpentry.com.au/services/refurbishment/)
+* **Marketing** - [shutterstock.com](https://www.shutterstock.com/search/marketing+plan)
+* **Cleaning Services** - [topdowncleaning.co.uk](https://topdowncleaning.co.uk/blog/cleaning-home-against-covid19/)
+* **Admin Services** - [rtpsurveyors.co.uk](https://www.rtpsurveyors.co.uk/services/architectural-design-project-services/contract-administration/)
+* **Other Services** - [cloundlinkeduk.com](https://www.cloudlinkeduk.com/other-services/)
+* **Free Of Charge** - [dreamstime.com](https://www.dreamstime.com/stock-illustration-free-charge-hand-ball-pen-writing-text-transparent-whiteboard-image59162021)
+* **Plumbing & Electric** - [bestbettconstruction.com](https://bestbettconstruction.com/commercial-plumbing-and-electric/)
+* **Legal** - [businessfirstfamily.com](https://businessfirstfamily.com/legal-contracts-business/)
 
 ### Code
 
