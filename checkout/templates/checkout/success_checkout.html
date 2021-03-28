@@ -12,13 +12,13 @@
 </div>
 <div class="container success-order-container">
     <div class="row">
-        <p>
-                    {% if from_profile %} 
-                        <span id="order-summary-span">Please see below your order summary.</span>
-                    {% else %}
-                        Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is <strong>£{{ order.grand_total }}</strong>.
-                    {% endif %}
-                </p>
+            <p>
+                {% if from_profile %} 
+                    <span id="order-summary-span">Please see below your order summary.</span>
+                {% else %}
+                    Your order was succesful. We have sent a confirmation email to <strong>{{ order.email }}</strong>. Your order total is <strong>£{{ order.grand_total }}</strong>.
+                {% endif %}
+            </p>
         <div class="overflow-mobile-div">
             <div class="col-12 order-details-col">
                 
@@ -126,7 +126,12 @@
         </div>
         <div id="action-order-row" class="row">
             <div class="col-12">
+                <div id="order-history-buttons">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}"><button class="profile-order-history buttons text-uppercase">back to profile</button></a>
+                {% endif %} 
                 <a id="order-action-button" href="{% url 'services' %}"><button class="continue-shopping-button buttons text-uppercase">continue shopping</button></a>
+                </div>
             </div>
         </div>
     </div>

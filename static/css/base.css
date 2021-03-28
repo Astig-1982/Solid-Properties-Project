@@ -569,6 +569,7 @@ body {
     bottom: .19%;
 }
 
+.profile-order-history:hover,
 #continue-shopping-add-property:hover,
 .back-to-profile-a:hover,
 .register-property-button:hover,
@@ -1232,11 +1233,6 @@ th, td {
     margin-bottom: 7.8%;
 }
 
-#order-action-button {
-    float: right;
-    margin-right: 23.4%;
-}
-
 .order-details-col p:not(#billing-total) {
     padding-left: 4.6%;
     font-size: 90%;
@@ -1327,6 +1323,21 @@ th, td {
 
 #total-amount {
     margin-left: 10%;
+}
+
+#order-history-buttons {
+    float: right;
+    margin-right: 23.4%;
+}
+
+.profile-order-history {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+    width: 10rem;
+    height: 2.5rem;
+    margin-right: .9rem;
+    border: none;
+    font-size: 88%;
 }
 
 /* --------------------------------------------------- billing details page starts here -------------------------------------------------- */
@@ -1641,6 +1652,10 @@ th, td {
         margin-bottom: 2%;
     }
 
+    #order-history-buttons {
+        margin-right: 12.9%;
+    }
+
     #add-property-div {
         width: 65%;
         margin-top: 15%;
@@ -1767,9 +1782,7 @@ th, td {
         padding: 5.9%;
     }
 
-    #order-action-button {
-        margin-right: 6.5rem;
-    }
+   
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1996,6 +2009,10 @@ th, td {
         margin-top: 3.95rem;
     }
 
+    #order-history-buttons {
+        float: none;
+    }
+
     #sign-up-paragraph,
     #login-paragraph,
     .login-form {
@@ -2060,6 +2077,10 @@ th, td {
     .category-image {
         width: 10rem;
         height: 7.95rem;
+    }
+
+    #order-history-buttons {
+        float: none;
     }
 
     .category-column {
@@ -2303,6 +2324,10 @@ th, td {
         width: 85%;
     }
 
+    #order-history-buttons {
+        margin-right: 0;
+    }
+
     .properties-table {
         width: max-content;
     }
@@ -2388,10 +2413,6 @@ th, td {
     #continue-shopping-add-property {
         padding: .98rem 1.4rem;
         font-size: 72%;
-    }
-
-    #order-action-button {
-        margin-right: 55.4%;
     }
 }
 
