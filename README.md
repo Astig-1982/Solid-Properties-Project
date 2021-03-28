@@ -222,7 +222,48 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 **Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0, null=False, blank=False, editable=False | the_property
 **LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
 
-[Back to Top](#table-of-contents)
+[Back to Top](#Information Architecture)
+
+## Technologies used
+
+### Languages
+
+* [HTML](https://html.com/)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
+### Tools
+
+* [Gitpod](https://www.gitpod.io/) IDE used for developing this project.
+* [Stripe](https://stripe.com) as payment platform to validate and accept credit card payments securely.
+* [AWS S3 Bucket](https://aws.amazon.com/) to store images entered into the database.
+* [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) for version control.
+* [GitHub](https://github.com/) to store and share project code remotely.
+* [Heroku](https://www.heroku.com/) to deploy the project.
+* [Balsamiq](https://balsamiq.com/) to create wireframes.
+* [Tinypng](https://tinypng.com/) used to compress image files.
+
+### Databases
+
+* [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+* [SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+
+### Libraries and Frameworks
+
+* [Django](https://www.djangoproject.com/) as python web framework for rapid development and clean design.
+* [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enable creation, configuration and management of AWS S3.
+* [Django Heroku](https://pypi.org/project/django-heroku/) to improve deployment of django projects on heroku.
+* [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
+* [Gunicorn](https://pypi.org/project/gunicorn/) WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+* [Pillow](https://pillow.readthedocs.io/en/stable/) as python imaging library to aid in processing image files to store in database.
+* [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
+* [Whitenoise](http://whitenoise.evans.io/en/stable/) to allows the web app to serve its own static files.
+* [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+* [JQuery](https://jquery.com) to simplify DOM manipulation.
+* [Bootstrap](https://www.bootstrapcdn.com/) to facilitate the development of the website responsiveness and of the grid structure.
+* [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Vroom.
+* [Google Fonts](https://fonts.google.com/) to style the website fonts.
 
 ## Features:
 
