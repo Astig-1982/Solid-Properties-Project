@@ -149,7 +149,7 @@ I am confident I will completely crush this bug in the very nearest future.
 ## Further Testing
 
 * During the develpment process the website was constantly testing locally with debugger: ```debug=True```. Every time the website crashed the debugger displayed a message describing the error. This helped me find the location of the error and fix it.
-* Friends and familiy members have been asked to test the website multiple times and offer feedback on its design and functionality. Their feedback helped me improve the overall UX.
+* Friends and familiy members have been kindly asked to test the website multiple times and offer feedback on its design and functionality. Their feedback helped me improve the overall UX.
 
 
 

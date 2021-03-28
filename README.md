@@ -503,3 +503,35 @@ STRIPE_PUBLIC_KEY | `<your secret key>`
 STRIPE_SECRET_KEY | `<your secret key>`
 USE_AWS | `True`
 
+## Credits
+
+### Imgages:
+
+#### Hero Image Home Page
+
+* 
+
+#### Bakcground Image Secondary pages
+
+* [telegraph.co.uk](https://www.telegraph.co.uk/travel/destinations/europe/united-kingdom/england/london/articles/)
+
+#### Category Images
+
+### Code
+
+* The course lessons from [CODE INSTITUTE](https://codeinstitute.net/) have provided an important reference in the development of this project. The code in the lessons has been a source of inspiration for many of the new notions approached in this project, especially the payment system.
+* [Django Documentation](https://docs.djangoproject.com/en/3.1/) has proved to be a valuable and indispensable resource.
+* [CSS-Tricks](https://css-tricks.com/) has been used as a source of inspiration for the **fixed footer**.
+
+### Aknowkedgments
+
+Extra special thanks to my mentor [Simen Daehlin] who has been continually guiding and supporting me through the course. This has a great influence in my journey of becoming a junior developer.
+
+All tutors from [CODE INSTITUTE](https://codeinstitute.net/) who have always been extremly responsive and offered excellent guidance and support on every approach.
+
+Fellow coders from [Slack](https://slack.com/intl/en-gb/) and [Stack Overflow](https://stackoverflow.com/)
+
+
+
+
+
