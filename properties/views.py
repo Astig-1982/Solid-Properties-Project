@@ -33,15 +33,13 @@ def add_property(request):
                     'no_of_bedrooms': request.POST['no_of_bedrooms'],
                     'activate': request.POST['activate-property'],
                 }
-
             property_form = PropertyForm(form_data)
-
             if property_form.is_valid():
                 property_form.save()
                 property_form = PropertyForm()
                 messages.success(request, f"{street_address} has been \
                 succesfuly registered and added to your list of properties.")
-
+        return redirect(reverse('profile'))
     else:
         property_form = PropertyForm()
 

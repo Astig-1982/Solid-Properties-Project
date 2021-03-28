@@ -569,6 +569,7 @@ body {
     bottom: .19%;
 }
 
+#continue-shopping-add-property:hover,
 .back-to-profile-a:hover,
 .register-property-button:hover,
 .main-action-buttons:hover,
@@ -650,11 +651,21 @@ body {
 }
 
 #add-property-button {
-    width: 20rem !important;
-    height: 3.5rem;
-    font-size: 130%;
+    width: 11rem;
+    height: 2.9rem;
+    font-size: 85%;
     letter-spacing: .5px;
-    display: block;
+    
+}
+
+#continue-shopping-add-property {
+    text-decoration: none;
+    border: 1px solid rgb(2, 191, 191);
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+    font-size: 85%;
+    padding: .95rem 2rem;
+    margin-left: 1rem;
 }
 
 .active-property-box {
@@ -1617,11 +1628,12 @@ th, td {
     }
 
     #add-property-button {
-        width: 16.9rem;
         height: 4rem;
-        font-size: 130%;
         letter-spacing: .5px;
-        display: block;
+    }
+
+    #continue-shopping-add-property {
+        padding: 1.49rem 2rem;
     }
 
     .active-property-box {
@@ -1976,6 +1988,12 @@ th, td {
 
     #logout-form {
         width: auto;
+    }
+
+    #add-property-div {
+        width: 68.5%;
+        padding-left: 0px;
+        margin-top: 3.95rem;
     }
 
     #sign-up-paragraph,
@@ -2363,9 +2381,13 @@ th, td {
     }
 
     #add-property-button {
-        display: block;
-        font-size: 85%;
-        width: 12rem;
+        font-size: 72%;
+        width: 9rem;
+    }
+
+    #continue-shopping-add-property {
+        padding: .98rem 1.4rem;
+        font-size: 72%;
     }
 
     #order-action-button {
