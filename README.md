@@ -525,11 +525,17 @@ USE_AWS | `True`
 
 ### Aknowkedgments
 
-Extra special thanks to my mentor [Simen Daehlin] who has been continually guiding and supporting me through the course. This has a great influence in my journey of becoming a junior developer.
+Extra special thanks to my mentor [Simen Daehlin](https://github.com/Eventyret) who has been continually guiding and supporting me through the course. Thuis had a great influence in my journey of becoming a junior developer.
 
 All tutors from [CODE INSTITUTE](https://codeinstitute.net/) who have always been extremly responsive and offered excellent guidance and support on every approach.
 
-Fellow coders from [Slack](https://slack.com/intl/en-gb/) and [Stack Overflow](https://stackoverflow.com/)
+Fellow coders from [Slack](https://slack.com/intl/en-gb/) and [Stack Overflow](https://stackoverflow.com/) who have been extremly helpful and supportive during the development of all my projects.
+
+## Disclaimer
+
+This site is developed for **educational purposes** only. The company **Solid Properties** including its affiliated London address - **212 Marylebone Rd, London, NW1 5LS** - is purely fictional.
+
+
 
 
 
