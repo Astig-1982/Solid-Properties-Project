@@ -1,5 +1,28 @@
 # Testing
 
+## Table Of cart_contents
+- [Testing](#testing)
+  * [Automated Testing](#automated-testing)
+  * [Test Driven Development](#test-driven-development)
+  * [Manual Testing](#manual-testing)
+    + [Navbar&Footer](#navbar-footer)
+    + [Website links](#website-links)
+    + [Categories Display](#categories-display)
+    + [Sort By](#sort-by)
+    + [Serch box](#serch-box)
+    + [Adding properties to the list in the **Profile** section and diplaying them in the **Select a property** dropdown list on the **detailed_service** page](#adding-properties-to-the-list-in-the---profile---section-and-diplaying-them-in-the---select-a-property---dropdown-list-on-the---detailed-service---page)
+    + [Automated calculation of the total price](#automated-calculation-of-the-total-price)
+    + [Shopping cart tables](#shopping-cart-tables)
+    + [Payment System](#payment-system)
+    + [Authentification System](#authentification-system)
+    + [Deactivating Properties From The Website](#deactivating-properties-from-the-website)
+      - [Further testing on this feature:](#further-testing-on-this-feature-)
+    + [Activating properties on the website](#activating-properties-on-the-website)
+    + [Order History](#order-history)
+    + [Saving and updating user's details at billing_details section](#saving-and-updating-user-s-details-at-billing-details-section)
+    + [Responsiveness](#responsiveness)
+  * [Further Testing](#further-testing)
+
 ## Automated Testing
 
 I have used the following validation services to test the code used to built this webiste:

@@ -1,6 +1,70 @@
 # Solid Properties Project
 
-Solid Properties is a website where landlords\landladies and property managers can purchase a wide array of property services. The main purpose of the website is to provide to the users a personalized shopping experience.
+Solid Properties is a website where landlords\landladies and property managers can purchase a wide array of property services. The main purpose of the website is to provide to the users a **personalized shopping experience**.
+
+## Table Of cart_contents
+- [Solid Properties Project](#solid-properties-project)
+  * [How It Works](#how-it-works)
+    + [Instructions:](#instructions-)
+    + [Further information:](#further-information-)
+  * [Site Owners Goals](#site-owners-goals)
+  * [User Stories](#user-stories)
+    + [General Users](#general-users)
+    + [Landlords/Landladies](#landlords-landladies)
+  * [Design Choices](#design-choices)
+    + [Images:](#images-)
+      - [Hero Image From Home Page:](#hero-image-from-home-page-)
+      - [Top Image from **Services** and **Profile** pages:](#top-image-from---services---and---profile---pages-)
+      - [Category Images:](#category-images-)
+    + [Fonts:](#fonts-)
+  * [Colors:](#colors-)
+    + [Icons:](#icons-)
+      - [Services Icons:](#services-icons-)
+    + [Extra:](#extra-)
+      - [Brief Description Display For Each Service:](#brief-description-display-for-each-service-)
+  * [Wireframes](#wireframes)
+  * [Information Architecture](#information-architecture)
+    + [Database Structure:](#database-structure-)
+      - [Services App](#services-app)
+        * [Category Model](#category-model)
+        * [Services Model](#services-model)
+      - [Profiles App](#profiles-app)
+        * [LandlordProfile Model](#landlordprofile-model)
+      - [Properties App](#properties-app)
+      - [Properties Model](#properties-model)
+      - [Checkout App](#checkout-app)
+        * [Order Model](#order-model)
+        * [OrderLineItem Model](#orderlineitem-model)
+        * [OrderLineItemAnonym Model](#orderlineitemanonym-model)
+  * [Technologies used](#technologies-used)
+    + [Languages](#languages)
+    + [Tools](#tools)
+    + [Databases](#databases)
+    + [Libraries and Frameworks](#libraries-and-frameworks)
+  * [Features:](#features-)
+    + [Fixed Navbar](#fixed-navbar)
+    + [Footer](#footer)
+  * [Individual List Of Properties](#individual-list-of-properties)
+    + [Personalised shopping](#personalised-shopping)
+    + [Automated Price Calculation](#automated-price-calculation)
+  * [Activate & Deactivate Properties](#activate---deactivate-properties)
+  * [Shopping Cart Table](#shopping-cart-table)
+      - [Shopping cart table when the user is logged in and performs purchases for properties from her/his list:](#shopping-cart-table-when-the-user-is-logged-in-and-performs-purchases-for-properties-from-her-his-list-)
+      - [Shopping cart table when the user is ***NOT*** logged in:](#shopping-cart-table-when-the-user-is----not----logged-in-)
+  * [Testing](#testing)
+  * [Bugs](#bugs)
+  * [Deployment:](#deployment-)
+    + [How to run this project locally:](#how-to-run-this-project-locally-)
+    + [Instructions](#instructions)
+    + [Deploying Solid Properties Project to Heroku:](#deploying-solid-properties-project-to-heroku-)
+  * [Credits](#credits)
+    + [Imgages:](#imgages-)
+      - [Hero Image Home Page](#hero-image-home-page)
+      - [Bakcground Image Secondary pages](#bakcground-image-secondary-pages)
+      - [Category Images](#category-images)
+    + [Code](#code)
+    + [Aknowkedgments](#aknowkedgments)
+  * [Disclaimer](#disclaimer)
 
 ## How It Works
 
@@ -260,7 +324,7 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 * [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
 * [Whitenoise](http://whitenoise.evans.io/en/stable/) to allows the web app to serve its own static files.
 * [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
-* [JQuery](https://jquery.com) to simplify DOM manipulation.
+* [JQuery](https://jquery.com) to facilitate DOM manipulation.
 * [Bootstrap](https://www.bootstrapcdn.com/) to facilitate the development of the website responsiveness and of the grid structure.
 * [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Vroom.
 * [Google Fonts](https://fonts.google.com/) to style the website fonts.
