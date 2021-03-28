@@ -2,7 +2,7 @@
 
 Solid Properties is a website where landlords\landladies and property managers can purchase a wide array of property services. The main purpose of the website is to provide to the users a **personalized shopping experience**.
 
-## Table Of cart_contents
+## Table Of Contents
 - [Solid Properties Project](#solid-properties-project)
   * [How It Works](#how-it-works)
     + [Instructions:](#instructions-)
