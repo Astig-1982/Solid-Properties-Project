@@ -40,6 +40,8 @@ I chose not to use Test Driven Development for this project as being my first en
 
 Now that I have a much better understanding of Django, I am plannig to subject the entire project to automated testing in the very near future.
 
+[**Back to Top**](#table-of-contents)
+
 ## Manual Testing
 
 ### Navbar&Footer
@@ -92,6 +94,8 @@ This feature went under strong scrutinity as it represents one of the most impor
 
 I've since performed multiple tests by adding different services for different properties and I am happy to announce that the feature now works as expected.
 
+[**Back to Top**](#table-of-contents)
+
 ### Payment System
 
 I have strongly emphasised on the testing of this feature as it was my first time working with [STRIPE](https://stripe.com/gb). The following have been carried:
@@ -137,6 +141,8 @@ Now this feature works as expected.
 
 Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
 
+[**Back to Top**](#table-of-contents)
+
 ### Saving and updating user's details at billing_details section
 
 * **Note**: this feature works only if the user is logged in. 
@@ -176,6 +182,7 @@ I am confident I will completely crush this bug in the very nearest future.
 * During the develpment process the website was constantly testing locally with debugger: ```debug=True```. Every time the website crashed the debugger displayed a message describing the error. This helped me find the location of the error and fix it.
 * Friends and familiy members have been kindly asked to test the website multiple times and offer feedback on its design and functionality. Their feedback helped me improve the overall UX.
 
+[**Back to Top**](#table-of-contents)
 
 
 

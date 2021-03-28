@@ -176,6 +176,7 @@ The wireframes for this project have been built using [BALSAMIQ](https://balsami
 
 **Note**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the profile page is complely different from the original wirreframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throught.
 
+[**Back to Top**](#table-of-contents)
 
 ## Information Architecture
 
@@ -286,7 +287,9 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 **Number Of Bedrooms** | DecimalField | max_digits=1, decimal_places=0, null=False, blank=False, editable=False | the_property
 **LineItem Total** | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False | lineitem_total
 
-[Back to Top](#Information Architecture)
+[**Information Architecture**](#information-architecture)
+
+[**Back to Top**](#table-of-contents)
 
 ## Technologies used
 
@@ -328,6 +331,8 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 * [Bootstrap](https://www.bootstrapcdn.com/) to facilitate the development of the website responsiveness and of the grid structure.
 * [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for Vroom.
 * [Google Fonts](https://fonts.google.com/) to style the website fonts.
+
+[**Back to Top**](#table-of-contents)
 
 ## Features:
 
@@ -435,6 +440,8 @@ This table contains:
 ![cart_not_logged](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/cart_not_logged.png)
 
 I chose to use this feature as I believe the user should have a clean understanding of each service she/he buys, what property has been purhcased for, and how the total cost is calculated. In this case she/he will have a sense of veritable transparency and also it helps to keep the budget under control.
+
+[**Back to Top**](#table-of-contents)
 
 ## Testing
 
@@ -608,6 +615,8 @@ STRIPE_PUBLIC_KEY | `<your secret key>`
 STRIPE_SECRET_KEY | `<your secret key>`
 USE_AWS | `True`
 
+[**Back to Top**](#table-of-contents)
+
 ## Credits
 
 ### Imgages:
@@ -649,7 +658,7 @@ Fellow coders from [Slack](https://slack.com/intl/en-gb/) and [Stack Overflow](h
 
 This site is developed for **educational purposes** only. The company **Solid Properties** including its affiliated London address - **212 Marylebone Rd, London, NW1 5LS** - is purely fictional.
 
-
+[**Back to Top**](#table-of-contents)
 
 
 
