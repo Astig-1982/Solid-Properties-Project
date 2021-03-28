@@ -68,9 +68,14 @@
                     <a id="continue-shopping-service" class="buttons text-uppercase" href="{% url 'services' %}">continue shopping</a>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
+                <div>{% if cart_items %}
+                    <div id="checkout-buttons-details-div">
+                        <a id="secure-checkout-detailed" href="{% url 'checkout' %}" class="secure-checkout-button text-uppercase">secure checkout</a>
+                        <a id="view-cart-detailed" href="{% url 'cart' %}" class="secure-checkout-button text-uppercase">view cart</a>
+                    </div>
+                    {% endif %}
+                </div>
             </form>
-            
-
             <div id="price-col" class="col-12 col-md-6">
                 <p><strong>PRICE  {% if service.price_variation %} (per bedroom) {% endif %}: <span class="price">£<span class="service-price">{{ service.price }}</span></span></strong>  
                     {% if service.price_variation %}

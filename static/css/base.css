@@ -602,6 +602,38 @@ body {
     border: 1.5px solid rgb(2, 209, 209)
 }
 
+#checkout-buttons-details-div {
+    margin-top: 1.19rem;
+}
+
+#secure-checkout-detailed {
+    font-size: 76%;
+    padding: .8rem .68rem;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#view-cart-detailed {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);   
+    border: 1px solid rgb(0, 0, 0);
+    text-decoration: none;
+    padding: .75rem 2.44rem;
+    margin-left: 1.6%;
+    box-sizing: border-box;
+    font-size: 74%;
+    font-weight: 700;  
+}
+
+#secure-checkout-detailed:hover {
+    color: #ffffff;
+}
+
+#view-cart-detailed:hover {
+    color: rgba(0, 0, 0, .8);
+    border: 1px solid rgba(0, 0, 0, .8);
+}
+
 /* --------------------------------------------------- add property page starts here -------------------------------------------------- */
 
 #add-property-row {
