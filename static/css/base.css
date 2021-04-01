@@ -372,20 +372,20 @@ body {
     margin-top: 1%;;
 }
 
-#personalised-continue-shopping,
-#personalised-register {
+.personalised-continue-shopping,
+.personalised-register {
     width: 14rem;
     height: 2.9rem;
     border: none;
     font-size: 110%;
 }
 
-#personalised-register {
+.personalised-register {
     background-color: rgb(2, 191, 191);
     color: #ffffff;
 }
 
-#personalised-continue-shopping {
+.personalised-continue-shopping {
     background-color: #ffffff;
     color: rgb(2, 191, 191);
     border: 1px solid rgb(2, 191, 191);
@@ -487,6 +487,15 @@ body {
     color: rgb(2, 191, 191);
     font-weight: 800;
     font-size: 119%;
+}
+
+.details {
+    color: rgb(2, 191, 191);
+    text-decoration: underline;
+}
+
+.details:hover {
+    color: rgb(2, 191, 191);
 }
 
 /* --------------------------------------------------- service page starts here -------------------------------------------------- */
@@ -641,7 +650,7 @@ body {
     bottom: .19%;
 }
 
-#personalised-register:hover,
+.personalised-register:hover,
 .profile-order-history:hover,
 #continue-shopping-add-property:hover,
 .back-to-profile-a:hover,
@@ -670,7 +679,7 @@ body {
     text-decoration: none;
 }
 
-#personalised-continue-shopping:hover,
+.personalised-continue-shopping:hover,
 #checkout-continue-shopping-button:hover,
 .continue-shopping-button:hover,
 #continue-shopping-service:hover {

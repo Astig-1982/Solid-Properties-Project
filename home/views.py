@@ -31,6 +31,7 @@ def personalised_shopping(request):
     """
     context = {
         'personalised': True,
+        'from_about': True,
     }
 
     return render(request, 'home/personalised.html', context)

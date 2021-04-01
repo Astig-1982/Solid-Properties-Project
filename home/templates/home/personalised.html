@@ -49,8 +49,12 @@
     <div class="row">
         <div class="col-12">
             <div class="personalised-action-buttons">
-                <a href=""><button id="personalised-register" class="buttons">REGISTER NOW</button></a>
-                <a href=""><button id="personalised-continue-shopping" class="buttons">CONTINUE SHOPPING</button></a>
+                <a href="{% url 'account_signup' %}" aria-label="register"><button class="personalised-register buttons">REGISTER NOW</button></a>
+                {% if from_about %}
+                    <a href="{% url 'about' %}" aria-label="got to about page"><button class="personalised-continue-shopping buttons">BACK TO ABOUT</button></a>
+                {% else %}
+                    <a href="{% url 'services' %}" aria-label="all services"><button class="personalised-continue-shopping buttons">CONTINUE SHOPPING</button></a>
+                {% endif %}
             </div>
         </div>
     </div>
