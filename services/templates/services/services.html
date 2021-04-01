@@ -70,10 +70,23 @@
         {% endif %}
     </div>
 </div>
-
-{% block postloadjs %}
-
 {% endblock %}
 
+{% block postloadjs %}
+<script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $(window).on("scroll", function () {
+                    if ($(window).scrollTop() > 50) {
+                        $('.personalised-shopping-div').addClass('navbar-transition')
+                        $('.personalised-shopping-div').addClass('opaque');
+                    } else {
+                        $('.personalised-shopping-div').removeClass('navbar-transition')
+                        $('.personalised-shopping-div').removeClass('opaque');
+                    }
+                });
+            });
+        });
+    </script>
 {% endblock %}
 

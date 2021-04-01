@@ -18,8 +18,8 @@ body {
 
 .navbar-transition {
     transition-property: background-color;
-    transition-duration: 1s;
-    transition-timing-function: ease-in;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
 }
 
 .blue {
@@ -225,6 +225,28 @@ body {
     width: 35%;
 }
 
+.personalised-shopping-div {
+    background-color: rgba(2, 191, 191, .75);
+    color: #ffffff;
+    padding: .6rem 0;
+    width: 100vw;
+    margin: 0;
+}
+
+.opaque {
+    background-color: rgb(2, 191, 191);
+}
+
+.personalised-shopping-div p {
+    margin: 0;
+    letter-spacing: .2rem;
+    font-weight: 700;
+}
+
+#personalised-shopping-a {
+    color: #ffffff;
+}
+
 /* --------------------------------------------------- home page starts here -------------------------------------------------- */
 
             /* ------- landing section ------ */
@@ -319,6 +341,56 @@ body {
     color: rgba(0, 0, 0, .6);
     text-decoration: none;
     display: inline-block;
+}
+
+/* --------------------------------------------------- personalised shopping page starts here -------------------------------------------------- */
+
+.personalised-container {
+    margin-top: 3.5%;
+    margin-bottom: 3.9%;
+}
+
+.personalised-div li,
+.personalised-div p {
+    letter-spacing: .1rem;
+    font-size: 105%;
+}
+
+.personalised-div li {
+    line-height: 200%;
+}
+
+#register-personalised {
+    color: rgb(0, 0, 0);
+}
+
+#follow-the-steps {
+    margin-top: 2%;
+}
+
+.personalised-action-buttons {
+    margin-top: 1%;;
+}
+
+#personalised-continue-shopping,
+#personalised-register {
+    width: 14rem;
+    height: 2.9rem;
+    border: none;
+    font-size: 110%;
+}
+
+#personalised-register {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
+}
+
+#personalised-continue-shopping {
+    background-color: #ffffff;
+    color: rgb(2, 191, 191);
+    border: 1px solid rgb(2, 191, 191);
+    margin-left: 2%;
+    font-weight: 600;
 }
 
 /* --------------------------------------------------- about page starts here -------------------------------------------------- */
@@ -569,6 +641,7 @@ body {
     bottom: .19%;
 }
 
+#personalised-register:hover,
 .profile-order-history:hover,
 #continue-shopping-add-property:hover,
 .back-to-profile-a:hover,
@@ -597,6 +670,7 @@ body {
     text-decoration: none;
 }
 
+#personalised-continue-shopping:hover,
 #checkout-continue-shopping-button:hover,
 .continue-shopping-button:hover,
 #continue-shopping-service:hover {

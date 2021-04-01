@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid border border-blue section-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="mx-auto text-center section-title-container">
+                <h1 class="section-title">personalised shopping</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container personalised-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="personalised-div">
+                <h3 class="text-uppercase">about</h3>
+                <hr>
+                <p>
+                    Many of our provided services vary in price, depending on the number of 
+                    bedrooms the service is purchased for. In your profile, create your own list of properties. 
+                    Upon selecting the service you wish to purchase, select the property to be executed for and the price 
+                    will be automatically calculated. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="follow-the-steps" class="row">
+        <div class="col-12">
+            <div class="personalised-div">
+                <h3 class="text-uppercase">how to get started</h3>
+                <hr>
+                <p>Follow the steps below to start your personalised shopping experience:</p>
+                <ol>
+                    <li><strong>REGISTER</strong> on the webiste with your name and email address.</li>
+                    <li>Go to your newly created <strong>PROFILE</strong> section and add your first property to your list. You can add as many properties you as you want. All properties will be dispayed in your list of properties in the <strong>PROFILE</strong> section.</li>
+                    <li><strong>ACTIVATE</strong> the property by clicking the <strong>ACTIVATE</strong> button next to it.</li>
+                    <li>Got to <strong>SERVICES</strong> page and choose a service.</li>
+                    <li>Select the property for which you wish the service to be purchased. The price of the service will update according to how many bedrooms the selected property comprises of. Some services have a fixed price, regardless of the number of bedrooms.</li> 
+                    <li>Add the service to your shopping cart.</li>
+                    <li>Go to your <strong>SHOPPING CART</strong> to see all services added, the properies for which they've been added, the price for each service and the total amount of the cart.</li>
+                    <li>Got to <strong>SECURE CHECKOUT</strong> to complete your order if you wish to proceed with the purchase.</li>
+                    <li>Once the order is completed, you will receive a detailed order history which will be saved in your <strong>PROFILE</strong> section.</li>
+                </ol>  
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="personalised-action-buttons">
+                <a href=""><button id="personalised-register" class="buttons">REGISTER NOW</button></a>
+                <a href=""><button id="personalised-continue-shopping" class="buttons">CONTINUE SHOPPING</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}

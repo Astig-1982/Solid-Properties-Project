@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container-fluid home-container mh-100">
     <div class="row border border-blue landing-row">
-        <div class="col-12">
+        <div class="col-12 p-0">
             <div class="mx-auto text-center title-container">
                 <h2>a full property service company you can trust</h2>
                 <h1 class="main-title">solid properties</h1>
@@ -42,10 +42,11 @@
     $(document).ready(function(){
         $(".category-image").mouseenter(function(){
             $(this).addClass("shadow-none");
-  });
+        });
         $(".category-image").mouseleave(function(){
             $(this).removeClass("shadow-none");
-  });
+        });
+        $('.personalised-shopping-div').addClass('opaque');
     });
 </script>
 

@@ -23,3 +23,14 @@ def about(request):
     context = {}
 
     return render(request, 'home/about.html', context)
+
+
+def personalised_shopping(request):
+    """
+    This view displays the personalised page
+    """
+    context = {
+        'personalised': True,
+    }
+
+    return render(request, 'home/personalised.html', context)
