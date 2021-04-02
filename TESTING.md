@@ -201,7 +201,6 @@ cart = {
     }
 ```
 
-
 If the user is **logged out**:
 * the cart table will display the number of bedrooms for which a certain service is purchased. To achieve this, in **cart** app the ```add_to_cart``` function in **views.py** will store in a list the ***number the bedrooms*** submitted. Please see below:
 
@@ -344,7 +343,18 @@ I decided again not to approach this solution because of exigent time constraint
 I cannot emphasize strong enough on the fact that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above, although I believe this is not the most productive way and will only complicate the code.
 
 **Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this bug!!**
- 
+
+**EXTRA NOTE**:
+
+I advise the user/assesor not to log in without making sure the **shopping cart** is empty. If, however, this happens and will automatically trigger the **BUG**, please follow the steps below to get rid of the bug, delete the session variable and restart the website:
+
+1. Right click on the mouse and click ```Inspect``` to open **Dev Tools**.
+2. From **Dev Tools** click and enter ```Application```.
+3. Click on ```Cookies``` 
+4. Search for **sessionid**.
+5. Right click on the the **sessionid** and click ```delete```.
+6. Refresh the website making sure the path will take you home page.
+
 ## Further Testing
 
 * During the develpment process the website was constantly testing locally with debugger: ```debug=True```. Every time the website crashed the debugger displayed a message describing the error. This helped me find the location of the error and fix it.
