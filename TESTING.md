@@ -294,20 +294,20 @@ I believe the bug will be solved if the **shopping cart** will be empty and read
 
 ### Attempts in solving the bug without overriding the Django login view:
 
-* Adding a ```try/except``` block at ```cart_contents```. 
+1. Adding a ```try/except``` block at ```cart_contents```. 
 
 This solves the issue only if the ***id*** of the property doesn't correspond with the ***number of bedrooms*** added in the list. The ```for loop``` will try to retrieve the property, will not find it based on the ***id*** and the ```exception``` will take place. However if it finds a property with an ***id*** corresponding with the number of bedrooms, the ```exception``` will not happen. Consequently, the first behaviour mentioned above will take place.
 
 Therefore I decided not to ditch this solution.
 
-* In ```cart_contents```, at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retreieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
+2. In ```cart_contents```, at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retreieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
     * In **views.py** at ```add_to_cart``` function:
 
         ```bash
         cart[service_id].append(float(the_property.id))
         ```
     * In **contexts.py** at ```cart_contents``` function:
-    
+
         ```bash
         for service, properties_or_bedrooms in cart.items():
 
@@ -327,7 +327,7 @@ Therefore I decided not to ditch this solution.
 
 Unfortunately this fails as upon loggin in, the website throws a **KeyError exception** as **cart** session variable is not found.
 
-* Based on the same logic mentioned above, I try to clear the **shopping cart** dictionary stored in **cart** variable, instead of deleting the session variable. This is achieved using ```cart.clear()```.
+3. Based on the same logic mentioned above, I try to clear the **shopping cart** dictionary stored in **cart** variable, instead of deleting the session variable. This is achieved using ```cart.clear()```.
 
 This also fails and the folowing error is thrown:
 
