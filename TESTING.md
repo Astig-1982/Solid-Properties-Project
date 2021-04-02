@@ -353,7 +353,7 @@ I advise the user/assesor not to log in without making sure the **shopping cart*
 3. Click on ```Cookies``` 
 4. Search for **sessionid**.
 5. Right click on the the **sessionid** and click ```delete```.
-6. Refresh the website making sure the path will take you home page.
+6. Refresh the website making sure the path will take you to home page.
 
 ## Further Testing
 

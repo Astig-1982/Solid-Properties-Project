@@ -134,23 +134,31 @@ body {
   padding-bottom: 12.9rem;
 }
 
-.footer-container a {
+.footer-links {
     color: #ffffff;
     text-decoration: none;
+    margin-left: 2.5rem;
+}
+
+.social-links {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links:hover,
+.footer-links:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#footer-home-link {
+    margin-left: 25rem;
 }
 
 .footer-horizontal {
     width: 70%;
     height: .05rem;
     background-color: #ffffff;
-}
-
-.social-row a {
-    margin-left: 2.5rem;
-}
-
-.social-row a:first-child {
-    margin-left: 25rem;
 }
 
 .footer-container p:first-child {
@@ -176,6 +184,8 @@ body {
 
 .footer-categories a {
     margin-left: 3.9rem;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 #legal-footer {
@@ -1542,7 +1552,7 @@ th, td {
         margin-left: 4.55rem;
     }
 
-    .social-row a:first-child {
+    #footer-home-link {
         margin-left: 22.9rem;
     }
 
@@ -1666,7 +1676,7 @@ th, td {
         margin-left: 0;
     }
 
-    .social-row a:first-child {
+    #footer-home-link {
         margin-left: 14.1rem;
     }
 
@@ -1894,11 +1904,11 @@ th, td {
         width: 100%;
     }
 
-    .social-row a:first-child {
+    #footer-home-link {
         margin-left: 6.8rem;
     }
 
-    .social-row a {
+    .footer-links {
         margin-left: 2rem;
     }
 
@@ -2204,7 +2214,7 @@ th, td {
         width: 80%;
     }
 
-    .social-row a:first-child {
+    #footer-home-link {
         margin-left: 0;
     }
 
@@ -2514,6 +2524,10 @@ th, td {
     #personalised-title {
         font-size: 145%;
         letter-spacing: .1rem;
+    }
+
+    .personalised-shopping-div p {
+        font-size: .5rem;
     }
 }
 
