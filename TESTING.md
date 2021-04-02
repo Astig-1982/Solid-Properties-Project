@@ -298,9 +298,9 @@ I believe the bug will be solved if the **shopping cart** will be empty and read
 
 This solves the issue only if the ***id*** of the property doesn't correspond with the ***number of bedrooms*** added in the list. The ```for loop``` will try to retrieve the property, will not find it based on the ***id*** and the ```exception``` will take place. However if it finds a property with an ***id*** corresponding with the number of bedrooms, the ```exception``` will not happen. Consequently, the first behaviour mentioned above will take place.
 
-Therefore I decided not to ditch this solution.
+Therefore I decided to abandon this solution.
 
-2. In ```cart_contents```, at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retreieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
+2. In ```cart_contents``` function at the ```for loop``` before retrieving the property, I check if the element (**property_or_bedrooms**) retrieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
     * In **views.py** at ```add_to_cart``` function:
 
         ```bash
@@ -323,7 +323,7 @@ Therefore I decided not to ditch this solution.
 
                     ...
         ```
-**NOTE**: If the type of the element is ```integer```, it means that the **shopping cart** contains the ***no_of_bedrooms*** and **NOT** the ***id's** of the properties.
+**NOTE**: If the type of the element is ```integer```, it means that the **shopping cart** contains the ***no_of_bedrooms*** and **NOT** the ***id's*** of the properties.
 
 Unfortunately this fails as upon loggin in, the website throws a **KeyError exception** as **cart** session variable is not found.
 
@@ -333,9 +333,9 @@ This also fails and the folowing error is thrown:
 
      dictionary changed size during iteration
 
-I believe this is because the external ```for loop`` will still take place after the ```nested for loop``` breaks. However, because the cart dictinary is modified inside the nested loop, the error occurs. 
+I believe this is because the external ```for loop``` will still take place after the ```nested for loop``` breaks. However, because the cart dictinary is modified inside the nested loop, the error occurs. 
 
-A way around it is to break from both the nested and external loop as soon as the ```if statement``` "discovers" the element retrieved is an ```integer```. But because the external loop acts in the same way if the user is logged in or not (only the nested loop is different), this involves re-creating the whole logic of ```cart_contents``` function, even possibly creating 2 different functions for each of the situations (user logged in, user logged out). 
+A way around it is to break from both the nested and external loops as soon as the ```if statement``` "discovers" that the element retrieved is an ```integer```. But because the external loop acts in the same way if the user is logged in or not (only the nested loop is different), this involves re-creating the whole logic of ```cart_contents``` function, even possibly creating 2 different functions for each of the situations (user logged in, user logged out). 
 
 I decided again not to approach this solution because of exigent time constraints.
 
@@ -343,7 +343,7 @@ I decided again not to approach this solution because of exigent time constraint
 
 I cannot emphasize strong enough that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above.
 
-**Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this unfortunate bug!**
+**Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this bug!!**
  
 ## Further Testing
 
