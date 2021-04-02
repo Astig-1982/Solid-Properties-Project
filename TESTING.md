@@ -187,7 +187,7 @@ The website has been developed to function different if the user is logged in, c
 
 If the user is **logged in**:
 
-* the cart table will display the property for which a certain service is being purchased. To achieve this, at **cart** app the ```add_to_cart``` function in **views.py** will store in a list the ***id*** of the property submitted. Please see below:
+* the cart table will display the property for which a certain service is being purchased. To achieve this, in **cart** app the ```add_to_cart``` function in **views.py** will store in a list the ***id*** of the property submitted. Please see below:
 
 ```bash
 cart[service_id].append(the_property.id)
@@ -203,7 +203,7 @@ cart = {
 
 
 If the user is **logged out**:
-* the cart table will display the number of bedrooms for which a certain service is purchased. To achieve this, at **cart** app the ```add_to_cart``` function in **views.py** will store in a list the ***number the bedrooms*** submitted. Please see below:
+* the cart table will display the number of bedrooms for which a certain service is purchased. To achieve this, in **cart** app the ```add_to_cart``` function in **views.py** will store in a list the ***number the bedrooms*** submitted. Please see below:
 
 ```bash
 cart[service_id].append(no_of_bedrooms)
@@ -217,13 +217,15 @@ cart = {
     }
 ```
 
-Consequently, the logic of the function that handles the shopping cart -- ```cart_contents``` -- is different for each of the above cases.
+Consequently, the logic of ```cart_contents``` function -- the function that handles the shopping cart -- is different for each of the above cases.
 
-In the former case, the ```nested for loop``` in the ```cart_contents``` iterates through the **shopping** cart and it retrieves the **property** from Properties model, using the ***id*** stored in a list at ```add_to_cart``` function in **views.py**. It will then append ***the property*** to the **list_properties_or_bedrooms** list. Please see below:
+In the former case, the ```nested for loop``` in the ```cart_contents``` function iterates through the **shopping** cart and it retrieves the **property** from the Properties model, using the ***id*** stored in a list at ```add_to_cart``` function in **views.py**. It will then append ***the property*** to the **list_properties_or_bedrooms** list. Please see below:
 
 ```bash
 for service, properties_or_bedrooms in cart.items():
-        total = []
+
+        ...
+
         list_properties_or_bedrooms = []
         service = get_object_or_404(Services, pk=service)
         for property_or_bedrooms in properties_or_bedrooms:
@@ -233,36 +235,34 @@ for service, properties_or_bedrooms in cart.items():
 
                 ...
 
-                total.append(total_cost)
-                count_items.append(the_property)
                 list_properties_or_bedrooms.append({
                     'property': the_property,
-                    'total_cost': total_cost,
+                    ...
                 })
 ```
 
-**NOTE**: **property_or_bedrooms** in this case represents the ***id*** of each of the properties added for a specific service.
+**NOTE**: **property_or_bedrooms** in this case represents the ***id*** of each of the properties.
 
-In the latter case, the ```nested for loop``` will iterate through the **shopping cart** and will retrieve from the list the ***number of bedrooms***. It will then append the ***no_of_bedrooms*** to the **list_properties_or_bedrooms** list Please see below:
+In the latter case, the ```nested for loop``` in the ```cart_contents``` function will iterate through the **shopping cart** and will retrieve from the list the ***number of bedrooms***. It will then append the ***no_of_bedrooms*** to the **list_properties_or_bedrooms** list. Please see below:
 
 ```bash
 for service, properties_or_bedrooms in cart.items():
-        total = []
+
+        ...
+
         list_properties_or_bedrooms = []
         service = get_object_or_404(Services, pk=service)
         for property_or_bedrooms in properties_or_bedrooms:
 
                 ...
 
-                total.append(total_cost)
-                count_items.append(property_or_bedrooms)
                 list_properties_or_bedrooms.append({
                     'no_of_bedrooms': property_or_bedrooms,
-                    'total_cost': total_cost,
+                    ...
                 })
 ```
 
-**NOTE**: **property_or_bedrooms** in this case represents the ***no_of_bedrooms*** added for a specific service.
+**NOTE**: **property_or_bedrooms** in this case represents the ***no_of_bedrooms*** added.
 
 
 
