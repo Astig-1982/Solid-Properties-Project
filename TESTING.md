@@ -302,10 +302,12 @@ Therefore I decided not to ditch this solution.
 
 * In ```cart_contents```, at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retreieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
     * In **views.py** at ```add_to_cart``` function:
+
         ```bash
         cart[service_id].append(float(the_property.id))
         ```
     * In **contexts.py** at ```cart_contents``` function:
+    
         ```bash
         for service, properties_or_bedrooms in cart.items():
 
