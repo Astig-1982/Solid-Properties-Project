@@ -341,7 +341,7 @@ I decided again not to approach this solution because of exigent time constraint
 
 ### Verdict:
 
-I cannot emphasize strong enough that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above.
+I cannot emphasize strong enough that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above, although I believe this is not the most productive way and will only complicate the code.
 
 **Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this bug!!**
  
