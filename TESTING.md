@@ -87,7 +87,7 @@ Both shopping cart tables have been tested -  for logged in and not logged in us
 
 This feature went under strong scrutinity as it represents one of the most important features of the personalised shopping experience.
 
-* The testing has been performed by adding different services for different properties in the shopping cart. Afterwords I was checking the table to make sure the correct properties are attributed to the correct services, as selected when they were added to the cart. Equally important I was checking to make sure the price for each service is calculated accordingly - for each individual property and also for all of the properties that is due to be purchased for. The following **bug** has been detected:
+* The testing has been performed by adding different services for different properties in the shopping cart. Afterwords I was checking the table to make sure the correct properties are attributed to the correct services, as selected when they were added to the cart. Equally important I was checking to make sure the price for each service is calculated accordingly - for each individual property and also for all of the properties that is due to be purchased for. The following **BUG** has been detected:
     * In the corresponding field, instead of displaying the price of the service for ALL of the properties that is due to be purhcased for, it displayed the price calculated only for the last property. 
     * **Cause** - this is because in the **cart** app in **context.py** at ```cart_contents``` function created to display the shopping cart, I created the empty list named ```total``` (where the price of all of the properties is appended) in the second ```for loop``` of the nested loop. This loop was used to iterate through the list of properties of the specific service - **the logic of this feature has been documentated in the README.md file [here](https://github.com/Astig-1982/Solid-Properties-Project#detailed-shopping-cart-table)**.
     * **Correction** - I've corrected this bug by simply creating the empty list named ```total```  in the first ```for loop``` of the nested loop (when iterating through services). Thus, for each service, ```total``` list will append the price for each of the property associated with that specific service.
@@ -116,12 +116,12 @@ No errors have been detected and the feature works as expected.
 
 ### Deactivating Properties From The Website
 
-When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **bugs** have been detected:
+When it was first designed, the purpose of this feature was to remove the property entirely from the list of properties. It was working as expected, however 2 **BUGS** have been detected:
 
-* **Bug** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculates the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
+* **BUG** - when the property was removed from the website, an error was occurring in the *order history* section, if services have been purchased for the specific property. This is because the order history retrieves the properties from the **Properties** model and based on the number of bedrooms the property comprises, it calculates the total amount of the specific service. If the property is no longer available in the **Properties** model, the price for the specific service comes as 0. 
     * **Correction** - I have amended this error by choosing to deactivate the property from the website, rather than completely removing it. Documentation for this feature can be found [here](https://github.com/Astig-1982/Solid-Properties-Project#activate--deactivate-properties). This actually improves the overall UX as now the user has also the possibility to reactivate the property back anytime.
 
-* **Bug** - if the user adds services to her/his shopping cart and after navigates to the **Profile** section and decides to deactivate  a property for which a service has been prior added to the shopping cart, when returning to the shopping cart the property will still be there - which is wrong because the property is no longer active on the website and services cannot be purchased for it.
+* **BUG** - if the user adds services to her/his shopping cart and after navigates to the **Profile** section and decides to deactivate  a property for which a service has been prior added to the shopping cart, when returning to the shopping cart the property will still be there - which is wrong because the property is no longer active on the website and services cannot be purchased for it.
     * **Correction** - In the **properties** app in **views.py** I have modified the ```activate_deactivate``` function, and now this function first checks if the property is in the current shopping cart session, and if it is, it will be removed and the shopping cart will be updated accordingly.
 
 Now this feature works as expected.
@@ -137,7 +137,7 @@ Now this feature works as expected.
 
 ### Order History
 
- * This feature manifested the **bug** mentioned at the testing of **deactivating properties** feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
+ * This feature manifested the **BUG** mentioned at the testing of **deactivating properties** feature and its description and correction have been documentated above. No other bugs have been detected during the development and testing of this feature.
 
 Confirm that the order history works as expected and the services together with their corresponding properties and correct prices are displayed correct.
 
@@ -170,14 +170,14 @@ This website has been developed to be responsive on all major type of screens:
 
 * **Regular Mobiles Screens** (Ex: Iphone 6/7/8, Huawei P30) ```@media (max-width: 375px)``` - fully responsive.
 
-During the development of the website's responsiveness, the following **bug** has been detected:
+During the development of the website's responsiveness, the following **BUG** has been detected:
 
 * **Overflow**
     * *Checkout* page exhibits small padding/margin on the right hand side of the screen. The bug behaves exactly the same on all types of screens. My attemps in removing it have been unsuccesfull and due to time constraints I've decided to postpone further investigation.
 
 I am confident I will completely crush this bug in the very nearest future.
 
-## Known bug related to shopping cart tables and login feature.
+## Known **BUG** related to shopping cart tables and login feature.
 
 A bug has been detected at ```cart_contents``` function at **contexts.py**.
 
@@ -264,8 +264,85 @@ for service, properties_or_bedrooms in cart.items():
 
 **NOTE**: **property_or_bedrooms** in this case represents the ***no_of_bedrooms*** added.
 
+The **bug** manifests in the following way:
 
+If a user is **NOT** logged in and adds items to her/his **shopping cart**, and afterwords decides to **log in** *without emptying the cart or completing the purchase*, the **shopping cart** will still contain the items added prior to log in and the website will exhibit the following behaviours:
 
+* The **shopping cart** table will contain the services added and also random properties. 
+
+#### Explanation:
+
+This is because the ```for loop``` at ```cart_contents``` will attempt to retrieve **properties** from Properties model using as ***id's*** the ***number of bedrooms*** added prior to the cart.
+
+* The website will crush and will throw a **404 error** with the message:
+
+```No Properties matches the given query.```
+
+#### Explanation:
+
+Again the  ```for loop``` will iterate through the **shopping cart** and will attempt to retrieve properties using the ***id's*** found in the list.
+
+But if there are no properties in the model with the specific ***ids***, the site will crush and throw the above error.
+
+Both of the above outcomes are wrong and unwanted. The latter is because of obvious reasons - the site will crash.
+
+The former is because the properties displayed in the **shopping cart** table do not belong there (neither the services in the first place) as they have been retrieved using wrong ***id's*** (the **id's** representing actually the **number of bedrooms** added to the list prior to loggin in).
+
+### Solution:
+
+I believe the bug will be solved if the **shopping cart** will be empty and ready to go as soon as a user logs in. I am confident this can be achieved by overriding the **Django login view** - deleting the cart session variable upon logging in. As this being my very first project using Django and still learning while developing and mostly due of exigent time constraints and the fact that I understand that the login view contains about 900 lines of code, I decided not to approach this solution for the the being. 
+
+### Attempts in solving the bug without overriding the Django login view:
+
+* Adding a ```try/except``` block at ```cart_contents```. 
+
+This solves the issue only if the ***id*** of the property doesn't correspond with the ***number of bedrooms*** added in the list. The ```for loop``` will try to retrieve the property, will not find it based on the ***id*** and the ```exception``` will take place. However if it finds a property with an ***id*** corresponding with the number of bedrooms, the ```exception``` will not happen. Consequently, the first behaviour mentioned above will take place.
+
+Therefore I decided not to ditch this solution.
+
+* In ```cart_contents```, at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retreieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
+    * In **views.py** at ```add_to_cart``` function:
+        ```bash
+        cart[service_id].append(float(the_property.id))
+        ```
+    * In **contexts.py** at ```cart_contents``` function:
+        ```bash
+        for service, properties_or_bedrooms in cart.items():
+
+        ...
+
+        list_properties_or_bedrooms = []
+        service = get_object_or_404(Services, pk=service)
+        for property_or_bedrooms in properties_or_bedrooms:
+            if request.user.is_authenticated:
+                if isinstance(property_or_bedrooms, int):
+                    del request.session['cart']
+                    break
+
+                    ...
+        ```
+**NOTE**: If the type of the element is ```integer```, it means that the **shopping cart** contains the ***no_of_bedrooms*** and **NOT** the ***id's** of the properties.
+
+Unfortunately this fails as upon loggin in, the website throws a **KeyError exception** as **cart** session variable is not found.
+
+* Based on the same logic mentioned above, I try to clear the **shopping cart** dictionary stored in **cart** variable, instead of deleting the session variable. This is achieved using ```cart.clear()```.
+
+This also fails and the folowing error is thrown:
+
+     dictionary changed size during iteration
+
+I believe this is because the external ```for loop`` will still take place after the ```nested for loop``` breaks. However, because the cart dictinary is modified inside the nested loop, the error occurs. 
+
+A way around it is to break from both the nested and external loop as soon as the ```if statement``` "discovers" the element retrieved is an ```integer```. But because the external loop acts in the same way if the user is logged in or not (only the nested loop is different), this involves re-creating the whole logic of ```cart_contents``` function, even possibly creating 2 different functions for each of the situations (user logged in, user logged out). 
+
+I decided again not to approach this solution because of exigent time constraints.
+
+### Verdict:
+
+I cannot emphasize strong enough that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above.
+
+**Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this unfortunate bug!**
+ 
 ## Further Testing
 
 * During the develpment process the website was constantly testing locally with debugger: ```debug=True```. Every time the website crashed the debugger displayed a message describing the error. This helped me find the location of the error and fix it.
