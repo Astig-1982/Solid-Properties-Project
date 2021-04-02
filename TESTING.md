@@ -300,7 +300,7 @@ This solves the issue only if the ***id*** of the property doesn't correspond wi
 
 Therefore I decided to abandon this solution.
 
-2. In ```cart_contents``` function at the ```for loop``` before retrieving the property, I check if the element (**property_or_bedrooms**) retrieved from the list represents the **id** of a property, or the **no_of_bedrooms**. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
+2. In ```cart_contents``` function at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retrieved from the list represents the ***id*** of a property, or the ***no_of_bedrooms***. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
     * In **views.py** at ```add_to_cart``` function:
 
         ```bash
@@ -333,7 +333,7 @@ This also fails and the folowing error is thrown:
 
      dictionary changed size during iteration
 
-I believe this is because the external ```for loop``` will still take place after the ```nested for loop``` breaks. However, because the cart dictinary is modified inside the nested loop, the error occurs. 
+I believe this is because the external ```for loop``` will still take place after the ```nested for loop``` breaks. However, because the cart dictionary is modified inside the nested loop, the error occurs. 
 
 A way around it is to break from both the nested and external loops as soon as the ```if statement``` "discovers" that the element retrieved is an ```integer```. But because the external loop acts in the same way if the user is logged in or not (only the nested loop is different), this involves re-creating the whole logic of ```cart_contents``` function, even possibly creating 2 different functions for each of the situations (user logged in, user logged out). 
 
@@ -341,7 +341,7 @@ I decided again not to approach this solution because of exigent time constraint
 
 ### Verdict:
 
-I cannot emphasize strong enough ont he fact that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above, although I believe this is not the most productive way and will only complicate the code.
+I cannot emphasize strong enough on the fact that my belief is that the cleanest and simplest solution to the problem is overriding the **Django login view**. However, I am confident I could possibly work my way around it using similar methods as stated above, although I believe this is not the most productive way and will only complicate the code.
 
 **Rest assured that as soon as this project will be finished and the results from the school will be in, I will do research on how to override the login function and I will completely crush this bug!!**
  

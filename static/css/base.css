@@ -353,7 +353,6 @@ body {
 .personalised-div li,
 .personalised-div p {
     letter-spacing: .1rem;
-    font-size: 105%;
 }
 
 .personalised-div li {
@@ -377,7 +376,6 @@ body {
     width: 14rem;
     height: 2.9rem;
     border: none;
-    font-size: 110%;
 }
 
 .personalised-register {
@@ -2501,6 +2499,21 @@ th, td {
     #continue-shopping-add-property {
         padding: .98rem 1.4rem;
         font-size: 72%;
+    }
+
+    .personalised-action-buttons {
+        text-align: center;
+    }
+
+    .personalised-continue-shopping, 
+    .personalised-register {
+        width: 9rem;
+        font-size: 70%;
+    }
+
+    #personalised-title {
+        font-size: 145%;
+        letter-spacing: .1rem;
     }
 }
 
