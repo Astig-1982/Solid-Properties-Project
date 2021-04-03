@@ -73,10 +73,10 @@ Users are encouraged to sign up and register any number of properties from their
 ### Instructions:
 
 1. Click the ```REGISTER``` tab and sign up on the website with your name and email address.
-2. Go to your **Profile** page and register a property by clicking ```ADD PROPERTY```.
+2. Go to your **PROFILE** page and register a property by clicking ```ADD PROPERTY```.
 3. Complete the form provided with the property address, post code and number of bedrooms it comprises (please note that these are mandatory fields).
 4. Activate your property from your *properties table* in the profile section.
-5. Go to **Services** page and choose a service.
+5. Go to **SERVICES** page and choose a service.
 **NOTE**: services differentiate between services with a fixed price and services for which the price varies (ex: **repainting**, **refurbishment**), depending on the number of bedrooms the service is purchased for*.
 6. Below the service image, select from your list of properties the property for which you wish to purchase the service.
 7. Based on the number of bedrooms the property selected comprises, a price will be instantly calculated. You will see displayed the **PRICE (per bedroom)** of the service, and next to it the **TOTAL COST** of the service for the property selected.
@@ -86,7 +86,7 @@ Users are encouraged to sign up and register any number of properties from their
  * The ***shopping cart*** displays the price of the **service name**, the **price** of the service, **the property** for which the service has been purchased, the **price for the specific property** (as for many this varies from the initial price, depending on the number of bedrooms the property comprises of), the **total price of the service** for all of the properties that has been purchased for. At the bottom will be displayed the **total cost** of the shopping cart.
  * When the purchase is complete, a detailed **order history** will be provided in which the users will have a history 
 of each service purchased and for which of their properties has been executed.
- * If a property is no longer required on the website, go to **Profile** page and from your list of properties table click on the ```DEACTIVATE``` tab to deactivate the property from the website. This will also disable your property from your list of properties when choosing a service.
+ * If a property is no longer required on the website, go to **PROFILE** page and from your list of properties table click on the ```DEACTIVATE``` tab to deactivate the property from the website. This will also disable your property from your list of properties when choosing a service.
 **NOTE**: in your order history will be mentioned if a property is no longer active on the website*.
 
 Of course, if a user doesn't wish to sign up, services can be purchased without the need of registration. Upon choosing a service, if its price depends of the number of bedrooms a property comprises, 
@@ -340,7 +340,7 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 
 ![navbar](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/navbar.png)
 
-The navbar is fixed and on top of the screens and it's avaiable on all pages throught. In it the user finds links to the following:
+The navbar is fixed and on top of the screens and it's avaiable on all pages throughout. In it the user finds links to the following:
 * **Home** page
 * **Services** page
 * **Categories** section
@@ -404,7 +404,7 @@ The page contains:
 
 ### Individual List Of Properties
 
-This feature allows the user to create her/his own list of properties in the **profile** section. 
+This feature allows the user to create her/his own list of properties in the **PROFILE** section. 
 
 ![list_of_properties](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/list_of_properties.png)
 
@@ -416,7 +416,7 @@ This feature allows the user to activate and deactivate properties from her/his 
 
 ![activate](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/activate.png)
 
-If a property is no longer required on the website (maybe it's being sold or it's currently managed by a third party) the user can deactivate it from her/his **profile** section. This will also disables the property from the options list upon choosing a service. And it will also be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the website*. Every property can be activated again at any point.
+If a property is no longer required on the website (maybe it's being sold or it's currently managed by a third party) the user can deactivate it from her/his **PROFILE** section. This will also disables the property from the options list upon choosing a service. And it will also be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the website*. Every property can be activated again at any point.
 * This feature has been realised in the backend in the **properties** app. I created a ```BooleanField``` named ```activate``` in the **Properties** model. In **views.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
 
 ### Personalised Shopping Experience
@@ -439,7 +439,9 @@ This feature offers an in depth display of the shopping cart.
     * In **context.py** I created ```cart_contents``` funnction that will use a **nested for loop** to iterate through the dictionary created in views.py. Within the first for loop a list named ```total``` will be created for each service. The second loop will iterate through the list of id's of each service, and will calculate the total cost of the service for the specific property. This will be appended to the ```total``` list created in the first iteration for each service. To calculate the total cost of a specific service for all of the properties purchased, I called python's ```sum()``` method to ```total```.
     * For **grand total**, in the same ```add_to_cart``` function I created a list named ```grand_total```. For each iteration of the first loop (for each service) to this list will be appended the sum of ```total``` list.   
 
-The same logic has been applied for displaying the shopping cart table if the user is ***NOT*** logged in. 
+Two variants of the **shopping cart** have been created, on if the user is logged in, and the other if the user is NOT logged in.
+
+The same logic as stated above has been applied for displaying both of the shopping carts. Please see below:
 
 #### Shopping cart table when the user is logged in and performs purchases for properties from her/his list:
 
@@ -477,6 +479,8 @@ Please see testing info in [TESTING.md](https://github.com/Astig-1982/Solid-Prop
 ## Bugs
 
 During the development of the website, the following bugs have been detected:
+
+* **Login bug** related to the shopping cart tables display - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#known-bug-related-to-shopping-cart-tables-and-login-feature).
 
 * **Shopping cart tables** bug - this bug has been documentated [here](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/TESTING.md#detailed-shopping-cart-tables).
 
