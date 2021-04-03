@@ -278,6 +278,7 @@ body {
 .title-container h2 {
     font-style: italic;
     text-transform: capitalize;
+    letter-spacing: .1rem;
 }
 
 .main-title {
@@ -302,17 +303,20 @@ body {
 
 .categories-title {
     margin-top: 3.5%;
+    font-family: 'Noto Serif', serif;
+    letter-spacing: .1rem;
 }
 
 .categories-title h2 {
     font-size: 3rem;
     font-weight: bold !important;
-    letter-spacing: .08rem;
+    
 }
 
 .categories-title h4 {
     margin-top: 1%;
     font-size: 2rem;
+    font-family: 'Lato', sans-serif;
 }
 
             /* ------- category section ------ */
@@ -1919,9 +1923,7 @@ th, td {
 
     .order-number-span {
         padding: 5.9%;
-    }
-
-   
+    }   
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -2174,12 +2176,13 @@ th, td {
  
 @media (max-width: 576px) {
     .title-container {
-        margin-top: 65.9%;
+        margin-top: 58.9%;
         width: 100%;
+        padding: 2rem 0;
     }
 
     .main-title {
-        font-size: 1.89rem;
+        font-size: 2.41rem;
     }
 
     .landing-row {
@@ -2576,7 +2579,7 @@ th, td {
 
 @media (max-width: 375px) {
     .main-title {
-        font-size: 1.66rem;
+        font-size: 2.1rem;
     }
 
     .title-container h2 {
