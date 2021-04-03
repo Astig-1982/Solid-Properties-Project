@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Serif:wght@100;300;400;500,700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Cormorant+Garamond&family=Crimson+Pro:wght@100;300;400;500,700;800;900&display=swap');
 
 body {
     margin: 0;
@@ -288,9 +288,12 @@ body {
     font-weight: 900 !important;
 }
 
-#navbar-brand,
-.section-title,
-.main-title {
+.main-title,
+#navbar-brand {
+    font-family: 'Crimson Pro', serif;   
+}
+
+.section-title {
     font-family: 'Noto Serif', serif;
 }
 
@@ -303,13 +306,13 @@ body {
 
 .categories-title {
     margin-top: 3.5%;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     letter-spacing: .1rem;
 }
 
 .categories-title h2 {
     font-size: 3rem;
-    font-weight: bold !important;
+    font-weight: 500;
     
 }
 
@@ -538,6 +541,7 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 12.5%;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .service-holder {
@@ -581,7 +585,6 @@ body {
 }
 
 .service-description {
-    font-size: .95rem;
     margin-bottom: 0;
 }
 
@@ -1555,7 +1558,7 @@ th, td {
 /* --------------------------------------------------- media queries start here -------------------------------------------------- */
 @media (min-width: 1500px) {
     #shopping-cart-a {
-        right: 2rem;
+        right: 3.6rem;
     }
 
     #how-it-works-separator  {
@@ -1564,6 +1567,18 @@ th, td {
 
     #head-p-order {
         margin-bottom: 2.6rem;
+    }
+
+    #service-button-id {
+        margin-right: 1.1%;
+    }
+
+    #register-button-id {
+        margin-left: 1.1%;;
+    }
+
+    .services-container {
+        padding: 0 9rem;
     }
 }
 
@@ -1580,6 +1595,18 @@ th, td {
     .navbar-nav {
         margin-left: 0;
         font-size: 95%;
+    }
+
+    .services-container {
+        padding: 0 5rem;
+    }
+
+    #service-button-id {
+        margin-right: 1.1%;
+    }
+
+    #register-button-id {
+        margin-left: 1.1%;;
     }
     
     .footer-horizontal {
@@ -1741,6 +1768,10 @@ th, td {
 
     .services-row {
         margin-top: 28%;
+    }
+
+    .services-container {
+        padding: 0 2rem;
     }
 
     .service-image {
@@ -2173,7 +2204,6 @@ th, td {
     }
 }
 
- 
 @media (max-width: 576px) {
     .title-container {
         margin-top: 58.9%;
