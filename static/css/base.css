@@ -1527,6 +1527,14 @@ th, td {
     margin-left: 6rem;
 }
 
+.confirmation-button {
+    width: 9rem;
+    text-transform: uppercase;
+    border: none;
+    height: 2.8rem;
+    margin-left: 6rem;
+}
+
 /* --------------------------------------------------- media queries start here -------------------------------------------------- */
 @media (min-width: 1500px) {
     #shopping-cart-a {
