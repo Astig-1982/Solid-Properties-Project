@@ -683,7 +683,7 @@ Extra special thanks to my mentor [Simen Daehlin](https://github.com/Eventyret) 
 
 All tutors from [CODE INSTITUTE](https://codeinstitute.net/) who have always been extremely responsive and offered excellent guidance and support on every approach.
 
-Fellow coders from [Slack](https://slack.com/intl/en-gb/) [Stack Overflow](https://stackoverflow.com/) who have been helpful and supportive during the development of all my projects.
+Fellow coders from [Slack](https://slack.com/intl/en-gb/) who have been helpful and supportive during the development of all my projects.
 
 Although I don't have yet an account and never communicated with coders from [Stack Overflow](https://stackoverflow.com/), I would like to aknowledge the fact that many times when I simply googled an enquiry related to coding, I found myself navigating on the [Stack Overflow](https://stackoverflow.com/) page where I found answers to my questions, as many of them where already asked by fellow coders in the past.
 
