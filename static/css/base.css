@@ -658,6 +658,7 @@ body {
     bottom: .19%;
 }
 
+.confirmation-button:hover,
 .personalised-register:hover,
 .profile-order-history:hover,
 #continue-shopping-add-property:hover,
@@ -1517,7 +1518,7 @@ th, td {
     top: 2.4rem;
 }
 
-/* ------------------ verification email page starts here  ------------------ */
+/* ------------------ verification email page ------------------ */
 
 #verification-container {
     margin-top: 8%;
@@ -1527,7 +1528,11 @@ th, td {
     margin-left: 6rem;
 }
 
+/* ------------------ confirmation email page ------------------ */
+
 .confirmation-button {
+    background-color: rgb(2, 191, 191);
+    color: #ffffff;
     width: 9rem;
     text-transform: uppercase;
     border: none;
