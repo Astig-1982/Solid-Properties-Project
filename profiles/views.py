@@ -64,3 +64,12 @@ def billing_details(request):
     return render(request, 'profiles/billing_details.html', context)
 
 
+def personalised_shopping_profile(request):
+
+    context = {
+        'from_profile': True,
+    }
+
+    return render(request, 'home/personalised.html', context)
+
+

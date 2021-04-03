@@ -174,7 +174,7 @@ The wireframes for this project have been built using [BALSAMIQ](https://balsami
 * [Tablet](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_tablet.pdf)
 * [Mobile](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_mobile.pdf)
 
-**Note**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the profile page is complely different from the original wirreframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throught.
+**NOTE**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the profile page is complely different from the original wirreframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throught.
 
 [**Back to Top**](#table-of-contents)
 
@@ -366,25 +366,6 @@ The foooter is fixed and visible an on pages. It contains the following:
 
 I chose to display all categories on the footer as this makes them accesible to the user on all pages. It also impvroves the overall UX.
 
-## Individual List Of Properties
-
-This feature allows the user to create her/his own list of properties in the **profile** section. 
-
-![list_of_properties](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/list_of_properties.png)
-
-This feature has been introduced to enable the **personalised shopping** feature listed below. The user can create her/his own list of properties. From this list she/he can choose the properties she/he wishes to purchase services for.
-
-### Personalised shopping
-
-This feature allows the user to purhcased services for each individual property from her/his. 
-
-![personalised](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personalised_shopping.png)
-
-I chose to implement this feature as it makes the experience on the site more dynamic. Most of the times the type of services provided by the webiste are to be executed to specific properties. In this case the user has the possibility to choose directly from the website the service and the property for which the service is purchased.
-* This feature has been realised:
-    * In the backend by accessing all the properties from the **Properties** model
-    * In the front end by rendering them using a ```for loop``` in the ```select``` tag in the **detailed_service.html** template.
-
 ### Automated Price Calculation 
 
 This feature will automatically calculate the price of the service, depending on the number of bedrooms the property comprises.
@@ -394,7 +375,42 @@ This feature will automatically calculate the price of the service, depending on
 I chose to introduce this feature as the price of many of the services provided depends on how many bedrooms the property that it has been purchased for has. For example, the price for *Repainting* is **£500** per bedroom, so should it is purchased for a property comprising 4 bedrooms, the total price of the service will be **£2000**. This price is calculated automatically when the user selects the property she/he wishes the service to be purchased for. 
 * I have realised this feature with the help of JavaScript. The code is located at the bottom of the page (*detailed_service.html*) in a ```script``` tag.
 
-## Activate & Deactivate Properties
+### Navbar Personalised Shopping Banner
+
+This feature encourages the users to register and take advantage of the personalised shopping feature.
+
+![activate](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/Screenshot+2021-04-03+at+14.06.33.png)
+
+This banner takes the user to the **personalised shopping** page containing the instructions on how the personlised shopping experience works.
+
+**NOTE**: This banner will be displayed only when the user is not logged in. This banner will also NOT be displayed on the **personlised shopping** page.
+
+### Instructions For Personalised Shopping Experience
+
+This feature has been created in order to clearly instruct the user on how the **personalised shopping experience** works.
+
+![activate](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personlised-instructions.png)
+
+The page contains:
+
+* Ordered list of instructions on how the **personalised shopping experience** works. **NOTE**: if the page is accessed when the user is logged in, the first instruction in the list will not be displayed as this specific instruction directs the user to register first.
+
+* Call to action **REGISTER** button to encourage the user to register after reading the instructions. **NOTE**: this button is displayed only if the user is NOT logged in.
+
+* Call to action buttons to take the user back to the page from where they accessed this section:
+    * **BACK TO ABOUT** if the page has been accessed from **ABOUT** page.
+    * **BACK TO PROFILE** if the page has been accessed from **PROFILE** page.
+    * **CONTINUE SHOPPING** if the page has been accessed from anywhere else on the website except the above mentioned.
+
+### Individual List Of Properties
+
+This feature allows the user to create her/his own list of properties in the **profile** section. 
+
+![list_of_properties](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/list_of_properties.png)
+
+This feature has been introduced to enable the **personalised shopping** feature listed below. The user can create her/his own list of properties. From this list she/he can choose the properties she/he wishes to purchase services for.
+
+### Activate & Deactivate Properties
 
 This feature allows the user to activate and deactivate properties from her/his list of properties.
 
@@ -403,7 +419,18 @@ This feature allows the user to activate and deactivate properties from her/his 
 If a property is no longer required on the website (maybe it's being sold or it's currently managed by a third party) the user can deactivate it from her/his **profile** section. This will also disables the property from the options list upon choosing a service. And it will also be reflected in the **order history** where a red text below the property address will inform the user the *property is no longer active on the website*. Every property can be activated again at any point.
 * This feature has been realised in the backend in the **properties** app. I created a ```BooleanField``` named ```activate``` in the **Properties** model. In **views.py** I created a function ```activate_deactivate``` that will update accordingly the ```BooleanField``` belonging to the specific instance of the **Properties** model.
 
-## Shopping Cart Table
+### Personalised Shopping Experience
+
+This feature allows the user to purchase services for each individual property from her/his list of properties.
+
+![personalised](https://solid-properties-project.s3.eu-west-2.amazonaws.com/media/personalised_shopping.png)
+
+I chose to implement this feature as it makes the experience on the site more dynamic. Most of the times the type of services provided by the webiste are to be executed to specific properties. In this case the user has the possibility to choose directly from the website the service and the property for which the service is purchased.
+* This feature has been realised:
+    * In the backend by accessing all the properties from the **Properties** model
+    * In the front end by rendering them using a ```for loop``` in the ```select``` tag in the **detailed_service.html** template.
+
+### Shopping Cart Table
 
 This feature offers an in depth display of the shopping cart.
 
@@ -489,7 +516,7 @@ Please click the links above for documentation on how to set these up and retrie
     python3 -m .venv venv
     ```  
 
-    *NOTE: The `python3` part of this command is for mac operating systems. Your command may differ, depending on the operating system you use*
+    ***NOTE**: The `python3` part of this command is for mac operating systems. Your command may differ, depending on the operating system you use*
 
 4. Activate the .venv with the command:
 

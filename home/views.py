@@ -27,10 +27,22 @@ def about(request):
 
 def personalised_shopping(request):
     """
-    This view displays the personalised page
+    This view displays the personalised shoppoing page
     """
     context = {
         'personalised': True,
+    }
+
+    return render(request, 'home/personalised.html', context)
+
+
+def personalised_shopping_about(request):
+    """
+    This view displays the personalised shopping page accessed from about page
+    """
+    context = {
+        'personalised': True,
+        'from_about': True,
     }
 
     return render(request, 'home/personalised.html', context)

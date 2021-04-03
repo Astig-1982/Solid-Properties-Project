@@ -818,6 +818,14 @@ body {
     width: 91.4%;
 }
 
+#profile-personalised-shopping-a {
+    color: rgb(2, 191, 191);
+}
+
+#profile-personalised-shopping-a:hover {
+    color: rgb(2, 191, 191);
+}
+
 #property-address-id {
     width: 21.8rem;
 }
@@ -1549,6 +1557,10 @@ th, td {
     #how-it-works-separator  {
         margin-top: 3%;
     }
+
+    #head-p-order {
+        margin-bottom: 2.6rem;
+    }
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
@@ -1647,6 +1659,10 @@ th, td {
         width: 10rem;
         height: 3.1rem;
         font-size: 100%;
+    }
+
+    #head-p-order {
+        margin-bottom: 2.6rem;
     }
 
     .back-to-profile-a {

@@ -33,8 +33,12 @@
                 <hr>
                 <p>Follow the steps below to start your personalised shopping experience:</p>
                 <ol>
-                    <li><strong>REGISTER</strong> on the webiste with your name and email address.</li>
-                    <li>Go to your newly created <strong>PROFILE</strong> section and add your first property to your list. You can add as many properties you as you want. All properties will be dispayed in your list of properties in the <strong>PROFILE</strong> section.</li>
+                    {% if from_profile %}
+                        <li>From your <strong>PROFILE</strong> section add your first property to your list. You can add as many properties you as you want. All properties will be dispayed in your list of properties in the <strong>PROFILE</strong> section.</li>
+                    {% else %}
+                        <li><strong>REGISTER</strong> on the website with your name and email address.</li>
+                        <li>Go to your newly created <strong>PROFILE</strong> section and add your first property to your list. You can add as many properties you as you want. All properties will be dispayed in your list of properties in the <strong>PROFILE</strong> section.</li>
+                    {% endif %}        
                     <li><strong>ACTIVATE</strong> the property by clicking the <strong>ACTIVATE</strong> button next to it.</li>
                     <li>Got to <strong>SERVICES</strong> page and choose a service.</li>
                     <li>Select the property for which you wish the service to be purchased. The price of the service will update according to how many bedrooms the selected property comprises of. Some services have a fixed price, regardless of the number of bedrooms.</li> 
@@ -49,8 +53,16 @@
     <div class="row">
         <div class="col-12">
             <div class="personalised-action-buttons">
-                <a href="{% url 'account_signup' %}" aria-label="register"><button class="personalised-register buttons">REGISTER NOW</button></a>
-                <a href="{% url 'services' %}" aria-label="all services"><button class="personalised-continue-shopping buttons">CONTINUE SHOPPING</button></a>
+                {% if not request.user.is_authenticated %}
+                    <a href="{% url 'account_signup' %}" aria-label="register"><button class="personalised-register buttons">REGISTER NOW</button></a>
+                {% endif %}
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" aria-label="all services"><button class="personalised-continue-shopping buttons">BACK TO PROFILE</button></a>
+                {% elif from_about %}
+                    <a href="{% url 'about' %}" aria-label="all services"><button class="personalised-continue-shopping buttons">BACK TO ABOUT</button></a>
+                {% else %}
+                    <a href="{% url 'services' %}" aria-label="all services"><button class="personalised-continue-shopping buttons">CONTINUE SHOPPING</button></a>
+                {% endif %}
             </div>
         </div>
     </div>
