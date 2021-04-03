@@ -299,7 +299,7 @@ This solves the issue only if the ***id*** of the property doesn't correspond wi
 
 Therefore I decided to abandon this solution.
 
-2. In ```cart_contents``` function at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retrieved from the list represents the ***id*** of a property, or the ***no_of_bedrooms***. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as integers. Please see below: 
+2. In ```cart_contents``` function at the ```for loop```, before retrieving the property, I check if the element (**property_or_bedrooms**) retrieved from the list represents the ***id*** of a property, or the ***no_of_bedrooms***. In order to do this, I believe the easiest way is to check the type of the element. Currently, the type of the element is ```integer``` in both cases. So I decided the **id's** of the properties to be added as ```float``` numbers and the ***no_of_bedrooms*** to be added as ```integer```. Please see below: 
     * In **views.py** at ```add_to_cart``` function:
 
         ```bash

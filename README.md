@@ -174,7 +174,7 @@ The wireframes for this project have been built using [BALSAMIQ](https://balsami
 * [Tablet](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_tablet.pdf)
 * [Mobile](https://github.com/Astig-1982/Solid-Properties-Project/blob/master/wireframes/wireframes_mobile.pdf)
 
-**NOTE**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the profile page is complely different from the original wirreframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throught.
+**NOTE**: Parts of the wireframes differ from the website as during the development process I've reimagined the design and logic on certain pages in order to improve the overall UX. New elements have been introduced, while some of secondary importance have been discarted, mostly due to time constraints. For instance, the **PROFILE** page is completely different from the original wireframe as I thought that emphasizing on the list of properties rather than on the user's details is more important, considering the personalised shopping experience revolves around them. Nevertheless, the wireframes played a crucial role in the development process and served as excelent guidlines throughout.
 
 [**Back to Top**](#table-of-contents)
 
@@ -677,13 +677,15 @@ USE_AWS | `True`
 * [Django Documentation](https://docs.djangoproject.com/en/3.1/) has proved to be a valuable and indispensable resource.
 * [CSS-Tricks](https://css-tricks.com/) has been used as a source of inspiration for the **fixed footer**.
 
-### Aknowkedgments
+### Aknowledgments
 
-Extra special thanks to my mentor [Simen Daehlin](https://github.com/Eventyret) who has been continually guiding and supporting me through the course. Thuis had a great influence in my journey of becoming a junior developer.
+Extra special thanks to my mentor [Simen Daehlin](https://github.com/Eventyret) who has been continually guiding and supporting me through the course. This had a great influence in my journey of becoming a junior developer.
 
-All tutors from [CODE INSTITUTE](https://codeinstitute.net/) who have always been extremly responsive and offered excellent guidance and support on every approach.
+All tutors from [CODE INSTITUTE](https://codeinstitute.net/) who have always been extremely responsive and offered excellent guidance and support on every approach.
 
-Fellow coders from [Slack](https://slack.com/intl/en-gb/) and [Stack Overflow](https://stackoverflow.com/) who have been extremly helpful and supportive during the development of all my projects.
+Fellow coders from [Slack](https://slack.com/intl/en-gb/) [Stack Overflow](https://stackoverflow.com/) who have been helpful and supportive during the development of all my projects.
+
+Although I don't have yet an account and never communicated with coders from [Stack Overflow](https://stackoverflow.com/), I would like to aknowledge the fact that many times when I simply googled an enquiry related to coding, I found myself navigating on the [Stack Overflow](https://stackoverflow.com/) page where I found answers to my questions, as many of them where already asked by fellow coders in the past.
 
 ## Disclaimer
 
