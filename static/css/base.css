@@ -1517,6 +1517,16 @@ th, td {
     top: 2.4rem;
 }
 
+/* ------------------ verification email page starts here  ------------------ */
+
+#verification-container {
+    margin-top: 8%;
+}
+
+.verification-div {
+    margin-left: 6rem;
+}
+
 /* --------------------------------------------------- media queries start here -------------------------------------------------- */
 @media (min-width: 1500px) {
     #shopping-cart-a {
