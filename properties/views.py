@@ -42,6 +42,11 @@ def add_property(request):
                 property_form = PropertyForm()
                 messages.success(request, f"{street_address} has been \
                 succesfuly registered and added to your list of properties.")
+            else:
+                messages.error(request, 'your form is not valid. note that only \
+                a property with a maximum number of 9 bedrooms \
+                can be registered.')
+                return redirect(reverse('add_property'))
         return redirect(reverse('profile'))
     else:
         property_form = PropertyForm()
