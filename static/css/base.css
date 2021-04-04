@@ -2255,7 +2255,7 @@ th, td {
 
     #detailed-image-mobile {
         padding-right: 0;
-    }
+    } 
 
     #detailed-mobile {
         padding: 0 1.5rem;
@@ -2674,8 +2674,16 @@ th, td {
         width: 9rem;
     }
 
+    .continue-shopping-button {
+        font-size: 70%;
+    }
+
     #adjust-cart-button {
         padding-left: 2.9rem;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0;
+        font-size: 80%;
     }
 
     #order-action-button {
