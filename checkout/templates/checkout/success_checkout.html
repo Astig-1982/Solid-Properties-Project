@@ -4,11 +4,11 @@
 {% block content %}
 <div class="container-fluid checkout-container">
     <div class="row checkout-title">
-            <div class="col-12">
-                <h1 class="text-uppercase">{% if from_profile %} order history {% else %} order succesful {% endif %}</h1>
-                <hr>
-            </div>
+        <div class="col-12">
+            <h1 class="text-uppercase">{% if from_profile %} order history {% else %} order succesful {% endif %}</h1>
+            <hr>
         </div>
+    </div>
 </div>
 <div class="container success-order-container">
     <div class="row">
@@ -79,7 +79,7 @@
                     {% endif %}   
                 </table>
                 </fieldset>
-
+                
                 <fieldset class="mt-2">
                     <legend class="{% if request.user.is_authenticated %} order-billing-legends {% else %} order-billing-legends-not-logged {% endif %}">Billing Details</legend>
                 <table class="success-tables shadow-sm mb-5 bg-white">
@@ -136,8 +136,6 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block postloadjs %}

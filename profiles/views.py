@@ -86,4 +86,3 @@ def personalised_shopping_profile(request):
 
     return render(request, 'home/personalised.html', context)
 
-

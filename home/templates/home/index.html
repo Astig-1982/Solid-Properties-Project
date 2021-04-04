@@ -32,24 +32,14 @@
         {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block postloadjs %}
-
 <script type="text/javascript">
     $(document).ready(function(){
-        $(".category-image").mouseenter(function(){
-            $(this).addClass("shadow-none");
-        });
-        $(".category-image").mouseleave(function(){
-            $(this).removeClass("shadow-none");
-        });
         $('.personalised-shopping-div').addClass('opaque');
     });
 </script>
-
 {% endblock %}
 
 

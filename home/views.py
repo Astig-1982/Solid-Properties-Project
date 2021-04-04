@@ -5,7 +5,9 @@ from services.models import Category
 
 
 def index(request):
-
+    """
+    This view displays the home page
+    """
     all_categories = Category.objects.all()
     categories = all_categories.order_by('name')
 

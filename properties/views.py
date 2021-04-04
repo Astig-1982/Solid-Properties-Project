@@ -6,6 +6,7 @@ from .forms import PropertyForm
 from profiles.models import LandlordProfile
 from properties.models import Properties
 
+
 # Create your views here.
 
 

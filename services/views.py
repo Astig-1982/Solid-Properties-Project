@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Services, Category
 from profiles.models import LandlordProfile
 
@@ -59,7 +60,7 @@ def all_services(request):
 
 def detailed_service(request, service_id):
     """
-    This view displays a specific service in detail.
+    This view displays a specific service in detail
     """
     service = get_object_or_404(Services, pk=service_id)
     if request.user.is_authenticated:
