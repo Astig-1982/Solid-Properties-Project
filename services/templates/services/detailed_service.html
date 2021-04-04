@@ -26,7 +26,7 @@
                             <option selected value="1">Please select a property</option>
                             {% for property in properties %}
                                 {% if property.activate %}
-                                    <option value="{{ property.no_of_bedrooms }}"><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
+                                    <option value="{{ property.no_of_bedrooms }}">{{ property.no_of_bedrooms }} Bed <span class="no-of-bedrooms">{{ property.street_address }}</span></option>
                                 {% else %}
                                     <option value="{{ property.no_of_bedrooms }}" disabled><span class="no-of-bedrooms">{{ property.street_address }}</span></option>
                                 {% endif %}
@@ -88,8 +88,7 @@
             {% else %}
                 <p class="price-variation-paragraph">*Please note that this service has a fixed price, regardless of the number of bedrooms the property comprises.</p>
             {% endif %}
-            </div>
-        
+            </div>  
     </div>
 </div>
 {% endblock %}
@@ -103,7 +102,8 @@
         // this function updates the total price
         $('.select-property').change(function(){
             let bedrooms = $(this).val();
-            let street_address = $(this).find(":selected").text();
+            let row_street_address = $(this).find(":selected").text();
+            let street_address = row_street_address.slice(6)
             let servicePrice = $('.service-price').html();
             let servicePriceInt = parseInt(servicePrice);
             let noOfBedrooms = parseInt(bedrooms);
