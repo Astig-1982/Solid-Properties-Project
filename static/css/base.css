@@ -615,6 +615,7 @@ body {
 #detailed-service-container {
     margin-top: 9.8rem;
     margin-bottom: 5rem;
+    padding: 0;
 }
 
 .horizontal-separator {
