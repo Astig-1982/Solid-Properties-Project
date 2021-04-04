@@ -102,6 +102,11 @@ body {
     border: 1px solid rgb(2, 191, 191);
 }
 
+.navbar-nav .nav-link {
+    padding-bottom: 0;
+    margin-bottom: 8.5px;
+}
+
 .navbar-toggler-icon {
     background-color: rgb(33,0,112);
 }
@@ -563,6 +568,12 @@ body {
 .hvr-rectangle-out:before {
     background: rgb(2, 191, 191);
     border-radius: 50%;
+}
+
+.hvr-underline-from-center:before {
+    background-color: #ffffff;
+    height: 1.55px;
+    
 }
 
 .category-icon-i {

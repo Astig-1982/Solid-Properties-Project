@@ -58,31 +58,31 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{% url 'services' %}"
+                                    <a class="nav-link active hvr-underline-from-center" aria-current="page" href="{% url 'services' %}"
                                         aria-label="services">services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'home' %}">categories</a>
+                                    <a class="nav-link hvr-underline-from-center" href="{% url 'home' %}">categories</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'about' %}" aria-label="about"
+                                    <a class="nav-link hvr-underline-from-center" href="{% url 'about' %}" aria-label="about"
                                         tabindex="-1">about</a>
                                 </li>
                                 {% if request.user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'profile' %}" aria-label="profile">profile</a>
+                                    <a class="nav-link hvr-underline-from-center" href="{% url 'profile' %}" aria-label="profile">profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'account_logout' %}" aria-label="sign out"
+                                    <a class="nav-link hvr-underline-from-center" href="{% url 'account_logout' %}" aria-label="sign out"
                                         tabindex="-1">sign out</a>
                                 </li>
                                 {% else %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/login/" aria-label="sign in" tabindex="-1">sign
+                                    <a class="nav-link hvr-underline-from-left" href="/accounts/login/" aria-label="sign in" tabindex="-1">sign
                                         in</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'account_signup' %}" aria-label="register"
+                                    <a class="nav-link hvr-underline-from-left" href="{% url 'account_signup' %}" aria-label="register"
                                         tabindex="-1">register</a>
                                 </li>
                                 {% endif %}
@@ -106,13 +106,14 @@
                 <div class="row personalised-shopping-div">
                     <div class="col-12 p-0">
                         <div class="text-center text-uppercase">
-                            <p>take advantage of the <a id="personalised-shopping-a" href="{% url 'personalised' %}" aria-label="personalised shopping">personalised shopping</a> experience</p>
+                            <p>take advantage of the <a id="personalised-shopping-a" href="{% url 'personalised' %}"
+                                    aria-label="personalised shopping">personalised shopping</a> experience</p>
                         </div>
                     </div>
                 </div>
                 {% endif %}
             </header>
-    
+
             {% block content %}
             {% endblock %}
         </div>
@@ -122,26 +123,32 @@
                 <div id="social-queries" class="col-12 col-md-6">
                     <p>Follow us on:
                         <span id="all-social">
-                            <span id="facebook-span"><a href="https://en-gb.facebook.com/" aria-label="connect with us on facebook" target="_blank" class="social-links"><i class="fab fa-facebook-square"></i></a></span>
-                            <span><a href="https://www.instagram.com/" aria-label="connect with us on instagram" target="_blank" class="social-links"><i class="fab fa-instagram"></i></a></span>
-                            <span><a href="https://www.linkedin.com/" aria-label="connect with us on linkedin" target="_blank" class="social-links"><i class="fab fa-linkedin"></i></a></span>
-                            <span><a href="https://twitter.com/" aria-label="connect with us on twitter" target="_blank" class="social-links"><i class="fab fa-twitter-square"></i></a></span>
+                            <span id="facebook-span"><a href="https://en-gb.facebook.com/"
+                                    aria-label="connect with us on facebook" target="_blank" class="social-links"><i
+                                        class="fab fa-facebook-square"></i></a></span>
+                            <span><a href="https://www.instagram.com/" aria-label="connect with us on instagram"
+                                    target="_blank" class="social-links"><i class="fab fa-instagram"></i></a></span>
+                            <span><a href="https://www.linkedin.com/" aria-label="connect with us on linkedin"
+                                    target="_blank" class="social-links"><i class="fab fa-linkedin"></i></a></span>
+                            <span><a href="https://twitter.com/" aria-label="connect with us on twitter" target="_blank"
+                                    class="social-links"><i class="fab fa-twitter-square"></i></a></span>
                         </span>
                     </p>
                 </div>
                 <div class="col-12 d-md-none mx-auto footer-horizontal"></div>
                 <div class="col-12 col-md-6">
                     <div id="account-queries" class="pt-md-3">
-                        <a id="footer-home-link" class="footer-links" href="{% url 'home' %}" aria-label="go to home page">Home</a>
+                        <a id="footer-home-link" class="footer-links hvr-underline-from-center" href="{% url 'home' %}"
+                            aria-label="go to home page">Home</a>
                         {% if request.user.is_authenticated %}
-                        <a class="footer-links" href="{% url 'profile' %}" aria-label="go to profile">Profile</a>
+                        <a class="footer-links hvr-underline-from-center" href="{% url 'profile' %}" aria-label="go to profile">Profile</a>
                         {% else %}
-                        <a class="footer-links" href="/accounts/login/" aria-label="sign in">Sign In</a>
+                        <a class="footer-links hvr-underline-from-center" href="/accounts/login/" aria-label="sign in">Sign In</a>
                         {% endif %}
                         {% if request.user.is_authenticated %}
-                        <a class="footer-links" href="{% url 'account_logout' %}" aria-label="sign out">Sign Out</a>
+                        <a class="footer-links hvr-underline-from-center" href="{% url 'account_logout' %}" aria-label="sign out">Sign Out</a>
                         {% else %}
-                        <a class="footer-links" href="{% url 'account_signup' %}" aria-label="register">Register</a>
+                        <a class="footer-links hvr-underline-from-center" href="{% url 'account_signup' %}" aria-label="register">Register</a>
                         {% endif %}
                     </div>
                 </div>
@@ -150,14 +157,14 @@
             <div class="row footer-categories">
                 <div id="footer-col" class="d-none d-md-block col-md-12">
                     <div class="mx-auto">
-                        <a id="legal-footer" href="{% url 'services' %}?category=legal">Legal Services</a>
-                        <a href="{% url 'services' %}?category=repairs_and_refurbishments">Repairs & Refurbishments</a>
-                        <a href="{% url 'services' %}?category=admin_services">Admin Services</a>
-                        <a href="{% url 'services' %}?category=plumbing_electric">Plumbing & Electric</a>
-                        <a href="{% url 'services' %}?category=free_of_charge">Free</a>
-                        <a href="{% url 'services' %}?category=marketing">Marketing</a>
-                        <a href="{% url 'services' %}?category=	cleaning_services">Cleaning</a>
-                        <a href="{% url 'services' %}?category=other_services">Other</a>
+                        <a id="legal-footer" href="{% url 'services' %}?category=legal" class="hvr-underline-from-center">Legal Services</a>
+                        <a href="{% url 'services' %}?category=repairs_and_refurbishments" class="hvr-underline-from-center">Repairs & Refurbishments</a>
+                        <a href="{% url 'services' %}?category=admin_services" class="hvr-underline-from-center">Admin Services</a>
+                        <a href="{% url 'services' %}?category=plumbing_electric" class="hvr-underline-from-center">Plumbing & Electric</a>
+                        <a href="{% url 'services' %}?category=free_of_charge" class="hvr-underline-from-center">Free</a>
+                        <a href="{% url 'services' %}?category=marketing" class="hvr-underline-from-center">Marketing</a>
+                        <a href="{% url 'services' %}?category=	cleaning_services" class="hvr-underline-from-center">Cleaning</a>
+                        <a href="{% url 'services' %}?category=other_services" class="hvr-underline-from-center">Other</a>
                     </div>
                     <p class="mx-auto text-center copyright-message">Copyright Solid Properties Ltd. 2021. Registered
                         Office 212 Marylebone Rd, London, NW1 5LS</p>

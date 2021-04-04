@@ -310,6 +310,7 @@ This model is connected to **Order** and **Services** models with **ForeignKeys*
 * [Heroku](https://www.heroku.com/) to deploy the project.
 * [Balsamiq](https://balsamiq.com/) to create wireframes.
 * [Tinypng](https://tinypng.com/) used to compress image files.
+* [Cdnjs](https://cdnjs.com/libraries/hover.css/2.1.1) used for hover effects.
 
 ### Databases
 
