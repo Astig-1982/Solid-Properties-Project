@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .forms import PropertyForm
 from profiles.models import LandlordProfile
@@ -8,6 +9,7 @@ from properties.models import Properties
 # Create your views here.
 
 
+@login_required
 def add_property(request):
     """
     This view adds a property to the user's list.

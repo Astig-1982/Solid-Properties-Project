@@ -1,9 +1,11 @@
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 from .models import LandlordProfile
 from checkout.models import Order
 from .forms import BillingForm
+
 
 # Create your views here.
 
@@ -49,6 +51,7 @@ def order_history(request, order_number):
     return render(request, 'checkout/success_checkout.html', context)
 
 
+@login_required
 def billing_details(request):
     """
     This view displays and updates user's billing details.
