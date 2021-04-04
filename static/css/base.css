@@ -2253,6 +2253,18 @@ th, td {
         margin-bottom: 0;
     }
 
+    #detailed-image-mobile {
+        padding-right: 0;
+    }
+
+    #detailed-mobile {
+        padding: 0 1.5rem;
+    }
+
+    .property-container {
+        padding: 0 1rem;
+    }
+
     #category-containers {
         padding-left: 0;
         padding-right: 0;
@@ -2369,7 +2381,8 @@ th, td {
     }
 
     #detailed-service-container {
-        margin-top: 5.5rem;
+        margin-top: 3.5rem;
+        padding: 0;    
     }
 
     .service-image {
