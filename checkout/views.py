@@ -118,7 +118,7 @@ def checkout(request):
         the shopping cart is 0.
         """
         messages.warning(request, "purchases cannot be \
-                            performed on free services only.")
+                            performed for free services only.")
         return redirect(reverse('cart'))
 
 
