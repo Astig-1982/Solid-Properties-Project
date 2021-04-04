@@ -10,7 +10,7 @@ from properties.models import Properties
 
 def add_property(request):
     """
-    This view adds a property to the user's list
+    This view adds a property to the user's list.
     """
     landlord = get_object_or_404(LandlordProfile, user=request.user)
 

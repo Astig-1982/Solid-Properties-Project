@@ -9,7 +9,10 @@ from .forms import BillingForm
 
 
 def landlord_profile(request):
-
+    """
+    This view displays user's profile
+    and its list of properties and orders.
+    """
     landlord = get_object_or_404(LandlordProfile, user=request.user)
     all_properties = landlord.properties.all()
     orders = landlord.orders.all()
@@ -27,7 +30,9 @@ def landlord_profile(request):
 
 
 def order_history(request, order_number):
-
+    """
+    This view displays user's past orders.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -44,7 +49,9 @@ def order_history(request, order_number):
 
 
 def billing_details(request):
-
+    """
+    This view displays and updates user's billing details.
+    """
     landlord = get_object_or_404(LandlordProfile, user=request.user)
 
     if request.method == 'POST':
@@ -65,7 +72,10 @@ def billing_details(request):
 
 
 def personalised_shopping_profile(request):
-
+    """
+    This view displays personalised shopping page
+    if it's accessed from the profile page.
+    """
     context = {
         'from_profile': True,
     }

@@ -15,7 +15,7 @@ def update_order(sender, instance, created, **kwargs):
 @receiver(post_save, sender=OrderLineItemAnonym)
 def update_order_anonym(sender, instance, created, **kwargs):
     """
-    This method is executed if the user is not logged in.
+    This method is executed if the user is NOT logged in.
     """
     instance.order.update_total_for_anonym()
 
@@ -31,6 +31,6 @@ def update_delete_order(sender, instance, **kwargs):
 @receiver(post_delete, sender=OrderLineItemAnonym)
 def update_delete_order_anonym(sender, instance, **kwargs):
     """
-    This method is executed if the user is not logged in.
+    This method is executed if the user is NOT logged in.
     """
     instance.order.update_total_for_anonym()

@@ -8,7 +8,9 @@ from profiles.models import LandlordProfile
 
 
 def all_services(request):
-
+    """
+    This view displays and sorts services
+    """
     services = Services.objects.all()
     categories = Category.objects.all()
     query = None
@@ -56,7 +58,9 @@ def all_services(request):
 
 
 def detailed_service(request, service_id):
-
+    """
+    This view displays a specific service in detail.
+    """
     service = get_object_or_404(Services, pk=service_id)
     if request.user.is_authenticated:
         landlord = get_object_or_404(LandlordProfile, user=request.user)

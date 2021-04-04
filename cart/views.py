@@ -17,7 +17,7 @@ def view_cart(request):
 
 def add_to_cart(request, service_id):
     """
-    This view adds to shopping cart.
+    This view adds services to shopping cart.
     """
     service = get_object_or_404(Services, pk=service_id)
     street_address = request.POST.get("street_address")

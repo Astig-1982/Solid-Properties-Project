@@ -16,14 +16,18 @@ import stripe
 
 
 def checkout(request):
-
+    """
+    This view checks the user out and saves
+    the orders in the database.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     try:
         if request.method == 'POST':
             cart = request.session.get('cart', {})
             if request.user.is_authenticated:
-                landlord = get_object_or_404(LandlordProfile, user=request.user)
+                landlord = get_object_or_404(
+                    LandlordProfile, user=request.user)
             else:
                 landlord = None
 
@@ -82,7 +86,8 @@ def checkout(request):
             )
 
             if request.user.is_authenticated:
-                landlord = get_object_or_404(LandlordProfile, user=request.user)
+                landlord = get_object_or_404(
+                    LandlordProfile, user=request.user)
                 order_form = OrderForm(initial={
                         'full_name': landlord.default_full_name,
                         'email': landlord.user.email,
@@ -108,12 +113,20 @@ def checkout(request):
         return render(request, 'checkout/checkout.html', context)
 
     except Exception:
-        messages.warning(request, "purchases cannot be performed on free services only.")
+        """
+        This exception will take effect if the value of
+        the shopping cart is 0.
+        """
+        messages.warning(request, "purchases cannot be \
+                            performed on free services only.")
         return redirect(reverse('cart'))
 
 
 def success_checkout(request, order_number):
-
+    """
+    This view renders the success order page
+    upon the completion of a purchase.
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
