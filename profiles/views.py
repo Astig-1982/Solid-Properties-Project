@@ -1,13 +1,14 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import LandlordProfile
-from properties.models import Properties
 from checkout.models import Order
 from .forms import BillingForm
 
 # Create your views here.
 
 
+@login_required
 def landlord_profile(request):
     """
     This view displays user's profile
