@@ -2064,7 +2064,7 @@ th, td {
 
     .table-buttons {
         float: none;
-        margin-left: 4.5%;
+        margin-left: 4.49%;
     }
 
     #remove-property {
@@ -2102,10 +2102,6 @@ th, td {
 
     #total-amount-span {
         margin-left: 34%;
-    }
-
-    .table-buttons {
-        margin-left: 0;
     }
 
     .success-tables {
