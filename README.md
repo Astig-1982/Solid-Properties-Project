@@ -655,9 +655,9 @@ USE_AWS | `True`
 
 #### Hero Image Home Page
 
-* 
+* [standard.co.uk](https://www.standard.co.uk/homesandproperty/luxury/inside-the-spectacular-london-penthouse-with-a-ps12-million-view-luxury-fourbedroom-home-frames-iconic-tower-bridge-views-from-five-terraces-a109761.html)
 
-#### Bakcground Image Secondary Pages
+#### Background Image Secondary Pages
 
 * [telegraph.co.uk](https://www.telegraph.co.uk/travel/destinations/europe/united-kingdom/england/london/articles/)
 
