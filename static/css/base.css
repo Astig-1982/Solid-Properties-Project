@@ -998,6 +998,13 @@ th, td {
     width: 20rem;  
 }
 
+#service-data a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: .35rem;
+}
+
 .data-no-of-bedrooms {
     width: 15rem;
 }
@@ -1256,17 +1263,23 @@ th, td {
 #property-no-of-bedrooms div {
     box-sizing: border-box;
     padding-top: 8.5%;
+    position: relative;
+    bottom: .35rem;
 }
 
 #address-data-checkout {
     width: 20rem;
     box-sizing: border-box;
     padding-top: 7%;
+    position: relative;
+    bottom: .4rem;
 }
 
 #total-cost-per-property-td div {
     box-sizing: border-box;
     padding-top: 8.5%;
+    position: relative;
+    top: .4rem;
 }
 
 #checkput-grand-total-div {
@@ -2227,6 +2240,10 @@ th, td {
         height: 100vh;
     }
 
+    #address-data-checkout {
+        height: 3.27rem;
+    }
+
     .title-container h2 {
         font-size: 1.4rem;
     }
@@ -2362,6 +2379,10 @@ th, td {
         display: inline;
         margin-bottom: 0;
         border: none;
+    }
+
+    .cart-container {
+        margin-top: 28.5%;
     }
 
     #filtering-row {
